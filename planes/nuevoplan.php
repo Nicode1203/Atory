@@ -1,3 +1,15 @@
+<?php
+//seguridad de sesiones paginacion (prueba 1)
+session_start();
+error_reporting(0);
+$varsesion= $_SESSION['usuario'];
+if ($varsesion == null || $varsesion='') {
+    header ("location:../index.html");
+    die();
+    exit;
+}
+
+?>
 <!DOCTYPE html>
 <html>
 
@@ -115,7 +127,7 @@
 
           <!--valor de email-->
           <div class="form-group">
-            <label for="des">Describcion del plan</label>
+            <label for="des">Descripcion del plan</label>
             <input type="text" class="form-control" name="des" id="des" placeholder="Describcion del plan">
           </div>
           <!--valor de estado del cliente-->

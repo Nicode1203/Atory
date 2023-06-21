@@ -1,3 +1,15 @@
+<?php
+//seguridad de sesiones paginacion (prueba 1)
+session_start();
+error_reporting(0);
+$varsesion= $_SESSION['usuario'];
+if ($varsesion == null || $varsesion='') {
+    header ("location:../index.html");
+    die();
+    exit;
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 

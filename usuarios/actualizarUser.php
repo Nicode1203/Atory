@@ -9,8 +9,6 @@ if ($varsesion == null || $varsesion='') {
     exit;
 }
 
-
-            
 ?>
 
 <!-- CODIGO HTML -->

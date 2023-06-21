@@ -1,3 +1,15 @@
+<?php
+//seguridad de sesiones paginacion (prueba 1)
+session_start();
+error_reporting(0);
+$varsesion= $_SESSION['usuario'];
+if ($varsesion == null || $varsesion='') {
+    header ("location:../index.html");
+    die();
+    exit;
+}
+
+?>
 <!DOCTYPE html>
 <html>
 
@@ -98,7 +110,7 @@
         <th> Nombres del cliente</th>
         <th> Telefono </th>
         <th> Correo CLiente </th>
-        <th> Eliminar</th>
+        <th> Responder solicitud</th>
     </tr>
     </thead>
     ';
@@ -120,8 +132,8 @@
               <td> <?php echo "$nombres" ?></td>
               <td> <?php echo "$tel" ?></td>
               <td> <?php echo "$email" ?></td>
-              <th>
-              <th><a href="elisoli.php?i=<?php echo $row['idSolicitud'] ?>" class="btn btn-danger">Eliminar</a></th>
+              
+              <th><a href="elisoli.php?i=<?php echo $row['idSolicitud'] ?>" class="btn btn-danger">Responder</a></th>
               </th>
             </tr>
         <?php

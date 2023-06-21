@@ -4,19 +4,11 @@ session_start();
 error_reporting(0);
 $varsesion= $_SESSION['usuario'];
 if ($varsesion == null || $varsesion='') {
-    header ("location:index.html");
+    header ("location:../index.html");
     die();
     exit;
 }
 
-/* 
-include "login/claseSeguridad.php";
-
-$seguridad = new Seguridad();
-if ($seguridad->getUsuario()==null) {
-    header ('location:index.html');
-}
-*/
 ?>
 
 <!-- CODIGO HTML -->
