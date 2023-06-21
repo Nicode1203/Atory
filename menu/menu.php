@@ -49,6 +49,7 @@ if ($varsesion == null || $varsesion='') {
                                 <img class="img-xs rounded-circle" src="assets/images/faces-clipart/pic-8.png" alt="">
                                 <span class="count bg-success"></span>
                             </div>
+                            
                             <div class="profile-name">
                                 <h5 class="mb-0 font-weight-normal">ADMINISTRATIVO</h5>
                                 <span>Rol administrativo</span>
@@ -152,6 +153,7 @@ if ($varsesion == null || $varsesion='') {
                         <span class="mdi mdi-menu"></span>
                     </button>
                     <ul class="navbar-nav navbar-nav-right">
+                    <a href="solplan.php" class="btn btn-info " role="button" aria-pressed="true">Nuevos Clientes</a>
                         <li class="nav-item dropdown">
                             <a class="nav-link collapsed" id="profileDropdown" href="#" data-toggle="dropdown" aria-expanded="false">
                                 <div class="navbar-profile">

@@ -123,7 +123,7 @@
               <th>
               <th><a href="actpqr.php?i=<?php echo $row['idPqr'] ?>" class="btn btn-danger">Activar</a></th>
               </th>
-            </tr>";
+            </tr>
         <?php
           }
         }
