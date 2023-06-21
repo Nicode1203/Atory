@@ -15,7 +15,7 @@ if ($filas['rol'] == 'Administrador') {// que pasa cuando entra en rol administr
   header("location:../principal.php");
   exit;
 }elseif ($filas['rol'] == 'Tecnico') {// que pasa cuando entra en rol tecnico
-  header("location:../userTecnico/principal.php");
+  header("location:../userTecnico/visitas/tablasVisitas.php");
   exit;
 }{
   ?>

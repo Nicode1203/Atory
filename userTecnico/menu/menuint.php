@@ -62,7 +62,7 @@ if ($varsesion == null || $varsesion='') {
                 </li>
                 
                 <li class="nav-item menu-items">
-                    <a class="nav-link" href="../usuarios/usuarios.php">
+                    <a class="nav-link" href="../visitas/tablasVisitas.php">
                         <span class="menu-icon">
                             <i class="mdi mdi-table-large"></i>
                         </span>
