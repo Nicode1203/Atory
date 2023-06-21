@@ -83,12 +83,12 @@ if($rta = $con -> query($sql)){
     <td> <?php  echo "$creacion"?></td> 
     <td> <?php  echo "$act"?></td> 
     <th>
-    <a href="../actualizar.php?id=<?php echo $row['documentoUsuario'] ?>" class="btn btn-info">Editar</a></th>
+    <a href="updateUser.php?id=<?php echo $row['documentoUsuario'] ?>" class="btn btn-info">Editar</a></th>
     </th>
     <th>
     <th><a href="../delete.php?id=<?php echo $row['documentoUsuario'] ?>" class="btn btn-danger">Eliminar</a></th>
     </th>
-</tr>";
+</tr>
 <?php
 }
 }
