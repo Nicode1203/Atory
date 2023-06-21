@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+    
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Atory Solutions</title>
+    <!-- plugins:css -->
+    <link rel="stylesheet" href="../assets/vendors/mdi/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="../assets/vendors/css/vendor.bundle.base.css">
+    <!-- endinject -->
+    <!-- Plugin css for this page -->
+    <link rel="stylesheet" href="../assets/vendors/jvectormap/jquery-jvectormap.css">
+    <link rel="stylesheet" href="../assets/vendors/flag-icon-css/css/flag-icon.min.css">
+    <link rel="stylesheet" href="../assets/vendors/owl-carousel-2/owl.carousel.min.css">
+    <link rel="stylesheet" href="../assets/vendors/owl-carousel-2/owl.theme.default.min.css">
+    <!-- End plugin css for this page -->
+    <!-- inject:css -->
+    <!-- endinject -->
+    <!-- Layout styles -->
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <!-- End layout styles -->
+    <link rel="shortcut icon" href="../assets/images/favicon.png">
+  <style type="text/css">/* Chart.js */
+@keyframes chartjs-render-animation{from{opacity:.99}to{opacity:1}}.chartjs-render-monitor{animation:chartjs-render-animation 1ms}.chartjs-size-monitor,.chartjs-size-monitor-expand,.chartjs-size-monitor-shrink{position:absolute;direction:ltr;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1}.chartjs-size-monitor-expand>div{position:absolute;width:1000000px;height:1000000px;left:0;top:0}.chartjs-size-monitor-shrink>div{position:absolute;width:200%;height:200%;left:0;top:0}</style></head>
+  <body>
+    <div class="container-scroller">
+      <!-- partial:partials/_sidebar.html -->
+      <nav class="sidebar sidebar-offcanvas" id="sidebar">
+        <div class="sidebar-brand-wrapper d-none d-lg-flex align-items-center justify-content-center fixed-top">
+          <img style="width:40px;height:40px;" src="../assets/images/logo-mini.png" alt="logo"> <!-- LOGO DE ATORY-->
+          
+        </div>
+        <ul class="nav">
+          <li class="nav-item menu-items">
+            <a class="nav-link" href="">
+              <span class="menu-icon">
+                <i class="mdi mdi-table-large"></i>
+              </span>
+              <span class="menu-title"> Solicitud PQR</span>
+            </a>
+          </li>
+          
+        </ul>
+      </nav>
+      <!-- partial -->
+      <div class="container-fluid page-body-wrapper">
+        <!-- partial:partials/_navbar.html -->
+        <nav class="navbar p-0 fixed-top d-flex flex-row">
+          <div class="navbar-brand-wrapper d-flex d-lg-none align-items-center justify-content-center">
+            <a class="navbar-brand brand-logo-mini" href="../index.html"><img src="../assets/images/logo-mini.svg" alt="logo"></a>
+          </div>
+          <div class="navbar-menu-wrapper flex-grow d-flex align-items-stretch">
+            <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
+              <span class="mdi mdi-menu"></span>
+            </button>
+            
+
+            <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
+              <span class="mdi mdi-format-line-spacing"></span>
+            </button>
+          </div>
+        </nav>
+        <!-- partial -->
+
+
+        <div class="main-panel">
+          <div class="content-wrapper"> <!-- ESTO ES LO QUE TENEMOS QUE MODIFICAR -->
+            <form action="../index.html">
+              <input type="submit" value="Volver al inicio" class="btn btn-primary btn-lg"/>
+          </form>
+            
+            <div class="card-body">
+                    <h4 class="card-title">INGRESAR PQR</h4>
+                    <p class="card-description"> Ingrese sus datos</p>
+                    <form class="forms-sample">
+                  
+                      <div class="form-group">
+                        <label for="td">Seleccione tipo de documento</label>
+                        <select class="form-control" name="td" id="td" required>
+                        <option value="C.C">C.C</option>
+                        <option value="C.E">C.E</option>
+                        <option value="R.C">R.C</option>
+                        <option value="T.I">T.I</option>
+                        </select>
+                      </div>
+                    
+                      <div class="form-group">
+                        <label for="id">Ingrese documento</label>
+                        <input type="text" class="form-control"  name="id" id="id"  placeholder="Numero de documento" required>
+                      </div>
+
+              
+                      <div class="form-group">
+                        <label for="nombre">Ingrese nombres y apellidos</label>
+                        <input type="text" class="form-control"  name="nombre" id="nombre"  placeholder="Ingrese nombre" required>
+                      </div>
+
+
+                 
+                      <div class="form-group">
+                        <label for="tel">Ingrese numero de telefono</label>
+                        <input type="text" class="form-control"  name="tel" id="tel"  placeholder="Numero de telefono" required>
+                      </div>
+
+            
+                      <div class="form-group">
+                        <label for="email">Ingrese correo electronico</label>
+                        <input type="email" class="form-control"  name="email" id="email"  placeholder="Correo electronico" required>
+                      </div>
+
+ 
+                      <div class="form-group">
+                        <label for="estado">Seleccione tipo de solicitud</label>
+                        <select class="form-control" name="soli" id="soli">
+                          <option value="Solicitud">Solicitud </option>
+                          <option value="Peticion">Peticion</option>
+                          <option value="Reclamo">Reclamo</option>
+                          <option value="Sugerencia">Sugerencia</option>
+                        </select>
+                      </div>
+
+                      <div class="form-group">
+                        <label for="creacion">Describanos el motivo de contacto</label>
+                        <input type="text" class="form-control"  name="dc" id="dc"  placeholder="" required>
+                      </div>
+
+                      <div>
+                        <br>
+                        <button id="submit" type="submit" formmethod="post" formaction="enviarpqr.php" class="btn btn-primary">Enviar</button>
+                        
+                      </div>
+                    </form>
+            
+            <div class="row">
+              <div>
+                <div>
+                  
+                </div>
+              </div>
+              
+            </div>
+            
+            
+            
+            
+          </div>
+          <!-- ESTO ES LO QUE PODEMOS MODIFICAR -->
+          <!-- partial:partials/_footer.html -->
+          
+          <!-- partial -->
+        </div>
+        <footer class="footer">
+          <div class="d-sm-flex justify-content-center justify-content-sm-between">
+            <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright © Atory Solution 2023</span>
+            <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center"> <a href=" " target="_blank"></a> </span>
+          </div>
+        </footer>
+        <!-- main-panel ends -->
+      </div>
+      <!-- page-body-wrapper ends -->
+    
+    
+    </div>
+    
+    <script>
+
+  
+    </script>
+    <!-- container-scroller -->
+    <!-- plugins:js -->
+    <script src="../assets/vendors/js/vendor.bundle.base.js"></script>
+    <!-- endinject -->
+    <!-- Plugin js for this page -->
+    <script src="../assets/vendors/chart.js/Chart.min.js"></script>
+    <script src="../assets/vendors/progressbar.js/progressbar.min.js"></script>
+    <script src="../assets/vendors/jvectormap/jquery-jvectormap.min.js"></script>
+    <script src="../assets/vendors/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
+    <script src="../assets/vendors/owl-carousel-2/owl.carousel.min.js"></script>
+    <!-- End plugin js for this page -->
+    <!-- inject:js -->
+    <script src="../assets/js/off-canvas.js"></script>
+    <script src="../assets/js/hoverable-collapse.js"></script>
+    <script src="../assets/js/misc.js"></script>
+    <script src="../assets/js/settings.js"></script>
+    <script src="../assets/js/todolist.js"></script>
+    <!-- endinject -->
+    <!-- Custom js for this page -->
+    <script src="../assets/js/dashboard.js"></script>
+    <!-- End custom js for this page -->
+  
+<div class="jvectormap-tip"></div>
+</body>
+</html>
+
