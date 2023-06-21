@@ -27,11 +27,11 @@
     <nav class="sidebar sidebar-offcanvas" id="sidebar">
       <div class="sidebar-brand-wrapper d-none d-lg-flex align-items-center justify-content-center fixed-top">
         <!-- Logo de Atory -->
-        <a class="sidebar-brand brand-logo" href="index.html">
+        <a class="sidebar-brand brand-logo" href="../index.html">
           <img src="../assets/images/atori.png" alt="logo">
         </a>
         <!-- Volver a inicio -->
-        <a class="sidebar-brand brand-logo-mini" href="index.html">
+        <a class="sidebar-brand brand-logo-mini" href="../index.html">
           <img src="../assets/images/logo-mini.png" alt="logo">
         </a>
       </div>

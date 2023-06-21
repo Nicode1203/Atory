@@ -153,7 +153,7 @@ if ($varsesion == null || $varsesion='') {
                         <span class="mdi mdi-menu"></span>
                     </button>
                     <ul class="navbar-nav navbar-nav-right">
-                    <a href="solplan.php" class="btn btn-info " role="button" aria-pressed="true">Nuevos Clientes</a>
+                    <a href="planes/solicitudes.php" class="btn btn-info " role="button" aria-pressed="true">Nuevos Clientes</a>
                         <li class="nav-item dropdown">
                             <a class="nav-link collapsed" id="profileDropdown" href="#" data-toggle="dropdown" aria-expanded="false">
                                 <div class="navbar-profile">
