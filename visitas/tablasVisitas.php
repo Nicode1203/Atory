@@ -42,8 +42,8 @@ if ($varsesion == null || $varsesion = ''  ) {
         <div class="content-wrapper">
         <h1 style="font-size: 32px;">Visitas tecnicas e Instalaciones</h1>
             <div class="card-body">
-                
-                
+            <a href="ingresarVisita.php" class="btn btn-primary">Ingresar nueva Visita</a>
+                <a href="../excel/excelVisitas.php" class="btn btn-success">Exportar tabla a Excel</a>
                 <?php
                 include("../conexion.php");
 
@@ -86,8 +86,10 @@ if ($varsesion == null || $varsesion = ''  ) {
                             <td> <?php echo "$nomTec" ?></td>
                             <td> <?php echo "$motivo" ?></td>
                             <td> <?php echo "$diaVisita" ?></td>
-
-                            <th><a href="eliminarVisita.php?i=<?php echo $row['idVisita'] ?>" class="btn btn-danger">Atender visita</a></th>
+                            <td>
+                                <a href="actualizarVisita.php?id=<?php echo $row['idVisita'] ?>" class="btn btn-info">Editar</a>
+                            </td>
+                            <th><a href="eliminarVisitaDes.php?i=<?php echo $row['idVisita'] ?>" class="btn btn-danger">Eliminar Visita</a></th>
                             </th>
                         </tr>
                 <?php

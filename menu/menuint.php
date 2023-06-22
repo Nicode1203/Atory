@@ -136,6 +136,14 @@ if ($varsesion == null || $varsesion='') {
                         <span class="menu-title">PQR</span>
                     </a>
                 </li>
+                <li class="nav-item menu-items">
+                    <a class="nav-link" href="../visitas/tablasVisitas.php">
+                        <span class="menu-icon">
+                            <i class="mdi mdi-table-large"></i>
+                        </span>
+                        <span class="menu-title">Gestión Visitas</span>
+                    </a>
+                </li>
             </ul>
         </nav>
         <!-- Página parcial -->
