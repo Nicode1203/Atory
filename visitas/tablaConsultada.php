@@ -42,13 +42,12 @@ if ($varsesion == null || $varsesion = '') {
         <div class="content-wrapper">
             <h1 style="font-size: 32px;">Visitas tecnicas e Instalaciones</h1>
             <div class="card-body">
-                <a href="ingresarVisita.php" class="btn btn-primary">Ingresar nueva Visita</a>
-                <a href="../excel/excelVisitas.php" class="btn btn-success">Exportar tabla a Excel</a>
-                <a href="../visitas/consultarVisitas.php" class="btn btn-light  ">Consultar visitas</a>
+                
                 <?php
                 include("../conexion.php");
 
-                $sql = "SELECT * FROM visitas WHERE estadoVisita='Activo';";
+                $id=$_POST["docCliente"];
+                      $sql= "SELECT * FROM visitas WHERE documentoCliente='$id';";
 
                 echo '<div class="table-responsive">
                 <table class="table table-hover">
@@ -56,9 +55,6 @@ if ($varsesion == null || $varsesion = '') {
             <tr>
             <th> Documento Cliente</th>
             <th> Nombre Cliente</th>
-            <th> Telefono Cliente</th>
-            <th> Direccion Cliente</th>
-            <th> Nombre Tecnico </th>
             <th> Motivo de visita </th>
             <th> Dia de la visita </th>
         </tr>
@@ -84,16 +80,11 @@ if ($varsesion == null || $varsesion = '') {
                         <tr>
                             <td> <?php echo "$docCliente" ?></td>
                             <td> <?php echo "$nomCliente" ?></td>
-                            <td> <?php echo "$telCliente" ?></td>
-                            <td> <?php echo "$dirCliente" ?></td>
-                            <td> <?php echo "$nomTec" ?></td>
+
                             <td> <?php echo "$motivo" ?></td>
                             <td> <?php echo "$diaVisita" ?></td>
                             
-                            <th><a href="actualizarVisita.php?id=<?php echo $row['idVisita'] ?>" class="btn btn-info">Actualizar</a>
-                            </th>
-                            <th><a href="eliminarVisitaDes.php?i=<?php echo $row['idVisita'] ?>" class="btn btn-danger">Eliminar Visita</a></th>
-                            </th>
+                            <th><a href="consulta.php?id=<?php echo $row['idVisita'] ?>" class="btn btn-info">Consultar visita completa</a>
                         </tr>
                 <?php
                     }

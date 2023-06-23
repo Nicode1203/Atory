@@ -3,7 +3,7 @@
 session_start();
 error_reporting(0);
 $varsesion = $_SESSION['usuario'];
-if ($varsesion == null || $varsesion = '' ) {
+if ($varsesion == null || $varsesion = '') {
     header("location:index.html");
     die();
     exit;
@@ -99,9 +99,9 @@ if ($seguridad->getUsuario()==null) {
                             <td>
                                 <a href="delete.php?id=<?php echo $row['documentoCliente'] ?>" class="btn btn-danger">Eliminar</a>
                             </td>
-                            
-                                
-                           
+
+
+
                         </tr>
                 <?php
                     }

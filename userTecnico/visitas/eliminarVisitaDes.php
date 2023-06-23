@@ -2,9 +2,9 @@
 
 include("conexion.php");
 
-$id=$_GET['id'];
+$i=$_GET['i'];
 
-$sql="UPDATE visitas SET  estadoVisita='Atendida'WHERE idVisita='$id'";  
+$sql="UPDATE visitas SET  estadoVisita='Eliminada'WHERE idVisita='$i'";  
 $query=mysqli_query($con,$sql);
 
     if($query){

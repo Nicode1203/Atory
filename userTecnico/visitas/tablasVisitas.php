@@ -3,7 +3,7 @@
 session_start();
 error_reporting(0);
 $varsesion = $_SESSION['usuario'];
-if ($varsesion == null || $varsesion = ''  ) {
+if ($varsesion == null || $varsesion = '') {
     header("location:../../index.html");
     die();
     exit;
@@ -40,10 +40,9 @@ if ($varsesion == null || $varsesion = ''  ) {
     <div class="main-panel">
 
         <div class="content-wrapper">
-        <h1 style="font-size: 32px;">Visitas tecnicas e Instalaciones</h1>
+            <h1 style="font-size: 32px;">Visitas tecnicas e Instalaciones</h1>
             <div class="card-body">
-                
-                
+
                 <?php
                 include("../conexion.php");
 
@@ -53,6 +52,7 @@ if ($varsesion == null || $varsesion = ''  ) {
                 <table class="table table-hover">
                 <thead>
             <tr>
+            <th> Documento Cliente</th>
             <th> Nombre Cliente</th>
             <th> Telefono Cliente</th>
             <th> Direccion Cliente</th>
@@ -80,14 +80,16 @@ if ($varsesion == null || $varsesion = ''  ) {
                         $eVisita = $row['estadoVisita'];
                 ?>
                         <tr>
+                            <td> <?php echo "$docCliente" ?></td>
                             <td> <?php echo "$nomCliente" ?></td>
                             <td> <?php echo "$telCliente" ?></td>
                             <td> <?php echo "$dirCliente" ?></td>
                             <td> <?php echo "$nomTec" ?></td>
                             <td> <?php echo "$motivo" ?></td>
                             <td> <?php echo "$diaVisita" ?></td>
-
-                            <th><a href="eliminarVisita.php?i=<?php echo $row['idVisita'] ?>" class="btn btn-danger">Atender visita</a></th>
+                            
+                            <th><a href="comentario.php?id=<?php echo $row['idVisita'] ?>" class="btn btn-primary">Agregar comentario</a></th>
+                            <th><a href="eliminarVisita.php?id=<?php echo $row['idVisita'] ?>" class="btn btn-danger">Marcar como Atendida</a></th>
                             </th>
                         </tr>
                 <?php

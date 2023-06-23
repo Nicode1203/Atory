@@ -100,23 +100,9 @@ if ($varsesion == null || $varsesion = '') {
                 <p class="card-description"> Ingrese los datos </p>
                 <form action="updateVisita.php" method="POST">
                 <input type="hidden" name="id" value="<?php echo $row['idVisita']  ?>">
-                    <input type="text" class="form-control mb-3" name="docC" placeholder="documento del cliente" value="<?php echo $row['documentoCliente']  ?>">
-                    <input type="text" class="form-control mb-3" name="nomC" placeholder="Nombres Completos" value="<?php echo $row['nombreCliente']  ?>">
-                    <input type="text" class="form-control mb-3" name="telC" placeholder="Ingrese telefono" value="<?php echo $row['telefonoCliente']  ?>">
-                    <input type="text" class="form-control mb-3" name="emailC" placeholder="Ingrese correo electronico" value="<?php echo $row['emailCliente']  ?>">
-                    <input type="text" class="form-control mb-3" name="dir" placeholder="direccion" value="<?php echo $row['direccionCliente']  ?>">
-                    <input type="text" class="form-control mb-3" name="docT" value="<?php echo $row['documentoTecnico']  ?>">
-
-                    <select class="form-select" aria-label="Default select example" name="nomT" id="nomT" value="<?php echo $row['nombreTecnico']  ?>">
-                        <option value="Cristian Muñoz">Cristian Muñoz</option>
-                        <option value="Fabian Quimbay">Fabian Quimbay</option>
-                    </select>
-                    <input type="text" class="form-control mb-3" name="telT" value="<?php echo $row['telefonoTecnico']  ?>">
-                    <input type="text" class="form-control mb-3" name="emailT" value="<?php echo $row['emailTecnico']  ?>">
-                    <input type="text" class="form-control mb-3" name="motivo" value="<?php echo $row['motivoVisita']  ?>">
-                    <input type="date" class="form-control mb-3" name="dia" placeholder="fecha de visita" value="<?php echo $row['diaVisita']  ?>">
-
-                    <input type="submit" class="btn btn-primary btn-block" value="Actualizar" formmethod="post" formaction=../visitas/updateVisita.php>
+                    <input type="text" class="form-control mb-3" name="comentario" placeholder="comentario" value="<?php echo $row['comentario']  ?>">
+                   
+                    <input type="submit" class="btn btn-primary btn-block" value="Agregar comentario" formmethod="post" formaction=../visitas/updateComentario.php>
                 </form>
 
 

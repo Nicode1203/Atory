@@ -122,7 +122,7 @@ if ($varsesion == null || $varsesion='') {
                     </a>
                 </li>
                 <li class="nav-item menu-items">
-                    <a class="nav-link" href="inventario/inventario.html">
+                    <a class="nav-link" href="inventario/tablasinventario.php">
                         <span class="menu-icon">
                             <i class="mdi mdi-chart-bar"></i>
                         </span>

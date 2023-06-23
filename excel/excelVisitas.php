@@ -6,7 +6,7 @@ header("Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetm
 <?php
 include("../conexion.php");
 
-$sql = "SELECT * FROM visitas WHERE estadoVisita='Activo';";
+$sql = "SELECT * FROM visitas";
 
 echo '<div class="table-responsive">
             <table class="table table-hover">
