@@ -95,8 +95,10 @@ if ($varsesion == null || $varsesion = '') {
       <h1 style="font-size: 32px;">GESTIÓN FACTURAS</h1>
       <div class="card">
       <div class="card-body">
+      <a href="factcliente.php" class="btn btn-danger" role="button" aria-pressed="true">Ingresar factura</a>
         <a href="fpagas.php" class="btn btn-primary active" role="button" aria-pressed="true">Ver facturas pagas</a>
         <a href="consultarf.php" class="btn btn-primary active" role="button" aria-pressed="true">Consultar facturas</a>
+        
         <a href="../excel/excelFactura.php" class="btn btn-success">Exportar tabla a Excel</a>
         <?php
 

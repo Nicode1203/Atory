@@ -43,8 +43,9 @@ if ($varsesion == null || $varsesion = '') {
             <h1 style="font-size: 32px;">Visitas tecnicas e Instalaciones</h1>
             <div class="card-body">
                 <a href="ingresarVisita.php" class="btn btn-primary">Ingresar nueva Visita</a>
+                <a href="../visitas/consultarVisitas.php" class="btn btn-primary  ">Consultar visitas</a>
                 <a href="../excel/excelVisitas.php" class="btn btn-success">Exportar tabla a Excel</a>
-                <a href="../visitas/consultarVisitas.php" class="btn btn-light  ">Consultar visitas</a>
+                
                 <?php
                 include("../conexion.php");
 

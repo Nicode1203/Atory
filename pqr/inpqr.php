@@ -110,6 +110,7 @@ if ($varsesion == null || $varsesion='') {
         <th> Numero de documento</th>
         <th> Nombres de cliente</th>
         <th> Tipo de PQR </th>
+        <th> Comentario </th>
         <th> Activar</th>
     </tr>
     </thead>
@@ -126,6 +127,7 @@ if ($varsesion == null || $varsesion='') {
             $soli = $row['tPqr'];
             $dp = $row['desPqr'];
             $epqr = $row['estadoPqr'];
+            $com = $row['comentario'];
         ?>
             <tr>
               <td> <?php echo "$i" ?></td>
@@ -133,9 +135,10 @@ if ($varsesion == null || $varsesion='') {
               <td> <?php echo "$id" ?></td>
               <td> <?php echo "$nombres" ?></td>
               <td> <?php echo "$soli" ?></td>
-              <th>
+              <td> <?php echo "$com" ?></td>
+              
               <th><a href="actpqr.php?i=<?php echo $row['idPqr'] ?>" class="btn btn-danger">Activar</a></th>
-              </th>
+              
             </tr>
         <?php
           }

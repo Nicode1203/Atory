@@ -102,21 +102,26 @@ if ($varsesion == null || $varsesion = '') {
     <div class="content-wrapper"> <!-- ESTO ES LO QUE TENEMOS QUE MODIFICAR -->
       <h1 style="font-size: 32px;">GESTIÓN INVENTARIO</h1>
       <div class="card-body">
-        <h4 class="card-title">Actualizacion plan </h4>
-        <p class="card-description"> Ingrese informacion de nuevo plan</p>
+        <h4 class="card-title">Actualizacion inventario </h4>
+        <p class="card-description"> </p>
         <form action="../actplan.php" method="POST">
 
           <input type="hidden" name="id" value="<?php echo $row['idProducto']  ?>">
+          <p class="card-description"> Nombre del producto: </p>
           <input type="text" class="form-control mb-3" name="nombrep" placeholder="Velocidad Plan" value="<?php echo $row['nombreProducto']  ?>">
+          <p class="card-description"> Serial producto: </p>
           <input type="text" class="form-control mb-3" name="serial" placeholder="Nombre del Plan" value="<?php echo $row['serialProducto']  ?>">
+          <p class="card-description"> Descripcion del producto: </p>
           <input type="text" class="form-control mb-3" name="desp" placeholder="Ingrese Valor del Plan" value="<?php echo $row['descripcionProducto']  ?>">
+          <p class="card-description"> Cantidad: </p>
           <input type="text" class="form-control mb-3" name="cantidad" placeholder="Descripcion del plan" value="<?php echo $row['cantidad']  ?>">
+          <p class="card-description"> Estado: </p>
           <select class="form-select" aria-label="Default select example" name="estadop" id="estadop" value="<?php echo $row['estadoProducto']  ?>">
             <option value="Activo">Activo </option>
             <option value="Inactivo">Inactivo</option>
           </select>
-
-          <input type="submit" class="btn btn-primary btn-block" value="Actualizar" formmethod="post" formaction=updateinventario.php>
+          <p></p>
+          <input type="submit" class="btn btn-primary btn-lg" value="Actualizar" formmethod="post" formaction=updateinventario.php>
         </form>
 
         <div class="row">
@@ -152,24 +157,24 @@ if ($varsesion == null || $varsesion = '') {
 
   <!-- container-scroller -->
   <!-- plugins:js -->
-  <script src="assets/vendors/js/vendor.bundle.base.js"></script>
+  <script src="../assets/vendors/js/vendor.bundle.base.js"></script>
   <!-- endinject -->
   <!-- Plugin js for this page -->
-  <script src="assets/vendors/chart.js/Chart.min.js"></script>
-  <script src="assets/vendors/progressbar.js/progressbar.min.js"></script>
-  <script src="assets/vendors/jvectormap/jquery-jvectormap.min.js"></script>
-  <script src="assets/vendors/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
-  <script src="assets/vendors/owl-carousel-2/owl.carousel.min.js"></script>
+  <script src="../assets/vendors/chart.js/Chart.min.js"></script>
+  <script src="../assets/vendors/progressbar.js/progressbar.min.js"></script>
+  <script src="../assets/vendors/jvectormap/jquery-jvectormap.min.js"></script>
+  <script src="../assets/vendors/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
+  <script src="../assets/vendors/owl-carousel-2/owl.carousel.min.js"></script>
   <!-- End plugin js for this page -->
   <!-- inject:js -->
-  <script src="assets/js/off-canvas.js"></script>
-  <script src="assets/js/hoverable-collapse.js"></script>
-  <script src="assets/js/misc.js"></script>
-  <script src="assets/js/settings.js"></script>
-  <script src="assets/js/todolist.js"></script>
+  <script src="../assets/js/off-canvas.js"></script>
+  <script src="../assets/js/hoverable-collapse.js"></script>
+  <script src="../assets/js/misc.js"></script>
+  <script src="../assets/js/settings.js"></script>
+  <script src="../assets/js/todolist.js"></script>
   <!-- endinject -->
   <!-- Custom js for this page -->
-  <script src="assets/js/dashboard.js"></script>
+  <script src="../assets/js/dashboard.js"></script>
   <!-- End custom js for this page -->
 
   <div class="jvectormap-tip"></div>

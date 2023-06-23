@@ -1,4 +1,4 @@
-<?php
+    <?php
 //seguridad de sesiones paginacion (prueba 1)
 session_start();
 error_reporting(0);
@@ -35,10 +35,10 @@ if ($varsesion == null || $varsesion='' ) {
             <div class="main-panel">
                 <div class="content-wrapper">
                     <div class="page-header">
-                        <h1 style="font-size: 32px;">CONSULTAR FACTURAS</h1>
+                        <h1 style="font-size: 32px;">CREAR FACTURAS FACTURAS</h1>
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb">
-                                <li class="breadcrumb-item" aria-current="page">Consulte sus facturas</li>
+                                <li class="breadcrumb-item" aria-current="page">Crear Facturas facturas</li>
                             </ol>
                         </nav>
                     </div>
@@ -54,9 +54,9 @@ if ($varsesion == null || $varsesion='' ) {
                                     </div>
                                     <div>
                                         <br>
-                                        <button id="submit" type="submit" formmethod="post" formaction="cfactura.php" class="btn btn-primary">Consultar</button>
+                                        <button id="submit" type="submit" formmethod="post" formaction="crearfactura.php" class="btn btn-primary">Crear Factura</button>
                                         <button id="submit" type="submit" formmethod="post" formaction="facturas.php" class="btn btn-primary">Ver todas las facturas</button>
-                                        <button id="submit" type="submit" formmethod="post" formaction="factcliente.php" class="btn btn-primary">Ingresar nueva factura</button>
+        
                                     </div>
                                 </form>
                             </div>

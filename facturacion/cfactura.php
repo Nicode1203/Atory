@@ -52,7 +52,7 @@ if ($seguridad->getUsuario()==null) {
 
                 include("conexion.php");
                 $dc = $_POST['id'];
-                $sql = "SELECT cliente.idCliente,factura.cliente_idCliente,cliente.documentoCliente,cliente.nombreCliente,factura.fechaFactura,factura.valorTotalFactura,factura.estadoFactura FROM cliente 
+                $sql = "SELECT cliente.idCliente,factura.cliente_idCliente,cliente.documentoCliente,cliente.nombreCliente,factura.fechaFactura,factura.valorTotalFactura,factura.estadoFactura, factura.idFactura FROM cliente 
             INNER JOIN factura
             ON cliente.idCliente=factura.cliente_idCliente
             WHERE documentoCliente='$dc';";
@@ -67,6 +67,7 @@ if ($seguridad->getUsuario()==null) {
                     <th> Valor Total</th>
                     <th> Estado factura</th>
                     <th> Consultas</th>
+                    <th> Editar</th>
                     <th> Pago</th>
                 </tr>
                 </thead>
@@ -81,6 +82,7 @@ if ($seguridad->getUsuario()==null) {
                         $ffact = $row['fechaFactura'];
                         $st = $row['valorTotalFactura'];
                         $estf = $row['estadoFactura'];
+                        $if = $row['idFactura'];
 
 
                 ?>
@@ -93,7 +95,8 @@ if ($seguridad->getUsuario()==null) {
                             <th>
                                 <a href="verfacturaAdmin.php?id=<?php echo  $row['idCliente'] ?>" class="btn btn-info">ver factura</a>
                             </th>
-
+                            <th><a href="editfactura.php?if=<?php echo  $row['idFactura'] ?>" class="btn btn-primary">Editar factura</a>
+                            </th>
                             <th><a href="eliminarf.php?id=<?php echo $row['cliente_idCliente']   ?>" class="btn btn-danger">Pago</a></th>
 
                         </tr>

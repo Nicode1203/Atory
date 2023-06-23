@@ -51,6 +51,7 @@ if ($varsesion == null || $varsesion='' ) {
       $soli = $row['tPqr'];
       $dp = $row['desPqr'];
       $epqr = $row['estadoPqr'];
+      $com = $row['comentario'];
     }
   }
   ?>
@@ -79,7 +80,7 @@ if ($varsesion == null || $varsesion='' ) {
                   <label for="des"> Razón de contacto: <?php echo "$dp" ?></label>
                 </div>
                 <div class="form-group">
-                  <h3 class="page-tittle"> Contactar al clinete: </h3>
+                  <h3 class="page-tittle"> Contactar al cliente: </h3>
                 </div>
                 <div class="form-group">
                   <label for="des"> Numero de telefono: <?php echo "$tel" ?></label>
@@ -87,6 +88,10 @@ if ($varsesion == null || $varsesion='' ) {
                 <div class="form-group">
                   <label for="des"> Correo Electronico: <?php echo "$email" ?></label>
                 </div>
+                <div class="form-group">
+                  <label for="des"> Comentarios y respuesta del Administrador: <?php echo "$com" ?></label>
+                </div>
+
                 <div class="form-button mt-5">
                   <button id="submit" type="submit" formmethod="post" formaction="pqr.php" class="btn btn-primary">Volver a PQR</button>
                   <button id="submit" type="submit" formmethod="post" formaction="inpqr.php" class="btn btn-primary">Ver PQR Respondidos</button>

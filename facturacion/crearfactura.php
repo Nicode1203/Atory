@@ -3,7 +3,7 @@
 session_start();
 error_reporting(0);
 $varsesion= $_SESSION['usuario'];
-if ($varsesion == null || $varsesion='') {
+if ($varsesion == null || $varsesion='' ) {
     header ("location:../index.html");
     die();
     exit;
@@ -17,6 +17,38 @@ if ($varsesion == null || $varsesion='') {
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <?php
+  include("conexion.php");
+  $doc = $_POST['id'];
+  $sql = "SELECT * FROM cliente  
+  INNER JOIN factura
+  ON cliente.idCliente=factura.cliente_idCliente
+  WHERE documentoCliente= '$doc';";
+  $query = mysqli_query($con, $sql);
+  $row = mysqli_fetch_array($query);
+  if ($rta = $con->query($sql)) {
+    while ($row = $rta->fetch_assoc()) {
+      $id = $row['idCliente'];
+      $td=$row['tipoDocumento'];
+      $doc=$row['documentoCliente'];
+      $nomc=$row['nombreCliente'];
+      $telc=$row['telefonoCliente'];
+      $emailc=$row['correoCliente'];
+      $dc=$row['direccion'];
+      $ec=$row['estadoCliente'];
+      $creado=$row['creado'];
+      $uact=$row['ultimaActualizacion'];
+      $if=$row['idFactura'];
+      $ffact=$row['fechaFactura'];
+      $impt=$row['impuestoTotal'];
+      $sub=$row['subTotal'];
+      $st=$row['valorTotalFactura'];
+      $cid=$row['cliente_idCliente'];
+      $estf=$row['estadoFactura'];
+    }
+  }
+  ?>
+  ?>
   <title>Atory Solutions</title>
   <!-- plugins:css -->
   <link rel="stylesheet" href="../assets/vendors/mdi/css/materialdesignicons.min.css">
@@ -91,83 +123,54 @@ if ($varsesion == null || $varsesion='') {
 
 
   <div class="main-panel">
-    
     <div class="content-wrapper"> <!-- ESTO ES LO QUE TENEMOS QUE MODIFICAR -->
-    <h1 style="font-size: 32px;">GESTIÓN PQR</h1>
-    
       <div class="card-body">
+        <h4 class="card-title">Actualizacion FACTURA </h4>
+        <p class="card-description"> Cliente: <?php echo "$doc"  ?></p>
+        <p class="card-description"> Documento:<?php echo "$nomc"  ?> </p>
+        <p class="card-description"> Telefono:<?php echo "$telc"  ?> </p>
+        <p class="card-description"> Correo Electronico:<?php echo "$emailc"  ?> </p>
+        <p class="card-description"> Dirección Cliente:<?php echo "$dc"  ?> </p>
+        <p class="card-description"> Ingrese infomración de factura</p>
+        <form action="actfactura.php" method="POST">
+        <input type="hidden" name="if" value="<?php echo "$if"  ?>">
+          <input type="hidden" name="id" value="<?php echo "$id"  ?>">
+          <input type="hidden" name="cid" value="<?php echo "$cid"  ?>">
+          <input type="date" class="form-control mb-3" name="ffact" placeholder="Fecha de factura" >
+          <input type="text" class="form-control mb-3" name="impt" placeholder="impuesto de factura" >
+          <input type="text" class="form-control mb-3" name="sub" placeholder="Valor sin impuesto" >
+          <input type="text" class="form-control mb-3" name="st" placeholder="Valor total" >
 
-      
-        <a href="../principal.php" class="btn btn-primary " role="button" aria-pressed="true">Volver al inicio</a>
-        
-        <a href="../excel/excelPQR.php" class="btn btn-success">Exportar tabla a Excel</a>
-        <?php
+          <input type="submit" class="btn btn-primary btn-block" value="crear" formmethod="post" formaction=ingresarfactura.php>
+        </form>
 
-        include("conexion.php");
+        <div class="row">
+          <div>
+            <div>
 
-        $sql = "SELECT * FROM pqr2 WHERE estadoPqr='Activo';";
+            </div>
+          </div>
 
-        echo '<div class="table-responsive">
-            <table class="table table-hover">
-            <thead>
-        <tr>
-        <th> Id PQR </th>
-        <th> Tipo de documento</th>
-        <th> Numero de documento</th>
-        <th> Nombres de cliente</th>
-        <th> Tipo de PQR </th>
-        <th> Consultar PQR</th>
-        <th> Comentario</th>
-        <th> Eliminar</th>
-    </tr>
-    </thead>
-    ';
-
-        if ($rta = $con->query($sql)) {
-          while ($row = $rta->fetch_assoc()) {
-            $i = $row['idPqr'];
-            $td = $row['tipoDocumento'];
-            $id = $row['nDocumento'];
-            $nombres = $row['nombresCliente'];
-            $tel = $row['telefonoCliente'];
-            $email = $row['emailCliente'];
-            $soli = $row['tPqr'];
-            $dp = $row['desPqr'];
-            $epqr = $row['estadoPqr'];
-            $com = $row ['comentario'];
-        ?>
-            <tr>
-              <td> <?php echo "$i" ?></td>
-              <td> <?php echo "$td" ?></td>
-              <td> <?php echo "$id" ?></td>
-              <td> <?php echo "$nombres" ?></td>
-              <td> <?php echo "$soli" ?></td>
-              
-                <th><a href="consultarpqr.php?i=<?php echo $row['idPqr'] ?>" class="btn btn-primary">Consultar PQR </a></th>
-                <th><a href="comentario.php?i=<?php echo $row['idPqr'] ?>" class="btn btn-info">Agregar comentario </a></th>
-              <th><a href="eliminarpqr.php?i=<?php echo $row['idPqr'] ?>" class="btn btn-danger">Eliminar</a></th>
-             
-            </tr>
-        <?php
-          }
-        }
-
-        ?>
-
-        <!-- ESTO ES LO QUE PODEMOS MODIFICAR -->
-        <!-- partial:partials/_footer.html -->
-
-        <!-- partial -->
-      </div>
-      <footer class="footer">
-        <div class="d-sm-flex justify-content-center justify-content-sm-between">
-          <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright © Atory Solution 2023</span>
-          <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center"> <a href=" " target="_blank"></a> </span>
         </div>
-      </footer>
-      <!-- main-panel ends -->
+
+
+
+
+      </div>
+      <!-- ESTO ES LO QUE PODEMOS MODIFICAR -->
+      <!-- partial:partials/_footer.html -->
+
+      <!-- partial -->
     </div>
-    <!-- page-body-wrapper ends -->
+    <footer class="footer">
+      <div class="d-sm-flex justify-content-center justify-content-sm-between">
+        <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright © Atory Solution 2023</span>
+        <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center"> <a href=" " target="_blank"></a> </span>
+      </div>
+    </footer>
+    <!-- main-panel ends -->
+  </div>
+  <!-- page-body-wrapper ends -->
 
 
   </div>
