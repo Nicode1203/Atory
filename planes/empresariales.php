@@ -87,11 +87,9 @@ if ($varsesion == null || $varsesion='' ) {
                       <td> <?php echo "$estadop" ?></td>
                       <th>
                         <a href="actualizar.php?cp=<?php echo $row['codigoPlan'] ?>" class="btn btn-info">Editar</a>
-                      </th>
-                      </th>
-                      <th>
+                      
                       <th><a href="planes/eliminarplan.php?cp=<?php echo $row['codigoPlan'] ?>" class="btn btn-danger">Eliminar</a></th>
-                      </th>
+                      
                     </tr>
                 <?php
                   }

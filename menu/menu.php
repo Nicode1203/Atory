@@ -114,7 +114,7 @@ if ($varsesion == null || $varsesion='') {
                     </div>
                 </li>
                 <li class="nav-item menu-items">
-                    <a class="nav-link" href="facturacion/facturacion.html">
+                    <a class="nav-link" href="facturacion/facturas.php">
                         <span class="menu-icon">
                             <i class="mdi mdi-playlist-play"></i>
                         </span>
