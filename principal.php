@@ -28,6 +28,7 @@ if ($varsesion == null || $varsesion='' ) {
     <link rel="shortcut icon" href="assets/images/favicon.png">
 </head>
 <body>
+        <!-- se incluye el llmado de menu mediante PHP -->
         <?php
         include 'menu/menu.php';
         ?>
