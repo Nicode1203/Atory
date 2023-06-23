@@ -1,1 +1,2 @@
 ErrorDocument 404 http://localhost/versionpreliminar-atory-master/error-404.html
+ErrorDocument 500 http://localhost/versionpreliminar-atory-master/error-500.html
