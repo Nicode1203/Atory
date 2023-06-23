@@ -2,11 +2,11 @@
 //seguridad de sesiones paginacion (prueba 1)
 session_start();
 error_reporting(0);
-$varsesion= $_SESSION['usuario'];
-if ($varsesion == null || $varsesion='' ) {
-    header ("location:../index.html");
-    die();
-    exit;
+$varsesion = $_SESSION['usuario'];
+if ($varsesion == null || $varsesion = '') {
+  header("location:../index.html");
+  die();
+  exit;
 }
 
 ?>
@@ -93,6 +93,8 @@ if ($varsesion == null || $varsesion='' ) {
 
   <div class="main-panel">
     <div class="content-wrapper"> <!-- ESTO ES LO QUE TENEMOS QUE MODIFICAR -->
+      <h1 style="font-size: 32px;">GESTIÓN FACTURAS</h1>
+      <div class="card">
       <div class="card-body">
         <a href="facturas.php" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Volver a facturas pendientes</a>
         <?php
@@ -139,9 +141,9 @@ WHERE estadoFactura='Pago';";
               <td> <?php echo "$estf" ?></td>
               <th>
                 <a href="verfactura.php?id=<?php echo  $row['idCliente'] ?>" class="btn btn-info">ver factura</a>
-              
+
               <th><a href="pend.php?id=<?php echo $row['cliente_idCliente']   ?>" class="btn btn-danger">Regresar a pendientes</a></th>
-             
+
             </tr>
         <?php
           }
@@ -152,6 +154,7 @@ WHERE estadoFactura='Pago';";
         <!-- partial:partials/_footer.html -->
 
         <!-- partial -->
+      </div>
       </div>
       <footer class="footer">
         <div class="d-sm-flex justify-content-center justify-content-sm-between">

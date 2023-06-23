@@ -137,7 +137,7 @@ if ($varsesion == null || $varsesion = '' ) {
             </div>
         </footer>
         <!-- main-panel ends -->
-    </div>
+    
     <!-- page-body-wrapper ends -->
 
 

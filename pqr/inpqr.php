@@ -92,7 +92,8 @@ if ($varsesion == null || $varsesion='') {
 
   <div class="main-panel">
     <div class="content-wrapper"> <!-- ESTO ES LO QUE TENEMOS QUE MODIFICAR -->
-      <div class="card-body">
+    <h1 style="font-size: 32px;">GESTIÓN PQR</h1>  
+    <div class="card-body">
         <a href="pqr.php" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Volver a PQR</a>
         <?php
 

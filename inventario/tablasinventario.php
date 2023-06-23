@@ -2,11 +2,11 @@
 //seguridad de sesiones paginacion (prueba 1)
 session_start();
 error_reporting(0);
-$varsesion= $_SESSION['usuario'];
-if ($varsesion == null || $varsesion='') {
-    header ("location:../index.html");
-    die();
-    exit;
+$varsesion = $_SESSION['usuario'];
+if ($varsesion == null || $varsesion = '') {
+  header("location:../index.html");
+  die();
+  exit;
 }
 
 ?>
@@ -92,8 +92,9 @@ if ($varsesion == null || $varsesion='') {
 
   <div class="main-panel">
     <div class="content-wrapper"> <!-- ESTO ES LO QUE TENEMOS QUE MODIFICAR -->
+      <h1 style="font-size: 32px;">GESTIÓN INVENTARIO</h1>
       <div class="card-body">
-        
+
         <a href="inactivosinv.php" class="btn btn-danger">Consutlar productos inactivos.</a>
         <a href="../excel/excelInventario.php" class="btn btn-success">Exportar tabla a Excel</a>
         <a href="ingresarp.php" class="btn btn-info">Ingresar nuevo producto</a>
@@ -126,7 +127,7 @@ if ($varsesion == null || $varsesion='') {
             $serial = $row['serialProducto'];
             $desp = $row['descripcionProducto'];
             $cantidad = $row['cantidad'];
-            $estado=$row['estadoProducto'];
+            $estado = $row['estadoProducto'];
         ?>
             <tr>
               <td> <?php echo "$id" ?></td>
@@ -137,10 +138,10 @@ if ($varsesion == null || $varsesion='') {
               <th>
                 <a href="actinv.php?id=<?php echo $row['idProducto'] ?>" class="btn btn-primary"> Editar Producto </a>
               </th>
-              
-              
+
+
               <th><a href="elmproducto.php?id=<?php echo $row['idProducto'] ?>" class="btn btn-danger">Eliminar</a></th>
-             
+
             </tr>
         <?php
           }

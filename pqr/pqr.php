@@ -91,8 +91,13 @@ if ($varsesion == null || $varsesion='') {
 
 
   <div class="main-panel">
+    
     <div class="content-wrapper"> <!-- ESTO ES LO QUE TENEMOS QUE MODIFICAR -->
+    <h1 style="font-size: 32px;">GESTIÓN PQR</h1>
+    
       <div class="card-body">
+
+      
         <a href="../principal.php" class="btn btn-primary " role="button" aria-pressed="true">Volver al inicio</a>
         <a href="../excel/excelPQR.php" class="btn btn-success">Exportar tabla a Excel</a>
         <?php
@@ -136,11 +141,9 @@ if ($varsesion == null || $varsesion='') {
               <td> <?php echo "$soli" ?></td>
               <th>
                 <a href="consultarpqr.php?i=<?php echo $row['idPqr'] ?>" class="btn btn-info">Consultar PQR </a>
-              </th>
-              </th>
-              <th>
+             
               <th><a href="eliminarpqr.php?i=<?php echo $row['idPqr'] ?>" class="btn btn-danger">Eliminar</a></th>
-              </th>
+             
             </tr>
         <?php
           }

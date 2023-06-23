@@ -57,6 +57,7 @@ if ($varsesion == null || $varsesion='' ) {
   <div class="main-panel">
     <div class="content-wrapper">
       <div class="page-header">
+      <h1 style="font-size: 32px;">GESTIÓN PQR</h1>
         <h3 class="page-title">Tipo <?php echo "$soli" ?> </h3>
       </div>
       <div class="row">

@@ -3,7 +3,7 @@
 session_start();
 error_reporting(0);
 $varsesion = $_SESSION['usuario'];
-if ($varsesion == null || $varsesion = '' ) {
+if ($varsesion == null || $varsesion = '') {
     header("../location:index.html");
     die();
     exit;
@@ -38,11 +38,12 @@ if ($varsesion == null || $varsesion = '' ) {
 
     <div class="main-panel">
         <div class="content-wrapper"> <!-- ESTO ES LO QUE TENEMOS QUE MODIFICAR -->
+            <h1 style="font-size: 32px;">GESTIÓN INVENTARIO</h1>
             <div class="card-body">
-                <h4 class="card-title"> GESTIÓN INVENTARIO</h4>
+                
                 <p class="card-description"> Ingrese los datos del nuevo producto </p>
                 <form class="forms-sample">
-        
+
                     <div class="form-group">
                         <label for="nombrep">Ingrese nombre del producto</label>
                         <input type="text" class="form-control" name="nombrep" id="nombrep" placeholder="Nombre del Producto">

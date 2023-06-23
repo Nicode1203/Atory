@@ -2,11 +2,11 @@
 //seguridad de sesiones paginacion (prueba 1)
 session_start();
 error_reporting(0);
-$varsesion= $_SESSION['usuario'];
-if ($varsesion == null || $varsesion='') {
-    header ("location:../index.html");
-    die();
-    exit;
+$varsesion = $_SESSION['usuario'];
+if ($varsesion == null || $varsesion = '') {
+  header("location:../index.html");
+  die();
+  exit;
 }
 
 ?>
@@ -92,6 +92,7 @@ if ($varsesion == null || $varsesion='') {
 
   <div class="main-panel">
     <div class="content-wrapper"> <!-- ESTO ES LO QUE TENEMOS QUE MODIFICAR -->
+      <h1 style="font-size: 32px;">GESTIÓN INVENTARIO</h1>
       <div class="card-body">
         <a href="tablasinventario.php" class="btn btn-primary " role="button" aria-pressed="true">Volver a activos</a>
         <a href="../excel/excelPQR.php" class="btn btn-success">Exportar tabla a Excel</a>
@@ -123,7 +124,7 @@ if ($varsesion == null || $varsesion='') {
             $serial = $row['serialProducto'];
             $desp = $row['descripcionProducto'];
             $cantidad = $row['cantidad'];
-            $estado=$row['estadoProducto'];
+            $estado = $row['estadoProducto'];
         ?>
             <tr>
               <td> <?php echo "$id" ?></td>

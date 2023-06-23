@@ -2,11 +2,11 @@
 //seguridad de sesiones paginacion (prueba 1)
 session_start();
 error_reporting(0);
-$varsesion= $_SESSION['usuario'];
-if ($varsesion == null || $varsesion='' ) {
-    header ("location:../index.html");
-    die();
-    exit;
+$varsesion = $_SESSION['usuario'];
+if ($varsesion == null || $varsesion = '') {
+  header("location:../index.html");
+  die();
+  exit;
 }
 
 ?>
@@ -92,8 +92,12 @@ if ($varsesion == null || $varsesion='' ) {
 
   <div class="main-panel">
     <div class="content-wrapper"> <!-- ESTO ES LO QUE TENEMOS QUE MODIFICAR -->
+      <h1 style="font-size: 32px;">GESTIÓN FACTURAS</h1>
+      <div class="card">
       <div class="card-body">
-        <a href="fpagas.php" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Ver facturas pagas</a>
+        <a href="fpagas.php" class="btn btn-primary active" role="button" aria-pressed="true">Ver facturas pagas</a>
+        <a href="consultarf.php" class="btn btn-primary active" role="button" aria-pressed="true">Consultar facturas</a>
+        <a href="../excel/excelFactura.php" class="btn btn-success">Exportar tabla a Excel</a>
         <?php
 
         include("conexion.php");
@@ -137,16 +141,16 @@ if ($varsesion == null || $varsesion='' ) {
               <td> <?php echo "$st" ?></td>
               <td> <?php echo "$estf" ?></td>
               <th>
-                <a href="verfactura.php?id=<?php echo  $row['idCliente'] ?>" class="btn btn-info">ver factura</a>
-             
+                <a href="verfacturaAdmin.php?id=<?php echo  $row['idCliente'] ?>" class="btn btn-info">ver factura</a>
+
               <th><a href="eliminarf.php?id=<?php echo $row['cliente_idCliente']   ?>" class="btn btn-danger">Pago</a></th>
-              
+
             </tr>
         <?php
           }
         }
         ?>
-
+</div>
         <!-- ESTO ES LO QUE PODEMOS MODIFICAR -->
         <!-- partial:partials/_footer.html -->
 
@@ -155,11 +159,12 @@ if ($varsesion == null || $varsesion='' ) {
       <footer class="footer">
         <div class="d-sm-flex justify-content-center justify-content-sm-between">
           <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright © Atory Solution 2023</span>
-          <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center"> <a href=" " target="_blank"></a> </span>
+          
         </div>
       </footer>
       <!-- main-panel ends -->
     </div>
+    
     <!-- page-body-wrapper ends -->
 
 

@@ -97,12 +97,10 @@ if ($seguridad->getUsuario()==null) {
                             <td> <?php echo "$act" ?></td>
                             <th>
                                 <a href="actualizar.php?id=<?php echo $row['documentoCliente'] ?>" class="btn btn-info">Editar</a>
-                            </th>
-                            </th>
-                            <th>
+                            
                             <th><a href="delete.php?id=<?php echo $row['documentoCliente'] ?>" class="btn btn-danger">Eliminar</a></th>
-                            </th>
-                        </tr>";
+                            
+                        </tr>
                 <?php
                     }
                 }

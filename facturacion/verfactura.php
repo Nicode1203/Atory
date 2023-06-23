@@ -130,6 +130,7 @@
                     <div class="form-group">
                       <label for="des"> Tambien le estará llegando una copia a su dirección <?php echo "$dc" ?></label>
                     </div>
+                    <a href="../index.html" class="btn btn-light btn-lg active" role="button" aria-pressed="true">Volver a pagina inicial</a>
                   </form>
                 </div>
               </div>
