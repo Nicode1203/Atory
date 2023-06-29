@@ -97,7 +97,7 @@ if ($seguridad->getUsuario()==null) {
                                 <a href="actualizar.php?id=<?php echo $row['documentoCliente'] ?>" class="btn btn-info">Editar</a>
                             </td>
                             <td>
-                                <a href="delete.php?id=<?php echo $row['documentoCliente'] ?>" class="btn btn-danger">Eliminar</a>
+                                <a class="borrar btn btn-danger" href="delete.php?id=<?php echo $row['documentoCliente'] ?>" >Eliminar</a>
                             </td>
 
 
@@ -154,6 +154,30 @@ if ($seguridad->getUsuario()==null) {
     <!-- End custom js for this page -->
 
     <div class="jvectormap-tip"></div>
+    <!-- Estas ultimas lineas son para la alerta DE BORRAR, INSERTA SWEET ALERT Y LUEGO ESTA EL SCRIPT PARA BORRAR-->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        $('.borrar').on('click', function(e) {
+            e.preventDefault();
+            var self = $(this);
+            console.log(self.data('title'));
+            Swal.fire({
+                title: 'Esta seguro que desea continuar?',
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Confirmar',
+                cancelButtonText: 'No',
+                background: '#34495E'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    
+                    location.href = self.attr('href');
+                }
+            })
+        })
+    </script>
 </body>
 
 </html>

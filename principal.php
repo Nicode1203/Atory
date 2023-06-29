@@ -84,10 +84,14 @@ if ($varsesion == null || $varsesion='' ) {
     </div>
     <!-- container-scroller -->
     <!-- Scripts -->
+    
     <script src="assets/vendors/js/vendor.bundle.base.js"></script>
     <script src="assets/js/off-canvas.js"></script>
     <script src="assets/js/hoverable-collapse.js"></script>
     <script src="assets/js/misc.js"></script>
+    <!-- Estas ultimas lineas son para la alerta -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="assets/js/sweetAlert.js"></script>
     <!-- Fin de los scripts -->
 </body>
 </html>

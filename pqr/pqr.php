@@ -145,7 +145,7 @@ if ($varsesion == null || $varsesion='') {
               
                 <th><a href="consultarpqr.php?i=<?php echo $row['idPqr'] ?>" class="btn btn-primary">Consultar PQR </a></th>
                 <th><a href="comentario.php?i=<?php echo $row['idPqr'] ?>" class="btn btn-info">Agregar comentario </a></th>
-              <th><a href="eliminarpqr.php?i=<?php echo $row['idPqr'] ?>" class="btn btn-danger">Eliminar</a></th>
+              <th><a href="eliminarpqr.php?i=<?php echo $row['idPqr'] ?>" class="borrar btn btn-danger">Eliminar</a></th>
              
             </tr>
         <?php
@@ -195,6 +195,30 @@ if ($varsesion == null || $varsesion='') {
   <!-- End custom js for this page -->
 
   <div class="jvectormap-tip"></div>
+  <!-- Estas ultimas lineas son para la alerta DE BORRAR, INSERTA SWEET ALERT Y LUEGO ESTA EL SCRIPT PARA BORRAR-->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        $('.borrar').on('click', function(e) {
+            e.preventDefault();
+            var self = $(this);
+            console.log(self.data('title'));
+            Swal.fire({
+                title: 'Esta seguro que desea continuar?',
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Confirmar',
+                cancelButtonText: 'No',
+                background: '#34495E'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    
+                    location.href = self.attr('href');
+                }
+            })
+        })
+    </script>
 </body>
 
 </html>

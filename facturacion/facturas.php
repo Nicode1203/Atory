@@ -145,7 +145,7 @@ if ($varsesion == null || $varsesion = '') {
               <th>
                 <a href="verfacturaAdmin.php?id=<?php echo  $row['idCliente'] ?>" class="btn btn-info">ver factura</a>
 
-              <th><a href="eliminarf.php?id=<?php echo $row['cliente_idCliente']   ?>" class="btn btn-danger">Pago</a></th>
+              <th><a href="eliminarf.php?id=<?php echo $row['cliente_idCliente']   ?>" class="borrar btn btn-danger">Pago</a></th>
 
             </tr>
         <?php
@@ -195,6 +195,30 @@ if ($varsesion == null || $varsesion = '') {
   <!-- End custom js for this page -->
 
   <div class="jvectormap-tip"></div>
+  <!-- Estas ultimas lineas son para la alerta DE BORRAR, INSERTA SWEET ALERT Y LUEGO ESTA EL SCRIPT PARA BORRAR-->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        $('.borrar').on('click', function(e) {
+            e.preventDefault();
+            var self = $(this);
+            console.log(self.data('title'));
+            Swal.fire({
+                title: 'Esta seguro que desea continuar?',
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Confirmar',
+                cancelButtonText: 'No',
+                background: '#34495E'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    
+                    location.href = self.attr('href');
+                }
+            })
+        })
+    </script>
 </body>
 
 </html>
