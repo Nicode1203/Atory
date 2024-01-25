@@ -87,7 +87,7 @@ if ($varsesion == null || $varsesion = '') {
                             <td> <?php echo "$nomTec" ?></td>
                             <td> <?php echo "$motivo" ?></td>
                             <td> <?php echo "$diaVisita" ?></td>
-                            
+
                             <th><a href="comentario.php?id=<?php echo $row['idVisita'] ?>" class="btn btn-primary">Agregar comentario</a></th>
                             <th><a href="eliminarVisita.php?id=<?php echo $row['idVisita'] ?>" class="btn btn-danger">Marcar como Atendida</a></th>
                             </th>
@@ -142,26 +142,20 @@ if ($varsesion == null || $varsesion = '') {
     <!-- Estas ultimas lineas son para la alerta DE BORRAR, INSERTA SWEET ALERT Y LUEGO ESTA EL SCRIPT PARA BORRAR-->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script>
-        $('.borrar').on('click', function(e) {
-            e.preventDefault();
-            var self = $(this);
-            console.log(self.data('title'));
-            Swal.fire({
-                title: 'Esta seguro que desea continuar?',
-                icon: 'warning',
-                showCancelButton: true,
-                confirmButtonColor: '#3085d6',
-                cancelButtonColor: '#d33',
-                confirmButtonText: 'Confirmar',
-                cancelButtonText: 'No',
-                background: '#34495E'
-            }).then((result) => {
-                if (result.isConfirmed) {
-                    
-                    location.href = self.attr('href');
-                }
-            })
-        })
+        (() => {
+
+        })()
+
+        const {} = Swal.fire({
+            title: 'Hola, Bienvenido a Atory Solutions',
+            icon: 'info',
+            width: '40%',
+            padding: 0,
+            background: '#34495E',
+            position: 'center',
+            allowOutsideClick: false,
+            confirmButtonColor: '#3498DB'
+        });
     </script>
 </body>
 
