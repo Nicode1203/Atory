@@ -52,7 +52,7 @@ if ($varsesion == null || $varsesion='') {
                             
                             <div class="profile-name">
                                 <h5 class="mb-0 font-weight-normal">ADMINISTRATIVO</h5>
-                                <span>Rol administrativo</span>
+                                <span>Administrativo</span>
                             </div>
                         </div>
                         <!-- Ajustes de perfil -->
