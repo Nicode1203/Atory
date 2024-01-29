@@ -68,6 +68,27 @@
       <!-- page-body-wrapper ends -->
     </div>
     <!-- container-scroller -->
+
+    <div id="contenido-php">
+        <!-- Aquí se cargará el contenido de plancontainer.php -->
+    </div>
+
+    <script>
+        // Función para cargar el contenido de plancontainer.php
+        function cargarContenidoPHP() {
+            fetch('../planes/plancontainer.php')
+                .then(response => response.text())
+                .then(data => {
+                    // Insertar el contenido en la div
+                    document.getElementById('contenido-php').innerHTML = data;
+                })
+                .catch(error => console.error('Error al cargar plancontainer.php:', error));
+        }
+
+        // Llamar a la función cuando se carga la página
+        window.onload = cargarContenidoPHP;
+    </script>
+
     <!-- plugins:js -->
     <script src="../assets/vendors/js/vendor.bundle.base.js"></script>
     <!-- endinject -->
