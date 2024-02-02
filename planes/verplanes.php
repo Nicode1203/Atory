@@ -43,7 +43,7 @@
           <div class="card" style="background: url('../assets/images/planes/fondoplanes.jpg') center center / cover no-repeat; border-radius: 20px; position: relative;">
           <div class="card-body text-dark">
                 <h4 class="card-title text-dark" style="font-weight: bold; font-size: 25px;"><?php echo "$nplan" ?></h4>
-                <img src="../assets/images/planes/publicidad20m.gif" alt="Descripción de la imagen" class="card-img-top" style="border-radius: 20px 20px 0 0; width: 80%; height: 50%; display: block; margin-left: auto; margin-right: auto;">
+                <img src="../assets/images/planes/20MEGAS.gif" alt="Descripción de la imagen" class="card-img-top" style="border-radius: 20px 20px 0 0; width: 80%; height: 50%; display: block; margin-left: auto; margin-right: auto;">
                 <form class="forms-sample">
                   <div class="form-group">
                     <label for="cp" style="font-weight: bold; font-size: 20px;">Tipo de plan: <?php echo "$tplan" ?></label>
@@ -83,7 +83,7 @@
           <div class="card" style="background: url('../assets/images/planes/fondoplanes.jpg') center center / cover no-repeat; border-radius: 20px; position: relative;">
           <div class="card-body text-dark">
                 <h4 class="card-title text-dark" style="font-weight: bold; font-size: 25px;"><?php echo "$nplan" ?></h4>
-                <img src="../assets/images/planes/lanzamiento.gif" alt="Descripción de la imagen" class="card-img-top" style="border-radius: 20px 20px 0 0; width: 80%; height: 50%; display: block; margin-left: auto; margin-right: auto;">
+                <img src="../assets/images/planes/50MEGAS.gif" alt="Descripción de la imagen" class="card-img-top" style="border-radius: 20px 20px 0 0; width: 80%; height: 50%; display: block; margin-left: auto; margin-right: auto;">
                 <form class="forms-sample">
                   <div class="form-group">
                     <label for="cp" style="font-weight: bold; font-size: 20px;">Tipo de plan: <?php echo "$tplan" ?></label>
@@ -124,7 +124,7 @@
           <div class="card" style="background: url('../assets/images/planes/fondoplanes.jpg') center center / cover no-repeat; border-radius: 20px; position: relative;">
           <div class="card-body text-dark">
                 <h4 class="card-title text-dark" style="font-weight: bold; font-size: 25px;"><?php echo "$nplan" ?></h4>
-                <img src="../assets/images/planes/lanzamiento.gif" alt="Descripción de la imagen" class="card-img-top" style="border-radius: 20px 20px 0 0; width: 80%; height: 50%; display: block; margin-left: auto; margin-right: auto;">
+                <img src="../assets/images/planes/70MEGAS.gif" alt="Descripción de la imagen" class="card-img-top" style="border-radius: 20px 20px 0 0; width: 80%; height: 50%; display: block; margin-left: auto; margin-right: auto;">
                 <form class="forms-sample">
                   <div class="form-group">
                     <label for="cp" style="font-weight: bold; font-size: 20px;">Tipo de plan: <?php echo "$tplan" ?></label>
@@ -164,7 +164,7 @@
           <div class="card" style="background: url('../assets/images/planes/fondoplanes.jpg') center center / cover no-repeat; border-radius: 20px; position: relative;">
           <div class="card-body text-dark">
                 <h4 class="card-title text-dark" style="font-weight: bold; font-size: 25px;"><?php echo "$nplan" ?></h4>
-                <img src="../assets/images/planes/lanzamiento.gif" alt="Descripción de la imagen" class="card-img-top" style="border-radius: 20px 20px 0 0; width: 80%; height: 50%; display: block; margin-left: auto; margin-right: auto;">
+                <img src="../assets/images/planes/120MEGAS.gif" alt="Descripción de la imagen" class="card-img-top" style="border-radius: 20px 20px 0 0; width: 80%; height: 50%; display: block; margin-left: auto; margin-right: auto;">
                 <form class="forms-sample">
                   <div class="form-group">
                     <label for="cp" style="font-weight: bold; font-size: 20px;">Tipo de plan: <?php echo "$tplan" ?></label>
@@ -205,7 +205,7 @@
           <div class="card" style="background: url('../assets/images/planes/fondoplanes.jpg') center center / cover no-repeat; border-radius: 20px; position: relative;">
           <div class="card-body text-dark">
                 <h4 class="card-title text-dark" style="font-weight: bold; font-size: 25px;"><?php echo "$nplan" ?></h4>
-                <img src="../assets/images/planes/lanzamiento.gif" alt="Descripción de la imagen" class="card-img-top" style="border-radius: 20px 20px 0 0; width: 80%; height: 50%; display: block; margin-left: auto; margin-right: auto;">
+                <img src="../assets/images/planes/5MEGAS.gif" alt="Descripción de la imagen" class="card-img-top" style="border-radius: 20px 20px 0 0; width: 80%; height: 50%; display: block; margin-left: auto; margin-right: auto;">
                 <form class="forms-sample">
                   <div class="form-group">
                     <label for="cp" style="font-weight: bold; font-size: 20px;">Tipo de plan: <?php echo "$tplan" ?></label>
@@ -245,7 +245,7 @@
             <div class="card" style="background: url('../assets/images/planes/fondoplanes.jpg') center center / cover no-repeat; border-radius: 20px; position: relative;">
           <div class="card-body text-dark">
                 <h4 class="card-title text-dark" style="font-weight: bold; font-size: 25px;"><?php echo "$nplan" ?></h4>
-                <img src="../assets/images/planes/lanzamiento.gif" alt="Descripción de la imagen" class="card-img-top" style="border-radius: 20px 20px 0 0; width: 80%; height: 50%; display: block; margin-left: auto; margin-right: auto;">
+                <img src="../assets/images/planes/150MEGAS.gif" alt="Descripción de la imagen" class="card-img-top" style="border-radius: 20px 20px 0 0; width: 80%; height: 50%; display: block; margin-left: auto; margin-right: auto;">
                 <form class="forms-sample">
                   <div class="form-group">
                     <label for="cp" style="font-weight: bold; font-size: 20px;">Tipo de plan: <?php echo "$tplan" ?></label>
@@ -285,7 +285,7 @@
             <div class="card" style="background: url('../assets/images/planes/fondoplanes.jpg') center center / cover no-repeat; border-radius: 20px; position: relative;">
           <div class="card-body text-dark">
                 <h4 class="card-title text-dark" style="font-weight: bold; font-size: 25px;"><?php echo "$nplan" ?></h4>
-                <img src="../assets/images/planes/lanzamiento.gif" alt="Descripción de la imagen" class="card-img-top" style="border-radius: 20px 20px 0 0; width: 80%; height: 50%; display: block; margin-left: auto; margin-right: auto;">
+                <img src="../assets/images/planes/10MEGAS.gif" alt="Descripción de la imagen" class="card-img-top" style="border-radius: 20px 20px 0 0; width: 80%; height: 50%; display: block; margin-left: auto; margin-right: auto;">
                 <form class="forms-sample">
                   <div class="form-group">
                     <label for="cp" style="font-weight: bold; font-size: 20px;">Tipo de plan: <?php echo "$tplan" ?></label>
