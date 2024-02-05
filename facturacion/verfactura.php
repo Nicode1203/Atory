@@ -21,49 +21,6 @@
 </head>
 
 <body>
-  <div class="container-scroller">
-    <!-- partial:../../partials/_sidebar.html -->
-
-    <nav class="sidebar sidebar-offcanvas" id="sidebar">
-      <div class="sidebar-brand-wrapper d-none d-lg-flex align-items-center justify-content-center fixed-top">
-        <!-- Logo de Atory -->
-        <a class="sidebar-brand brand-logo" href="../index.html">
-          <img src="../assets/images/atori.png" alt="logo">
-        </a>
-        <!-- Volver a inicio -->
-        <a class="sidebar-brand brand-logo-mini" href="../index.html">
-          <img src="../assets/images/logo-mini.png" alt="logo">
-        </a>
-      </div>
-      <ul class="nav">
-
-        <li class="nav-item menu-items">
-          <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
-            <span class="menu-icon">
-              <i class="mdi mdi-laptop"></i>
-            </span>
-            <span class="menu-title">Facturas</span>
-            <i class="menu-arrow"></i>
-          </a>
-        </li>
-      </ul>
-    </nav>
-    <!-- partial -->
-    <div class="container-fluid page-body-wrapper">
-      <!-- partial:../../partials/_navbar.html -->
-      <nav class="navbar p-0 fixed-top d-flex flex-row">
-        <div class="navbar-brand-wrapper d-flex d-lg-none align-items-center justify-content-center">
-          <a class="navbar-brand brand-logo-mini" href="index.html"><img src="../assets/images/logo-mini.svg" alt="logo" /></a>
-        </div>
-        <div class="navbar-menu-wrapper flex-grow d-flex align-items-stretch">
-          <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
-            <span class="mdi mdi-menu"></span>
-          </button>
-          <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
-            <span class="mdi mdi-format-line-spacing"></span>
-          </button>
-        </div>
-      </nav>
       <!-- partial -->
       <?php
       include_once "conexion.php";
@@ -130,7 +87,7 @@
                     <div class="form-group">
                       <label for="des"> Tambien le estará llegando una copia a su dirección <?php echo "$dc" ?></label>
                     </div>
-                    <a href="../index.html" class="btn btn-light btn-lg active" role="button" aria-pressed="true">Volver a pagina inicial</a>
+                    <a href="../index.html" class="btn btn-danger btn-lg active" role="button" aria-pressed="true">Volver a pagina inicial</a>
                   </form>
                 </div>
               </div>
