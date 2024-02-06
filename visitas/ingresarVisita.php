@@ -38,63 +38,65 @@ if ($varsesion == null || $varsesion = '') {
 
     <div class="main-panel">
         <div class="content-wrapper"> <!-- ESTO ES LO QUE TENEMOS QUE MODIFICAR -->
-            <div class="card-body">
-                <h4 class="card-title">GESTION DE VISITAS</h4>
-                <p class="card-description"> Ingrese los datos de la visita</p>
-                <form class="forms-sample">
-                    
-                    <div class="form-group">
-                        <label for="docC">Ingrese documento del Cliente</label>
-                        <input type="text" class="form-control" name="docC" id="docC" placeholder="Numero de documento">
-                    </div>
-                    <div class="form-group">
-                        <label for="nomC">Ingrese nombre del Cliente</label>
-                        <input type="text" class="form-control" name="nomC" id="nomC" placeholder="Nombre">
-                    </div>
-                    <div class="form-group">
-                        <label for="telC">Ingrese telefono del Cliente</label>
-                        <input type="text" class="form-control" name="telC" id="telC" placeholder="Telefono">
-                    </div>
-                    <div class="form-group">
-                        <label for="emailC">Ingrese Correo del Cliente</label>
-                        <input type="email" class="form-control" name="emailC" id="emailC" placeholder="Correo electronico">
-                    </div>
-                    <div class="form-group">
-                        <label for="dir">Ingrese direccion del Cliente</label>
-                        <input type="text" class="form-control" name="dir" id="dir" placeholder="Direccion">
-                    </div>
-                    <div class="form-group">
-                        <label for="docT">Ingrese documento del tecnico</label>
-                        <input type="text" class="form-control" name="docT" id="docT" placeholder="Numero de documento">
-                    </div>
-                    <div class="form-group">
-                        <label for="nomT">Seleccione el tecnico</label>
-                        <select class="form-control" name="nomT" id="nomT">
-                            <option value="Cristian Muñoz">Cristian Muñoz</option>
-                            <option value="Fabian Quimbay">Fabian Quimbay</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="telT">Ingrese telefono del Tecnico</label>
-                        <input type="text" class="form-control" name="telT" id="telT" placeholder="Ingrese telefono">
-                    </div>
-                
-                    <!--valor de email-->
-                    <div class="form-group">
-                        <label for="emailT">Ingrese Correo del tecnico</label>
-                        <input type="email" class="form-control" name="emailT" id="emailT" placeholder="Correo electronico">
-                    </div>
+            <div class="col-6 grid-margin stretch-card">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">GESTION DE VISITAS</h4>
+                        <p class="card-description"> Ingrese los datos de la visita</p>
+                        <form class="forms-sample">
 
-                    <!--valor de motivo-->
-                    <div class="form-group">
-                        <label for="motivo">Ingrese motivo de la visita</label>
-                        <input type="text" class="form-control" name="motivo" id="motivo" placeholder="Motivo">
-                    </div>
-                    <div class="form-group">
-                        <label for="dia">Ingrese dia de la visita</label>
-                        <input type="date" class="form-control" name="dia" id="dia" placeholder="">
-                    </div>
-                    <!--
+                            <div class="form-group">
+                                <label for="docC">Ingrese documento del Cliente</label>
+                                <input type="text" class="form-control" name="docC" id="docC" placeholder="Numero de documento">
+                            </div>
+                            <div class="form-group">
+                                <label for="nomC">Ingrese nombre del Cliente</label>
+                                <input type="text" class="form-control" name="nomC" id="nomC" placeholder="Nombre">
+                            </div>
+                            <div class="form-group">
+                                <label for="telC">Ingrese telefono del Cliente</label>
+                                <input type="text" class="form-control" name="telC" id="telC" placeholder="Telefono">
+                            </div>
+                            <div class="form-group">
+                                <label for="emailC">Ingrese Correo del Cliente</label>
+                                <input type="email" class="form-control" name="emailC" id="emailC" placeholder="Correo electronico">
+                            </div>
+                            <div class="form-group">
+                                <label for="dir">Ingrese direccion del Cliente</label>
+                                <input type="text" class="form-control" name="dir" id="dir" placeholder="Direccion">
+                            </div>
+                            <div class="form-group">
+                                <label for="docT">Ingrese documento del tecnico</label>
+                                <input type="text" class="form-control" name="docT" id="docT" placeholder="Numero de documento">
+                            </div>
+                            <div class="form-group">
+                                <label for="nomT">Seleccione el tecnico</label>
+                                <select class="form-control" name="nomT" id="nomT">
+                                    <option value="Cristian Muñoz">Cristian Muñoz</option>
+                                    <option value="Fabian Quimbay">Fabian Quimbay</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="telT">Ingrese telefono del Tecnico</label>
+                                <input type="text" class="form-control" name="telT" id="telT" placeholder="Ingrese telefono">
+                            </div>
+
+                            <!--valor de email-->
+                            <div class="form-group">
+                                <label for="emailT">Ingrese Correo del tecnico</label>
+                                <input type="email" class="form-control" name="emailT" id="emailT" placeholder="Correo electronico">
+                            </div>
+
+                            <!--valor de motivo-->
+                            <div class="form-group">
+                                <label for="motivo">Ingrese motivo de la visita</label>
+                                <input type="text" class="form-control" name="motivo" id="motivo" placeholder="Motivo">
+                            </div>
+                            <div class="form-group">
+                                <label for="dia">Ingrese dia de la visita</label>
+                                <input type="date" class="form-control" name="dia" id="dia" placeholder="">
+                            </div>
+                            <!--
                     <div class="form-group">
                         <label for="est">Seleccione estado de la visita</label>
                         <select class="form-control" name="est" id="est">
@@ -104,22 +106,20 @@ if ($varsesion == null || $varsesion = '') {
                         </select>
                     </div>
                     -->
-                    <div>
-                        <br>
-                        <button id="submit" type="submit" formmethod="post" formaction="insertarVisita.php" class="btn btn-primary">Guardar</button>
-                        <button id="submit" type="submit" formmethod="post" formaction="tablasVisitas.php" class="btn btn-primary"> Volver a tablas </button>
+                            <div>
+                                <br>
+                                <button id="submit" type="submit" formmethod="post" formaction="insertarVisita.php" class="btn btn-primary">Guardar</button>
+                                <button id="submit" type="submit" formmethod="post" formaction="tablasVisitas.php" class="btn btn-primary"> Volver a tablas </button>
+
+                            </div>
+                        </form>
+
+
 
                     </div>
-                </form>
-
-                <div class="row">
-                    <div>
-                        <div>
-
-                        </div>
-                    </div>
-
                 </div>
+
+
 
 
 

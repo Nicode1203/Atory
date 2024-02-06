@@ -41,12 +41,12 @@ if ($varsesion == null || $varsesion = '') {
                 <h1 style="font-size: 32px;">GESTIÓN CLIENTES</h1>
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item" aria-current="page">Esta usted en el módulo de gestión</li>
+                        <li class="breadcrumb-item" aria-current="page"></li>
                     </ol>
                 </nav>
             </div>
             <div class="row">
-                <div class="col-12 grid-margin stretch-card">
+                <div class="col- grid-margin stretch-card">
                     <div class="card">
                         <!-- CONTENIDO -->
                         <div class="card-body">
