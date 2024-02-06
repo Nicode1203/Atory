@@ -2,9 +2,9 @@
 //seguridad de sesiones paginacion (prueba 1)
 session_start();
 error_reporting(0);
-$varsesion= $_SESSION['usuario'];
-if ($varsesion == null || $varsesion='' ) {
-    header ("location:../index.html");
+$varsesion = $_SESSION['usuario'];
+if ($varsesion == null || $varsesion = '') {
+    header("location:../index.html");
     die();
     exit;
 }
@@ -14,6 +14,7 @@ if ($varsesion == null || $varsesion='' ) {
 <!-- CODIGO HTML -->
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -27,25 +28,27 @@ if ($varsesion == null || $varsesion='' ) {
     <!-- Fin de los estilos del archivo actual -->
     <link rel="shortcut icon" href="../assets/images/favicon.png">
 </head>
+
 <body>
-        <?php
-        include '../menu/menuint.php';
-        ?>
+    <?php
+    include '../menu/menuint.php';
+    ?>
 
-        <!-- partial -->
+    <!-- partial -->
 
 
-        <div class="main-panel">
-    <div class="content-wrapper">
-        <div class="card-body">
-            <a href="usuarios.php" class="btn btn-primary" role="button" aria-pressed="true">Volver al inicio</a>
-            <a href="../excel/excelUsuario.php" class="btn btn-success">Exportar tabla a Excel</a>
-            <?php
-            include("conexion.php");
+    <div class="main-panel">
+        <div class="content-wrapper">
+            <div class="card">
+                <div class="card-body">
+                    <a href="usuarios.php" class="btn btn-primary" role="button" aria-pressed="true">Volver al inicio</a>
+                    <a href="../excel/excelUsuario.php" class="btn btn-success">Exportar tabla a Excel</a>
+                    <?php
+                    include("conexion.php");
 
-            $sql = "SELECT * FROM usuario WHERE estadoUsuario='Activo';";
+                    $sql = "SELECT * FROM usuario WHERE estadoUsuario='Activo';";
 
-            echo '<div class="table-responsive">
+                    echo '<div class="table-responsive">
                 <table class="table table-hover">
                     <thead>
                         <tr>
@@ -64,65 +67,66 @@ if ($varsesion == null || $varsesion='' ) {
                         </tr>
                     </thead>';
 
-            if ($rta = $con->query($sql)) {
-                while ($row = $rta->fetch_assoc()) {
-                    $td = $row['tipoDocumento'];
-                    $id = $row['documentoUsuario'];
-                    $nombres = $row['nombresUsuario'];
-                    $telefono = $row['telefonoUsuario'];
-                    $email = $row['correoUsuario'];
-                    $clave = $row['claveUsuario'];
-                    $estado = $row['estadoUsuario'];
-                    $creacion = $row['creado'];
-                    $act = $row['ultimaActualizacion'];
-                    $rol = $row['rol'];
+                    if ($rta = $con->query($sql)) {
+                        while ($row = $rta->fetch_assoc()) {
+                            $td = $row['tipoDocumento'];
+                            $id = $row['documentoUsuario'];
+                            $nombres = $row['nombresUsuario'];
+                            $telefono = $row['telefonoUsuario'];
+                            $email = $row['correoUsuario'];
+                            $clave = $row['claveUsuario'];
+                            $estado = $row['estadoUsuario'];
+                            $creacion = $row['creado'];
+                            $act = $row['ultimaActualizacion'];
+                            $rol = $row['rol'];
                     ?>
-                    <tr>
+                            <tr>
 
-                        <td> <?php echo $td ?></td>
-                        <td> <?php echo $id ?></td>
-                        <td> <?php echo $nombres ?></td>
-                        <td> <?php echo $telefono ?></td>
-                        <td> <?php echo $email ?></td>
-                        <td> <?php echo $clave ?></td>
-                        <td> <?php echo $estado ?></td>
-                        <td> <?php echo $creacion ?></td>
-                        <td> <?php echo $act ?></td>
-                        <td> <?php echo $rol ?></td>
-                        <td>
-                            <a href="actualizarUser.php?id=<?php echo $row['documentoUsuario'] ?>" class="btn btn-info">Editar</a>
-                        </td>
-                        <td>
-                            <a href="deleteUsuario.php?id=<?php echo $row['documentoUsuario']  ?> "class="borrar btn btn-danger">Eliminar</a>
-                        </td>
-                    </tr>
+                                <td> <?php echo $td ?></td>
+                                <td> <?php echo $id ?></td>
+                                <td> <?php echo $nombres ?></td>
+                                <td> <?php echo $telefono ?></td>
+                                <td> <?php echo $email ?></td>
+                                <td> <?php echo $clave ?></td>
+                                <td> <?php echo $estado ?></td>
+                                <td> <?php echo $creacion ?></td>
+                                <td> <?php echo $act ?></td>
+                                <td> <?php echo $rol ?></td>
+                                <td>
+                                    <a href="actualizarUser.php?id=<?php echo $row['documentoUsuario'] ?>" class="btn btn-info">Editar</a>
+                                </td>
+                                <td>
+                                    <a href="deleteUsuario.php?id=<?php echo $row['documentoUsuario']  ?> " class="borrar btn btn-danger">Eliminar</a>
+                                </td>
+                            </tr>
 
                     <?php
-                }
-            }
-            ?>
+                        }
+                    }
+                    ?>
+                </div>
+            </div>
         </div>
     </div>
-</div>
 
-          <!-- ESTO ES LO QUE PODEMOS MODIFICAR -->
-          <!-- partial:partials/_footer.html -->
-          
-          <!-- partial -->
-        </div>
-        <footer class="footer">
-          <div class="d-sm-flex justify-content-center justify-content-sm-between">
+    <!-- ESTO ES LO QUE PODEMOS MODIFICAR -->
+    <!-- partial:partials/_footer.html -->
+
+    <!-- partial -->
+    </div>
+    <footer class="footer">
+        <div class="d-sm-flex justify-content-center justify-content-sm-between">
             <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright © Atory Solution 2023</span>
             <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center"> <a href=" " target="_blank"></a> </span>
-          </div>
-        </footer>
-        <!-- main-panel ends -->
-      </div>
-      <!-- page-body-wrapper ends -->
-    
-    
+        </div>
+    </footer>
+    <!-- main-panel ends -->
     </div>
-    
+    <!-- page-body-wrapper ends -->
+
+
+    </div>
+
     <!-- container-scroller -->
     <!-- plugins:js -->
     <script src="../assets/vendors/js/vendor.bundle.base.js"></script>
@@ -144,10 +148,10 @@ if ($varsesion == null || $varsesion='' ) {
     <!-- Custom js for this page -->
     <script src="../assets/js/dashboard.js"></script>
     <!-- End custom js for this page -->
-  
-<div class="jvectormap-tip"></div>
-<!-- Estas ultimas lineas son para la alerta DE BORRAR, INSERTA SWEET ALERT Y LUEGO ESTA EL SCRIPT PARA BORRAR-->
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <div class="jvectormap-tip"></div>
+    <!-- Estas ultimas lineas son para la alerta DE BORRAR, INSERTA SWEET ALERT Y LUEGO ESTA EL SCRIPT PARA BORRAR-->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script>
         $('.borrar').on('click', function(e) {
             e.preventDefault();
@@ -164,12 +168,12 @@ if ($varsesion == null || $varsesion='' ) {
                 background: '#34495E'
             }).then((result) => {
                 if (result.isConfirmed) {
-                    
+
                     location.href = self.attr('href');
                 }
             })
         })
     </script>
 </body>
-</html>
 
+</html>

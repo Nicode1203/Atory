@@ -41,17 +41,18 @@ if ($varsesion == null || $varsesion = '') {
 
         <div class="content-wrapper">
             <h1 style="font-size: 32px;">Visitas tecnicas e Instalaciones</h1>
-            <div class="card-body">
-                <a href="ingresarVisita.php" class="btn btn-primary">Ingresar nueva Visita</a>
-                <a href="../visitas/consultarVisitas.php" class="btn btn-primary  ">Consultar visitas</a>
-                <a href="../excel/excelVisitas.php" class="btn btn-success">Exportar tabla a Excel</a>
-                
-                <?php
-                include("../conexion.php");
+            <div class="card">
+                <div class="card-body">
+                    <a href="ingresarVisita.php" class="btn btn-primary">Ingresar nueva Visita</a>
+                    <a href="../visitas/consultarVisitas.php" class="btn btn-primary  ">Consultar visitas</a>
+                    <a href="../excel/excelVisitas.php" class="btn btn-success">Exportar tabla a Excel</a>
 
-                $sql = "SELECT * FROM visitas WHERE estadoVisita='Activo';";
+                    <?php
+                    include("../conexion.php");
 
-                echo '<div class="table-responsive">
+                    $sql = "SELECT * FROM visitas WHERE estadoVisita='Activo';";
+
+                    echo '<div class="table-responsive">
                 <table class="table table-hover">
                 <thead>
             <tr>
@@ -66,46 +67,47 @@ if ($varsesion == null || $varsesion = '') {
         </thead>
         ';
 
-                if ($rta = $con->query($sql)) {
-                    while ($row = $rta->fetch_assoc()) {
-                        $id = $row['idVisita'];
-                        $docCliente = $row['documentoCliente'];
-                        $nomCliente = $row['nombreCliente'];
-                        $telCliente = $row['telefonoCliente'];
-                        $emailCliente = $row['emailCliente'];
-                        $dirCliente = $row['direccionCliente'];
-                        $docTecnico = $row['documentoTecnico'];
-                        $nomTec = $row['nombreTecnico'];
-                        $telTec = $row['telefonoTecnico'];
-                        $emailTec = $row['emailTecnico'];
-                        $motivo = $row['motivoVisita'];
-                        $diaVisita = $row['diaVisita'];
-                        $eVisita = $row['estadoVisita'];
-                ?>
-                        <tr>
-                            <td> <?php echo "$docCliente" ?></td>
-                            <td> <?php echo "$nomCliente" ?></td>
-                            <td> <?php echo "$telCliente" ?></td>
-                            <td> <?php echo "$dirCliente" ?></td>
-                            <td> <?php echo "$nomTec" ?></td>
-                            <td> <?php echo "$motivo" ?></td>
-                            <td> <?php echo "$diaVisita" ?></td>
-                            
-                            <th><a href="actualizarVisita.php?id=<?php echo $row['idVisita'] ?>" class="btn btn-info">Actualizar</a>
-                            </th>
-                            <th><a href="eliminarVisitaDes.php?i=<?php echo $row['idVisita'] ?>" class="borrar btn btn-danger">Eliminar Visita</a></th>
-                            </th>
-                        </tr>
-                <?php
+                    if ($rta = $con->query($sql)) {
+                        while ($row = $rta->fetch_assoc()) {
+                            $id = $row['idVisita'];
+                            $docCliente = $row['documentoCliente'];
+                            $nomCliente = $row['nombreCliente'];
+                            $telCliente = $row['telefonoCliente'];
+                            $emailCliente = $row['emailCliente'];
+                            $dirCliente = $row['direccionCliente'];
+                            $docTecnico = $row['documentoTecnico'];
+                            $nomTec = $row['nombreTecnico'];
+                            $telTec = $row['telefonoTecnico'];
+                            $emailTec = $row['emailTecnico'];
+                            $motivo = $row['motivoVisita'];
+                            $diaVisita = $row['diaVisita'];
+                            $eVisita = $row['estadoVisita'];
+                    ?>
+                            <tr>
+                                <td> <?php echo "$docCliente" ?></td>
+                                <td> <?php echo "$nomCliente" ?></td>
+                                <td> <?php echo "$telCliente" ?></td>
+                                <td> <?php echo "$dirCliente" ?></td>
+                                <td> <?php echo "$nomTec" ?></td>
+                                <td> <?php echo "$motivo" ?></td>
+                                <td> <?php echo "$diaVisita" ?></td>
+
+                                <th><a href="actualizarVisita.php?id=<?php echo $row['idVisita'] ?>" class="btn btn-info">Actualizar</a>
+                                </th>
+                                <th><a href="eliminarVisitaDes.php?i=<?php echo $row['idVisita'] ?>" class="borrar btn btn-danger">Eliminar Visita</a></th>
+                                </th>
+                            </tr>
+                    <?php
+                        }
                     }
-                }
 
-                ?>
+                    ?>
 
-                <!-- ESTO ES LO QUE PODEMOS MODIFICAR -->
-                <!-- partial:partials/_footer.html -->
+                    <!-- ESTO ES LO QUE PODEMOS MODIFICAR -->
+                    <!-- partial:partials/_footer.html -->
 
-                <!-- partial -->
+                    <!-- partial -->
+                </div>
             </div>
             <footer class="footer">
                 <div class="d-sm-flex justify-content-center justify-content-sm-between">
@@ -161,7 +163,7 @@ if ($varsesion == null || $varsesion = '') {
                 background: '#34495E'
             }).then((result) => {
                 if (result.isConfirmed) {
-                    
+
                     location.href = self.attr('href');
                 }
             })

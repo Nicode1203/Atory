@@ -93,19 +93,20 @@ if ($varsesion == null || $varsesion = '') {
   <div class="main-panel">
     <div class="content-wrapper"> <!-- ESTO ES LO QUE TENEMOS QUE MODIFICAR -->
       <h1 style="font-size: 32px;">GESTIÓN INVENTARIO</h1>
-      <div class="card-body">
+      <div class="card">
+        <div class="card-body">
 
-        <a href="inactivosinv.php" class="btn btn-danger">Consutlar productos inactivos.</a>
-        <a href="../excel/excelInventario.php" class="btn btn-success">Exportar tabla a Excel</a>
-        <a href="ingresarp.php" class="btn btn-info">Ingresar nuevo producto</a>
+          <a href="inactivosinv.php" class="btn btn-danger">Consutlar productos inactivos.</a>
+          <a href="../excel/excelInventario.php" class="btn btn-success">Exportar tabla a Excel</a>
+          <a href="ingresarp.php" class="btn btn-info">Ingresar nuevo producto</a>
 
-        <?php
+          <?php
 
-        include("conexion.php");
+          include("conexion.php");
 
-        $sql = "SELECT * FROM producto WHERE estadoProducto='Activo';";
+          $sql = "SELECT * FROM producto WHERE estadoProducto='Activo';";
 
-        echo '<div class="table-responsive">
+          echo '<div class="table-responsive">
             <table class="table table-hover">
             <thead>
         <tr>
@@ -120,39 +121,40 @@ if ($varsesion == null || $varsesion = '') {
     </thead>
     ';
 
-        if ($rta = $con->query($sql)) {
-          while ($row = $rta->fetch_assoc()) {
-            $id = $row['idProducto'];
-            $nombrep = $row['nombreProducto'];
-            $serial = $row['serialProducto'];
-            $desp = $row['descripcionProducto'];
-            $cantidad = $row['cantidad'];
-            $estado = $row['estadoProducto'];
-        ?>
-            <tr>
-              <td> <?php echo "$id" ?></td>
-              <td> <?php echo "$nombrep" ?></td>
-              <td> <?php echo "$serial" ?></td>
-              <td> <?php echo "$desp" ?></td>
-              <td> <?php echo "$cantidad" ?></td>
-              <th>
-                <a href="actinv.php?id=<?php echo $row['idProducto'] ?>" class="btn btn-primary"> Editar Producto </a>
-              </th>
+          if ($rta = $con->query($sql)) {
+            while ($row = $rta->fetch_assoc()) {
+              $id = $row['idProducto'];
+              $nombrep = $row['nombreProducto'];
+              $serial = $row['serialProducto'];
+              $desp = $row['descripcionProducto'];
+              $cantidad = $row['cantidad'];
+              $estado = $row['estadoProducto'];
+          ?>
+              <tr>
+                <td> <?php echo "$id" ?></td>
+                <td> <?php echo "$nombrep" ?></td>
+                <td> <?php echo "$serial" ?></td>
+                <td> <?php echo "$desp" ?></td>
+                <td> <?php echo "$cantidad" ?></td>
+                <th>
+                  <a href="actinv.php?id=<?php echo $row['idProducto'] ?>" class="btn btn-primary"> Editar Producto </a>
+                </th>
 
 
-              <th><a href="elmproducto.php?id=<?php echo $row['idProducto'] ?>" class="borrar btn btn-danger">Eliminar</a></th>
+                <th><a href="elmproducto.php?id=<?php echo $row['idProducto'] ?>" class="borrar btn btn-danger">Eliminar</a></th>
 
-            </tr>
-        <?php
+              </tr>
+          <?php
+            }
           }
-        }
 
-        ?>
+          ?>
 
-        <!-- ESTO ES LO QUE PODEMOS MODIFICAR -->
-        <!-- partial:partials/_footer.html -->
+          <!-- ESTO ES LO QUE PODEMOS MODIFICAR -->
+          <!-- partial:partials/_footer.html -->
 
-        <!-- partial -->
+          <!-- partial -->
+        </div>
       </div>
       <footer class="footer">
         <div class="d-sm-flex justify-content-center justify-content-sm-between">
@@ -192,28 +194,28 @@ if ($varsesion == null || $varsesion = '') {
   <div class="jvectormap-tip"></div>
   <!-- Estas ultimas lineas son para la alerta DE BORRAR, INSERTA SWEET ALERT Y LUEGO ESTA EL SCRIPT PARA BORRAR-->
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script>
-        $('.borrar').on('click', function(e) {
-            e.preventDefault();
-            var self = $(this);
-            console.log(self.data('title'));
-            Swal.fire({
-                title: 'Esta seguro que desea continuar?',
-                icon: 'warning',
-                showCancelButton: true,
-                confirmButtonColor: '#3085d6',
-                cancelButtonColor: '#d33',
-                confirmButtonText: 'Confirmar',
-                cancelButtonText: 'No',
-                background: '#34495E'
-            }).then((result) => {
-                if (result.isConfirmed) {
-                    
-                    location.href = self.attr('href');
-                }
-            })
-        })
-    </script>
+  <script>
+    $('.borrar').on('click', function(e) {
+      e.preventDefault();
+      var self = $(this);
+      console.log(self.data('title'));
+      Swal.fire({
+        title: 'Esta seguro que desea continuar?',
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Confirmar',
+        cancelButtonText: 'No',
+        background: '#34495E'
+      }).then((result) => {
+        if (result.isConfirmed) {
+
+          location.href = self.attr('href');
+        }
+      })
+    })
+  </script>
 </body>
 
 </html>
