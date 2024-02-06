@@ -2,11 +2,11 @@
 //seguridad de sesiones paginacion (prueba 1)
 session_start();
 error_reporting(0);
-$varsesion= $_SESSION['usuario'];
-if ($varsesion == null || $varsesion='') {
-    header ("location:../index.html");
-    die();
-    exit;
+$varsesion = $_SESSION['usuario'];
+if ($varsesion == null || $varsesion = '') {
+  header("location:../index.html");
+  die();
+  exit;
 }
 
 ?>
@@ -91,23 +91,23 @@ if ($varsesion == null || $varsesion='') {
 
 
   <div class="main-panel">
-    
+
     <div class="content-wrapper"> <!-- ESTO ES LO QUE TENEMOS QUE MODIFICAR -->
-    <h1 style="font-size: 32px;">GESTIÓN PQR</h1>
-    
-      <div class="card-body">
+      <h1 style="font-size: 32px;">GESTIÓN PQR</h1>
+      <div class="card">
+        <div class="card-body">
 
-      
-        <a href="../principal.php" class="btn btn-primary " role="button" aria-pressed="true">Volver al inicio</a>
-        
-        <a href="../excel/excelPQR.php" class="btn btn-success">Exportar tabla a Excel</a>
-        <?php
 
-        include("conexion.php");
+          <a href="../principal.php" class="btn btn-primary " role="button" aria-pressed="true">Volver al inicio</a>
 
-        $sql = "SELECT * FROM pqr2 WHERE estadoPqr='Activo';";
+          <a href="../excel/excelPQR.php" class="btn btn-success">Exportar tabla a Excel</a>
+          <?php
 
-        echo '<div class="table-responsive">
+          include("conexion.php");
+
+          $sql = "SELECT * FROM pqr2 WHERE estadoPqr='Activo';";
+
+          echo '<div class="table-responsive">
             <table class="table table-hover">
             <thead>
         <tr>
@@ -123,41 +123,42 @@ if ($varsesion == null || $varsesion='') {
     </thead>
     ';
 
-        if ($rta = $con->query($sql)) {
-          while ($row = $rta->fetch_assoc()) {
-            $i = $row['idPqr'];
-            $td = $row['tipoDocumento'];
-            $id = $row['nDocumento'];
-            $nombres = $row['nombresCliente'];
-            $tel = $row['telefonoCliente'];
-            $email = $row['emailCliente'];
-            $soli = $row['tPqr'];
-            $dp = $row['desPqr'];
-            $epqr = $row['estadoPqr'];
-            $com = $row ['comentario'];
-        ?>
-            <tr>
-              <td> <?php echo "$i" ?></td>
-              <td> <?php echo "$td" ?></td>
-              <td> <?php echo "$id" ?></td>
-              <td> <?php echo "$nombres" ?></td>
-              <td> <?php echo "$soli" ?></td>
-              
+          if ($rta = $con->query($sql)) {
+            while ($row = $rta->fetch_assoc()) {
+              $i = $row['idPqr'];
+              $td = $row['tipoDocumento'];
+              $id = $row['nDocumento'];
+              $nombres = $row['nombresCliente'];
+              $tel = $row['telefonoCliente'];
+              $email = $row['emailCliente'];
+              $soli = $row['tPqr'];
+              $dp = $row['desPqr'];
+              $epqr = $row['estadoPqr'];
+              $com = $row['comentario'];
+          ?>
+              <tr>
+                <td> <?php echo "$i" ?></td>
+                <td> <?php echo "$td" ?></td>
+                <td> <?php echo "$id" ?></td>
+                <td> <?php echo "$nombres" ?></td>
+                <td> <?php echo "$soli" ?></td>
+
                 <th><a href="consultarpqr.php?i=<?php echo $row['idPqr'] ?>" class="btn btn-primary">Consultar PQR </a></th>
                 <th><a href="comentario.php?i=<?php echo $row['idPqr'] ?>" class="btn btn-info">Agregar comentario </a></th>
-              <th><a href="eliminarpqr.php?i=<?php echo $row['idPqr'] ?>" class="borrar btn btn-danger">Eliminar</a></th>
-             
-            </tr>
-        <?php
+                <th><a href="eliminarpqr.php?i=<?php echo $row['idPqr'] ?>" class="borrar btn btn-danger">Eliminar</a></th>
+
+              </tr>
+          <?php
+            }
           }
-        }
 
-        ?>
+          ?>
 
-        <!-- ESTO ES LO QUE PODEMOS MODIFICAR -->
-        <!-- partial:partials/_footer.html -->
+          <!-- ESTO ES LO QUE PODEMO  S MODIFICAR -->
+          <!-- partial:partials/_footer.html -->
 
-        <!-- partial -->
+          <!-- partial -->
+        </div>
       </div>
       <footer class="footer">
         <div class="d-sm-flex justify-content-center justify-content-sm-between">
@@ -197,28 +198,28 @@ if ($varsesion == null || $varsesion='') {
   <div class="jvectormap-tip"></div>
   <!-- Estas ultimas lineas son para la alerta DE BORRAR, INSERTA SWEET ALERT Y LUEGO ESTA EL SCRIPT PARA BORRAR-->
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script>
-        $('.borrar').on('click', function(e) {
-            e.preventDefault();
-            var self = $(this);
-            console.log(self.data('title'));
-            Swal.fire({
-                title: 'Esta seguro que desea continuar?',
-                icon: 'warning',
-                showCancelButton: true,
-                confirmButtonColor: '#3085d6',
-                cancelButtonColor: '#d33',
-                confirmButtonText: 'Confirmar',
-                cancelButtonText: 'No',
-                background: '#34495E'
-            }).then((result) => {
-                if (result.isConfirmed) {
-                    
-                    location.href = self.attr('href');
-                }
-            })
-        })
-    </script>
+  <script>
+    $('.borrar').on('click', function(e) {
+      e.preventDefault();
+      var self = $(this);
+      console.log(self.data('title'));
+      Swal.fire({
+        title: 'Esta seguro que desea continuar?',
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Confirmar',
+        cancelButtonText: 'No',
+        background: '#34495E'
+      }).then((result) => {
+        if (result.isConfirmed) {
+
+          location.href = self.attr('href');
+        }
+      })
+    })
+  </script>
 </body>
 
 </html>

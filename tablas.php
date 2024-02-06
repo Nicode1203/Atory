@@ -45,15 +45,16 @@ if ($seguridad->getUsuario()==null) {
 
     <div class="main-panel">
         <div class="content-wrapper">
-            <div class="card-body">
-                <a href="principal.php" class="btn btn-primary " role="button" aria-pressed="true">Volver al inicio</a>
-                <a href="excel/excelCliente.php" class="btn btn-success">Exportar a Excel</a>
-                <?php
-                include("conexion.php");
+            <div class="card">
+                <div class="card-body">
+                    <a href="principal.php" class="btn btn-primary " role="button" aria-pressed="true">Volver al inicio</a>
+                    <a href="excel/excelCliente.php" class="btn btn-success">Exportar a Excel</a>
+                    <?php
+                    include("conexion.php");
 
-                $sql = "SELECT * FROM cliente WHERE estadoCliente='Activo';";
+                    $sql = "SELECT * FROM cliente WHERE estadoCliente='Activo';";
 
-                echo '<div class="table-responsive">
+                    echo '<div class="table-responsive">
         <table class="table table-hover">
           <thead>
             <tr>
@@ -71,43 +72,44 @@ if ($seguridad->getUsuario()==null) {
             </tr>
           </thead>';
 
-                if ($rta = $con->query($sql)) {
-                    while ($row = $rta->fetch_assoc()) {
-                        $td = $row['tipoDocumento'];
-                        $id = $row['documentoCliente'];
-                        $nombres = $row['nombreCliente'];
-                        $telefono = $row['telefonoCliente'];
-                        $email = $row['correoCliente'];
-                        $dir = $row['direccion'];
-                        $estado = $row['estadoCliente'];
-                        $creacion = $row['creado'];
-                        $act = $row['ultimaActualizacion'];
-                ?>
-                        <tr>
-                            <td> <?php echo $td ?></td>
-                            <td> <?php echo $id ?></td>
-                            <td> <?php echo $nombres ?></td>
-                            <td> <?php echo $telefono ?></td>
-                            <td> <?php echo $email ?></td>
-                            <td> <?php echo $dir ?></td>
-                            <td> <?php echo $estado ?></td>
-                            <td> <?php echo $creacion ?></td>
-                            <td> <?php echo $act ?></td>
-                            <td>
-                                <a href="actualizar.php?id=<?php echo $row['documentoCliente'] ?>" class="btn btn-info">Editar</a>
-                            </td>
-                            <td>
-                                <a class="borrar btn btn-danger" href="delete.php?id=<?php echo $row['documentoCliente'] ?>" >Eliminar</a>
-                            </td>
+                    if ($rta = $con->query($sql)) {
+                        while ($row = $rta->fetch_assoc()) {
+                            $td = $row['tipoDocumento'];
+                            $id = $row['documentoCliente'];
+                            $nombres = $row['nombreCliente'];
+                            $telefono = $row['telefonoCliente'];
+                            $email = $row['correoCliente'];
+                            $dir = $row['direccion'];
+                            $estado = $row['estadoCliente'];
+                            $creacion = $row['creado'];
+                            $act = $row['ultimaActualizacion'];
+                    ?>
+                            <tr>
+                                <td> <?php echo $td ?></td>
+                                <td> <?php echo $id ?></td>
+                                <td> <?php echo $nombres ?></td>
+                                <td> <?php echo $telefono ?></td>
+                                <td> <?php echo $email ?></td>
+                                <td> <?php echo $dir ?></td>
+                                <td> <?php echo $estado ?></td>
+                                <td> <?php echo $creacion ?></td>
+                                <td> <?php echo $act ?></td>
+                                <td>
+                                    <a href="actualizar.php?id=<?php echo $row['documentoCliente'] ?>" class="btn btn-info">Editar</a>
+                                </td>
+                                <td>
+                                    <a class="borrar btn btn-danger" href="delete.php?id=<?php echo $row['documentoCliente'] ?>">Eliminar</a>
+                                </td>
 
 
 
-                        </tr>
-                <?php
+                            </tr>
+                    <?php
+                        }
                     }
-                }
-                ?>
-                </table>
+                    ?>
+                    </table>
+                </div>
             </div>
         </div>
     </div>
@@ -172,7 +174,7 @@ if ($seguridad->getUsuario()==null) {
                 background: '#34495E'
             }).then((result) => {
                 if (result.isConfirmed) {
-                    
+
                     location.href = self.attr('href');
                 }
             })

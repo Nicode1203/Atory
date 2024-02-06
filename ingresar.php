@@ -3,7 +3,7 @@
 session_start();
 error_reporting(0);
 $varsesion = $_SESSION['usuario'];
-if ($varsesion == null || $varsesion = '' ) {
+if ($varsesion == null || $varsesion = '') {
     header("location:index.html");
     die();
     exit;
@@ -38,6 +38,7 @@ if ($varsesion == null || $varsesion = '' ) {
 
     <div class="main-panel">
         <div class="content-wrapper"> <!-- ESTO ES LO QUE TENEMOS QUE MODIFICAR -->
+
             <div class="card-body">
                 <h4 class="card-title">GESTION DE CLIENTES</h4>
                 <p class="card-description"> Ingrese los datos del cliente</p>
@@ -137,8 +138,8 @@ if ($varsesion == null || $varsesion = '' ) {
             </div>
         </footer>
         <!-- main-panel ends -->
-    
-    <!-- page-body-wrapper ends -->
+
+        <!-- page-body-wrapper ends -->
 
 
     </div>
