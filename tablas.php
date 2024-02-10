@@ -51,7 +51,9 @@ if ($seguridad->getUsuario()==null) {
             </div>
             <div class="card">
                 <div class="card-body">
-                    <a href="principal.php" class="btn btn-primary " role="button" aria-pressed="true">Volver al inicio</a>
+                    <a href="ingresar.php" class="btn btn-primary " role="button" aria-pressed="true">Crear nuevo cliente</a>
+                    <a href="principal.php" class="btn btn-primary " role="button" aria-pressed="true">Consultar cliente</a>
+
                     <a href="excel/excelCliente.php" class="btn btn-success">Exportar a Excel</a>
                     <?php
                     include("conexion.php");
@@ -128,7 +130,7 @@ if ($seguridad->getUsuario()==null) {
     </div>
     <footer class="footer">
         <div class="d-sm-flex justify-content-center justify-content-sm-between">
-            <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright © Atory Solution 2023</span>
+
             <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center"> <a href=" " target="_blank"></a> </span>
         </div>
     </footer>

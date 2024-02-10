@@ -37,20 +37,13 @@ if ($varsesion == null || $varsesion = '') {
     <!-- Hasta aca es toda la barra lateral y la barra superior (lo que se deja igual en todas las paginas de admin) -->
     <div class="main-panel">
         <div class="content-wrapper">
-            <div class="page-header">
-                <h1 style="font-size: 32px;">GESTIÓN CLIENTES</h1>
-                <nav aria-label="breadcrumb">
-                    <ol class="breadcrumb">
-                        <li class="breadcrumb-item" aria-current="page"></li>
-                    </ol>
-                </nav>
-            </div>
+
             <div class="row">
                 <div class="col- grid-margin stretch-card">
                     <div class="card">
                         <!-- CONTENIDO -->
                         <div class="card-body">
-                            <h4 class="card-title">BASE DE DATOS DE CLIENTES</h4>
+                            <h4 class="card-title">CONSULTAR CLIENTES</h4>
                             <form class="forms-sample">
                                 <div class="form-group">
                                     <label for="id">Ingrese identificación de cliente</label>
