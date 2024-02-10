@@ -80,7 +80,7 @@ if ($varsesion == null || $varsesion='') {
                     </a>
                 </li>
                 <li class="nav-item menu-items">
-                    <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
+                    <a class="nav-link" href="planes/tablaplanes.php">
                         <span class="menu-icon">
                             <i class="mdi mdi-laptop"></i>
                         </span>
