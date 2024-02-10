@@ -61,7 +61,8 @@ if ($seguridad->getUsuario()==null) {
                     $sql = "SELECT cliente.tipoDocumento,cliente.documentoCliente,cliente.nombreCliente,plan.nombrePlan FROM cliente 
                     INNER JOIN plan
                     ON cliente.plan_idPlan=plan.idPlan
-                    WHERE estadoCliente='Activo';";
+                    WHERE estadoCliente='Activo'
+                    ORDER BY nombreCliente ASC;";
 
                     echo
                     '<div class="table-responsive">

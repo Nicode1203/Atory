@@ -44,14 +44,15 @@ if ($varsesion == null || $varsesion = '') {
 
       </div>
       <div class="row">
-        <div class="card">
-          <div class="card-body">
+        <div class="col-md-12 grid-margin stretch-card">
+          <div class="card">
+            <div class="card-body">
 
-            <form class="forms-sample">
-              <?php
-              include_once "conexion.php";
-              $sql = "SELECT * FROM plan WHERE estadoPlan='activo';";
-              echo '<div class="table-responsive">
+              <form class="forms-sample">
+                <?php
+                include_once "conexion.php";
+                $sql = "SELECT * FROM plan WHERE estadoPlan='Archivado';";
+                echo '<div class="table-responsive">
                       <table class="table table-hover">
                       <thead>
                           <tr>
@@ -65,63 +66,57 @@ if ($varsesion == null || $varsesion = '') {
                           </tr>
                         </thead>
                           ';
-              if ($rta = $con->query($sql)) {
-                while ($row = $rta->fetch_assoc()) {
-                  $cp = $row['codigoPlan'];
-                  $vel = $row['velocidad'];
-                  $nplan = $row['nombrePlan'];
-                  $pplan = $row['precioPlan'];
-                  $des = $row['desPlan'];
-                  $estadop = $row['estadoPlan'];
-              ?>
-                  <tr>
-                    <td> <?php echo "$cp" ?></td>
-                    <td> <?php echo "$vel" ?></td>
-                    <td> <?php echo "$nplan" ?></td>
-                    <td> <?php echo "$pplan" ?></td>
-                    <td> <?php echo "$estadop" ?></td>
-                    <th>
-                      <a href="../planes/actualizar.php?cp=<?php echo $row['codigoPlan'] ?>" class="btn btn-info">Editar</a>
-                    </th>
-                    </th>
-                    <th>
-                      <a href="../planes/eliminarplan.php?cp=<?php echo $row['codigoPlan'] ?>" class="borrar btn btn-danger">Archivar</a>
-                    </th>
-                    </th>
-                    <td>
+                if ($rta = $con->query($sql)) {
+                  while ($row = $rta->fetch_assoc()) {
+                    $cp = $row['codigoPlan'];
+                    $vel = $row['velocidad'];
+                    $nplan = $row['nombrePlan'];
+                    $pplan = $row['precioPlan'];
+                    $des = $row['desPlan'];
+                    $estadop = $row['estadoPlan'];
+                ?>
+                    <tr>
+                      <td> <?php echo "$cp" ?></td>
+                      <td> <?php echo "$vel" ?></td>
+                      <td> <?php echo "$nplan" ?></td>
+                      <td> <?php echo "$pplan" ?></td>
+                      <td> <?php echo "$estadop" ?></td>
+                      <th>
+                        <a href="../planes/actualizar.php?cp=<?php echo $row['codigoPlan'] ?>" class="btn btn-info">Editar</a>
+                      </th>
+                      </th>
+                      <th>
+                        <a href="../planes/activarplan.php?cp=<?php echo $row['codigoPlan'] ?>" class="borrar btn btn-danger">Volver a activar</a>
+                      </th>
+                      </th>
+                      <td>
 
-                    </td>
-                  </tr>
-              <?php
+                      </td>
+                    </tr>
+                <?php
+                  }
                 }
-              }
 
-              ?>
-              <div class="form-button mt-5">
-                <button id="submit" type="submit" formmethod="post" formaction="../planes/rurales.php" class="btn btn-primary btn-lg">Ver planes rurales</button>
-                <button id="submit" type="submit" formmethod="post" formaction="../planes/urbanos.php" class="btn btn-primary btn-lg">Ver planes urbanos</button>
-                <button id="submit" type="submit" formmethod="post" formaction="../planes/empresariales.php" class="btn btn-primary btn-lg">Ver planes empresariales</button>
-                <button id="submit" type="submit" formmethod="post" formaction="../planes/nuevoplan.php" class="btn btn-primary btn-lg">Ingresar nuevo plan</button>
-                <button id="submit" type="submit" formmethod="post" formaction="../planes/consultarplanes.php" class="btn btn-primary btn-lg">Consultar Plan</button>
-                <button id="submit" type="submit" formmethod="post" formaction="../planes/tablaplanesinac.php" class="btn btn-danger btn-lg">Ver planes Inactivos</button>
+                ?>
+                <div class="form-button mt-5">
+                  <button id="submit" type="submit" formmethod="post" formaction="../planes/rurales.php" class="btn btn-primary btn-lg">Ver planes rurales</button>
+                  <button id="submit" type="submit" formmethod="post" formaction="../planes/urbanos.php" class="btn btn-primary btn-lg">Ver planes urbanos</button>
+                  <button id="submit" type="submit" formmethod="post" formaction="../planes/empresariales.php" class="btn btn-primary btn-lg">Ver planes empresariales</button>
+                  <button id="submit" type="submit" formmethod="post" formaction="../planes/nuevoplan.php" class="btn btn-primary btn-lg">Ingresar nuevo plan</button>
+                  <button id="submit" type="submit" formmethod="post" formaction="../planes/consultarplanes.php" class="btn btn-primary btn-lg">Consultar Plan</button>
+                  <button id="submit" type="submit" formmethod="post" formaction="../planes/tablaplanes.php" class="btn btn-warning btn-lg">Ver planes Activos</button>
+                  <a href="../excel/excelPlanes.php" class="btn btn-success btn-lg">Exportar tabla a Excel</a>
+                </div>
 
-                <a href="../excel/excelPlanes.php" class="btn btn-success btn-lg">Exportar tabla a Excel</a>
-              </div>
-
-            </form>
-
+              </form>
+            </div>
           </div>
-
         </div>
-
       </div>
+
     </div>
-
+    <!-- partial -->
   </div>
-
-  <!-- partial -->
-  </div>
-
   <!-- main-panel ends -->
   </div>
   <!-- page-body-wrapper ends -->
