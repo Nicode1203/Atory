@@ -22,10 +22,6 @@ if ($varsesion == null || $varsesion=''  ) {
   <link rel="stylesheet" href="../assets/vendors/mdi/css/materialdesignicons.min.css">
   <link rel="stylesheet" href="../assets/vendors/css/vendor.bundle.base.css">
   <!-- endinject -->
-  <!-- Plugin css for this page -->
-  <!-- End Plugin css for this page -->
-  <!-- inject:css -->
-  <!-- endinject -->
   <!-- Layout styles -->
   <link rel="stylesheet" href="../assets/css/style.css">
   <!-- End layout styles -->
@@ -41,11 +37,6 @@ if ($varsesion == null || $varsesion=''  ) {
     <div class="content-wrapper">
       <div class="page-header">
         <h3 class="page-title"> Planes Urbanos </h3>
-        <nav aria-label="breadcrumb">
-          <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="#">Seccion planes Urbanos</a></li>
-          </ol>
-        </nav>
       </div>
       <div class="row">
         <div class="col-md-12 grid-margin stretch-card">
@@ -109,14 +100,7 @@ if ($varsesion == null || $varsesion=''  ) {
           </div>
         </div>
       </div>
-
       <!-- content-wrapper ends -->
-      <!-- partial:../partials/_footer.html -->
-      <footer class="footer">
-        <div class="d-sm-flex justify-content-center justify-content-sm-between">
-          <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright © AtorySolution 2023</span>
-      </footer>
-    </div>
     <!-- partial -->
   </div>
   <!-- main-panel ends -->

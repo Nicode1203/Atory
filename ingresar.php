@@ -114,30 +114,12 @@ if ($varsesion == null || $varsesion = '') {
                             </div>
                         </form>
                     </div>
-
-
-
-
                 </div>
             </div>
             <!-- ESTO ES LO QUE PODEMOS MODIFICAR -->
-            <!-- partial:partials/_footer.html -->
-
-            <!-- partial -->
         </div>
-        <footer class="footer">
-            <div class="d-sm-flex justify-content-center justify-content-sm-between">
-                <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright © Atory Solution 2023</span>
-                <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center"> <a href=" " target="_blank"></a> </span>
-            </div>
-        </footer>
-        <!-- main-panel ends -->
-
-        <!-- page-body-wrapper ends -->
-
 
     </div>
-
     <!-- container-scroller -->
     <!-- plugins:js -->
     <script src="assets/vendors/js/vendor.bundle.base.js"></script>
@@ -159,7 +141,6 @@ if ($varsesion == null || $varsesion = '') {
     <!-- Custom js for this page -->
     <script src="assets/js/dashboard.js"></script>
     <!-- End custom js for this page -->
-
     <div class="jvectormap-tip"></div>
 </body>
 

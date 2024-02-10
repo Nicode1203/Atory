@@ -17,7 +17,7 @@ if ($varsesion == null || $varsesion='' ) {
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Corona Admin</title>
+  <title>Atory Solution</title>
   <!-- plugins:css -->
   <link rel="stylesheet" href="../assets/vendors/mdi/css/materialdesignicons.min.css">
   <link rel="stylesheet" href="../assets/vendors/css/vendor.bundle.base.css">
@@ -41,11 +41,6 @@ if ($varsesion == null || $varsesion='' ) {
     <div class="content-wrapper">
       <div class="page-header">
         <h3 class="page-title"> Planes Empresariales </h3>
-        <nav aria-label="breadcrumb">
-          <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="#">Seccion planes empresariales</a></li>
-          </ol>
-        </nav>
       </div>
       <div class="row">
         <div class="col-md-12 grid-margin stretch-card">
@@ -109,13 +104,7 @@ if ($varsesion == null || $varsesion='' ) {
           </div>
         </div>
       </div>
-
       <!-- content-wrapper ends -->
-      <!-- partial:../../partials/_footer.html -->
-      <footer class="footer">
-        <div class="d-sm-flex justify-content-center justify-content-sm-between">
-          <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright © AtorySolution 2023</span>
-      </footer>
     </div>
     <!-- partial -->
   </div>
