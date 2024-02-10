@@ -1,6 +1,6 @@
 /*
 SQLyog Ultimate v11.11 (64 bit)
-MySQL - 5.5.5-10.4.28-MariaDB : Database - atory
+MySQL - 5.5.5-10.4.27-MariaDB : Database - atory
 *********************************************************************
 */
 
@@ -13,7 +13,7 @@ MySQL - 5.5.5-10.4.28-MariaDB : Database - atory
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
-CREATE DATABASE /*!32312 IF NOT EXISTS*/`atory` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci */;
+CREATE DATABASE /*!32312 IF NOT EXISTS*/`atory` /*!40100 DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci */;
 
 USE `atory`;
 
@@ -32,13 +32,17 @@ CREATE TABLE `cliente` (
   `estadoCliente` varchar(10) NOT NULL DEFAULT 'Activo',
   `creado` date DEFAULT NULL,
   `ultimaActualizacion` date DEFAULT NULL,
+  `plan_idPlan` int(11) NOT NULL,
   PRIMARY KEY (`idCliente`),
-  UNIQUE KEY `documentoCliente` (`documentoCliente`)
-) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+  UNIQUE KEY `documentoCliente` (`documentoCliente`),
+  KEY `fk_plan_cliente` (`plan_idPlan`),
+  CONSTRAINT `fk_cliente_factura` FOREIGN KEY (`idCliente`) REFERENCES `factura` (`cliente_idCliente`),
+  CONSTRAINT `fk_plan_cliente` FOREIGN KEY (`plan_idPlan`) REFERENCES `plan` (`idPlan`)
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 /*Data for the table `cliente` */
 
-insert  into `cliente`(`idCliente`,`tipoDocumento`,`documentoCliente`,`nombreCliente`,`telefonoCliente`,`correoCliente`,`direccion`,`estadoCliente`,`creado`,`ultimaActualizacion`) values (1,'C.C','1055325484','Arnulfo Rodriguez','3005554878','arnulfo@gmail.com','cll 148 # 98-41','Archivado','2023-05-12','2023-05-17'),(2,'C.C','1030525484','Blanca Cordero','3008562013','blanca@gmail.com','cr 5 #148 -13','Activo','2023-05-18','2023-05-18'),(3,'C.C','1035585487','Carolina Crosby','3122254858','caro@gmail.com','cll 89 sur # 45-48','Activo','2023-05-17','2023-05-17'),(4,'C.C','9587458','Diana Borges','3103404090','diana@gmail.com','cr 2 # 98-74','Activo','2023-05-17','2023-05-17'),(5,'C.C','1025859658','Ernesto Gutierrez','3203103525','ernie@gmail.com','cll 45 # 10-47','Archivado','2023-06-01','2023-06-04'),(7,'C.C','2121','Carlos Schick','300300300','lkaro@gmail.com','cll 5#98-45','Activo','2023-01-02','2023-05-16'),(13,'C.C','123','Mariana Borda','3236587979','Mariana@hotmail.com','cr 23 # 125-66','Archivado','2023-03-01','2023-03-02'),(14,'C.C','2365','Ayane Hayabusa','878965412','ayane@hotmail.com','cll 123# 78-41','Activo','2023-01-10','2023-06-07'),(15,'C.E','9863','Isabella Montana','9547893652','isabella@gmail.com','cll 127 # 98-85','Activo','2022-01-04','2023-01-10'),(17,'C.E','58944444','Maria Reyes','3231039856','maria.r@gmail.com','cll 145 # 108-63','Activo','2022-07-08','2023-03-17'),(18,'C.C','698','Yolanda Tellez','3216549898','y.165@aol.com','cll159#10-29','Activo','2023-06-10','2023-06-18'),(19,'C.E','56','Tina Lovecraft','9548961245','tina@gmail.com','cll 36#69-89','Activo','2023-04-05','2023-06-06'),(20,'C.C','1012151563','Gabriela Castiblanco','3103656989','gaby@hotmail.com','km 5 via cota chia','Activo','2023-04-11','2023-05-28'),(23,'C.C','789','Ana Maria Rosales','7893652123','maria@gmail.com','cll 13#140-75','Activo','2023-06-23','2023-06-23'),(25,'C.C','2024','juanito alimaña','300886644','alimana@gmail.com','cll 34 # 20 20','Activo','2024-01-24','2024-01-24');
+insert  into `cliente`(`idCliente`,`tipoDocumento`,`documentoCliente`,`nombreCliente`,`telefonoCliente`,`correoCliente`,`direccion`,`estadoCliente`,`creado`,`ultimaActualizacion`,`plan_idPlan`) values (1,'C.C','1055325484','Arnulfo Rodriguez','3005554878','arnulfo@gmail.com','cll 148 # 98-41','Archivado','2023-05-12','2023-05-17',1),(2,'C.C','1030525484','Blanca Cordero','3008562013','blanca@gmail.com','cr 5 #148 -13','Activo','2023-05-18','2023-05-18',2),(3,'C.C','1035585487','Carolina Crosby','3122254858','caro@gmail.com','cll 89 sur # 45-48','Activo','2023-05-17','2023-05-17',2),(4,'C.C','9587458','Diana Borges','3103404090','diana@gmail.com','cr 2 # 98-74','Activo','2023-05-17','2023-05-17',2),(5,'C.C','1025859658','Ernesto Gutierrez','3203103525','ernie@gmail.com','cll 45 # 10-47','Archivado','2023-06-01','2023-06-04',2),(6,'C.C','2121','Carlos Schick','300300300','lkaro@gmail.com','cll 5#98-45','Activo','2023-01-02','2023-05-16',1),(7,'C.C','123','Mariana Borda','3236587979','Mariana@hotmail.com','cr 23 # 125-66','Archivado','2023-03-01','2023-03-02',1),(8,'C.C','2365','Ayane Hayabusa','878965412','ayane@hotmail.com','cll 123# 78-41','Activo','2023-01-10','2023-06-07',1),(9,'C.E','9863','Isabella Montana','9547893652','isabella@gmail.com','cll 127 # 98-85','Activo','2022-01-04','2023-01-10',1),(10,'C.E','58944444','Maria Reyes','3231039856','maria.r@gmail.com','cll 145 # 108-63','Activo','2022-07-08','2023-03-17',3),(11,'C.C','698','Yolanda Tellez','3216549898','y.165@aol.com','cll159#10-29','Activo','2023-06-10','2023-06-18',4),(12,'C.E','56','Tina Lovecraft','9548961245','tina@gmail.com','cll 36#69-89','Activo','2023-04-05','2023-06-06',3),(13,'C.C','1012151563','Gabriela Castiblanco','3103656989','gaby@hotmail.com','km 5 via cota chia','Activo','2023-04-11','2023-05-28',3),(14,'C.C','789','Ana Maria Rosales','7893652123','maria@gmail.com','cll 13#140-75','Activo','2023-06-23','2023-06-23',2),(15,'C.C','2024','juanito alimaña','300886644','alimana@gmail.com','cll 34 # 20 20','Activo','2024-01-24','2024-01-24',7);
 
 /*Table structure for table `factura` */
 
@@ -53,13 +57,12 @@ CREATE TABLE `factura` (
   `cliente_idCliente` int(11) NOT NULL,
   `estadoFactura` varchar(20) NOT NULL DEFAULT 'Pendiente',
   PRIMARY KEY (`idFactura`),
-  KEY `cliente_idCliente` (`cliente_idCliente`),
-  CONSTRAINT `factura_ibfk_1` FOREIGN KEY (`cliente_idCliente`) REFERENCES `cliente` (`idCliente`)
+  KEY `cliente_idCliente` (`cliente_idCliente`)
 ) ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci AVG_ROW_LENGTH=45;
 
 /*Data for the table `factura` */
 
-insert  into `factura`(`idFactura`,`fechaFactura`,`impuestoTotal`,`subTotal`,`valorTotalFactura`,`cliente_idCliente`,`estadoFactura`) values (1,'2023-05-17',10000,50000,60000,1,'Pago'),(2,'2023-05-17',15000,60000,75000,2,'pago'),(3,'2023-05-17',50000,500000,550000,3,'Pago'),(4,'2023-05-16',30000,200000,130000,4,'Pago'),(6,'2023-03-12',7000,15000,22000,13,'Pendiente'),(7,'2023-04-12',6000,21000,27000,13,'Pendiente'),(8,'2023-05-12',6000,15000,21000,13,'Pendiente'),(9,'2023-02-12',5000,15000,20000,13,'Pendiente'),(10,'2023-05-22',70000,350000,420000,4,'Pago'),(11,'2023-02-13',7000,25000,32000,13,'Pendiente'),(12,'2023-06-29',20000,20000,40000,1,'Pago'),(15,'2023-01-09',6000,45000,51000,5,'Pendiente'),(17,'2023-03-30',90000,450000,54000,7,'Pendiente'),(18,'2023-02-10',100000,500000,600000,14,'Pendiente'),(19,'2022-12-17',50000,250000,30000,15,'Pendiente'),(21,'2022-11-25',85000,225000,310000,18,'Pendiente'),(22,'2023-01-18',6000,30000,36000,17,'Pendiente'),(25,'2023-03-09',20000,75000,95000,19,'Pendiente'),(26,'2023-06-18',15000,75000,90000,19,'Pendiente'),(27,'2023-06-30',7000,30000,37000,19,'Pendiente'),(28,'2024-02-05',50000,150000,200000,7,'Pendiente');
+insert  into `factura`(`idFactura`,`fechaFactura`,`impuestoTotal`,`subTotal`,`valorTotalFactura`,`cliente_idCliente`,`estadoFactura`) values (1,'2023-05-17',10000,50000,60000,1,'Pago'),(2,'2023-05-17',15000,60000,75000,2,'pago'),(3,'2023-05-17',50000,500000,550000,3,'Pago'),(4,'2023-05-16',30000,200000,130000,4,'Pago'),(6,'2023-03-12',7000,15000,22000,5,'Pendiente'),(7,'2023-04-12',6000,21000,27000,6,'Pendiente'),(8,'2023-05-12',6000,15000,21000,7,'Pendiente'),(9,'2023-02-12',5000,15000,20000,8,'Pendiente'),(10,'2023-05-22',70000,350000,420000,9,'Pago'),(11,'2023-02-13',7000,25000,32000,10,'Pendiente'),(12,'2023-06-29',20000,20000,40000,11,'Pago'),(15,'2023-01-09',6000,45000,51000,12,'Pendiente'),(17,'2023-03-30',90000,450000,54000,13,'Pendiente'),(18,'2023-02-10',100000,500000,600000,14,'Pendiente'),(19,'2022-12-17',50000,250000,30000,15,'Pendiente'),(21,'2022-11-25',85000,225000,310000,1,'Pendiente'),(22,'2023-01-18',6000,30000,36000,2,'Pendiente'),(25,'2023-03-09',20000,75000,95000,3,'Pendiente'),(26,'2023-06-18',15000,75000,90000,4,'Pendiente'),(27,'2023-06-30',7000,30000,37000,5,'Pendiente'),(28,'2024-02-05',50000,150000,200000,6,'Pendiente');
 
 /*Table structure for table `plan` */
 
@@ -79,7 +82,7 @@ CREATE TABLE `plan` (
 
 /*Data for the table `plan` */
 
-insert  into `plan`(`idPlan`,`codigoPlan`,`tipoPlan`,`velocidad`,`nombrePlan`,`precioPlan`,`desPlan`,`estadoPlan`) values (1,'1','rural','20mb','Plan economico',50000,'Plan económico de 20mb para la cuidad adecuada para casa pequeñas','Archivado'),(2,'2','urbano','50mb','Plan dorado',70000,'EL plan dorado urbano es mucho mas rapido ideal para una familia completa, con fibra óptica, ofrece excelente velicidad de internet','Activo'),(3,'3','urbano','70mb','Plan diamante',100000,'Plan de alta velocidad para hogares','Activo'),(4,'4','empresarial','120mb','Plan empresa',120000,'Plan Ideal Para empresas pequeñas, por 120000 y de fibra optica puede alcanzar buenas velocidades','Activo'),(7,'5','urbano','5 mb','Plan Basico',50000,'EL plan rural Basico consta de 5 megas de navegación, se hace por medio de radiofrecuencia y es el plan que tiene mayor covertura, recomendado para personas que vivan muy alejadas o en sitios de dificil alcance.','Activo'),(8,'6','empresarial','150 mb','Plan elite empresa',150000,'Plan para empresas grande que requieran excelente velocidades de wifi, viene con fibra óptica','Archivado'),(9,'7','urbano','10 mb','Plan dorado',65000,'Plan fibra optica rural, un plan con velocidades de internet más rapidas, para sitio rurales cerca a las cuidades más cercanas, toca validar disponibilidad','Activo');
+insert  into `plan`(`idPlan`,`codigoPlan`,`tipoPlan`,`velocidad`,`nombrePlan`,`precioPlan`,`desPlan`,`estadoPlan`) values (1,'1','rural','20mb','Plan economico',50000,'Plan económico de 20mb para la cuidad adecuada para casa pequeñas','Archivado'),(2,'2','urbano','50mb','Plan dorado',70000,'EL plan dorado urbano es mucho mas rapido ideal para una familia completa, con fibra óptica, ofrece excelente velicidad de internet','Activo'),(3,'3','urbano','70mb','Plan diamante',100000,'Plan de alta velocidad para hogares','Activo'),(4,'4','empresarial','120mb','Plan empresa',120000,'Plan Ideal Para empresas pequeñas, por 120000 y de fibra optica puede alcanzar buenas velocidades','Activo'),(5,'5','urbano','5 mb','Plan Basico',50000,'EL plan rural Basico consta de 5 megas de navegación, se hace por medio de radiofrecuencia y es el plan que tiene mayor covertura, recomendado para personas que vivan muy alejadas o en sitios de dificil alcance.','Activo'),(6,'6','empresarial','150 mb','Plan elite empresa',150000,'Plan para empresas grande que requieran excelente velocidades de wifi, viene con fibra óptica','Archivado'),(7,'7','urbano','10 mb','Plan dorado',65000,'Plan fibra optica rural, un plan con velocidades de internet más rapidas, para sitio rurales cerca a las cuidades más cercanas, toca validar disponibilidad','Activo');
 
 /*Table structure for table `pqr2` */
 

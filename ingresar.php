@@ -32,6 +32,11 @@ if ($varsesion == null || $varsesion = '') {
 <body>
     <?php
     include 'menu/menu.php';
+    include("conexion.php");
+
+    $sql = "SELECT * FROM plan WHERE estadoPlan='activo';";
+    $query = mysqli_query($con, $sql);
+    $row = mysqli_fetch_array($query);
     ?>
     <!-- partial -->
 
@@ -94,6 +99,25 @@ if ($varsesion == null || $varsesion = '') {
                                 </select>
                             </div>
 
+                            <!--valor de plan-->
+                            <div class="form-group">
+                                <label for="estado">Seleccione el plan</label>
+                                <select class="form-control" name="plan" id="plan">
+                                    <?php
+                                    if ($rta = $con->query($sql)) {
+                                        while ($row = $rta->fetch_assoc()) {
+                                            $cp = $row['codigoPlan'];
+                                            $nplan = $row['nombrePlan'];
+
+                                    ?>
+                                            <option value="<?php echo '$cp' ?>"><?php echo "$nplan" ?> </option>
+
+                                    <?php
+                                        }
+                                    }
+                                    ?>
+                                </select>
+                            </div>
                             <!--valor de fecha creacion-->
                             <div class="form-group">
                                 <label for="creacion">Ingrese fecha de creacion</label>
