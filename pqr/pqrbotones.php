@@ -98,9 +98,9 @@ if ($varsesion == null || $varsesion = '') {
         <div class="card-body">
 
 
-          <a href="../principal.php" class="btn btn-primary " role="button" aria-pressed="true">Volver al inicio</a>
+          <a href="../principal.php" class="btn btn-primary btn-lg " role="button" aria-pressed="true">Volver al inicio</a>
 
-          <a href="../excel/excelPQR.php" class="btn btn-success">Exportar tabla a Excel</a>
+          <a href="../excel/excelPQR.php" class="btn btn-success btn-lg">Exportar tabla a Excel</a>
           <?php
 
           include("conexion.php");

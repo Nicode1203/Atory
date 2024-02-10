@@ -47,9 +47,9 @@ if ($varsesion == null || $varsesion = '') {
 
             <div class="card">
                 <div class="card-body">
-                    <a href="ingresarVisita.php" class="btn btn-primary">Ingresar nueva Visita</a>
-                    <a href="../visitas/consultarVisitas.php" class="btn btn-primary  ">Consultar visitas</a>
-                    <a href="../excel/excelVisitas.php" class="btn btn-success">Exportar tabla a Excel</a>
+                    <a href="ingresarVisita.php" class="btn btn-primary btn-lg">Ingresar nueva Visita</a>
+                    <a href="../visitas/consultarVisitas.php" class="btn btn-primary btn-lg ">Consultar visitas</a>
+                    <a href="../excel/excelVisitas.php" class="btn btn-success btn-lg">Exportar tabla a Excel</a>
 
                     <?php
                     include("../conexion.php");

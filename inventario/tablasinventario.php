@@ -96,9 +96,9 @@ if ($varsesion == null || $varsesion = '') {
       <div class="card">
         <div class="card-body">
 
-          <a href="inactivosinv.php" class="btn btn-danger">Consutlar productos inactivos.</a>
-          <a href="../excel/excelInventario.php" class="btn btn-success">Exportar tabla a Excel</a>
-          <a href="ingresarp.php" class="btn btn-info">Ingresar nuevo producto</a>
+          <a href="inactivosinv.php" class="btn btn-danger btn-lg">Consutlar productos inactivos.</a>
+          <a href="../excel/excelInventario.php" class="btn btn-success btn-lg">Exportar tabla a Excel</a>
+          <a href="ingresarp.php" class="btn btn-info btn-lg">Ingresar nuevo producto</a>
 
           <?php
 
