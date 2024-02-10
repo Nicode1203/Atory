@@ -69,9 +69,7 @@
     </div>
     <!-- container-scroller -->
 
-    <div id="contenido-php">
-        <!-- Aquí se cargará el contenido de plancontainer.php -->
-    </div>
+  
 
     <script>
         // Función para cargar el contenido de plancontainer.php
