@@ -51,7 +51,9 @@ if ($seguridad->getUsuario()==null) {
             </div>
             <div class="card">
                 <div class="card-body">
-                    <a href="principal.php" class="btn btn-primary " role="button" aria-pressed="true">Volver al inicio</a>
+                    <a href="ingresar.php" class="btn btn-primary " role="button" aria-pressed="true">Crear nuevo cliente</a>
+                    <a href="principal.php" class="btn btn-primary " role="button" aria-pressed="true">Consultar cliente</a>
+
                     <a href="excel/excelCliente.php" class="btn btn-success">Exportar a Excel</a>
                     <?php
                     include("conexion.php");
@@ -126,7 +128,6 @@ if ($seguridad->getUsuario()==null) {
 
     <!-- partial -->
     </div>
-
     <!-- main-panel ends -->
     </div>
     <!-- page-body-wrapper ends -->

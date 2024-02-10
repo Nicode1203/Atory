@@ -2,9 +2,9 @@
 //seguridad de sesiones paginacion (prueba 1)
 session_start();
 error_reporting(0);
-$varsesion= $_SESSION['usuario'];
-if ($varsesion == null || $varsesion='') {
-    header ("location:index.html");
+$varsesion = $_SESSION['usuario'];
+if ($varsesion == null || $varsesion = '') {
+    header("location:index.html");
     die();
     exit;
 }
@@ -14,6 +14,7 @@ if ($varsesion == null || $varsesion='') {
 <!-- CODIGO HTML -->
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -27,8 +28,9 @@ if ($varsesion == null || $varsesion='') {
     <!-- Fin de los estilos del archivo actual -->
     <link rel="shortcut icon" href="assets/images/favicon.png">
 </head>
+
 <body>
-<div class="container-scroller">
+    <div class="container-scroller">
         <!-- Todo el slider -->
         <nav class="sidebar sidebar-offcanvas" id="sidebar">
             <div class="sidebar-brand-wrapper d-none d-lg-flex align-items-center justify-content-center fixed-top">
@@ -49,7 +51,7 @@ if ($varsesion == null || $varsesion='') {
                                 <img class="img-xs rounded-circle" src="assets/images/faces-clipart/pic-8.png" alt="">
                                 <span class="count bg-success"></span>
                             </div>
-                            
+
                             <div class="profile-name">
                                 <h5 class="mb-0 font-weight-normal">ADMINISTRATIVO</h5>
                                 <span>Administrativo</span>
@@ -67,12 +69,12 @@ if ($varsesion == null || $varsesion='') {
                             <i class="mdi mdi-laptop"></i>
                         </span>
                         <span class="menu-title">Gestión clientes</span>
-                        
+
                     </a>
-                    
+
                 </li>
                 <li class="nav-item menu-items">
-                    <a class="nav-link" href="usuarios/usuarios.php">
+                    <a class="nav-link" href="usuarios/tablasUser.php">
                         <span class="menu-icon">
                             <i class="mdi mdi-table-large"></i>
                         </span>
@@ -85,9 +87,9 @@ if ($varsesion == null || $varsesion='') {
                             <i class="mdi mdi-laptop"></i>
                         </span>
                         <span class="menu-title">Gestión Planes</span>
-                        
+
                     </a>
-                    
+
                 </li>
                 <li class="nav-item menu-items">
                     <a class="nav-link" href="facturacion/facturas.php">
@@ -137,7 +139,7 @@ if ($varsesion == null || $varsesion='') {
                         <span class="mdi mdi-menu"></span>
                     </button>
                     <ul class="navbar-nav navbar-nav-right">
-                    <a href="planes/solicitudes.php" class="btn btn-info " role="button" aria-pressed="true">Nuevos Clientes</a>
+                        <a href="planes/solicitudes.php" class="btn btn-info " role="button" aria-pressed="true">Nuevos Clientes</a>
                         <li class="nav-item dropdown">
                             <a class="nav-link collapsed" id="profileDropdown" href="#" data-toggle="dropdown" aria-expanded="false">
                                 <div class="navbar-profile">
@@ -151,14 +153,18 @@ if ($varsesion == null || $varsesion='') {
                                 <div class="dropdown-divider"></div>
                                 <a class="nav-link" href="login/login.php">
                                     <div class="dropdown-item preview-item">
-                                    <a href="cerrarSesion.php"><div class="preview-thumbnail">
-                                            <div class="preview-icon bg-dark rounded-circle">
-                                                <i class="mdi mdi-logout text-danger"></i>
+                                        <a href="cerrarSesion.php">
+                                            <div class="preview-thumbnail">
+                                                <div class="preview-icon bg-dark rounded-circle">
+                                                    <i class="mdi mdi-logout text-danger"></i>
+                                                </div>
                                             </div>
-                                        </div></a>
-                                        <a href="cerrarSesion.php"><div class="preview-item-content">
-                                            <p class="preview-subject mb-1" >Cerrar sesión</p>
-                                        </div></a>
+                                        </a>
+                                        <a href="cerrarSesion.php">
+                                            <div class="preview-item-content">
+                                                <p class="preview-subject mb-1">Cerrar sesión</p>
+                                            </div>
+                                        </a>
                                     </div>
                                 </a>
                             </div>
