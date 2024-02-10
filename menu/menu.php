@@ -67,21 +67,9 @@ if ($varsesion == null || $varsesion='') {
                             <i class="mdi mdi-laptop"></i>
                         </span>
                         <span class="menu-title">Gestión clientes</span>
-                        <i class="menu-arrow"></i>
+                        
                     </a>
-                    <div class="collapse" id="ui-basic">
-                        <ul class="nav flex-column sub-menu">
-                            <li class="nav-item">
-                                <a class="nav-link" href="principal.php">Consultar</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="tablas.php">Ver tablas</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="ingresar.php">Ingresar nuevo cliente</a>
-                            </li>
-                        </ul>
-                    </div>
+                    
                 </li>
                 <li class="nav-item menu-items">
                     <a class="nav-link" href="usuarios/usuarios.php">
@@ -97,21 +85,9 @@ if ($varsesion == null || $varsesion='') {
                             <i class="mdi mdi-laptop"></i>
                         </span>
                         <span class="menu-title">Gestión Planes</span>
-                        <i class="menu-arrow"></i>
+                        
                     </a>
-                    <div class="collapse" id="ui-basic">
-                        <ul class="nav flex-column sub-menu">
-                            <li class="nav-item">
-                                <a class="nav-link" href="planes/rurales.php">Rurales</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="planes/urbanos.php">Urbanos</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="planes/empresariales.php">Empresas</a>
-                            </li>
-                        </ul>
-                    </div>
+                    
                 </li>
                 <li class="nav-item menu-items">
                     <a class="nav-link" href="facturacion/facturas.php">

@@ -39,6 +39,10 @@ if ($varsesion == null || $varsesion = '') {
 
     <div class="main-panel">
         <div class="content-wrapper">
+        <div class="page-header">
+                <h1 style="font-size: 32px;">GESTIÓN USUARIOS</h1>
+                
+            </div>
             <div class="card">
                 <div class="card-body">
                     <a href="usuarios.php" class="btn btn-primary" role="button" aria-pressed="true">Volver al inicio</a>
