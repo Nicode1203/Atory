@@ -2,11 +2,11 @@
 //seguridad de sesiones paginacion (prueba 1)
 session_start();
 error_reporting(0);
-$varsesion= $_SESSION['usuario'];
-if ($varsesion == null || $varsesion='' ) {
-    header ("location:../index.html");
-    die();
-    exit;
+$varsesion = $_SESSION['usuario'];
+if ($varsesion == null || $varsesion = '') {
+  header("location:../index.html");
+  die();
+  exit;
 }
 
 ?>
@@ -40,13 +40,14 @@ if ($varsesion == null || $varsesion='' ) {
   <div class="main-panel">
     <div class="content-wrapper">
       <div class="page-header">
-        <h3 class="page-title"> Todos los planes activos</h3>
+        <h1 style="font-size: 32px;">GESTIÓN PLANES</h1>
+
       </div>
       <div class="row">
         <div class="col-md-12 grid-margin stretch-card">
           <div class="card">
             <div class="card-body">
-              <h4 class="card-title">Lista de Planes</h4>
+
               <form class="forms-sample">
                 <?php
                 include_once "conexion.php";
@@ -98,9 +99,12 @@ if ($varsesion == null || $varsesion='' ) {
 
                 ?>
                 <div class="form-button mt-5">
-                  <button id="submit" type="submit" formmethod="post" formaction="../planes/nuevoplan.php" class="btn btn-primary">Ingresar nuevo plan</button>
-                  <button id="submit" type="submit" formmethod="post" formaction="../planes/consultarplanes.php" class="btn btn-primary">Consultar Plan</button>
-                  <a href="../excel/excelPlanes.php" class="btn btn-success">Exportar tabla a Excel</a>
+                  <button id="submit" type="submit" formmethod="post" formaction="../planes/rurales.php" class="btn btn-primary btn-lg">Ver planes rurales</button>
+                  <button id="submit" type="submit" formmethod="post" formaction="../planes/urbanos.php" class="btn btn-primary btn-lg">Ver planes urbanos</button>
+                  <button id="submit" type="submit" formmethod="post" formaction="../planes/empresariales.php" class="btn btn-primary btn-lg">Ver planes empresariales</button>
+                  <button id="submit" type="submit" formmethod="post" formaction="../planes/nuevoplan.php" class="btn btn-primary btn-lg">Ingresar nuevo plan</button>
+                  <button id="submit" type="submit" formmethod="post" formaction="../planes/consultarplanes.php" class="btn btn-primary btn-lg">Consultar Plan</button>
+                  <a href="../excel/excelPlanes.php" class="btn btn-success btn-lg">Exportar tabla a Excel</a>
                 </div>
 
               </form>
@@ -137,28 +141,28 @@ if ($varsesion == null || $varsesion='' ) {
   <!-- endinject -->
   <!-- Estas ultimas lineas son para la alerta DE BORRAR, INSERTA SWEET ALERT Y LUEGO ESTA EL SCRIPT PARA BORRAR-->
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script>
-        $('.borrar').on('click', function(e) {
-            e.preventDefault();
-            var self = $(this);
-            console.log(self.data('title'));
-            Swal.fire({
-                title: 'Esta seguro que desea continuar?',
-                icon: 'warning',
-                showCancelButton: true,
-                confirmButtonColor: '#3085d6',
-                cancelButtonColor: '#d33',
-                confirmButtonText: 'Confirmar',
-                cancelButtonText: 'No',
-                background: '#34495E'
-            }).then((result) => {
-                if (result.isConfirmed) {
-                    
-                    location.href = self.attr('href');
-                }
-            })
-        })
-    </script>
+  <script>
+    $('.borrar').on('click', function(e) {
+      e.preventDefault();
+      var self = $(this);
+      console.log(self.data('title'));
+      Swal.fire({
+        title: 'Esta seguro que desea continuar?',
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Confirmar',
+        cancelButtonText: 'No',
+        background: '#34495E'
+      }).then((result) => {
+        if (result.isConfirmed) {
+
+          location.href = self.attr('href');
+        }
+      })
+    })
+  </script>
 </body>
 
 </html>

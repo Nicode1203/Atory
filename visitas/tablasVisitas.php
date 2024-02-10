@@ -40,7 +40,11 @@ if ($varsesion == null || $varsesion = '') {
     <div class="main-panel">
 
         <div class="content-wrapper">
-            <h1 style="font-size: 32px;">Visitas tecnicas e Instalaciones</h1>
+            <div class="page-header">
+                <h1 style="font-size: 32px;">GESTIÓN TABLAS VISITAS E INSTALACIONES</h1>
+
+            </div>
+
             <div class="card">
                 <div class="card-body">
                     <a href="ingresarVisita.php" class="btn btn-primary">Ingresar nueva Visita</a>

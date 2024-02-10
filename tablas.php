@@ -45,6 +45,10 @@ if ($seguridad->getUsuario()==null) {
 
     <div class="main-panel">
         <div class="content-wrapper">
+            <div class="page-header">
+                <h1 style="font-size: 32px;">GESTIÓN CLIENTES</h1>
+
+            </div>
             <div class="card">
                 <div class="card-body">
                     <a href="principal.php" class="btn btn-primary " role="button" aria-pressed="true">Volver al inicio</a>
@@ -54,7 +58,7 @@ if ($seguridad->getUsuario()==null) {
 
                     $sql = "SELECT * FROM cliente WHERE estadoCliente='Activo';";
 
-                    echo 
+                    echo
                     '<div class="table-responsive">
                     
         <table class="table table-hover ">

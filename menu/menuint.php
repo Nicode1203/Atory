@@ -61,7 +61,7 @@ if ($varsesion == null || $varsesion='') {
                     <span class="nav-link">PANEL DE CONTROL</span>
                 </li>
                 <li class="nav-item menu-items">
-                    <a class="nav-link collapsed" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
+                    <a class="nav-link" href="../tablas.php">
                         <span class="menu-icon">
                             <i class="mdi mdi-laptop"></i>
                         </span>
