@@ -2,11 +2,11 @@
 //seguridad de sesiones paginacion (prueba 1)
 session_start();
 error_reporting(0);
-$varsesion= $_SESSION['usuario'];
-if ($varsesion == null || $varsesion='' ) {
-    header ("location:../index.html");
-    die();
-    exit;
+$varsesion = $_SESSION['usuario'];
+if ($varsesion == null || $varsesion = '') {
+  header("location:../index.html");
+  die();
+  exit;
 }
 
 ?>
@@ -29,22 +29,22 @@ if ($varsesion == null || $varsesion='' ) {
   if ($rta = $con->query($sql)) {
     while ($row = $rta->fetch_assoc()) {
       $id = $row['idCliente'];
-      $td=$row['tipoDocumento'];
-      $doc=$row['documentoCliente'];
-      $nomc=$row['nombreCliente'];
-      $telc=$row['telefonoCliente'];
-      $emailc=$row['correoCliente'];
-      $dc=$row['direccion'];
-      $ec=$row['estadoCliente'];
-      $creado=$row['creado'];
-      $uact=$row['ultimaActualizacion'];
-      $if=$row['idFactura'];
-      $ffact=$row['fechaFactura'];
-      $impt=$row['impuestoTotal'];
-      $sub=$row['subTotal'];
-      $st=$row['valorTotalFactura'];
-      $cid=$row['cliente_idCliente'];
-      $estf=$row['estadoFactura'];
+      $td = $row['tipoDocumento'];
+      $doc = $row['documentoCliente'];
+      $nomc = $row['nombreCliente'];
+      $telc = $row['telefonoCliente'];
+      $emailc = $row['correoCliente'];
+      $dc = $row['direccion'];
+      $ec = $row['estadoCliente'];
+      $creado = $row['creado'];
+      $uact = $row['ultimaActualizacion'];
+      $if = $row['idFactura'];
+      $ffact = $row['fechaFactura'];
+      $impt = $row['impuestoTotal'];
+      $sub = $row['subTotal'];
+      $st = $row['valorTotalFactura'];
+      $cid = $row['cliente_idCliente'];
+      $estf = $row['estadoFactura'];
     }
   }
   ?>
@@ -133,13 +133,13 @@ if ($varsesion == null || $varsesion='' ) {
         <p class="card-description"> Dirección Cliente:<?php echo "$dc"  ?> </p>
         <p class="card-description"> Ingrese infomración de factura</p>
         <form action="actfactura.php" method="POST">
-        <input type="hidden" name="if" value="<?php echo "$if"  ?>">
+          <input type="hidden" name="if" value="<?php echo "$if"  ?>">
           <input type="hidden" name="id" value="<?php echo "$id"  ?>">
           <input type="hidden" name="cid" value="<?php echo "$cid"  ?>">
-          <input type="date" class="form-control mb-3" name="ffact" placeholder="Fecha de factura" >
-          <input type="text" class="form-control mb-3" name="impt" placeholder="impuesto de factura" >
-          <input type="text" class="form-control mb-3" name="sub" placeholder="Valor sin impuesto" >
-          <input type="text" class="form-control mb-3" name="st" placeholder="Valor total" >
+          <input type="date" class="form-control mb-3" name="ffact" placeholder="Fecha de factura">
+          <input type="text" class="form-control mb-3" name="impt" placeholder="impuesto de factura">
+          <input type="text" class="form-control mb-3" name="sub" placeholder="Valor sin impuesto">
+          <input type="text" class="form-control mb-3" name="st" placeholder="Valor total">
 
           <input type="submit" class="btn btn-primary btn-block" value="crear" formmethod="post" formaction=ingresarfactura.php>
         </form>
