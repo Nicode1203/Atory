@@ -41,11 +41,7 @@ if ($varsesion == null || $varsesion='' ) {
     <div class="content-wrapper">
       <div class="page-header">
         <h3 class="page-title"> Planes Rurales </h3>
-        <nav aria-label="breadcrumb">
-          <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="#">Seccion planes rurales</a></li>
-          </ol>
-        </nav>
+
       </div>
       <div class="row">
         <div class="col-md-12 grid-margin stretch-card">
@@ -111,11 +107,7 @@ if ($varsesion == null || $varsesion='' ) {
       </div>
 
       <!-- content-wrapper ends -->
-      <!-- partial:../../partials/_footer.html -->
-      <footer class="footer">
-        <div class="d-sm-flex justify-content-center justify-content-sm-between">
-          <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright © AtorySolution 2023</span>
-      </footer>
+
     </div>
     <!-- partial -->
   </div>

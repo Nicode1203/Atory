@@ -69,15 +69,8 @@ if ($varsesion == null || $varsesion = '') {
             </div>
         </div>
         <!-- Extremos del contenedor de contenido -->
-        <!-- FOOTER o pie de pagina-->
-        <footer class="footer">
-            <div class="d-sm-flex justify-content-center justify-content-sm-between">
-                <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Derechos de autor © atory.com 2023</span>
-                <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">
-                    <a href="https://www.bootstrapdash.com/bootstrap-admin-template/" target="_blank">atory.com</a>
-                </span>
-            </div>
-        </footer>
+
+
         <!-- Parcial -->
     </div>
     <!-- main-panel fin -->
@@ -91,9 +84,6 @@ if ($varsesion == null || $varsesion = '') {
     <script src="assets/js/off-canvas.js"></script>
     <script src="assets/js/hoverable-collapse.js"></script>
     <script src="assets/js/misc.js"></script>
-    <!-- Estas ultimas lineas son para la alerta  estan comentadas asi que se pueden volver a traer-->
-    <!-- <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script src="assets/js/sweetAlert.js"></script> -->
     <!-- Fin de los scripts -->
 </body>
 

@@ -98,9 +98,7 @@ if ($varsesion == null || $varsesion = ''  ) {
 
             </div>
             <!-- ESTO ES LO QUE PODEMOS MODIFICAR -->
-            <!-- partial:partials/_footer.html -->
 
-            <!-- partial -->
         </div>
         <footer class="footer">
             <div class="d-sm-flex justify-content-center justify-content-sm-between">
