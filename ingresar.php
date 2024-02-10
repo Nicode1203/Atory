@@ -110,7 +110,7 @@ if ($varsesion == null || $varsesion = '') {
                                             $nplan = $row['nombrePlan'];
 
                                     ?>
-                                            <option value="<?php echo '$cp' ?>"><?php echo "$nplan" ?> </option>
+                                            <option value="<?php echo $cp ?>"><?php echo "$nplan" ?> </option>
 
                                     <?php
                                         }

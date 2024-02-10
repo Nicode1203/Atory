@@ -2,8 +2,7 @@
 SQLyog Ultimate v11.11 (64 bit)
 MySQL - 5.5.5-10.4.27-MariaDB : Database - atory
 *********************************************************************
-*/
-
+*/
 
 /*!40101 SET NAMES utf8 */;
 
@@ -30,19 +29,18 @@ CREATE TABLE `cliente` (
   `correoCliente` varchar(100) NOT NULL,
   `direccion` varchar(100) DEFAULT NULL,
   `estadoCliente` varchar(10) NOT NULL DEFAULT 'Activo',
+  `plan_idPlan` int(11) NOT NULL,
   `creado` date DEFAULT NULL,
   `ultimaActualizacion` date DEFAULT NULL,
-  `plan_idPlan` int(11) NOT NULL,
   PRIMARY KEY (`idCliente`),
   UNIQUE KEY `documentoCliente` (`documentoCliente`),
   KEY `fk_plan_cliente` (`plan_idPlan`),
-  CONSTRAINT `fk_cliente_factura` FOREIGN KEY (`idCliente`) REFERENCES `factura` (`cliente_idCliente`),
   CONSTRAINT `fk_plan_cliente` FOREIGN KEY (`plan_idPlan`) REFERENCES `plan` (`idPlan`)
-) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 /*Data for the table `cliente` */
 
-insert  into `cliente`(`idCliente`,`tipoDocumento`,`documentoCliente`,`nombreCliente`,`telefonoCliente`,`correoCliente`,`direccion`,`estadoCliente`,`creado`,`ultimaActualizacion`,`plan_idPlan`) values (1,'C.C','1055325484','Arnulfo Rodriguez','3005554878','arnulfo@gmail.com','cll 148 # 98-41','Archivado','2023-05-12','2023-05-17',1),(2,'C.C','1030525484','Blanca Cordero','3008562013','blanca@gmail.com','cr 5 #148 -13','Activo','2023-05-18','2023-05-18',2),(3,'C.C','1035585487','Carolina Crosby','3122254858','caro@gmail.com','cll 89 sur # 45-48','Activo','2023-05-17','2023-05-17',2),(4,'C.C','9587458','Diana Borges','3103404090','diana@gmail.com','cr 2 # 98-74','Activo','2023-05-17','2023-05-17',2),(5,'C.C','1025859658','Ernesto Gutierrez','3203103525','ernie@gmail.com','cll 45 # 10-47','Archivado','2023-06-01','2023-06-04',2),(6,'C.C','2121','Carlos Schick','300300300','lkaro@gmail.com','cll 5#98-45','Activo','2023-01-02','2023-05-16',1),(7,'C.C','123','Mariana Borda','3236587979','Mariana@hotmail.com','cr 23 # 125-66','Archivado','2023-03-01','2023-03-02',1),(8,'C.C','2365','Ayane Hayabusa','878965412','ayane@hotmail.com','cll 123# 78-41','Activo','2023-01-10','2023-06-07',1),(9,'C.E','9863','Isabella Montana','9547893652','isabella@gmail.com','cll 127 # 98-85','Activo','2022-01-04','2023-01-10',1),(10,'C.E','58944444','Maria Reyes','3231039856','maria.r@gmail.com','cll 145 # 108-63','Activo','2022-07-08','2023-03-17',3),(11,'C.C','698','Yolanda Tellez','3216549898','y.165@aol.com','cll159#10-29','Activo','2023-06-10','2023-06-18',4),(12,'C.E','56','Tina Lovecraft','9548961245','tina@gmail.com','cll 36#69-89','Activo','2023-04-05','2023-06-06',3),(13,'C.C','1012151563','Gabriela Castiblanco','3103656989','gaby@hotmail.com','km 5 via cota chia','Activo','2023-04-11','2023-05-28',3),(14,'C.C','789','Ana Maria Rosales','7893652123','maria@gmail.com','cll 13#140-75','Activo','2023-06-23','2023-06-23',2),(15,'C.C','2024','juanito alimaña','300886644','alimana@gmail.com','cll 34 # 20 20','Activo','2024-01-24','2024-01-24',7);
+insert  into `cliente`(`idCliente`,`tipoDocumento`,`documentoCliente`,`nombreCliente`,`telefonoCliente`,`correoCliente`,`direccion`,`estadoCliente`,`plan_idPlan`,`creado`,`ultimaActualizacion`) values (1,'C.C','1055325484','Arnulfo Rodriguez','3005554878','arnulfo@gmail.com','cll 148 # 98-41','Archivado',1,'2023-05-12','2023-05-17'),(2,'C.C','1030525484','Blanca Cordero','3008562013','blanca@gmail.com','cr 5 #148 -13','Activo',2,'2023-05-18','2023-05-18'),(3,'C.C','1035585487','Carolina Crosby','3122254858','caro@gmail.com','cll 89 sur # 45-48','Activo',2,'2023-05-17','2023-05-17'),(4,'C.C','9587458','Diana Borges','3103404090','diana@gmail.com','cr 2 # 98-74','Activo',2,'2023-05-17','2023-05-17'),(5,'C.C','1025859658','Ernesto Gutierrez','3203103525','ernie@gmail.com','cll 45 # 10-47','Archivado',2,'2023-06-01','2023-06-04'),(6,'C.C','2121','Carlos Schick','300300300','lkaro@gmail.com','cll 5#98-45','Activo',1,'2023-01-02','2023-05-16'),(7,'C.C','123','Mariana Borda','3236587979','Mariana@hotmail.com','cr 23 # 125-66','Archivado',1,'2023-03-01','2023-03-02'),(8,'C.C','2365','Ayane Hayabusa','878965412','ayane@hotmail.com','cll 123# 78-41','Activo',1,'2023-01-10','2023-06-07'),(9,'C.E','9863','Isabella Montana','9547893652','isabella@gmail.com','cll 127 # 98-85','Activo',1,'2022-01-04','2023-01-10'),(10,'C.E','58944444','Maria Reyes','3231039856','maria.r@gmail.com','cll 145 # 108-63','Activo',3,'2022-07-08','2023-03-17'),(11,'C.C','698','Yolanda Tellez','3216549898','y.165@aol.com','cll159#10-29','Activo',4,'2023-06-10','2023-06-18'),(12,'C.E','56','Tina Lovecraft','9548961245','tina@gmail.com','cll 36#69-89','Activo',3,'2023-04-05','2023-06-06'),(13,'C.C','1012151563','Gabriela Castiblanco','3103656989','gaby@hotmail.com','km 5 via cota chia','Activo',3,'2023-04-11','2023-05-28'),(14,'C.C','789','Ana Maria Rosales','7893652123','maria@gmail.com','cll 13#140-75','Activo',2,'2023-06-23','2023-06-23'),(15,'C.C','2024','juanito alimaña','300886644','alimana@gmail.com','cll 34 # 20 20','Activo',7,'2024-01-24','2024-01-24'),(19,'C.C','14543','Chun li','1222323','chun@gmail.com','calle#123  67-87','Activo',4,'2024-02-08','2024-02-09'),(20,'C.C','1222233','Jack li','344455545','jack@gmail.com','calle#123  65-87','Activo',5,'2024-02-09','2024-02-10');
 
 /*Table structure for table `factura` */
 
@@ -54,15 +52,16 @@ CREATE TABLE `factura` (
   `impuestoTotal` decimal(10,0) NOT NULL,
   `subTotal` decimal(10,0) NOT NULL,
   `valorTotalFactura` decimal(10,0) NOT NULL,
-  `cliente_idCliente` int(11) NOT NULL,
   `estadoFactura` varchar(20) NOT NULL DEFAULT 'Pendiente',
+  `cliente_idCliente` int(11) DEFAULT NULL,
   PRIMARY KEY (`idFactura`),
-  KEY `cliente_idCliente` (`cliente_idCliente`)
+  KEY `fk_cliente_factura` (`cliente_idCliente`),
+  CONSTRAINT `fk_cliente_factura` FOREIGN KEY (`cliente_idCliente`) REFERENCES `cliente` (`idCliente`)
 ) ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci AVG_ROW_LENGTH=45;
 
 /*Data for the table `factura` */
 
-insert  into `factura`(`idFactura`,`fechaFactura`,`impuestoTotal`,`subTotal`,`valorTotalFactura`,`cliente_idCliente`,`estadoFactura`) values (1,'2023-05-17',10000,50000,60000,1,'Pago'),(2,'2023-05-17',15000,60000,75000,2,'pago'),(3,'2023-05-17',50000,500000,550000,3,'Pago'),(4,'2023-05-16',30000,200000,130000,4,'Pago'),(6,'2023-03-12',7000,15000,22000,5,'Pendiente'),(7,'2023-04-12',6000,21000,27000,6,'Pendiente'),(8,'2023-05-12',6000,15000,21000,7,'Pendiente'),(9,'2023-02-12',5000,15000,20000,8,'Pendiente'),(10,'2023-05-22',70000,350000,420000,9,'Pago'),(11,'2023-02-13',7000,25000,32000,10,'Pendiente'),(12,'2023-06-29',20000,20000,40000,11,'Pago'),(15,'2023-01-09',6000,45000,51000,12,'Pendiente'),(17,'2023-03-30',90000,450000,54000,13,'Pendiente'),(18,'2023-02-10',100000,500000,600000,14,'Pendiente'),(19,'2022-12-17',50000,250000,30000,15,'Pendiente'),(21,'2022-11-25',85000,225000,310000,1,'Pendiente'),(22,'2023-01-18',6000,30000,36000,2,'Pendiente'),(25,'2023-03-09',20000,75000,95000,3,'Pendiente'),(26,'2023-06-18',15000,75000,90000,4,'Pendiente'),(27,'2023-06-30',7000,30000,37000,5,'Pendiente'),(28,'2024-02-05',50000,150000,200000,6,'Pendiente');
+insert  into `factura`(`idFactura`,`fechaFactura`,`impuestoTotal`,`subTotal`,`valorTotalFactura`,`estadoFactura`,`cliente_idCliente`) values (1,'2023-05-17',10000,50000,60000,'Pago',1),(2,'2023-05-17',15000,60000,75000,'pago',1),(3,'2023-05-17',50000,500000,550000,'Pago',1),(4,'2023-05-16',30000,200000,130000,'Pago',1),(6,'2023-03-12',7000,15000,22000,'Pendiente',1),(7,'2023-04-12',6000,21000,27000,'Pendiente',1),(8,'2023-05-12',6000,15000,21000,'Pendiente',1),(9,'2023-02-12',5000,15000,20000,'Pendiente',6),(10,'2023-05-22',70000,350000,420000,'Pago',2),(11,'2023-02-13',7000,25000,32000,'Pendiente',3),(12,'2023-06-29',20000,20000,40000,'Pago',4),(15,'2023-01-09',6000,45000,51000,'Pendiente',5),(17,'2023-03-30',90000,450000,54000,'Pendiente',6),(18,'2023-02-10',100000,500000,600000,'Pendiente',5),(19,'2022-12-17',50000,250000,30000,'Pendiente',4),(21,'2022-11-25',85000,225000,310000,'Pendiente',3),(22,'2023-01-18',6000,30000,36000,'Pendiente',2),(25,'2023-03-09',20000,75000,95000,'Pendiente',1),(26,'2023-06-18',15000,75000,90000,'Pendiente',1),(27,'2023-06-30',7000,30000,37000,'Pendiente',2),(28,'2024-02-05',50000,150000,200000,'Pendiente',3);
 
 /*Table structure for table `plan` */
 
