@@ -51,9 +51,9 @@ if ($varsesion == null || $varsesion = '') {
                                 </div>
                                 <div>
                                     <br>
-                                    <button id="submit" type="submit" formmethod="post" formaction="consultar.php" class="btn btn-primary">Consultar</button>
-                                    <button id="submit" type="submit" formmethod="post" formaction="tablas.php" class="btn btn-primary">Ver tabla de clientes</button>
-                                    <button id="submit" type="submit" formmethod="post" formaction="ingresar.php" class="btn btn-primary">Ingresar nuevo cliente</button>
+                                    <button id="submit" type="submit" formmethod="post" formaction="consultar.php" class="btn btn-primary btn-lg">Consultar</button>
+                                    <button id="submit" type="submit" formmethod="post" formaction="tablas.php" class="btn btn-primary btn-lg">Ver tabla de clientes</button>
+                                    <button id="submit" type="submit" formmethod="post" formaction="ingresar.php" class="btn btn-primary btn-lg">Ingresar nuevo cliente</button>
                                 </div>
                             </form>
                         </div>

@@ -32,7 +32,7 @@
   $sql = "SELECT * FROM cliente  
       INNER JOIN factura
       ON cliente.idCliente=factura.cliente_idCliente
-      WHERE idCliente= '$id';";
+      WHERE idCliente= '$id;";
 
   if ($rta = $con->query($sql)) {
     while ($row = $rta->fetch_assoc()) {

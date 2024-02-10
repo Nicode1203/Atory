@@ -46,18 +46,19 @@ if ($seguridad->getUsuario()==null) {
 
     <div class="main-panel">
         <div class="content-wrapper"> <!-- ESTO ES LO QUE TENEMOS QUE MODIFICAR -->
-            <div class="card-body">
-                <a href="facturas.php" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Volver a facturas</a>
-                <?php
+            <div class="card">
+                <div class="card-body">
+                    <a href="facturas.php" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Volver a facturas</a>
+                    <?php
 
-                include("conexion.php");
-                $dc = $_POST['id'];
-                $sql = "SELECT cliente.idCliente,factura.cliente_idCliente,cliente.documentoCliente,cliente.nombreCliente,factura.fechaFactura,factura.valorTotalFactura,factura.estadoFactura, factura.idFactura FROM cliente 
+                    include("conexion.php");
+                    $dc = $_POST['id'];
+                    $sql = "SELECT cliente.idCliente,factura.cliente_idCliente,cliente.documentoCliente,cliente.nombreCliente,factura.fechaFactura,factura.valorTotalFactura,factura.estadoFactura, factura.idFactura FROM cliente 
             INNER JOIN factura
             ON cliente.idCliente=factura.cliente_idCliente
             WHERE documentoCliente='$dc';";
 
-                echo '<div class="table-responsive">
+                    echo '<div class="table-responsive">
                         <table class="table table-hover">
                         <thead>
                     <tr>
@@ -73,49 +74,45 @@ if ($seguridad->getUsuario()==null) {
                 </thead>
                 ';
 
-                if ($rta = $con->query($sql)) {
-                    while ($row = $rta->fetch_assoc()) {
-                        $a = $row['idCliente'];
-                        $b = $row['cliente_idCliente'];
-                        $dc = $row['documentoCliente'];
-                        $nomc = $row['nombreCliente'];
-                        $ffact = $row['fechaFactura'];
-                        $st = $row['valorTotalFactura'];
-                        $estf = $row['estadoFactura'];
-                        $if = $row['idFactura'];
+                    if ($rta = $con->query($sql)) {
+                        while ($row = $rta->fetch_assoc()) {
+                            $a = $row['idCliente'];
+                            $b = $row['cliente_idCliente'];
+                            $dc = $row['documentoCliente'];
+                            $nomc = $row['nombreCliente'];
+                            $ffact = $row['fechaFactura'];
+                            $st = $row['valorTotalFactura'];
+                            $estf = $row['estadoFactura'];
+                            $if = $row['idFactura'];
 
 
-                ?>
-                        <tr>
-                            <td> <?php echo "$dc" ?></td>
-                            <td> <?php echo "$nomc" ?></td>
-                            <td> <?php echo "$ffact" ?></td>
-                            <td> <?php echo "$st" ?></td>
-                            <td> <?php echo "$estf" ?></td>
-                            <th>
-                                <a href="verfacturaAdmin.php?id=<?php echo  $row['idCliente'] ?>" class="btn btn-info">ver factura</a>
-                            </th>
-                            <th><a href="editfactura.php?if=<?php echo  $row['idFactura'] ?>" class="btn btn-primary">Editar factura</a>
-                            </th>
-                            <th><a href="eliminarf.php?id=<?php echo $row['cliente_idCliente']   ?>" class="btn btn-danger">Pago</a></th>
+                    ?>
+                            <tr>
+                                <td> <?php echo "$dc" ?></td>
+                                <td> <?php echo "$nomc" ?></td>
+                                <td> <?php echo "$ffact" ?></td>
+                                <td> <?php echo "$st" ?></td>
+                                <td> <?php echo "$estf" ?></td>
+                                <th>
+                                    <a href="verfacturaAdmin.php?id=<?php echo  $row['idCliente'] ?>" class="btn btn-info">ver factura</a>
+                                </th>
+                                <th><a href="editfactura.php?if=<?php echo  $row['idFactura'] ?>" class="btn btn-primary">Editar factura</a>
+                                </th>
+                                <th><a href="eliminarf.php?id=<?php echo $row['cliente_idCliente']   ?>" class="btn btn-danger">Pago</a></th>
 
-                        </tr>
-                <?php
+                            </tr>
+                    <?php
+                        }
                     }
-                }
-                ?>
+                    ?>
 
+                </div>
                 <!-- ESTO ES LO QUE PODEMOS MODIFICAR -->
                 <!-- partial:partials/_footer.html -->
 
                 <!-- partial -->
             </div>
-            <footer class="footer">
-                <div class="d-sm-flex justify-content-center justify-content-sm-between">
-                    <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright © Atory Solution 2023</span>
-                    <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center"> <a href=" " target="_blank"></a> </span>
-                </div>
-            </footer>
+
             <!-- main-panel ends -->
         </div>
         <!-- page-body-wrapper ends -->
