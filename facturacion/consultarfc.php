@@ -23,6 +23,9 @@
             <!-- Hasta aca es toda la barra lateral y la barra superior (lo que se deja igual en todas las paginas de admin) -->
             <div class="main-panel">
                 <div class="content-wrapper">
+                <form action="../index.html">
+              <input type="submit" value="Volver al inicio" class="btn btn-primary btn-lg"/>
+          </form>    
                     <div class="page-header">
                         <h1 style="font-size: 32px;">Consulta tu factura</h1>
                         <nav aria-label="breadcrumb">

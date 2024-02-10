@@ -35,11 +35,11 @@ if ($varsesion == null || $varsesion = '') {
         <nav class="sidebar sidebar-offcanvas" id="sidebar">
             <div class="sidebar-brand-wrapper d-none d-lg-flex align-items-center justify-content-center fixed-top">
                 <!-- Logo de Atory -->
-                <a class="sidebar-brand brand-logo" href="index.html">
+                <a class="sidebar-brand brand-logo" >
                     <img src="assets/images/atori.png" alt="logo">
                 </a>
                 <!-- Volver a inicio -->
-                <a class="sidebar-brand brand-logo-mini" href="index.html">
+                <a class="sidebar-brand brand-logo-mini" >
                     <img src="assets/images/logo-mini.png" alt="logo">
                 </a>
             </div>
@@ -130,7 +130,7 @@ if ($varsesion == null || $varsesion = '') {
             <!-- Menú navbar.html -->
             <nav class="navbar p-0 fixed-top d-flex flex-row">
                 <div class="navbar-brand-wrapper d-flex d-lg-none align-items-center justify-content-center">
-                    <a class="navbar-brand brand-logo-mini" href="index.html">
+                    <a class="navbar-brand brand-logo-mini" >
                         <img src="../assets/images/logo-mini.png" alt="logo">
                     </a>
                 </div>
