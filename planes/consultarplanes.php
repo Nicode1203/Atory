@@ -63,15 +63,6 @@ if ($varsesion == null || $varsesion='') {
             </div>
         </div>
         <!-- Extremos del contenedor de contenido -->
-        <!-- FOOTER o pie de pagina-->
-        <footer class="footer">
-            <div class="d-sm-flex justify-content-center justify-content-sm-between">
-                <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Derechos de autor © atory.com 2023</span>
-                <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">
-                    <a href="https://www.bootstrapdash.com/bootstrap-admin-template/" target="_blank">atory.com</a>
-                </span>
-            </div>
-        </footer>
         <!-- Parcial -->
     </div>
     <!-- main-panel fin -->

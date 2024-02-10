@@ -107,10 +107,7 @@ if ($varsesion == null || $varsesion = '') {
 
                     ?>
 
-                    <!-- ESTO ES LO QUE PODEMOS MODIFICAR -->
-                    <!-- partial:partials/_footer.html -->
 
-                    <!-- partial -->
                 </div>
             </div>
             <!-- main-panel ends -->

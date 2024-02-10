@@ -155,9 +155,7 @@ if ($varsesion == null || $varsesion = '') {
           ?>
 
           <!-- ESTO ES LO QUE PODEMO  S MODIFICAR -->
-          <!-- partial:partials/_footer.html -->
 
-          <!-- partial -->
         </div>
       </div>
 
