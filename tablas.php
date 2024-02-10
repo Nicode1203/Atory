@@ -55,6 +55,7 @@ if ($seguridad->getUsuario()==null) {
                     $sql = "SELECT * FROM cliente WHERE estadoCliente='Activo';";
 
                     echo '<div class="table-responsive">
+                    
         <table class="table table-hover">
           <thead>
             <tr>
