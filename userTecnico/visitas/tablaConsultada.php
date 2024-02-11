@@ -24,7 +24,7 @@ if ($varsesion == null || $varsesion = '') {
     <link rel="stylesheet" href="../assets/vendors/css/vendor.bundle.base.css">
     <!-- Fin de los estilos de los plugins -->
     <!-- Estilos del archivo actual -->
-    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/style.css">
     <!-- Fin de los estilos del archivo actual -->
     <link rel="shortcut icon" href="../assets/images/favicon.png">
 </head>
@@ -42,12 +42,12 @@ if ($varsesion == null || $varsesion = '') {
         <div class="content-wrapper">
             <h1 style="font-size: 32px;">Visitas tecnicas e Instalaciones</h1>
             <div class="card-body">
-                
+
                 <?php
                 include("../conexion.php");
 
-                $id=$_POST["docCliente"];
-                      $sql= "SELECT * FROM visitas WHERE documentoCliente='$id';";
+                $id = $_POST["docCliente"];
+                $sql = "SELECT * FROM visitas WHERE documentoCliente='$id';";
 
                 echo '<div class="table-responsive">
                 <table class="table table-hover">
@@ -83,7 +83,7 @@ if ($varsesion == null || $varsesion = '') {
 
                             <td> <?php echo "$motivo" ?></td>
                             <td> <?php echo "$diaVisita" ?></td>
-                            
+
                             <th><a href="consulta.php?id=<?php echo $row['idVisita'] ?>" class="btn btn-info">Consultar visita completa</a>
                         </tr>
                 <?php
