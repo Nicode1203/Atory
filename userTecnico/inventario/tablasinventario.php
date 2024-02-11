@@ -92,16 +92,17 @@ if ($varsesion == null || $varsesion = '') {
 
   <div class="main-panel">
     <div class="content-wrapper"> <!-- ESTO ES LO QUE TENEMOS QUE MODIFICAR -->
-      <div class="card-body">
-        <h3>INVENTARIO</h3>
+      <div class="card">
+        <div class="card-body">
+          <h3>INVENTARIO</h3>
 
-        <?php
+          <?php
 
-        include("conexion.php");
+          include("conexion.php");
 
-        $sql = "SELECT * FROM producto WHERE estadoProducto='Activo';";
+          $sql = "SELECT * FROM producto WHERE estadoProducto='Activo';";
 
-        echo '<div class="table-responsive">
+          echo '<div class="table-responsive">
             <table class="table table-hover">
             <thead>
         <tr>
@@ -115,34 +116,35 @@ if ($varsesion == null || $varsesion = '') {
     </thead>
     ';
 
-        if ($rta = $con->query($sql)) {
-          while ($row = $rta->fetch_assoc()) {
-            $id = $row['idProducto'];
-            $nombrep = $row['nombreProducto'];
-            $serial = $row['serialProducto'];
-            $desp = $row['descripcionProducto'];
-            $cantidad = $row['cantidad'];
-            $estado = $row['estadoProducto'];
-        ?>
-            <tr>
-              <td> <?php echo "$id" ?></td>
-              <td> <?php echo "$nombrep" ?></td>
-              <td> <?php echo "$serial" ?></td>
-              <td> <?php echo "$desp" ?></td>
-              <td> <?php echo "$cantidad" ?></td>
-              <th>
+          if ($rta = $con->query($sql)) {
+            while ($row = $rta->fetch_assoc()) {
+              $id = $row['idProducto'];
+              $nombrep = $row['nombreProducto'];
+              $serial = $row['serialProducto'];
+              $desp = $row['descripcionProducto'];
+              $cantidad = $row['cantidad'];
+              $estado = $row['estadoProducto'];
+          ?>
+              <tr>
+                <td> <?php echo "$id" ?></td>
+                <td> <?php echo "$nombrep" ?></td>
+                <td> <?php echo "$serial" ?></td>
+                <td> <?php echo "$desp" ?></td>
+                <td> <?php echo "$cantidad" ?></td>
+                <th>
 
-            </tr>
-        <?php
+              </tr>
+          <?php
+            }
           }
-        }
 
-        ?>
+          ?>
 
-        <!-- ESTO ES LO QUE PODEMOS MODIFICAR -->
-        <!-- partial:partials/_footer.html -->
+          <!-- ESTO ES LO QUE PODEMOS MODIFICAR -->
+          <!-- partial:partials/_footer.html -->
 
-        <!-- partial -->
+          <!-- partial -->
+        </div>
       </div>
 
       <!-- main-panel ends -->
