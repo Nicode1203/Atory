@@ -83,7 +83,7 @@ if ($varsesion == null || $varsesion = '') {
           <select class="form-select" aria-label="Default select example" name="rol" id="rol" value="<?php echo $row['rol']  ?>">
             <option value="Administrador">Administrador </option>
             <option value="Tecnico">Tecnico</option>
-            <option value="Vendedor">Vendedor</option>
+
 
           </select>
           <p></p>
