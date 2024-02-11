@@ -159,25 +159,6 @@ CREATE TABLE `solicitudes` (
 
 insert  into `solicitudes`(`idSolicitud`,`tipoDocumento`,`numeroDocumento`,`nombres`,`telefono`,`email`,`estadoSolicitud`) values (1,'C.C','202','Estefania Flor','3195852323','este@gmail.com','Atendido'),(2,'C.E','963','Julian Hernandez','3692582365','juli@gmail.com','Atendido'),(3,'C.C','3654','Ayane Hayabusa','5893652121','ayane@hotmail.com','Atendido'),(4,'C.C','15263635','Kasumi Hayabusa','9549638521414','kasumi@gmail.com','Activo'),(5,'C.C','45','Helena Leau','9638525858','helena@yahoo.com','Atendido'),(6,'C.C','89','Fabian Quimbay','3258963254','helena@gmail.com','Activo'),(7,'C.C','789','Ana Maria Rosales','7893652123','maria@gmail.com','Activo'),(8,'C.C','3636','Juan Rodriguez','123456','juan@aol.com','Atendido'),(9,'C.C','56','Helena','7859635874','helena@gmail.com','Activo'),(10,'C.E','987','stephy gomez','3198988686','ste@gmail.com','Activo'),(11,'C.C','987654','juanito alimaña','300886644','alimana@gmail.com','Atendido');
 
-/*Table structure for table `users` */
-
-DROP TABLE IF EXISTS `users`;
-
-CREATE TABLE `users` (
-  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
-  `name` varchar(255) NOT NULL,
-  `email` varchar(255) NOT NULL,
-  `email_verified_at` timestamp NULL DEFAULT NULL,
-  `password` varchar(255) NOT NULL,
-  `remember_token` varchar(100) DEFAULT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `users_email_unique` (`email`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
-/*Data for the table `users` */
-
 /*Table structure for table `usuario` */
 
 DROP TABLE IF EXISTS `usuario`;
