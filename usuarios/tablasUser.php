@@ -63,7 +63,7 @@ if ($varsesion == null || $varsesion = '') {
                             <th>Nombres</th>
                             <th>Teléfono</th>
                             <th>Email</th>
-                            <th>Clave</th>
+                            
                             <th>Estado</th>
                             <th>Fecha creación</th>
                             <th>Última Actual</th>
@@ -93,7 +93,7 @@ if ($varsesion == null || $varsesion = '') {
                                 <td> <?php echo $nombres ?></td>
                                 <td> <?php echo $telefono ?></td>
                                 <td> <?php echo $email ?></td>
-                                <td> <?php echo $clave ?></td>
+
                                 <td> <?php echo $estado ?></td>
                                 <td> <?php echo $creacion ?></td>
                                 <td> <?php echo $act ?></td>

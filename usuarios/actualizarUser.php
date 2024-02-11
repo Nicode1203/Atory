@@ -88,6 +88,7 @@ if ($varsesion == null || $varsesion = '') {
           </select>
           <p></p>
           <input type="submit" class="btn btn-primary btn-lg" value="Actualizar" formmethod="post" formaction=updateUser.php>
+          <input type="submit" class="btn btn-primary btn-lg" value="Volver" formmethod="post" formaction=tablasUser.php>
         </form>
 
         <div class="row">
