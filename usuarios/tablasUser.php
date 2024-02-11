@@ -45,7 +45,9 @@ if ($varsesion == null || $varsesion = '') {
             </div>
             <div class="card">
                 <div class="card-body">
-                    <a href="usuarios.php" class="btn btn-primary btn-lg" role="button" aria-pressed="true">Volver al inicio</a>
+                    <a href="ingresarUser.php" class="btn btn-primary btn-lg" role="button" aria-pressed="true">Crear nuevo usuario</a>
+                    <a href="usuarios.php" class="btn btn-primary btn-lg" role="button" aria-pressed="true">Consultar usuario</a>
+
                     <a href="../excel/excelUsuario.php" class="btn btn-success btn-lg">Exportar tabla a Excel</a>
                     <?php
                     include("conexion.php");

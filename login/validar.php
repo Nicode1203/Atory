@@ -1,29 +1,41 @@
 <?php
-$usuario=$_POST['usuario'];
-$password=$_POST['pass'];
+$usuario = $_POST['usuario'];
+$password = $_POST['pass'];
 session_start();
-$_SESSION['usuario']=$usuario;
+$_SESSION['usuario'] = $usuario;
 
-$conn=mysqli_connect ("localhost","root","","atory");
+$conn = mysqli_connect("localhost", "root", "", "atory");
 
-$consulta="SELECT * FROM usuario where nombresUsuario='$usuario' and claveUsuario='$password'";
-$resultado=mysqli_query($conn,$consulta);
+$consulta = "SELECT * FROM usuario WHERE nombresUsuario = '$usuario'";
+$resultado = mysqli_query($conn, $consulta);
 
-$filas=mysqli_fetch_array($resultado);
+if (mysqli_num_rows($resultado) == 1) {
+  $fila = mysqli_fetch_assoc($resultado);
+  $hashed_clave = $fila['claveUsuario'];
 
-if ($filas['rol'] == 'Administrador') {// que pasa cuando entra en rol administrador
-  header("location:../principal.php");
+  // Verificar si la contraseña ingresada coincide con la contraseña encriptada almacenada en la base de datos
+  if (password_verify($password, $hashed_clave)) {
+    // Contraseña correcta, redirigir según el rol del usuario
+    if ($fila['rol'] == 'Administrador') {
+      header("location: ../principal.php");
+      exit;
+    } elseif ($fila['rol'] == 'Tecnico') {
+      header("location: ../userTecnico/visitas/tablasVisitas.php");
+      exit;
+    } else {
+      header("location: errorvalid.php");
+      exit;
+    }
+  } else {
+    // Contraseña incorrecta
+    header("location: errorvalid.php");
+    exit;
+  }
+} else {
+  // Usuario no encontrado
+  header("location: errorvalid.php");
   exit;
-}elseif ($filas['rol'] == 'Tecnico') {// que pasa cuando entra en rol tecnico
-  header("location:../userTecnico/visitas/tablasVisitas.php");
-  exit;
-}{
-  ?>
-  <?php
-  header ("location:errorvalid.php");
-  exit;
-  
-  
 }
+
 mysqli_free_result($resultado);
 mysqli_close($conn);

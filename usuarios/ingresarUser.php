@@ -137,7 +137,7 @@ if ($varsesion == null || $varsesion = '') {
               <!--valor de pasword-->
               <div class="form-group">
                 <label for="clave">Ingrese password</label>
-                <input type="text" class="form-control" name="clave" id="clave" placeholder="password">
+                <input type="password" class="form-control" name="clave" id="clave" placeholder="password">
               </div>
 
               <!--valor de estado del cliente-->
@@ -166,7 +166,7 @@ if ($varsesion == null || $varsesion = '') {
                 <select class="form-control" name="rol" id="rol">
                   <option value="Administrador">administrativo</option>
                   <option value="Tecnico">tecnico</option>
-                  <option value="Vendedor">vendedor</option>
+
                 </select>
               </div>
               <div>
