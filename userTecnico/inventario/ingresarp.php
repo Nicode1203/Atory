@@ -3,7 +3,7 @@
 session_start();
 error_reporting(0);
 $varsesion = $_SESSION['usuario'];
-if ($varsesion == null || $varsesion = '' ) {
+if ($varsesion == null || $varsesion = '') {
     header("location:../index.html");
     die();
     exit;
@@ -24,7 +24,7 @@ if ($varsesion == null || $varsesion = '' ) {
     <link rel="stylesheet" href="../assets/vendors/css/vendor.bundle.base.css">
     <!-- Fin de los estilos de los plugins -->
     <!-- Estilos del archivo actual -->
-    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/style.css">
     <!-- Fin de los estilos del archivo actual -->
     <link rel="shortcut icon" href="../assets/images/favicon.png">
 </head>
@@ -42,7 +42,7 @@ if ($varsesion == null || $varsesion = '' ) {
                 <h4 class="card-title"> GESTIÓN INVENTARIO</h4>
                 <p class="card-description"> Ingrese los datos del nuevo producto </p>
                 <form class="forms-sample">
-        
+
                     <div class="form-group">
                         <label for="nombrep">Ingrese nombre del producto</label>
                         <input type="text" class="form-control" name="nombrep" id="nombrep" placeholder="Nombre del Producto">

@@ -2,11 +2,11 @@
 //seguridad de sesiones paginacion (prueba 1)
 session_start();
 error_reporting(0);
-$varsesion= $_SESSION['usuario'];
-if ($varsesion == null || $varsesion='') {
-    header ("location:../index.html");
-    die();
-    exit;
+$varsesion = $_SESSION['usuario'];
+if ($varsesion == null || $varsesion = '') {
+  header("location:../index.html");
+  die();
+  exit;
 }
 
 ?>
@@ -31,7 +31,7 @@ if ($varsesion == null || $varsesion='') {
   <!-- inject:css -->
   <!-- endinject -->
   <!-- Layout styles -->
-  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../../assets/css/style.css">
   <!-- End layout styles -->
   <link rel="shortcut icon" href="../assets/images/favicon.png">
   <style type="text/css">
@@ -123,7 +123,7 @@ if ($varsesion == null || $varsesion='') {
             $serial = $row['serialProducto'];
             $desp = $row['descripcionProducto'];
             $cantidad = $row['cantidad'];
-            $estado=$row['estadoProducto'];
+            $estado = $row['estadoProducto'];
         ?>
             <tr>
               <td> <?php echo "$id" ?></td>
