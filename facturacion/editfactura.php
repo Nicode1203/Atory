@@ -151,6 +151,7 @@ if ($varsesion == null || $varsesion='' ) {
           </select>
           <p></p>
           <input type="submit" class="btn btn-primary btn-lg" value="Actualizar" formmethod="post" formaction=actfactura.php>
+          <input type="submit" class="btn btn-primary btn-lg" value="Volver" formmethod="post" formaction=facturas.php>
         </form>
 
         <div class="row">
