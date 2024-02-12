@@ -107,7 +107,8 @@ if ($varsesion == null || $varsesion = '') {
         $sql = "SELECT cliente.idCliente,factura.cliente_idCliente,cliente.documentoCliente,cliente.nombreCliente,factura.fechaFactura,factura.valorTotalFactura,factura.estadoFactura FROM cliente 
                     INNER JOIN factura
                     ON cliente.idCliente=factura.cliente_idCliente
-                    WHERE estadoFactura='Pendiente';";
+                    WHERE estadoFactura='Pendiente'
+                    ORDER BY fechaFactura DESC;";
 
         echo '<div class="table-responsive">
             <table class="table table-hover">
