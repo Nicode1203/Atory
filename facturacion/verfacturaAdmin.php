@@ -30,6 +30,8 @@
 
   $id = $_GET['id'];
   $sql = "SELECT * FROM cliente  
+      INNER JOIN plan
+      on cliente.plan_idPlan=plan.idPlan
       INNER JOIN factura
       ON cliente.idCliente=factura.cliente_idCliente
       WHERE idCliente= '$id';";
@@ -44,8 +46,17 @@
       $emailc = $row['correoCliente'];
       $dc = $row['direccion'];
       $ec = $row['estadoCliente'];
+      $plancliente=$row['plan_idPlan'];
       $creado = $row['creado'];
       $uact = $row['ultimaActualizacion'];
+      $idplan=$row['idPlan'];
+      $codigoplan=$row['codigoPlan'];
+      $tipoplan=$row['tipoPlan'];
+      $vp=$row['velocidad'];
+      $nombreplan=$row['nombrePlan'];
+      $precioplan=$row['precioPlan'];
+      $descripcionplan=$row['desPlan'];
+      $estadoplan=$row['estadoPlan'];
       $if = $row['idFactura'];
       $ffact = $row['fechaFactura'];
       $impt = $row['impuestoTotal'];
@@ -70,10 +81,18 @@
                 <div class="form-group">
                   <div class="card-body">
                     <h4 class="card-title">Esta es su factura correspontiente de <?php echo "$ffact" ?> </h4>
-
                     <form class="forms-sample">
+                    <div class="form-group">
+                        <label for="cp">Corresponde al plan <?php echo "$nombreplan" ?></label>
+                      </div>
                       <div class="form-group">
-                        <label for="cp"> La cual se encuentra: <?php echo "$estf" ?> </label>
+                        <label for="cp">del tipo: <?php echo "$tipoplan" ?></label>
+                      </div>
+                      <div class="form-group">
+                        <label for="cp">Velocidad: <?php echo "$vp" ?></label>
+                      </div>
+                      <div class="form-group">
+                        <label for="cp">Se encuentra actualmente: <?php echo "$estf" ?> </label>
                       </div>
                       <div class="form-group">
                         <label for="cp">Sub total: <?php echo "$st" ?></label>

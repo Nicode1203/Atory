@@ -42,7 +42,7 @@ if ($varsesion == null || $varsesion = '') {
       $idplan=$row['idPlan'];
       $codigoplan=$row['codigoPlan'];
       $tipoplan=$row['tipoPlan'];
-      $velplan=$row['$velocidad'];
+      $vp=$row['velocidad'];
       $nombreplan=$row['nombrePlan'];
       $precioplan=$row['precioPlan'];
       $descripcionplan=$row['desPlan'];
@@ -140,7 +140,7 @@ if ($varsesion == null || $varsesion = '') {
         <p class="card-description"> Correo Electronico:<?php echo "$emailc"  ?> </p>
         <p class="card-description"> Dirección Cliente:<?php echo "$dc"  ?> </p>
         <p class="card-description"> Plan del cliente:<?php echo "$tipoplan"  ?> </p>
-        <p class="card-description"> velocidad del plan:<?php echo "$velplan"  ?> </p>
+        <p class="card-description"> velocidad del plan:<?php echo "$vp"  ?> </p>
         <p class="card-description"> Subtotal a pagar: <?php echo "$sub"  ?> </p>
         <p class="card-description"> Impuestos: <?php echo "$impt"  ?> </p>
         <p class="card-description"> Total: <?php echo "$st"  ?> </p>
@@ -154,7 +154,8 @@ if ($varsesion == null || $varsesion = '') {
           <input type="hidden" name="sub" value="<?php echo "$sub"  ?>">
           <input type="hidden" name="st" value="<?php echo "$st"  ?>">
           
-          <input type="submit" class="btn btn-primary btn-block" value="crear" formmethod="post" formaction=ingresarfactura.php>
+          <input type="submit" class="btn btn-primary btn-lg" value="crear" formmethod="post" formaction=ingresarfactura.php>
+          <input type="submit" class="btn btn-primary btn-lg" value="cancelar" formmethod="post" formaction=facturas.php>
         </form>
 
         <div class="row">
