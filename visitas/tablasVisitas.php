@@ -54,7 +54,13 @@ if ($varsesion == null || $varsesion = '') {
                     <?php
                     include("../conexion.php");
 
-                    $sql = "SELECT * FROM visitas WHERE estadoVisita='Activo';";
+                    $sql = "select * from usuario
+                    inner join user_visita
+                    inner join visitas
+                    Inner join cliente
+                    where usuario.`idUsuario`=user_visita.`user_idUser`
+                    and user_visita.`visita_idVisita`=visitas.`idVisita`
+                    and  cliente.`idCliente`=visitas.`visita_idCliente`;";
 
                     echo '<div class="table-responsive">
                 <table class="table table-hover">
