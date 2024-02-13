@@ -29,19 +29,43 @@
                       $sql= "SELECT * FROM visitas WHERE idVisita='$id';";
                       if($rta = $con -> query($sql)){
                         while ($row = $rta -> fetch_assoc()){
-                            $nomCliente=$row['nombreCliente'];
-                            $telCliente=$row['telefonoCliente'];
-                            $dirCliente=$row['direccionCliente'];
-                            $nomTec=$row['nombreTecnico'];
-                            $motivo=$row['motivoVisita'];
-                            $diaVisita=$row['diaVisita'];
-                            
+                          $idu=$row['idUsuario'];
+                          $tdu=$row['tipoDocumento'];
+                          $docu = $row['documentoUsuario'];
+                          $nombresu=$row['nombresUsuario'];
+                          $telu=$row['telefonoUsuario'];
+                          $emailu=$row['correoUsuario'];
+                          $estadou=$row['estadoUsuario'];
+                          $creadou=$row['creado']; 
+                          $upu=$row['ultimaActualizacion'];
+                          $rolu=$row['rol']; 
+                          $uservisita=$row['iduser_visita'];
+                          $visita_idvisita=$row['visita_idVisita'];
+                          $user_idUser=$row['user_idUser'];
+                          $idv=$row['idVisita'];
+                          $tipov=$row['tipoVisita'];
+                          $motivo = $row['motivoVisita'];
+                          $diaVisita = $row['diaVisita'];
+                          $eVisita = $row['estadoVisita'];
+                          $visitacliente=$row['visita_idCliente'];
+                          $idc=$row['idCliente'];
+                          $tdc=$row['tipoDocumento'];                  
+                          $docCliente = $row['documentoCliente'];
+                          $nomCliente = $row['nombreCliente'];
+                          $telCliente = $row['telefonoCliente'];
+                          $emailCliente = $row['correoCliente'];
+                          $dirCliente = $row['direccion'];
+                          $estado_cliente=$row['estadoCliente'];
+                          $plan_idPlan=$row['plan_idPlan'];
+                          $crearcliente=$row['creado'];
+                          $uacliente=$row['ultimaActualizacion'];   
                         }}
              ?>         
         <div class="main-panel">
           <div class="content-wrapper">
           <div class="page-header">
-              <h3 class="page-title">Visitas: </h3>
+              <h1 class="page-title">Visita: <?php echo "$idv"?> </h1>
+              <h1 class="page-title">Tipo de visita: <?php echo "$tipov"?> </h1>
             </div>
          <div class="row">
               <div class="col-md-12 grid-margin stretch-card">
@@ -65,9 +89,9 @@
                         <label for="plan">Fecha de la visita : <?php echo" $diaVisita" ?></label>
                       </div>
                 <div class="form-button mt-5">
-                    <button id="submit" type="submit" formmethod="post" formaction="../visitas/tablasVisitas.php" class="btn btn-primary">Volver a todas las visitas</button>
+                    <button id="submit" type="submit" formmethod="post" formaction="../visitas/tablasVisitas.php" class="btn btn-primary btn-lg">Volver a todas las visitas</button>
+                    <button id="submit" type="submit" formmethod="post" formaction="../visitas/actualizarVisita.php" class="btn btn-primary btn-lg">Actualizar</button>
                 </div>
-
                     </form>
                   </div>
                 </div>

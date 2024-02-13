@@ -209,6 +209,7 @@ DROP TABLE IF EXISTS `visitas`;
 
 CREATE TABLE `visitas` (
   `idVisita` int(10) NOT NULL AUTO_INCREMENT,
+  `tipoVisita` varchar(100) NOT NULL DEFAULT 'Instalacion',
   `motivoVisita` varchar(2000) DEFAULT NULL,
   `diaVisita` date DEFAULT NULL,
   `estadoVisita` varchar(100) DEFAULT 'Activo',
@@ -220,7 +221,7 @@ CREATE TABLE `visitas` (
 
 /*Data for the table `visitas` */
 
-insert  into `visitas`(`idVisita`,`motivoVisita`,`diaVisita`,`estadoVisita`,`visita_idCliente`) values (1,'El modem no esta funcionando apropiadamente (internet lento)','2021-06-22','Activo',11),(2,'Instalacion de plan','2023-06-27','Activo',21),(3,'el servicio no esta funcionando','2023-06-29','Activo',7),(4,'Otra vez el internet me esta fallando','2023-06-30','Activo',7);
+insert  into `visitas`(`idVisita`,`tipoVisita`,`motivoVisita`,`diaVisita`,`estadoVisita`,`visita_idCliente`) values (1,'Instalacion','El modem no esta funcionando apropiadamente (internet lento)','2021-06-22','Activo',11),(2,'Instalacion','Instalacion de plan','2023-06-27','Activo',21),(3,'Instalacion','el servicio no esta funcionando','2023-06-29','Activo',7),(4,'Instalacion','Otra vez el internet me esta fallando','2023-06-30','Activo',7);
 
 /* Procedure structure for procedure `x` */
 
