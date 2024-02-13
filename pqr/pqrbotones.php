@@ -93,9 +93,7 @@ if ($varsesion == null || $varsesion = '') {
   <div class="main-panel">
 
     <div class="content-wrapper"> <!-- ESTO ES LO QUE TENEMOS QUE MODIFICAR -->
-      <div class="page-header">
-        <h1 style="font-size: 32px;">GESTIÓN PQR</h1>
-      </div>
+      <h1 style="font-size: 32px;">OBSERVACIONES</h1>
       <div class="card ">
         <div class="card-body">
 
@@ -113,12 +111,12 @@ if ($varsesion == null || $varsesion = '') {
             <table class="table table-hover">
             <thead>
         <tr>
-        <th> Id PQR </th>
+        <th> Id </th>
         <th> Tipo de documento</th>
         <th> Numero de documento</th>
         <th> Nombres de cliente</th>
-        <th> Tipo de PQR </th>
-        <th> Consultar PQR</th>
+        <th> Tipo </th>
+        <th> Consultar </th>
         <th> Comentario</th>
         <th> Eliminar</th>
     </tr>
@@ -145,7 +143,7 @@ if ($varsesion == null || $varsesion = '') {
                 <td> <?php echo "$nombres" ?></td>
                 <td> <?php echo "$soli" ?></td>
 
-                <th><a href="consultarpqr.php?i=<?php echo $row['idPqr'] ?>" class="btn btn-primary">Consultar PQR </a></th>
+                <th><a href="consultarpqr.php?i=<?php echo $row['idPqr'] ?>" class="btn btn-primary">Observacion </a></th>
                 <th><a href="comentario.php?i=<?php echo $row['idPqr'] ?>" class="btn btn-info">Agregar comentario </a></th>
                 <th><a href="eliminarpqr.php?i=<?php echo $row['idPqr'] ?>" class="borrar btn btn-danger">Eliminar</a></th>
 
