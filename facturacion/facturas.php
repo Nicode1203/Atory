@@ -92,7 +92,9 @@ if ($varsesion == null || $varsesion = '') {
 
   <div class="main-panel">
     <div class="content-wrapper"> <!-- ESTO ES LO QUE TENEMOS QUE MODIFICAR -->
-      <h1 style="font-size: 32px;">GESTIÓN FACTURAS</h1>
+      <div class="page-header">
+        <h1 style="font-size: 32px;">GESTIÓN FACTURAS</h1>
+      </div>
       <div class="card">
       <div class="card-body">
       <a href="factcliente.php" class="btn btn-danger btn-lg" role="button" aria-pressed="true">Ingresar factura</a>

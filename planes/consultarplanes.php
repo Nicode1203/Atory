@@ -2,9 +2,9 @@
 //seguridad de sesiones paginacion (prueba 1)
 session_start();
 error_reporting(0);
-$varsesion= $_SESSION['usuario'];
-if ($varsesion == null || $varsesion='') {
-    header ("location:../index.html");
+$varsesion = $_SESSION['usuario'];
+if ($varsesion == null || $varsesion = '') {
+    header("location:../index.html");
     die();
     exit;
 }
@@ -34,30 +34,25 @@ if ($varsesion == null || $varsesion='') {
     <!-- Parcial -->
     <div class="main-panel">
         <div class="content-wrapper">
-            <div class="page-header">
-                <h1 style="font-size: 32px;">GESTIÓN Planes</h1>
-                <nav aria-label="breadcrumb">
-                    <ol class="breadcrumb">
-                        <li class="breadcrumb-item active" aria-current="page">Esta usted en el módulo de Planes</li>
-                    </ol>
-                </nav>
-            </div>
+
             <div class="row">
-                <div class="col-12 grid-margin stretch-card">
+                <div class="col-6 grid-margin stretch-card">
                     <div class="card">
-                        <!-- CONTENIDO -->
-                        <h4 class="card-title">Consultas de Planes</h4>
-                        <form class="forms-sample">
-                            <div class="form-group">
-                                <label for="cp">Ingrese codigo de plan</label>
-                                <input type="text" class="form-control" name="cp" id="cp" placeholder="Ingrese Código del plan">
-                            </div>
-                            <div>
-                                <br>
-                                <button id="submit" type="submit" formmethod="post" formaction="../planes/plan.php" class="btn btn-primary">Consultar Plan</button>
-                                <!--<button id="submit" type="submit" formmethod="post" formaction="../principal.html" class="btn btn-primary">Volver al inicio</button> -->
-                            </div>
-                        </form>
+                        <div class="card-body">
+                            <!-- CONTENIDO -->
+                            <h4 class="card-title">Consultas de Planes</h4>
+                            <form class="forms-sample">
+                                <div class="form-group">
+                                    <label for="cp">Ingrese codigo de plan</label>
+                                    <input type="text" class="form-control" name="cp" id="cp" placeholder="Ingrese Código del plan">
+                                </div>
+                                <div>
+                                    <br>
+                                    <button id="submit" type="submit" formmethod="post" formaction="../planes/plan.php" class="btn btn-primary btn-lg">Consultar Plan</button>
+                                    <!--<button id="submit" type="submit" formmethod="post" formaction="../principal.html" class="btn btn-primary">Volver al inicio</button> -->
+                                </div>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>

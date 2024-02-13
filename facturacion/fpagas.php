@@ -93,7 +93,9 @@ if ($varsesion == null || $varsesion = '') {
 
   <div class="main-panel">
     <div class="content-wrapper"> <!-- ESTO ES LO QUE TENEMOS QUE MODIFICAR -->
+    <div class="page-header">
       <h1 style="font-size: 32px;">GESTIÓN FACTURAS</h1>
+    </div>
       <div class="card">
       <div class="card-body">
         <a href="facturas.php" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Volver a facturas pendientes</a>
@@ -158,12 +160,7 @@ if ($varsesion == null || $varsesion = '') {
         <!-- partial -->
       </div>
       </div>
-      <footer class="footer">
-        <div class="d-sm-flex justify-content-center justify-content-sm-between">
-          <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright © Atory Solution 2023</span>
-          <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center"> <a href=" " target="_blank"></a> </span>
-        </div>
-      </footer>
+
       <!-- main-panel ends -->
     </div>
     <!-- page-body-wrapper ends -->

@@ -86,7 +86,6 @@ if ($seguridad->getUsuario()==null) {
                             <div class="content-wrapper">
                                 <div class="page-header">
                                     <h2 class="page-title">Cliente</h2>
-                                    <h4 class="card-title">Cliente <?php echo "$nombres" ?></h4>
                                 </div>
                                 <div class="row">
                                     <div class="col-md-6 grid-margin stretch-card">
@@ -129,6 +128,9 @@ if ($seguridad->getUsuario()==null) {
                                                                 <div class="form-group">
                                                                     <label for="des">Descripción: <?php echo "$desplan" ?></label>
                                                                 </div>
+                                                                <td>
+                                                                    <a href="actualizar.php?id=<?php echo $row['documentoCliente'] ?>" class="btn btn-info btn-lg">Editar</a>
+                                                                </td>
                                                                 <a href="tablas.php" class="btn btn-light btn-lg active" role="button" aria-pressed="true">Volver</a>
                                                             </form>
                                                         </div>
