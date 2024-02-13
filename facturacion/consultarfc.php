@@ -24,18 +24,15 @@
             <div class="main-panel">
                 <div class="content-wrapper">
                 <form action="../index.html">
-              <input type="submit" value="Volver al inicio" class="btn btn-primary btn-lg"/>
+
           </form>    
                     <div class="page-header">
-                        <h1 style="font-size: 32px;">Consulta tu factura</h1>
+                        <h1 style="font-size: 32px;">CONSULTAR FACTURA</h1>
                         <nav aria-label="breadcrumb">
-                            <ol class="breadcrumb">
-                                <li class="breadcrumb-item" aria-current="page">Consulte sus facturas</li>
-                            </ol>
                         </nav>
                     </div>
                     <div class="row">
-                        <div class="col-12 grid-margin stretch-card">
+                        <div class="col-6 grid-margin stretch-card">
                             <div class="card">
                                 <!-- CONTENIDO -->
                                 <div class="card-body">
@@ -47,7 +44,8 @@
                                     </div>
                                     <div>
                                         <br>
-                                        <button id="submit" type="submit" formmethod="post" formaction="cfacturaC.php" class="btn btn-primary">Consultar</button>
+                                        <button id="submit" type="submit" formmethod="post" formaction="cfacturaC.php" class="btn btn-primary btn-lg">Consultar</button>
+                                        <input type="submit" value="Volver al inicio" class="btn btn-primary btn-lg"/>
                                     </div>
                                     </div>
                                 </form>
@@ -56,15 +54,6 @@
                     </div>
                 </div>
                 <!-- Extremos del contenedor de contenido -->
-                <!-- FOOTER o pie de pagina-->
-                <footer class="footer">
-                    <div class="d-sm-flex justify-content-center justify-content-sm-between">
-                        <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Derechos de autor © atory.com 2024</span>
-                        <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">
-                            <a href="https://www.bootstrapdash.com/bootstrap-admin-template/" target="_blank">atory.com</a>
-                        </span>
-                    </div>
-                </footer>
                 <!-- Parcial -->
             </div>
 
