@@ -26,7 +26,16 @@
         <?php 
                        include_once "conexion.php";
                        $id=$_GET["id"];
-                      $sql= "SELECT * FROM visitas WHERE idVisita='$id';";
+                      $sql= "SELECT * FROM usuario
+                      INNER JOIN user_visita
+                      INNER JOIN visitas
+                      INNER JOIN cliente
+                      INNER JOIN plan
+                      WHERE usuario.`idUsuario`=user_visita.`user_idUser`
+                      AND user_visita.`visita_idVisita`=visitas.`idVisita`
+                      AND  cliente.`idCliente`=visitas.`visita_idCliente`
+                      AND cliente.`plan_idPlan`=plan.`idPlan`
+                      AND idVisita='$id';";
                       if($rta = $con -> query($sql)){
                         while ($row = $rta -> fetch_assoc()){
                           $idu=$row['idUsuario'];
@@ -58,7 +67,11 @@
                           $estado_cliente=$row['estadoCliente'];
                           $plan_idPlan=$row['plan_idPlan'];
                           $crearcliente=$row['creado'];
-                          $uacliente=$row['ultimaActualizacion'];   
+                          $uacliente=$row['ultimaActualizacion'];
+                          $tipoplan=$row['tipoPlan'];
+                          $velplan=$row['velocidad'];
+                          $nombreplan=$row['nombrePlan'];
+                                
                         }}
              ?>         
         <div class="main-panel">
@@ -71,22 +84,43 @@
               <div class="col-md-12 grid-margin stretch-card">
                 <div class="card">
                   <div class="card-body">
-                    <h4 class="card-title"><?php echo "$nomCliente"?></h4>
+                  <h4 class="card-title">Información de la visita</h4>
+                    <h4 class="card-title">Nombre del cliente: <?php echo "$nomCliente"?></h4>
                     <form class="forms-sample">
                     <div class="form-group">
                         <label for="">Telefono Cliente:  <?php echo "$telCliente" ?></label>
                       </div>
                       <div class="form-group">
+                        <label for="">Correo Cliente:  <?php echo "$emailCliente" ?></label>
+                      </div>
+                      <div class="form-group">
                         <label for="vel">Direccion Cliente :  <?php echo "$dirCliente" ?></label>
                       </div>
                       <div class="form-group">
-                        <label for="plan">Nombre Tecnico :  <?php echo" $nomTec" ?></label>
+                        <label for="plan">Nombre Tecnico :  <?php echo" $nombresu" ?></label>
+                      </div>
+                      <div class="form-group">
+                        <label for="plan">Número del técnico : <?php echo" $telu" ?></label>
+                      </div>
+                      <div class="form-group">
+                        <label for="">Correo técnico:  <?php echo "$emailu" ?></label>
                       </div>
                       <div class="form-group">
                         <label for="plan">Motivo de la visita :  <?php echo" $motivo" ?></label>
                       </div>
                       <div class="form-group">
+                        <label for="plan">Plan contratado: <?php echo" $nombreplan" ?> del tipo <?php echo "$tipoplan"?></label>  
+                      </div>
+                      <div class="form-group">
+                        <label for="plan">Velocidad del plan: <?php echo" $velplan" ?></label>  
+                      </div>
+
+                      <div class="form-group">
+                      <div class="form-group">
                         <label for="plan">Fecha de la visita : <?php echo" $diaVisita" ?></label>
+                      </div>
+                      <div class="form-group">
+                        <label for="plan">Estado de la visita: <?php echo" $eVisita" ?></label>
                       </div>
                 <div class="form-button mt-5">
                     <button id="submit" type="submit" formmethod="post" formaction="../visitas/tablasVisitas.php" class="btn btn-primary btn-lg">Volver a todas las visitas</button>
