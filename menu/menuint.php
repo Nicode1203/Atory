@@ -111,7 +111,7 @@ if ($varsesion == null || $varsesion = '') {
                         <span class="menu-icon">
                             <i class="mdi mdi-contacts"></i>
                         </span>
-                        <span class="menu-title">PQR</span>
+                        <span class="menu-title">Sugerencia Clientes</span>
                     </a>
                 </li>
                 <li class="nav-item menu-items">
