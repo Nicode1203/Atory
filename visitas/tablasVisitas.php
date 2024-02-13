@@ -66,12 +66,11 @@ if ($varsesion == null || $varsesion = '') {
                 <table class="table table-hover">
                 <thead>
             <tr>
-            <th> Documento Cliente</th>
+            <th> Visita No.</th>
             <th> Nombre Cliente</th>
             <th> Telefono Cliente</th>
-            <th> Direccion Cliente</th>
-            <th> Nombre Tecnico </th>
-            <th> Motivo de visita </th>
+            <th> Nombre técnico</th>
+            <th> Tipo de visita</th>
             <th> Dia de la visita </th>
         </tr>
         </thead>
@@ -93,6 +92,7 @@ if ($varsesion == null || $varsesion = '') {
                             $visita_idvisita=$row['visita_idVisita'];
                             $user_idUser=$row['user_idUser'];
                             $idv=$row['idVisita'];
+                            $tipov=$row['tipoVisita'];
                             $motivo = $row['motivoVisita'];
                             $diaVisita = $row['diaVisita'];
                             $eVisita = $row['estadoVisita'];
@@ -110,12 +110,11 @@ if ($varsesion == null || $varsesion = '') {
                             $uacliente=$row['ultimaActualizacion'];
                     ?>
                             <tr>
-                                <td> <?php echo "$docCliente" ?></td>
+                                <td> <?php echo "$idv" ?></td>
                                 <td> <?php echo "$nomCliente" ?></td>
                                 <td> <?php echo "$telCliente" ?></td>
-                                <td> <?php echo "$dirCliente" ?></td>
                                 <td> <?php echo "$nombresu" ?></td>
-                                <td> <?php echo "$motivo" ?></td>
+                                <td> <?php echo "$tipov" ?></td>
                                 <td> <?php echo "$diaVisita" ?></td>
 
                                 <th><a href="actualizarVisita.php?id=<?php echo $row['idVisita'] ?>" class="btn btn-info">Actualizar</a>
