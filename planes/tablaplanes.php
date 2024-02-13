@@ -41,11 +41,10 @@ if ($varsesion == null || $varsesion = '') {
     <div class="content-wrapper">
       <div class="page-header">
         <h1 style="font-size: 32px;">GESTIÓN PLANES</h1>
-
       </div>
+      
       <div class="card">
         <div class="card-body">
-
           <form class="forms-sample">
             <?php
             include_once "conexion.php";
@@ -91,9 +90,8 @@ if ($varsesion == null || $varsesion = '') {
             <?php
               }
             }
-
             ?>
-            <div class="form-button mt-5">
+            <div class="form-button ">
               <button id="submit" type="submit" formmethod="post" formaction="../planes/rurales.php" class="btn btn-primary btn-lg">Ver planes rurales</button>
               <button id="submit" type="submit" formmethod="post" formaction="../planes/urbanos.php" class="btn btn-primary btn-lg">Ver planes urbanos</button>
               <button id="submit" type="submit" formmethod="post" formaction="../planes/empresariales.php" class="btn btn-primary btn-lg">Ver planes empresariales</button>
