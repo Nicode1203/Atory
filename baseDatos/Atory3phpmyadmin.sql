@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 12-02-2024 a las 20:14:05
+-- Tiempo de generación: 13-02-2024 a las 04:52:06
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -281,6 +281,27 @@ INSERT INTO `solicitudes` (`idSolicitud`, `tipoDocumento`, `numeroDocumento`, `n
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `user_visita`
+--
+
+CREATE TABLE `user_visita` (
+  `iduser_visita` int(11) NOT NULL,
+  `visita_idVisita` int(11) DEFAULT NULL,
+  `user_idUser` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+--
+-- Volcado de datos para la tabla `user_visita`
+--
+
+INSERT INTO `user_visita` (`iduser_visita`, `visita_idVisita`, `user_idUser`) VALUES
+(1, 2, 4),
+(2, 3, 5),
+(3, 1, 9);
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `usuario`
 --
 
@@ -319,29 +340,21 @@ INSERT INTO `usuario` (`idUsuario`, `tipoDocumento`, `documentoUsuario`, `nombre
 
 CREATE TABLE `visitas` (
   `idVisita` int(10) NOT NULL,
-  `documentoCliente` varchar(50) DEFAULT NULL,
-  `nombreCliente` varchar(100) DEFAULT NULL,
-  `telefonoCliente` varchar(50) DEFAULT NULL,
-  `emailCliente` varchar(50) DEFAULT NULL,
-  `direccionCliente` varchar(50) DEFAULT NULL,
-  `documentoTecnico` varchar(50) DEFAULT NULL,
-  `nombreTecnico` varchar(50) DEFAULT NULL,
-  `telefonoTecnico` varchar(50) DEFAULT NULL,
-  `emailTecnico` varchar(50) DEFAULT NULL,
   `motivoVisita` varchar(2000) DEFAULT NULL,
   `diaVisita` date DEFAULT NULL,
-  `estadoVisita` varchar(100) DEFAULT 'Activo'
+  `estadoVisita` varchar(100) DEFAULT 'Activo',
+  `visita_idCliente` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `visitas`
 --
 
-INSERT INTO `visitas` (`idVisita`, `documentoCliente`, `nombreCliente`, `telefonoCliente`, `emailCliente`, `direccionCliente`, `documentoTecnico`, `nombreTecnico`, `telefonoTecnico`, `emailTecnico`, `motivoVisita`, `diaVisita`, `estadoVisita`) VALUES
-(1, '1055325484', 'Arnulfo Rodriguez', '3005554878', 'arnulfo@gmail.com', 'cll 148 # 98-50', '1023554584', 'Cristian Muñoz', '3117322001', 'cristian@hotmail.com', 'El modem no esta funcionando apropiadamente (internet lento)', '2021-06-22', 'Activo'),
-(2, '123456789', 'Pepito Juares', '3005556677', 'pepi@gmail.com', 'direccion perdida la de siempre23', '1023554584', 'Cristian Muñoz', '3117322001', 'cristian@hotmail.com', 'Instalacion de plan', '2023-06-27', 'Atendida'),
-(3, '3334445555', 'Juanita Kremer', '3005556678', 'juanita@gmail.com', 'calle 445 bis', '1020554483', 'Fabian Quimbay', '3104552020', 'fabiancho@aol.com', 'el servicio no esta funcionando', '2023-06-29', 'Eliminada'),
-(4, '3334445555', 'Pepito Juares', '3005556677', 'pepi@gmail.com', 'calle 4534 ewes', '1023554584', 'Cristian Muñoz', '3117322001', 'cristian@hotmail.com', 'Otra vez el internet me esta fallando', '2023-06-30', 'Eliminada');
+INSERT INTO `visitas` (`idVisita`, `motivoVisita`, `diaVisita`, `estadoVisita`, `visita_idCliente`) VALUES
+(1, 'El modem no esta funcionando apropiadamente (internet lento)', '2021-06-22', 'Activo', 11),
+(2, 'Instalacion de plan', '2023-06-27', 'Activo', 21),
+(3, 'el servicio no esta funcionando', '2023-06-29', 'Activo', 7),
+(4, 'Otra vez el internet me esta fallando', '2023-06-30', 'Activo', 7);
 
 --
 -- Índices para tablas volcadas
@@ -395,6 +408,14 @@ ALTER TABLE `solicitudes`
   ADD PRIMARY KEY (`idSolicitud`);
 
 --
+-- Indices de la tabla `user_visita`
+--
+ALTER TABLE `user_visita`
+  ADD PRIMARY KEY (`iduser_visita`),
+  ADD KEY `user_idUser` (`user_idUser`),
+  ADD KEY `visita_idVisita` (`visita_idVisita`);
+
+--
 -- Indices de la tabla `usuario`
 --
 ALTER TABLE `usuario`
@@ -406,7 +427,8 @@ ALTER TABLE `usuario`
 -- Indices de la tabla `visitas`
 --
 ALTER TABLE `visitas`
-  ADD PRIMARY KEY (`idVisita`);
+  ADD PRIMARY KEY (`idVisita`),
+  ADD KEY `visita_idCliente` (`visita_idCliente`);
 
 --
 -- AUTO_INCREMENT de las tablas volcadas
@@ -455,6 +477,12 @@ ALTER TABLE `solicitudes`
   MODIFY `idSolicitud` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
+-- AUTO_INCREMENT de la tabla `user_visita`
+--
+ALTER TABLE `user_visita`
+  MODIFY `iduser_visita` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
@@ -481,6 +509,19 @@ ALTER TABLE `cliente`
 --
 ALTER TABLE `factura`
   ADD CONSTRAINT `fk_cliente_factura` FOREIGN KEY (`cliente_idCliente`) REFERENCES `cliente` (`idCliente`);
+
+--
+-- Filtros para la tabla `user_visita`
+--
+ALTER TABLE `user_visita`
+  ADD CONSTRAINT `user_visita_ibfk_1` FOREIGN KEY (`user_idUser`) REFERENCES `usuario` (`idUsuario`),
+  ADD CONSTRAINT `user_visita_ibfk_2` FOREIGN KEY (`visita_idVisita`) REFERENCES `visitas` (`idVisita`);
+
+--
+-- Filtros para la tabla `visitas`
+--
+ALTER TABLE `visitas`
+  ADD CONSTRAINT `visitas_ibfk_1` FOREIGN KEY (`visita_idCliente`) REFERENCES `cliente` (`idCliente`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
