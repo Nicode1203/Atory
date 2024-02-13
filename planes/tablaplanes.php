@@ -17,7 +17,7 @@ if ($varsesion == null || $varsesion = '') {
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Corona Admin</title>
+  <title>Atory System</title>
   <!-- plugins:css -->
   <link rel="stylesheet" href="../assets/vendors/mdi/css/materialdesignicons.min.css">
   <link rel="stylesheet" href="../assets/vendors/css/vendor.bundle.base.css">
@@ -43,15 +43,14 @@ if ($varsesion == null || $varsesion = '') {
         <h1 style="font-size: 32px;">GESTIÓN PLANES</h1>
 
       </div>
-      <div class="row">
-        <div class="card">
-          <div class="card-body">
+      <div class="card">
+        <div class="card-body">
 
-            <form class="forms-sample">
-              <?php
-              include_once "conexion.php";
-              $sql = "SELECT * FROM plan WHERE estadoPlan='activo';";
-              echo '<div class="table-responsive">
+          <form class="forms-sample">
+            <?php
+            include_once "conexion.php";
+            $sql = "SELECT * FROM plan WHERE estadoPlan='activo';";
+            echo '<div class="table-responsive">
                       <table class="table table-hover">
                       <thead>
                           <tr>
@@ -65,57 +64,54 @@ if ($varsesion == null || $varsesion = '') {
                           </tr>
                         </thead>
                           ';
-              if ($rta = $con->query($sql)) {
-                while ($row = $rta->fetch_assoc()) {
-                  $cp = $row['codigoPlan'];
-                  $vel = $row['velocidad'];
-                  $nplan = $row['nombrePlan'];
-                  $pplan = $row['precioPlan'];
-                  $des = $row['desPlan'];
-                  $estadop = $row['estadoPlan'];
-              ?>
-                  <tr>
-                    <td> <?php echo "$cp" ?></td>
-                    <td> <?php echo "$vel" ?></td>
-                    <td> <?php echo "$nplan" ?></td>
-                    <td> <?php echo "$pplan" ?></td>
-                    <td> <?php echo "$estadop" ?></td>
-                    <th>
-                      <a href="../planes/actualizar.php?cp=<?php echo $row['codigoPlan'] ?>" class="btn btn-info">Editar</a>
-                    </th>
-                    </th>
-                    <th>
-                      <a href="../planes/eliminarplan.php?cp=<?php echo $row['codigoPlan'] ?>" class="borrar btn btn-danger">Archivar</a>
-                    </th>
-                    </th>
-                    <td>
-
-                    </td>
-                  </tr>
-              <?php
-                }
+            if ($rta = $con->query($sql)) {
+              while ($row = $rta->fetch_assoc()) {
+                $cp = $row['codigoPlan'];
+                $vel = $row['velocidad'];
+                $nplan = $row['nombrePlan'];
+                $pplan = $row['precioPlan'];
+                $des = $row['desPlan'];
+                $estadop = $row['estadoPlan'];
+            ?>
+                <tr>
+                  <td><?php echo "$cp" ?></td>
+                  <td><?php echo "$vel" ?></td>
+                  <td><?php echo "$nplan" ?></td>
+                  <td><?php echo "$pplan" ?></td>
+                  <td><?php echo "$estadop" ?></td>
+                  <th>
+                    <a href="../planes/actualizar.php?cp=<?php echo $row['codigoPlan']; ?>" class="btn btn-info">Editar</a>
+                  </th>
+                  <th>
+                    <a href="../planes/eliminarplan.php?cp=<?php echo $row['codigoPlan']; ?>" class="borrar btn btn-danger">Archivar</a>
+                  </th>
+                  <td>
+                  </td>
+                </tr>
+            <?php
               }
+            }
 
-              ?>
-              <div class="form-button mt-5">
-                <button id="submit" type="submit" formmethod="post" formaction="../planes/rurales.php" class="btn btn-primary btn-lg">Ver planes rurales</button>
-                <button id="submit" type="submit" formmethod="post" formaction="../planes/urbanos.php" class="btn btn-primary btn-lg">Ver planes urbanos</button>
-                <button id="submit" type="submit" formmethod="post" formaction="../planes/empresariales.php" class="btn btn-primary btn-lg">Ver planes empresariales</button>
-                <button id="submit" type="submit" formmethod="post" formaction="../planes/nuevoplan.php" class="btn btn-primary btn-lg">Ingresar nuevo plan</button>
-                <button id="submit" type="submit" formmethod="post" formaction="../planes/consultarplanes.php" class="btn btn-primary btn-lg">Consultar Plan</button>
-                <button id="submit" type="submit" formmethod="post" formaction="../planes/tablaplanesinac.php" class="btn btn-danger btn-lg">Ver planes Inactivos</button>
+            ?>
+            <div class="form-button mt-5">
+              <button id="submit" type="submit" formmethod="post" formaction="../planes/rurales.php" class="btn btn-primary btn-lg">Ver planes rurales</button>
+              <button id="submit" type="submit" formmethod="post" formaction="../planes/urbanos.php" class="btn btn-primary btn-lg">Ver planes urbanos</button>
+              <button id="submit" type="submit" formmethod="post" formaction="../planes/empresariales.php" class="btn btn-primary btn-lg">Ver planes empresariales</button>
+              <button id="submit" type="submit" formmethod="post" formaction="../planes/nuevoplan.php" class="btn btn-primary btn-lg">Ingresar nuevo plan</button>
+              <button id="submit" type="submit" formmethod="post" formaction="../planes/consultarplanes.php" class="btn btn-primary btn-lg">Consultar Plan</button>
+              <button id="submit" type="submit" formmethod="post" formaction="../planes/tablaplanesinac.php" class="btn btn-danger btn-lg">Ver planes Inactivos</button>
 
-                <a href="../excel/excelPlanes.php" class="btn btn-success btn-lg">Exportar tabla a Excel</a>
-              </div>
+              <a href="../excel/excelPlanes.php" class="btn btn-success btn-lg">Exportar tabla a Excel</a>
+            </div>
 
-            </form>
-
-          </div>
+          </form>
 
         </div>
 
       </div>
+
     </div>
+  </div>
 
   </div>
 
