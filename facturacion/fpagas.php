@@ -93,7 +93,9 @@ if ($varsesion == null || $varsesion = '') {
 
   <div class="main-panel">
     <div class="content-wrapper"> <!-- ESTO ES LO QUE TENEMOS QUE MODIFICAR -->
+    <div class="page-header">
       <h1 style="font-size: 32px;">GESTIÓN FACTURAS</h1>
+    </div>
       <div class="card">
       <div class="card-body">
         <a href="facturas.php" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Volver a facturas pendientes</a>
@@ -101,10 +103,11 @@ if ($varsesion == null || $varsesion = '') {
 
         include("conexion.php");
 
-        $sql = "SELECT cliente.idCliente,factura.cliente_idCliente,cliente.documentoCliente,cliente.nombreCliente,factura.fechaFactura,factura.valorTotalFactura,factura.estadoFactura FROM cliente 
-INNER JOIN factura
-ON cliente.idCliente=factura.cliente_idCliente
-WHERE estadoFactura='Pago';";
+        $sql = "SELECT cliente.idCliente,factura.cliente_idCliente,cliente.documentoCliente,cliente.nombreCliente,factura.idFactura,factura.fechaFactura,factura.valorTotalFactura,factura.estadoFactura FROM cliente 
+        INNER JOIN factura
+        ON cliente.idCliente=factura.cliente_idCliente
+        WHERE estadoFactura='Pago'
+        ORDER BY fechaFactura DESC;";
 
         echo '<div class="table-responsive">
             <table class="table table-hover">
@@ -127,6 +130,7 @@ WHERE estadoFactura='Pago';";
             $b = $row['cliente_idCliente'];
             $dc = $row['documentoCliente'];
             $nomc = $row['nombreCliente'];
+            $idf=$row['idFactura'];
             $ffact = $row['fechaFactura'];
             $st = $row['valorTotalFactura'];
             $estf = $row['estadoFactura'];
@@ -140,7 +144,7 @@ WHERE estadoFactura='Pago';";
               <td> <?php echo "$st" ?></td>
               <td> <?php echo "$estf" ?></td>
               <th>
-                <a href="verfactura.php?id=<?php echo  $row['idCliente'] ?>" class="btn btn-info">ver factura</a>
+                <a href="verfacturaAdmin.php?id=<?php echo  $row['idCliente'] ?>" class="btn btn-info">ver factura</a>
 
               <th><a href="pend.php?id=<?php echo $row['cliente_idCliente']   ?>" class="btn btn-danger">Regresar a pendientes</a></th>
 
@@ -156,12 +160,7 @@ WHERE estadoFactura='Pago';";
         <!-- partial -->
       </div>
       </div>
-      <footer class="footer">
-        <div class="d-sm-flex justify-content-center justify-content-sm-between">
-          <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright © Atory Solution 2023</span>
-          <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center"> <a href=" " target="_blank"></a> </span>
-        </div>
-      </footer>
+
       <!-- main-panel ends -->
     </div>
     <!-- page-body-wrapper ends -->

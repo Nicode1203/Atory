@@ -2,11 +2,11 @@
 //seguridad de sesiones paginacion (prueba 1)
 session_start();
 error_reporting(0);
-$varsesion= $_SESSION['usuario'];
-if ($varsesion == null || $varsesion='') {
-    header ("location:../index.html");
-    die();
-    exit;
+$varsesion = $_SESSION['usuario'];
+if ($varsesion == null || $varsesion = '') {
+  header("location:../index.html");
+  die();
+  exit;
 }
 
 ?>
@@ -31,7 +31,7 @@ if ($varsesion == null || $varsesion='') {
   <!-- inject:css -->
   <!-- endinject -->
   <!-- Layout styles -->
-  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../../assets/css/style.css">
   <!-- End layout styles -->
   <link rel="shortcut icon" href="../assets/images/favicon.png">
   <style type="text/css">
@@ -92,16 +92,17 @@ if ($varsesion == null || $varsesion='') {
 
   <div class="main-panel">
     <div class="content-wrapper"> <!-- ESTO ES LO QUE TENEMOS QUE MODIFICAR -->
-      <div class="card-body">
-        <h3>INVENTARIO</h3>
+      <div class="card">
+        <div class="card-body">
+          <h3>INVENTARIO</h3>
 
-        <?php
+          <?php
 
-        include("conexion.php");
+          include("conexion.php");
 
-        $sql = "SELECT * FROM producto WHERE estadoProducto='Activo';";
+          $sql = "SELECT * FROM producto WHERE estadoProducto='Activo';";
 
-        echo '<div class="table-responsive">
+          echo '<div class="table-responsive">
             <table class="table table-hover">
             <thead>
         <tr>
@@ -115,34 +116,35 @@ if ($varsesion == null || $varsesion='') {
     </thead>
     ';
 
-        if ($rta = $con->query($sql)) {
-          while ($row = $rta->fetch_assoc()) {
-            $id = $row['idProducto'];
-            $nombrep = $row['nombreProducto'];
-            $serial = $row['serialProducto'];
-            $desp = $row['descripcionProducto'];
-            $cantidad = $row['cantidad'];
-            $estado=$row['estadoProducto'];
-        ?>
-            <tr>
-              <td> <?php echo "$id" ?></td>
-              <td> <?php echo "$nombrep" ?></td>
-              <td> <?php echo "$serial" ?></td>
-              <td> <?php echo "$desp" ?></td>
-              <td> <?php echo "$cantidad" ?></td>
-              <th>
-               
-            </tr>
-        <?php
+          if ($rta = $con->query($sql)) {
+            while ($row = $rta->fetch_assoc()) {
+              $id = $row['idProducto'];
+              $nombrep = $row['nombreProducto'];
+              $serial = $row['serialProducto'];
+              $desp = $row['descripcionProducto'];
+              $cantidad = $row['cantidad'];
+              $estado = $row['estadoProducto'];
+          ?>
+              <tr>
+                <td> <?php echo "$id" ?></td>
+                <td> <?php echo "$nombrep" ?></td>
+                <td> <?php echo "$serial" ?></td>
+                <td> <?php echo "$desp" ?></td>
+                <td> <?php echo "$cantidad" ?></td>
+                <th>
+
+              </tr>
+          <?php
+            }
           }
-        }
 
-        ?>
+          ?>
 
-        <!-- ESTO ES LO QUE PODEMOS MODIFICAR -->
-        <!-- partial:partials/_footer.html -->
+          <!-- ESTO ES LO QUE PODEMOS MODIFICAR -->
+          <!-- partial:partials/_footer.html -->
 
-        <!-- partial -->
+          <!-- partial -->
+        </div>
       </div>
 
       <!-- main-panel ends -->
@@ -177,28 +179,28 @@ if ($varsesion == null || $varsesion='') {
   <div class="jvectormap-tip"></div>
   <!-- Estas ultimas lineas son para la alerta DE BORRAR, INSERTA SWEET ALERT Y LUEGO ESTA EL SCRIPT PARA BORRAR-->
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script>
-        $('.borrar').on('click', function(e) {
-            e.preventDefault();
-            var self = $(this);
-            console.log(self.data('title'));
-            Swal.fire({
-                title: 'Esta seguro que desea continuar?',
-                icon: 'warning',
-                showCancelButton: true,
-                confirmButtonColor: '#3085d6',
-                cancelButtonColor: '#d33',
-                confirmButtonText: 'Confirmar',
-                cancelButtonText: 'No',
-                background: '#34495E'
-            }).then((result) => {
-                if (result.isConfirmed) {
-                    
-                    location.href = self.attr('href');
-                }
-            })
-        })
-    </script>
+  <script>
+    $('.borrar').on('click', function(e) {
+      e.preventDefault();
+      var self = $(this);
+      console.log(self.data('title'));
+      Swal.fire({
+        title: 'Esta seguro que desea continuar?',
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Confirmar',
+        cancelButtonText: 'No',
+        background: '#34495E'
+      }).then((result) => {
+        if (result.isConfirmed) {
+
+          location.href = self.attr('href');
+        }
+      })
+    })
+  </script>
 </body>
 
 </html>

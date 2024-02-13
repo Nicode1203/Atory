@@ -35,12 +35,12 @@ if ($varsesion == null || $varsesion = '') {
         <nav class="sidebar sidebar-offcanvas" id="sidebar">
             <div class="sidebar-brand-wrapper d-none d-lg-flex align-items-center justify-content-center fixed-top">
                 <!-- Logo de Atory -->
-                <a class="sidebar-brand brand-logo" href="../index.html">
+                <a class="sidebar-brand brand-logo">
                     <img src="../assets/images/atori.png" alt="logo">
                 </a>
                 <!-- Volver a inicio -->
-                <a class="sidebar-brand brand-logo-mini" href="../index.html">
-                    <img src="assets/images/logo-mini.png" alt="logo">
+                <a class="sidebar-brand brand-logo-mini">
+                    <img src="../assets/images/logo-mini.png" alt="logo">
                 </a>
             </div>
             <ul class="nav">
@@ -53,7 +53,7 @@ if ($varsesion == null || $varsesion = '') {
                             </div>
                             <div class="profile-name">
                                 <h5 class="mb-0 font-weight-normal">ADMINISTRATIVO</h5>
-                                <span>Rol administrativo</span>
+
                             </div>
                         </div>
                         <!-- Ajustes de perfil -->
@@ -129,8 +129,8 @@ if ($varsesion == null || $varsesion = '') {
             <!-- Menú navbar.html -->
             <nav class="navbar p-0 fixed-top d-flex flex-row">
                 <div class="navbar-brand-wrapper d-flex d-lg-none align-items-center justify-content-center">
-                    <a class="navbar-brand brand-logo-mini" href="index.html">
-                        <img src="../assets/images/logo-mini.png" alt="logo">
+                    <a class="navbar-brand brand-logo-mini">
+                        <img src=" ../assets/images/logo-mini.png" alt="logo">
                     </a>
                 </div>
                 <div class="navbar-menu-wrapper flex-grow d-flex align-items-stretch">

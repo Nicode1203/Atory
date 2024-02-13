@@ -2,11 +2,11 @@
 //seguridad de sesiones paginacion (prueba 1)
 session_start();
 error_reporting(0);
-$varsesion= $_SESSION['usuario'];
-if ($varsesion == null || $varsesion='' ) {
-    header ("location:../index.html");
-    die();
-    exit;
+$varsesion = $_SESSION['usuario'];
+if ($varsesion == null || $varsesion = '') {
+  header("location:../index.html");
+  die();
+  exit;
 }
 
 ?>
@@ -31,7 +31,7 @@ if ($varsesion == null || $varsesion='' ) {
   <!-- inject:css -->
   <!-- endinject -->
   <!-- Layout styles -->
-  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../../assets/css/style.css">
   <!-- End layout styles -->
   <link rel="shortcut icon" href="../assets/images/favicon.png">
   <style type="text/css">
@@ -85,14 +85,14 @@ if ($varsesion == null || $varsesion='' ) {
 
 <body>
   <?php
-    
-    include 'conexion.php';
-    
-    $id = $_GET['id'];
-    $sql = "SELECT * FROM producto WHERE idProducto='$id'";
-    $query = mysqli_query($con, $sql);
-    $row = mysqli_fetch_array($query);
-    
+
+  include 'conexion.php';
+
+  $id = $_GET['id'];
+  $sql = "SELECT * FROM producto WHERE idProducto='$id'";
+  $query = mysqli_query($con, $sql);
+  $row = mysqli_fetch_array($query);
+
   include '../menu/menuint.php';
   ?>
   <!-- partial -->
@@ -104,7 +104,7 @@ if ($varsesion == null || $varsesion='' ) {
         <h4 class="card-title">Actualizacion plan </h4>
         <p class="card-description"> Ingrese informacion de nuevo plan</p>
         <form action="../actplan.php" method="POST">
-            
+
           <input type="hidden" name="id" value="<?php echo $row['idProducto']  ?>">
           <input type="text" class="form-control mb-3" name="nombrep" placeholder="Velocidad Plan" value="<?php echo $row['nombreProducto']  ?>">
           <input type="text" class="form-control mb-3" name="serial" placeholder="Nombre del Plan" value="<?php echo $row['serialProducto']  ?>">

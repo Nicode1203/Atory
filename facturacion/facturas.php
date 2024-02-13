@@ -92,7 +92,9 @@ if ($varsesion == null || $varsesion = '') {
 
   <div class="main-panel">
     <div class="content-wrapper"> <!-- ESTO ES LO QUE TENEMOS QUE MODIFICAR -->
-      <h1 style="font-size: 32px;">GESTIÓN FACTURAS</h1>
+      <div class="page-header">
+        <h1 style="font-size: 32px;">GESTIÓN FACTURAS</h1>
+      </div>
       <div class="card">
       <div class="card-body">
       <a href="factcliente.php" class="btn btn-danger btn-lg" role="button" aria-pressed="true">Ingresar factura</a>
@@ -107,7 +109,8 @@ if ($varsesion == null || $varsesion = '') {
         $sql = "SELECT cliente.idCliente,factura.cliente_idCliente,cliente.documentoCliente,cliente.nombreCliente,factura.fechaFactura,factura.valorTotalFactura,factura.estadoFactura FROM cliente 
                     INNER JOIN factura
                     ON cliente.idCliente=factura.cliente_idCliente
-                    WHERE estadoFactura='Pendiente';";
+                    WHERE estadoFactura='Pendiente'
+                    ORDER BY fechaFactura DESC;";
 
         echo '<div class="table-responsive">
             <table class="table table-hover">

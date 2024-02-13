@@ -24,7 +24,7 @@ if ($varsesion == null || $varsesion = '') {
     <link rel="stylesheet" href="../assets/vendors/css/vendor.bundle.base.css">
     <!-- Fin de los estilos de los plugins -->
     <!-- Estilos del archivo actual -->
-    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/style.css">
     <!-- Fin de los estilos del archivo actual -->
     <link rel="shortcut icon" href="../assets/images/favicon.png">
 </head>
@@ -41,14 +41,15 @@ if ($varsesion == null || $varsesion = '') {
 
         <div class="content-wrapper">
             <h1 style="font-size: 32px;">Visitas tecnicas e Instalaciones</h1>
-            <div class="card-body">
+            <div class="card">
+                <div class="card-body">
 
-                <?php
-                include("../conexion.php");
+                    <?php
+                    include("../conexion.php");
 
-                $sql = "SELECT * FROM visitas WHERE estadoVisita='Activo';";
+                    $sql = "SELECT * FROM visitas WHERE estadoVisita='Activo';";
 
-                echo '<div class="table-responsive">
+                    echo '<div class="table-responsive">
                 <table class="table table-hover">
                 <thead>
             <tr>
@@ -63,45 +64,46 @@ if ($varsesion == null || $varsesion = '') {
         </thead>
         ';
 
-                if ($rta = $con->query($sql)) {
-                    while ($row = $rta->fetch_assoc()) {
-                        $id = $row['idVisita'];
-                        $docCliente = $row['documentoCliente'];
-                        $nomCliente = $row['nombreCliente'];
-                        $telCliente = $row['telefonoCliente'];
-                        $emailCliente = $row['emailCliente'];
-                        $dirCliente = $row['direccionCliente'];
-                        $docTecnico = $row['documentoTecnico'];
-                        $nomTec = $row['nombreTecnico'];
-                        $telTec = $row['telefonoTecnico'];
-                        $emailTec = $row['emailTecnico'];
-                        $motivo = $row['motivoVisita'];
-                        $diaVisita = $row['diaVisita'];
-                        $eVisita = $row['estadoVisita'];
-                ?>
-                        <tr>
-                            <td> <?php echo "$docCliente" ?></td>
-                            <td> <?php echo "$nomCliente" ?></td>
-                            <td> <?php echo "$telCliente" ?></td>
-                            <td> <?php echo "$dirCliente" ?></td>
-                            <td> <?php echo "$nomTec" ?></td>
-                            <td> <?php echo "$motivo" ?></td>
-                            <td> <?php echo "$diaVisita" ?></td>
+                    if ($rta = $con->query($sql)) {
+                        while ($row = $rta->fetch_assoc()) {
+                            $id = $row['idVisita'];
+                            $docCliente = $row['documentoCliente'];
+                            $nomCliente = $row['nombreCliente'];
+                            $telCliente = $row['telefonoCliente'];
+                            $emailCliente = $row['emailCliente'];
+                            $dirCliente = $row['direccionCliente'];
+                            $docTecnico = $row['documentoTecnico'];
+                            $nomTec = $row['nombreTecnico'];
+                            $telTec = $row['telefonoTecnico'];
+                            $emailTec = $row['emailTecnico'];
+                            $motivo = $row['motivoVisita'];
+                            $diaVisita = $row['diaVisita'];
+                            $eVisita = $row['estadoVisita'];
+                    ?>
+                            <tr>
+                                <td> <?php echo "$docCliente" ?></td>
+                                <td> <?php echo "$nomCliente" ?></td>
+                                <td> <?php echo "$telCliente" ?></td>
+                                <td> <?php echo "$dirCliente" ?></td>
+                                <td> <?php echo "$nomTec" ?></td>
+                                <td> <?php echo "$motivo" ?></td>
+                                <td> <?php echo "$diaVisita" ?></td>
 
-                            <th><a href="comentario.php?id=<?php echo $row['idVisita'] ?>" class="btn btn-primary">Agregar comentario</a></th>
-                            <th><a href="eliminarVisita.php?id=<?php echo $row['idVisita'] ?>" class="btn btn-danger">Marcar como Atendida</a></th>
-                            </th>
-                        </tr>
-                <?php
+                                <th><a href="comentario.php?id=<?php echo $row['idVisita'] ?>" class="btn btn-primary">Agregar comentario</a></th>
+                                <th><a href="eliminarVisita.php?id=<?php echo $row['idVisita'] ?>" class="btn btn-danger">Marcar como Atendida</a></th>
+                                </th>
+                            </tr>
+                    <?php
+                        }
                     }
-                }
 
-                ?>
+                    ?>
 
-                <!-- ESTO ES LO QUE PODEMOS MODIFICAR -->
-                <!-- partial:partials/_footer.html -->
+                    <!-- ESTO ES LO QUE PODEMOS MODIFICAR -->
+                    <!-- partial:partials/_footer.html -->
 
-                <!-- partial -->
+                    <!-- partial -->
+                </div>
             </div>
 
             <!-- main-panel ends -->
@@ -135,23 +137,7 @@ if ($varsesion == null || $varsesion = '') {
 
     <div class="jvectormap-tip"></div>
     <!-- Estas ultimas lineas son para la alerta DE BORRAR, INSERTA SWEET ALERT Y LUEGO ESTA EL SCRIPT PARA BORRAR-->
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script>
-        (() => {
 
-        })()
-
-        const {} = Swal.fire({
-            title: 'Hola, Bienvenido a Atory Solutions',
-            icon: 'info',
-            width: '40%',
-            padding: 0,
-            background: '#34495E',
-            position: 'center',
-            allowOutsideClick: false,
-            confirmButtonColor: '#3498DB'
-        });
-    </script>
 </body>
 
 </html>

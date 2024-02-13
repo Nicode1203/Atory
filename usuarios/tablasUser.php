@@ -45,7 +45,9 @@ if ($varsesion == null || $varsesion = '') {
             </div>
             <div class="card">
                 <div class="card-body">
-                    <a href="usuarios.php" class="btn btn-primary btn-lg" role="button" aria-pressed="true">Volver al inicio</a>
+                    <a href="ingresarUser.php" class="btn btn-primary btn-lg" role="button" aria-pressed="true">Crear nuevo usuario</a>
+                    <a href="usuarios.php" class="btn btn-primary btn-lg" role="button" aria-pressed="true">Consultar usuario</a>
+
                     <a href="../excel/excelUsuario.php" class="btn btn-success btn-lg">Exportar tabla a Excel</a>
                     <?php
                     include("conexion.php");
@@ -61,7 +63,7 @@ if ($varsesion == null || $varsesion = '') {
                             <th>Nombres</th>
                             <th>Teléfono</th>
                             <th>Email</th>
-                            <th>Clave</th>
+                            
                             <th>Estado</th>
                             <th>Fecha creación</th>
                             <th>Última Actual</th>
@@ -91,7 +93,7 @@ if ($varsesion == null || $varsesion = '') {
                                 <td> <?php echo $nombres ?></td>
                                 <td> <?php echo $telefono ?></td>
                                 <td> <?php echo $email ?></td>
-                                <td> <?php echo $clave ?></td>
+
                                 <td> <?php echo $estado ?></td>
                                 <td> <?php echo $creacion ?></td>
                                 <td> <?php echo $act ?></td>

@@ -101,54 +101,52 @@ if ($varsesion == null || $varsesion = '') {
   <div class="main-panel">
     <div class="content-wrapper"> <!-- ESTO ES LO QUE TENEMOS QUE MODIFICAR -->
       <h1 style="font-size: 32px;">GESTIÓN INVENTARIO</h1>
-      <div class="card-body">
-        <h4 class="card-title">Actualizacion inventario </h4>
-        <p class="card-description"> </p>
-        <form action="../actplan.php" method="POST">
+      <div class="col-md-6 grid-margin stretch-card">
+        <div class="card">
+          <div class="card-body">
+            <h4 class="card-title">Actualizacion inventario </h4>
+            <p class="card-description"> </p>
+            <form action="../actplan.php" method="POST">
 
-          <input type="hidden" name="id" value="<?php echo $row['idProducto']  ?>">
-          <p class="card-description"> Nombre del producto: </p>
-          <input type="text" class="form-control mb-3" name="nombrep" placeholder="Velocidad Plan" value="<?php echo $row['nombreProducto']  ?>">
-          <p class="card-description"> Serial producto: </p>
-          <input type="text" class="form-control mb-3" name="serial" placeholder="Nombre del Plan" value="<?php echo $row['serialProducto']  ?>">
-          <p class="card-description"> Descripcion del producto: </p>
-          <input type="text" class="form-control mb-3" name="desp" placeholder="Ingrese Valor del Plan" value="<?php echo $row['descripcionProducto']  ?>">
-          <p class="card-description"> Cantidad: </p>
-          <input type="text" class="form-control mb-3" name="cantidad" placeholder="Descripcion del plan" value="<?php echo $row['cantidad']  ?>">
-          <p class="card-description"> Estado: </p>
-          <select class="form-select" aria-label="Default select example" name="estadop" id="estadop" value="<?php echo $row['estadoProducto']  ?>">
-            <option value="Activo">Activo </option>
-            <option value="Inactivo">Inactivo</option>
-          </select>
-          <p></p>
-          <input type="submit" class="btn btn-primary btn-lg" value="Actualizar" formmethod="post" formaction=updateinventario.php>
-        </form>
+              <input type="hidden" name="id" value="<?php echo $row['idProducto']  ?>">
+              <p class="card-description"> Nombre del producto: </p>
+              <input type="text" class="form-control mb-3" name="nombrep" placeholder="Velocidad Plan" value="<?php echo $row['nombreProducto']  ?>">
+              <p class="card-description"> Serial producto: </p>
+              <input type="text" class="form-control mb-3" name="serial" placeholder="Nombre del Plan" value="<?php echo $row['serialProducto']  ?>">
+              <p class="card-description"> Descripcion del producto: </p>
+              <input type="text" class="form-control mb-3" name="desp" placeholder="Ingrese Valor del Plan" value="<?php echo $row['descripcionProducto']  ?>">
+              <p class="card-description"> Cantidad: </p>
+              <input type="text" class="form-control mb-3" name="cantidad" placeholder="Descripcion del plan" value="<?php echo $row['cantidad']  ?>">
+              <p class="card-description"> Estado: </p>
+              <select class="form-select" aria-label="Default select example" name="estadop" id="estadop" value="<?php echo $row['estadoProducto']  ?>">
+                <option value="Activo">Activo </option>
+                <option value="Inactivo">Inactivo</option>
+              </select>
+              <p></p>
+              <input type="submit" class="btn btn-primary btn-lg" value="Actualizar" formmethod="post" formaction=updateinventario.php>
+            </form>
 
-        <div class="row">
-          <div>
-            <div>
-
-            </div>
           </div>
-
         </div>
 
-
-
-
       </div>
-      <!-- ESTO ES LO QUE PODEMOS MODIFICAR -->
-      <!-- partial:partials/_footer.html -->
 
-      <!-- partial -->
+
+
+
     </div>
-    <footer class="footer">
-      <div class="d-sm-flex justify-content-center justify-content-sm-between">
-        <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright © Atory Solution 2023</span>
-        <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center"> <a href=" " target="_blank"></a> </span>
-      </div>
-    </footer>
-    <!-- main-panel ends -->
+    <!-- ESTO ES LO QUE PODEMOS MODIFICAR -->
+    <!-- partial:partials/_footer.html -->
+
+    <!-- partial -->
+  </div>
+  <footer class="footer">
+    <div class="d-sm-flex justify-content-center justify-content-sm-between">
+      <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright © Atory Solution 2023</span>
+      <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center"> <a href=" " target="_blank"></a> </span>
+    </div>
+  </footer>
+  <!-- main-panel ends -->
   </div>
   <!-- page-body-wrapper ends -->
 

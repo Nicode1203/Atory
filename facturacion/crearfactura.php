@@ -2,11 +2,11 @@
 //seguridad de sesiones paginacion (prueba 1)
 session_start();
 error_reporting(0);
-$varsesion= $_SESSION['usuario'];
-if ($varsesion == null || $varsesion='' ) {
-    header ("location:../index.html");
-    die();
-    exit;
+$varsesion = $_SESSION['usuario'];
+if ($varsesion == null || $varsesion = '') {
+  header("location:../index.html");
+  die();
+  exit;
 }
 
 ?>
@@ -21,32 +21,39 @@ if ($varsesion == null || $varsesion='' ) {
   include("conexion.php");
   $doc = $_POST['id'];
   $sql = "SELECT * FROM cliente  
-  INNER JOIN factura
-  ON cliente.idCliente=factura.cliente_idCliente
-  WHERE documentoCliente= '$doc';";
+  INNER JOIN plan
+  ON cliente.plan_idPlan=plan.idPlan
+  WHERE documentoCliente= '$doc'";
   $query = mysqli_query($con, $sql);
   $row = mysqli_fetch_array($query);
   if ($rta = $con->query($sql)) {
     while ($row = $rta->fetch_assoc()) {
       $id = $row['idCliente'];
-      $td=$row['tipoDocumento'];
-      $doc=$row['documentoCliente'];
-      $nomc=$row['nombreCliente'];
-      $telc=$row['telefonoCliente'];
-      $emailc=$row['correoCliente'];
-      $dc=$row['direccion'];
-      $ec=$row['estadoCliente'];
-      $creado=$row['creado'];
-      $uact=$row['ultimaActualizacion'];
-      $if=$row['idFactura'];
-      $ffact=$row['fechaFactura'];
-      $impt=$row['impuestoTotal'];
-      $sub=$row['subTotal'];
-      $st=$row['valorTotalFactura'];
-      $cid=$row['cliente_idCliente'];
-      $estf=$row['estadoFactura'];
+      $td = $row['tipoDocumento'];
+      $doc = $row['documentoCliente'];
+      $nomc = $row['nombreCliente'];
+      $telc = $row['telefonoCliente'];
+      $emailc = $row['correoCliente'];
+      $dc = $row['direccion'];
+      $ec = $row['estadoCliente'];
+      $plancliente=$row['plan_idPlan'];
+      $creado = $row['creado'];
+      $uact = $row['ultimaActualizacion'];
+      $idplan=$row['idPlan'];
+      $codigoplan=$row['codigoPlan'];
+      $tipoplan=$row['tipoPlan'];
+      $vp=$row['velocidad'];
+      $nombreplan=$row['nombrePlan'];
+      $precioplan=$row['precioPlan'];
+      $descripcionplan=$row['desPlan'];
+      $estadoplan=$row['estadoPlan'];
+      $cid=$id;
+      $st=$precioplan;
+      $impt=$st*0.19;
+      $sub=$st*0.81;
     }
   }
+
   ?>
   ?>
   <title>Atory Solutions</title>
@@ -118,6 +125,7 @@ if ($varsesion == null || $varsesion='' ) {
 <body>
   <?php
   include '../menu/menuint.php';
+
   ?>
   <!-- partial -->
 
@@ -125,23 +133,29 @@ if ($varsesion == null || $varsesion='' ) {
   <div class="main-panel">
     <div class="content-wrapper"> <!-- ESTO ES LO QUE TENEMOS QUE MODIFICAR -->
       <div class="card-body">
-        <h4 class="card-title">Actualizacion FACTURA </h4>
+        <h4 class="card-title">INGRESAR NUEVA FACTURA</h4>
         <p class="card-description"> Cliente: <?php echo "$doc"  ?></p>
         <p class="card-description"> Documento:<?php echo "$nomc"  ?> </p>
         <p class="card-description"> Telefono:<?php echo "$telc"  ?> </p>
         <p class="card-description"> Correo Electronico:<?php echo "$emailc"  ?> </p>
         <p class="card-description"> Dirección Cliente:<?php echo "$dc"  ?> </p>
-        <p class="card-description"> Ingrese infomración de factura</p>
+        <p class="card-description"> Plan del cliente:<?php echo "$tipoplan"  ?> </p>
+        <p class="card-description"> velocidad del plan:<?php echo "$vp"  ?> </p>
+        <p class="card-description"> Subtotal a pagar: <?php echo "$sub"  ?> </p>
+        <p class="card-description"> Impuestos: <?php echo "$impt"  ?> </p>
+        <p class="card-description"> Total: <?php echo "$st"  ?> </p>
+        <p class="card-description"> Ingrese fecha de pago:</p>
         <form action="actfactura.php" method="POST">
-        <input type="hidden" name="if" value="<?php echo "$if"  ?>">
+          <input type="hidden" name="if" value="<?php echo "$if"  ?>">
           <input type="hidden" name="id" value="<?php echo "$id"  ?>">
           <input type="hidden" name="cid" value="<?php echo "$cid"  ?>">
-          <input type="date" class="form-control mb-3" name="ffact" placeholder="Fecha de factura" >
-          <input type="text" class="form-control mb-3" name="impt" placeholder="impuesto de factura" >
-          <input type="text" class="form-control mb-3" name="sub" placeholder="Valor sin impuesto" >
-          <input type="text" class="form-control mb-3" name="st" placeholder="Valor total" >
-
-          <input type="submit" class="btn btn-primary btn-block" value="crear" formmethod="post" formaction=ingresarfactura.php>
+          <input type="date" class="form-control mb-3" name="ffact" placeholder="Fecha de factura">
+          <input type="hidden" name="impt" value="<?php echo "$impt"  ?>">
+          <input type="hidden" name="sub" value="<?php echo "$sub"  ?>">
+          <input type="hidden" name="st" value="<?php echo "$st"  ?>">
+          
+          <input type="submit" class="btn btn-primary btn-lg" value="crear" formmethod="post" formaction=ingresarfactura.php>
+          <input type="submit" class="btn btn-primary btn-lg" value="cancelar" formmethod="post" formaction=facturas.php>
         </form>
 
         <div class="row">

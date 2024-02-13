@@ -24,7 +24,7 @@ if ($varsesion == null || $varsesion = '') {
     <link rel="stylesheet" href="../assets/vendors/css/vendor.bundle.base.css">
     <!-- Fin de los estilos de los plugins -->
     <!-- Estilos del archivo actual -->
-    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/style.css">
     <!-- Fin de los estilos del archivo actual -->
     <link rel="shortcut icon" href="../assets/images/favicon.png">
 </head>
@@ -42,7 +42,7 @@ if ($varsesion == null || $varsesion = '') {
                 <h4 class="card-title">GESTION DE VISITAS</h4>
                 <p class="card-description"> Ingrese los datos de la visita</p>
                 <form class="forms-sample">
-                    
+
                     <div class="form-group">
                         <label for="docC">Ingrese documento del Cliente</label>
                         <input type="text" class="form-control" name="docC" id="docC" placeholder="Numero de documento">
@@ -78,7 +78,7 @@ if ($varsesion == null || $varsesion = '') {
                         <label for="telT">Ingrese telefono del Tecnico</label>
                         <input type="text" class="form-control" name="telT" id="telT" placeholder="Ingrese telefono">
                     </div>
-                
+
                     <!--valor de email-->
                     <div class="form-group">
                         <label for="emailT">Ingrese Correo del tecnico</label>
