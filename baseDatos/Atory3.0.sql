@@ -159,6 +159,25 @@ CREATE TABLE `solicitudes` (
 
 insert  into `solicitudes`(`idSolicitud`,`tipoDocumento`,`numeroDocumento`,`nombres`,`telefono`,`email`,`estadoSolicitud`) values (1,'C.C','202','Estefania Flor','3195852323','este@gmail.com','Atendido'),(2,'C.E','963','Julian Hernandez','3692582365','juli@gmail.com','Atendido'),(3,'C.C','3654','Ayane Hayabusa','5893652121','ayane@hotmail.com','Atendido'),(4,'C.C','15263635','Kasumi Hayabusa','9549638521414','kasumi@gmail.com','Activo'),(5,'C.C','45','Helena Leau','9638525858','helena@yahoo.com','Atendido'),(6,'C.C','89','Fabian Quimbay','3258963254','helena@gmail.com','Activo'),(7,'C.C','789','Ana Maria Rosales','7893652123','maria@gmail.com','Activo'),(8,'C.C','3636','Juan Rodriguez','123456','juan@aol.com','Atendido'),(9,'C.C','56','Helena','7859635874','helena@gmail.com','Activo'),(10,'C.E','987','stephy gomez','3198988686','ste@gmail.com','Activo'),(11,'C.C','987654','juanito alimaña','300886644','alimana@gmail.com','Atendido');
 
+/*Table structure for table `user_visita` */
+
+DROP TABLE IF EXISTS `user_visita`;
+
+CREATE TABLE `user_visita` (
+  `iduser_visita` int(11) NOT NULL AUTO_INCREMENT,
+  `visita_idVisita` int(11) DEFAULT NULL,
+  `user_idUser` int(11) DEFAULT NULL,
+  PRIMARY KEY (`iduser_visita`),
+  KEY `user_idUser` (`user_idUser`),
+  KEY `visita_idVisita` (`visita_idVisita`),
+  CONSTRAINT `user_visita_ibfk_1` FOREIGN KEY (`user_idUser`) REFERENCES `usuario` (`idUsuario`),
+  CONSTRAINT `user_visita_ibfk_2` FOREIGN KEY (`visita_idVisita`) REFERENCES `visitas` (`idVisita`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+/*Data for the table `user_visita` */
+
+insert  into `user_visita`(`iduser_visita`,`visita_idVisita`,`user_idUser`) values (1,2,4),(2,3,5),(3,1,9);
+
 /*Table structure for table `usuario` */
 
 DROP TABLE IF EXISTS `usuario`;
@@ -190,24 +209,18 @@ DROP TABLE IF EXISTS `visitas`;
 
 CREATE TABLE `visitas` (
   `idVisita` int(10) NOT NULL AUTO_INCREMENT,
-  `documentoCliente` varchar(50) DEFAULT NULL,
-  `nombreCliente` varchar(100) DEFAULT NULL,
-  `telefonoCliente` varchar(50) DEFAULT NULL,
-  `emailCliente` varchar(50) DEFAULT NULL,
-  `direccionCliente` varchar(50) DEFAULT NULL,
-  `documentoTecnico` varchar(50) DEFAULT NULL,
-  `nombreTecnico` varchar(50) DEFAULT NULL,
-  `telefonoTecnico` varchar(50) DEFAULT NULL,
-  `emailTecnico` varchar(50) DEFAULT NULL,
   `motivoVisita` varchar(2000) DEFAULT NULL,
   `diaVisita` date DEFAULT NULL,
   `estadoVisita` varchar(100) DEFAULT 'Activo',
-  PRIMARY KEY (`idVisita`)
+  `visita_idCliente` int(11) DEFAULT NULL,
+  PRIMARY KEY (`idVisita`),
+  KEY `visita_idCliente` (`visita_idCliente`),
+  CONSTRAINT `visitas_ibfk_1` FOREIGN KEY (`visita_idCliente`) REFERENCES `cliente` (`idCliente`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 /*Data for the table `visitas` */
 
-insert  into `visitas`(`idVisita`,`documentoCliente`,`nombreCliente`,`telefonoCliente`,`emailCliente`,`direccionCliente`,`documentoTecnico`,`nombreTecnico`,`telefonoTecnico`,`emailTecnico`,`motivoVisita`,`diaVisita`,`estadoVisita`) values (1,'1055325484','Arnulfo Rodriguez','3005554878','arnulfo@gmail.com','cll 148 # 98-50','1023554584','Cristian Muñoz','3117322001','cristian@hotmail.com','El modem no esta funcionando apropiadamente (internet lento)','2021-06-22','Activo'),(2,'123456789','Pepito Juares','3005556677','pepi@gmail.com','direccion perdida la de siempre23','1023554584','Cristian Muñoz','3117322001','cristian@hotmail.com','Instalacion de plan','2023-06-27','Atendida'),(3,'3334445555','Juanita Kremer','3005556678','juanita@gmail.com','calle 445 bis','1020554483','Fabian Quimbay','3104552020','fabiancho@aol.com','el servicio no esta funcionando','2023-06-29','Eliminada'),(4,'3334445555','Pepito Juares','3005556677','pepi@gmail.com','calle 4534 ewes','1023554584','Cristian Muñoz','3117322001','cristian@hotmail.com','Otra vez el internet me esta fallando','2023-06-30','Eliminada');
+insert  into `visitas`(`idVisita`,`motivoVisita`,`diaVisita`,`estadoVisita`,`visita_idCliente`) values (1,'El modem no esta funcionando apropiadamente (internet lento)','2021-06-22','Activo',11),(2,'Instalacion de plan','2023-06-27','Activo',21),(3,'el servicio no esta funcionando','2023-06-29','Activo',7),(4,'Otra vez el internet me esta fallando','2023-06-30','Activo',7);
 
 /* Procedure structure for procedure `x` */
 
