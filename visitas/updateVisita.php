@@ -2,23 +2,25 @@
 
 include("conexion.php");
 
-$id=$_POST['id'];
-$docC=$_POST['docC'];
-$nomC=$_POST['nomC'];
-$telC=$_POST['telC'];
-$emailC=$_POST['emailC'];
-$dir=$_POST['dir'];
-$docT=$_POST['docT'];
-$nomT=$_POST['nomT'];
-$telT=$_POST['telT'];
-$emailT=$_POST['emailT'];
-$motivo=$_POST['motivo'];
-$dia=$_POST['dia'];
+$idVisita = $_POST['idVisita'];
+$tipoVisita = $_POST['tipoVisita'];
+$visita_idVisita = $_POST['visita_idVisita'];
+$motivoVisita = $_POST['motivoVisita'];
+$diaVisita = $_POST['diaVisita'];
+$estadoVisita = $_POST['estadoVisita'];
+$idTecnico = $_POST['idTecnico'];
 
-$sql="UPDATE visitas SET  documentoCliente='$docC', nombreCliente='$nomC', telefonoCliente= '$telC', emailCliente= '$emailC', direccionCliente= '$dir', documentoTecnico= '$docT', nombreTecnico='$nomT', telefonoTecnico='$telT', emailTecnico='$emailT',motivoVisita='$motivo',diaVisita='$dia' WHERE idVisita='$id';";
 
-$query=mysqli_query($con,$sql);
-if($query){
+$sql1 = "UPDATE visitas
+SET tipoVisita = '$tipoVisita', motivoVisita = '$motivoVisita' , diaVisita = '$diaVisita' , estadoVisita = '$estadoVisita'
+WHERE idVisita = '$idVisita';";
+
+$sql2 = "UPDATE user_visita
+SET user_idUser = '$idTecnico'
+WHERE visita_idVisita = '$idVisita';";
+
+$query = mysqli_query($con, $sql1);
+$query2 = mysqli_query($con, $sql2);
+if ($query and $query2) {
     Header("Location: tablasVisitas.php");
 }
-?>
