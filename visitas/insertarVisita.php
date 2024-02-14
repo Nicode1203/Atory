@@ -9,10 +9,12 @@ $diaVisita = $_POST['diaVisita'];
 $estadoVisita = $_POST['estadoVisita'];
 $idTecnico = $_POST['idTecnico'];
 
+$sql1 = "UPDATE visitas
+SET tipoVisita = '$tipoVisita', motivoVisita = '$motivoVisita' , diaVisita = '$diaVisita' , estadoVisita = '$estadoVisita'
+WHERE idVisita = '$idVisita';";
 
-
-$sql="INSERT INTO visitas (documentoCliente, nombreCliente, telefonoCliente, emailCliente, direccionCliente, documentoTecnico, nombreTecnico, telefonoTecnico, emailTecnico, motivoVisita, diaVisita)
- VALUES('$docC','$nomC','$telC','$emailC','$dir','$docT','$nomT','$telT','$emailT','$motivo','$dia')";
+$sql1="INSERT INTO visitas (tipoVisita, motivoVisita, diaVisita, estadoVisita, visita_idCliente)
+ VALUES('$tipoVisita','$motivoVisita','$diaVisita','$estadoVisita','$idCliente')";
 
 
 if ($con->query($sql) === TRUE) {
