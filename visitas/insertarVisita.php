@@ -2,17 +2,12 @@
  <?php
 include("conexion.php");
 
-$docC=$_POST['docC'];
-$nomC=$_POST['nomC'];
-$telC=$_POST['telC'];
-$emailC=$_POST['emailC'];
-$dir=$_POST['dir'];
-$docT=$_POST['docT'];
-$nomT=$_POST['nomT'];
-$telT=$_POST['telT'];
-$emailT=$_POST['emailT'];
-$motivo=$_POST['motivo'];
-$dia=$_POST['dia'];
+$idCliente = $_POST['idCliente'];
+$tipoVisita = $_POST['tipoVisita'];
+$motivoVisita = $_POST['motivoVisita'];
+$diaVisita = $_POST['diaVisita'];
+$estadoVisita = $_POST['estadoVisita'];
+$idTecnico = $_POST['idTecnico'];
 
 
 
