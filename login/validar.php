@@ -6,7 +6,7 @@ $_SESSION['usuario'] = $usuario;
 
 $conn = mysqli_connect("localhost", "root", "", "atory");
 
-$consulta = "SELECT * FROM usuario WHERE nombresUsuario = '$usuario'";
+$consulta = "SELECT * FROM usuario WHERE documentoUsuario = '$usuario'";
 $resultado = mysqli_query($conn, $consulta);
 
 if (mysqli_num_rows($resultado) == 1) {
