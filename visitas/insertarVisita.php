@@ -2,22 +2,19 @@
  <?php
 include("conexion.php");
 
-$docC=$_POST['docC'];
-$nomC=$_POST['nomC'];
-$telC=$_POST['telC'];
-$emailC=$_POST['emailC'];
-$dir=$_POST['dir'];
-$docT=$_POST['docT'];
-$nomT=$_POST['nomT'];
-$telT=$_POST['telT'];
-$emailT=$_POST['emailT'];
-$motivo=$_POST['motivo'];
-$dia=$_POST['dia'];
+$idCliente = $_POST['idCliente'];
+$tipoVisita = $_POST['tipoVisita'];
+$motivoVisita = $_POST['motivoVisita'];
+$diaVisita = $_POST['diaVisita'];
+$estadoVisita = $_POST['estadoVisita'];
+$idTecnico = $_POST['idTecnico'];
 
+$sql1 = "UPDATE visitas
+SET tipoVisita = '$tipoVisita', motivoVisita = '$motivoVisita' , diaVisita = '$diaVisita' , estadoVisita = '$estadoVisita'
+WHERE idVisita = '$idVisita';";
 
-
-$sql="INSERT INTO visitas (documentoCliente, nombreCliente, telefonoCliente, emailCliente, direccionCliente, documentoTecnico, nombreTecnico, telefonoTecnico, emailTecnico, motivoVisita, diaVisita)
- VALUES('$docC','$nomC','$telC','$emailC','$dir','$docT','$nomT','$telT','$emailT','$motivo','$dia')";
+$sql1="INSERT INTO visitas (tipoVisita, motivoVisita, diaVisita, estadoVisita, visita_idCliente)
+ VALUES('$tipoVisita','$motivoVisita','$diaVisita','$estadoVisita','$idCliente')";
 
 
 if ($con->query($sql) === TRUE) {

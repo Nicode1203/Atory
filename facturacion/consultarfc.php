@@ -1,5 +1,3 @@
-
-
 <!-- CODIGO HTML -->
 <!DOCTYPE html>
 <html lang="en">
@@ -20,42 +18,42 @@
 
 <body>
 
-            <!-- Hasta aca es toda la barra lateral y la barra superior (lo que se deja igual en todas las paginas de admin) -->
-            <div class="main-panel">
-                <div class="content-wrapper">
-                <form action="../index.html">
+    <div class="main-panel">
 
-          </form>    
-                    <div class="page-header">
-                        <h1 style="font-size: 32px;">CONSULTAR FACTURA</h1>
-                        <nav aria-label="breadcrumb">
-                        </nav>
-                    </div>
-                    <div class="row">
-                        <div class="col-6 grid-margin stretch-card">
-                            <div class="card">
-                                <!-- CONTENIDO -->
-                                <div class="card-body">
-                                <h4 class="card-title">Facturas</h4>
-                                <form class="forms-sample">
-                                    <div class="form-group">
-                                        <label for="id">Ingrese su numero de identificacion</label>
-                                        <input type="text" class="form-control" name="id" id="id" placeholder="Ingrese Número de Identificación">
-                                    </div>
-                                    <div>
-                                        <br>
-                                        <button id="submit" type="submit" formmethod="post" formaction="cfacturaC.php" class="btn btn-primary btn-lg">Consultar</button>
-                                        <input type="submit" value="Volver al inicio" class="btn btn-primary btn-lg"/>
-                                    </div>
-                                    </div>
-                                </form>
-                            </div>
+        <div class="content-wrapper">
+
+            <div class="page-header">
+
+                <h1 style="font-size: 32px;">CONSULTAR FACTURA</h1>
+                <nav aria-label="breadcrumb">
+                </nav>
+            </div>
+            <div class="row">
+                <div class="col-6 grid-margin stretch-card">
+                    <div class="card">
+                        <!-- CONTENIDO -->
+                        <div class="card-body">
+                            <h4 class="card-title">Facturas</h4>
+                            <form class="forms-sample">
+                                <div class="form-group">
+                                    <label for="id">Ingrese su numero de identificacion</label>
+                                    <input type="text" class="form-control" name="id" id="id" placeholder="Ingrese Número de Identificación">
+                                </div>
+                                <div>
+                                    <br>
+                                    <button id="submit" type="submit" formmethod="post" formaction="cfacturaC.php" class="btn btn-primary btn-lg">Consultar</button>
+                                    <input type="submit" value="Volver al inicio" class="btn btn-primary btn-lg" formaction="../index.html" />
+                                </div>
                         </div>
+                        </form>
                     </div>
                 </div>
-                <!-- Extremos del contenedor de contenido -->
-                <!-- Parcial -->
             </div>
+        </div>
+
+        <!-- Extremos del contenedor de contenido -->
+        <!-- Parcial -->
+    </div>
 
     <!-- container-scroller -->
     <!-- Scripts -->

@@ -19,11 +19,8 @@
 </head>
 
 <body>
-            <!-- HASTA ACA ESTA LA BARRA LATERAL Y LA BARRA PRINCIPAL -->
-
-
             <div class="main-panel">
-                <div class="content-wrapper"> <!-- ESTO ES LO QUE TENEMOS QUE MODIFICAR -->
+                <div class="content-wrapper">
                     <h1 style="font-size: 32px;">Consulta tu factura</h1>
                     <div class="card-body">
 
@@ -85,17 +82,13 @@
 
                         <!-- partial -->
                     </div>
-                    <footer class="footer">
-                        <div class="d-sm-flex justify-content-center justify-content-sm-between">
-                            <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright © Atory Solution 2023</span>
-                            <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center"> <a href=" " target="_blank"></a> </span>
-                        </div>
-                    </footer>
+
                     <!-- main-panel ends -->
                 </div>
                 <!-- page-body-wrapper ends -->
-
-
+                <div>
+                <input type="submit" value="Volver al inicio" class="btn btn-primary btn-lg" formaction="../index.html" />
+                </div>
             </div>
 
             <!-- container-scroller -->
