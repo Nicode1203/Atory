@@ -55,7 +55,8 @@ if ($varsesion == null || $varsesion = '') {
                             </div>
                             <div>
                                 <br>
-                                <button id="submit" type="submit" formmethod="post" formaction="tablasVisitas.php" class="btn btn-danger btn-lg">Consultar Visitas</button>
+                                <button id="submit" type="submit" formmethod="post" formaction="tablasVisitas.php" class="btn btn-info btn-lg">Consultar Visitas Activas</button>
+                                <button id="submit" type="submit" formmethod="post" formaction="tablasAtendidas.php" class="btn btn-danger btn-lg">Consultar Visitas Atendidas</button>
                             </div>
                         </form>
                     </div>
@@ -92,7 +93,7 @@ if ($varsesion == null || $varsesion = '') {
     <!-- End custom js for this page -->
 
     <div class="jvectormap-tip"></div>
-    <!-- Estas ultimas lineas son para la alerta DE BORRAR, INSERTA SWEET ALERT Y LUEGO ESTA EL SCRIPT PARA BORRAR-->
+
 
 </body>
 

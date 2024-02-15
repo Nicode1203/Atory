@@ -189,6 +189,7 @@ if ($varsesion == null || $varsesion = '') {
             })
         })
     </script>
+    <!-- Hasta aca va la alerta-->
 </body>
 
 </html>
