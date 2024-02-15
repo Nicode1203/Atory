@@ -46,17 +46,17 @@
       $emailc = $row['correoCliente'];
       $dc = $row['direccion'];
       $ec = $row['estadoCliente'];
-      $plancliente=$row['plan_idPlan'];
+      $plancliente = $row['plan_idPlan'];
       $creado = $row['creado'];
       $uact = $row['ultimaActualizacion'];
-      $idplan=$row['idPlan'];
-      $codigoplan=$row['codigoPlan'];
-      $tipoplan=$row['tipoPlan'];
-      $vp=$row['velocidad'];
-      $nombreplan=$row['nombrePlan'];
-      $precioplan=$row['precioPlan'];
-      $descripcionplan=$row['desPlan'];
-      $estadoplan=$row['estadoPlan'];
+      $idplan = $row['idPlan'];
+      $codigoplan = $row['codigoPlan'];
+      $tipoplan = $row['tipoPlan'];
+      $vp = $row['velocidad'];
+      $nombreplan = $row['nombrePlan'];
+      $precioplan = $row['precioPlan'];
+      $descripcionplan = $row['desPlan'];
+      $estadoplan = $row['estadoPlan'];
       $if = $row['idFactura'];
       $ffact = $row['fechaFactura'];
       $impt = $row['impuestoTotal'];
@@ -69,21 +69,20 @@
   <div class="main-panel">
     <div class="content-wrapper">
       <div class="page-header">
-        <h2 class="page-title">Factura</h2>
-        <h4 class="card-title">Factura mes <?php echo "$ffact" ?></h4>
+        <h2 class="page-title">FACTURA</h2>
       </div>
       <div class="row">
         <div class="col-md-6 grid-margin stretch-card">
           <div class="card">
             <div class="card-body">
-              <h4 class="card-title">ESTIMADO <?php echo "$nomc" ?>, identificado con <?php echo "$td: $doc" ?></h4>
+              <h4 class="card-title">Estimado cliente  <?php echo "$nomc" ?>, identificado con : <?php echo "$td: $doc" ?></h4>
               <form class="forms-sample">
                 <div class="form-group">
                   <div class="card-body">
-                    <h4 class="card-title">Esta es su factura correspontiente de <?php echo "$ffact" ?> </h4>
+                    <h4 class="card-title">Esta factura corresponde a : <?php echo "$ffact" ?> </h4>
                     <form class="forms-sample">
-                    <div class="form-group">
-                        <label for="cp">Corresponde al plan <?php echo "$nombreplan" ?></label>
+                      <div class="form-group">
+                        <label for="cp">Corresponde al plan  <?php echo "$nombreplan" ?></label>
                       </div>
                       <div class="form-group">
                         <label for="cp">del tipo: <?php echo "$tipoplan" ?></label>
@@ -106,20 +105,11 @@
                       <div class="form-group">
                         <label for="des"> Le recordamos su información de contacto, su telefono es <?php echo "$telc" ?> y su correo es: <?php echo "$emailc" ?></label>
                       </div>
-                      <div class="form-group">
-                        <label for="des"> Tambien le estará llegando una copia a su dirección <?php echo "$dc" ?></label>
-                      </div>
                       <a href="facturas.php" class="btn btn-light btn-lg active" role="button" aria-pressed="true">Volver a facturas</a>
                     </form>
                   </div>
                 </div>
             </div>
-
-            <!-- content-wrapper ends -->
-            <!-- partial:../../partials/_footer.html -->
-            <footer class="footer">
-
-            </footer>
 
           </div>
           <!-- partial -->

@@ -100,7 +100,6 @@ if ($varsesion == null || $varsesion = '') {
       <a href="factcliente.php" class="btn btn-danger btn-lg" role="button" aria-pressed="true">Ingresar factura</a>
         <a href="fpagas.php" class="btn btn-primary active btn-lg" role="button" aria-pressed="true">Ver facturas pagas</a>
         <a href="consultarf.php" class="btn btn-primary active btn-lg" role="button" aria-pressed="true">Consultar facturas</a>
-        
         <a href="../excel/excelFactura.php" class="btn btn-success btn-lg">Exportar tabla a Excel</a>
         <?php
 
