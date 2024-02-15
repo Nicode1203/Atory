@@ -45,12 +45,13 @@ if ($varsesion == null || $varsesion = '') {
             </div>
             <div class="card">
                 <div class="card-body">
+                    <form method="POST" action="tablasAtendidas.php">
 
-                    <?php
-                    include("../conexion.php");
-                    $id = $_POST["id"];
+                        <?php
+                        include("../conexion.php");
+                        $id = $_POST["id"];
 
-                    $sql = "SELECT * FROM usuario
+                        $sql = "SELECT * FROM usuario
                     INNER JOIN user_visita
                     INNER JOIN visitas
                     INNER JOIN cliente
@@ -60,7 +61,7 @@ if ($varsesion == null || $varsesion = '') {
                     AND usuario.`documentoUsuario`= '$id'
                     AND estadoVisita = 'Activo';";
 
-                    echo '<div class="table-responsive">
+                        echo '<div class="table-responsive">
                 <table class="table table-hover">
                 <thead>
             <tr>
@@ -73,62 +74,67 @@ if ($varsesion == null || $varsesion = '') {
         </tr>
         </thead>
         ';
-                    if ($rta = $con->query($sql)) {
-                        while ($row = $rta->fetch_assoc()) {
-                            $idu = $row['idUsuario'];
-                            $tdu = $row['tipoDocumento'];
-                            $docu = $row['documentoUsuario'];
-                            $nombresu = $row['nombresUsuario'];
-                            $telu = $row['telefonoUsuario'];
-                            $emailu = $row['correoUsuario'];
-                            $estadou = $row['estadoUsuario'];
-                            $creadou = $row['creado'];
-                            $upu = $row['ultimaActualizacion'];
-                            $rolu = $row['rol'];
-                            $uservisita = $row['iduser_visita'];
-                            $visita_idvisita = $row['visita_idVisita'];
-                            $user_idUser = $row['user_idUser'];
-                            $idv = $row['idVisita'];
-                            $tipov = $row['tipoVisita'];
-                            $motivo = $row['motivoVisita'];
-                            $diaVisita = $row['diaVisita'];
-                            $eVisita = $row['estadoVisita'];
-                            $visitacliente = $row['visita_idCliente'];
-                            $idc = $row['idCliente'];
-                            $tdc = $row['tipoDocumento'];
-                            $docCliente = $row['documentoCliente'];
-                            $nomCliente = $row['nombreCliente'];
-                            $telCliente = $row['telefonoCliente'];
-                            $emailCliente = $row['correoCliente'];
-                            $dirCliente = $row['direccion'];
-                            $estado_cliente = $row['estadoCliente'];
-                            $plan_idPlan = $row['plan_idPlan'];
-                            $crearcliente = $row['creado'];
-                            $uacliente = $row['ultimaActualizacion'];
-                    ?>
-                            <tr>
-                                <td> <?php echo "$idv" ?></td>
-                                <td> <?php echo "$nomCliente" ?></td>
-                                <td> <?php echo "$telCliente" ?></td>
-                                <td> <?php echo "$nombresu" ?></td>
-                                <td> <?php echo "$tipov" ?></td>
-                                <td> <?php echo "$diaVisita" ?></td>
-                                <th><a href="consulta.php?id=<?php echo $row['idVisita'] ?>" class="btn btn-primary">Ver informacion de la visita</a></th>
-                                <th><a href="tablasAtendidas.php?idUsuario=<?php echo $row['idUsuario'] ?>" class="btn btn-info">Ver visitas Atendidas</a></th>
-                                <th><a href="eliminarVisita.php?id=<?php echo $row['idVisita'] ?>" class="btn btn-danger">Marcar como Atendida</a></th>
-                                </th>
-                            </tr>
-                    <?php
+                        if ($rta = $con->query($sql)) {
+                            while ($row = $rta->fetch_assoc()) {
+                                $idu = $row['idUsuario'];
+                                $tdu = $row['tipoDocumento'];
+                                $docu = $row['documentoUsuario'];
+                                $nombresu = $row['nombresUsuario'];
+                                $telu = $row['telefonoUsuario'];
+                                $emailu = $row['correoUsuario'];
+                                $estadou = $row['estadoUsuario'];
+                                $creadou = $row['creado'];
+                                $upu = $row['ultimaActualizacion'];
+                                $rolu = $row['rol'];
+                                $uservisita = $row['iduser_visita'];
+                                $visita_idvisita = $row['visita_idVisita'];
+                                $user_idUser = $row['user_idUser'];
+                                $idv = $row['idVisita'];
+                                $tipov = $row['tipoVisita'];
+                                $motivo = $row['motivoVisita'];
+                                $diaVisita = $row['diaVisita'];
+                                $eVisita = $row['estadoVisita'];
+                                $visitacliente = $row['visita_idCliente'];
+                                $idc = $row['idCliente'];
+                                $tdc = $row['tipoDocumento'];
+                                $docCliente = $row['documentoCliente'];
+                                $nomCliente = $row['nombreCliente'];
+                                $telCliente = $row['telefonoCliente'];
+                                $emailCliente = $row['correoCliente'];
+                                $dirCliente = $row['direccion'];
+                                $estado_cliente = $row['estadoCliente'];
+                                $plan_idPlan = $row['plan_idPlan'];
+                                $crearcliente = $row['creado'];
+                                $uacliente = $row['ultimaActualizacion'];
+                        ?>
+                                <tr>
+                                    <td> <?php echo "$idv" ?></td>
+                                    <td> <?php echo "$nomCliente" ?></td>
+                                    <td> <?php echo "$telCliente" ?></td>
+                                    <td> <?php echo "$nombresu" ?></td>
+                                    <td> <?php echo "$tipov" ?></td>
+                                    <td> <?php echo "$diaVisita" ?></td>
+                                    <input type="hidden" name="id" value="<?php echo $docu ?>">
+                                    <button type="submit" class="btn btn-primary btn-lg">Ver visitas Atendidas</button>
+
+                                    <th><a href="consulta.php?id=<?php echo $row['idVisita'] ?>" class="btn btn-primary">Ver informacion de la visita</a></th>
+
+
+                                    <th><a href="eliminarVisita.php?id=<?php echo $row['idVisita'] ?>" class="btn btn-danger">Marcar como Atendida</a></th>
+                                    </th>
+                                </tr>
+                        <?php
+                            }
                         }
-                    }
 
-                    ?>
+                        ?>
 
-                    <!-- ESTO ES LO QUE PODEMOS MODIFICAR -->
-                    <!-- partial:partials/_footer.html -->
+                        <!-- ESTO ES LO QUE PODEMOS MODIFICAR -->
+                        <!-- partial:partials/_footer.html -->
 
-                    <!-- partial -->
+                        <!-- partial -->
                 </div>
+                </form>
             </div>
 
             <!-- main-panel ends -->
