@@ -59,6 +59,7 @@
       $diaVisita = $row['diaVisita'];
       $eVisita = $row['estadoVisita'];
       $visitacliente = $row['visita_idCliente'];
+      $comentario = $row['comentario'];
       $idc = $row['idCliente'];
       $tdc = $row['tipoDocumento'];
       $docCliente = $row['documentoCliente'];
@@ -90,39 +91,42 @@
               <h4 class="card-title">Nombre del cliente: <?php echo "$nomCliente" ?></h4>
               <form class="forms-sample">
                 <div class="form-group">
-                  <label for="">Telefono Cliente: <?php echo "$telCliente" ?></label>
+                  <label for=""><b>Telefono Cliente: </b><?php echo "$telCliente" ?></label>
                 </div>
                 <div class="form-group">
-                  <label for="">Correo Cliente: <?php echo "$emailCliente" ?></label>
+                  <label for=""><b>Correo Cliente: </b><?php echo "$emailCliente" ?></label>
                 </div>
                 <div class="form-group">
-                  <label for="vel">Direccion Cliente : <?php echo "$dirCliente" ?></label>
+                  <label for="vel"><b>Direccion Cliente : </b><?php echo "$dirCliente" ?></label>
                 </div>
                 <div class="form-group">
-                  <label for="plan">Nombre Tecnico : <?php echo " $nombresu" ?></label>
+                  <label for="plan"><b>ombre Tecnico : </b><?php echo " $nombresu" ?></label>
                 </div>
                 <div class="form-group">
-                  <label for="plan">Número del técnico : <?php echo " $telu" ?></label>
+                  <label for="plan"><b>Número del técnico :</b> <?php echo " $telu" ?></label>
                 </div>
                 <div class="form-group">
-                  <label for="">Correo técnico: <?php echo "$emailu" ?></label>
+                  <label for=""><b>Correo técnico: </b><?php echo "$emailu" ?></label>
                 </div>
                 <div class="form-group">
-                  <label for="plan">Motivo de la visita : <?php echo " $motivo" ?></label>
+                  <label for="plan"><b>Motivo de la visita: </b> <?php echo " $motivo" ?></label>
                 </div>
                 <div class="form-group">
-                  <label for="plan">Plan contratado: <?php echo " $nombreplan" ?> del tipo <?php echo "$tipoplan" ?></label>
+                  <label for="plan"><b>Plan contratado: </b> <?php echo " $nombreplan" ?> del tipo <?php echo "$tipoplan" ?></label>
                 </div>
                 <div class="form-group">
-                  <label for="plan">Velocidad del plan: <?php echo " $velplan" ?></label>
+                  <label for="plan"><b>Velocidad del plan:</b> <?php echo " $velplan" ?></label>
                 </div>
 
                 <div class="form-group">
                   <div class="form-group">
-                    <label for="plan">Fecha de la visita : <?php echo " $diaVisita" ?></label>
+                    <label for="plan"><b>Fecha de la visita : </b><?php echo " $diaVisita" ?></label>
                   </div>
                   <div class="form-group">
-                    <label for="plan">Estado de la visita: <?php echo " $eVisita" ?></label>
+                    <label for="plan"><b>Estado de la visita: </b><?php echo " $eVisita" ?></label>
+                  </div>
+                  <div class="form-group">
+                    <label for="plan"><b>Comentarios: </b> <?php echo "$comentario" ?></label>
                   </div>
                   <div class="form-button mt-5">
                     <button id="submit" type="submit" formmethod="post" formaction="../visitas/tablasVisitas.php" class="btn btn-primary btn-lg">Volver a todas las visitas</button>
