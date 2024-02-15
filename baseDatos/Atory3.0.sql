@@ -1,6 +1,6 @@
 /*
 SQLyog Ultimate v11.11 (64 bit)
-MySQL - 5.5.5-10.4.27-MariaDB : Database - atory
+MySQL - 5.5.5-10.4.28-MariaDB : Database - atory
 *********************************************************************
 */
 
@@ -201,7 +201,7 @@ CREATE TABLE `usuario` (
 
 /*Data for the table `usuario` */
 
-insert  into `usuario`(`idUsuario`,`tipoDocumento`,`documentoUsuario`,`nombresUsuario`,`telefonoUsuario`,`correoUsuario`,`claveUsuario`,`estadoUsuario`,`creado`,`ultimaActualizacion`,`rol`) values (1,'C.C','806554878','Karl','3103209913','karl@gmail.com','$2y$10$GKR1Uq.gErAPTPRai5BuYuD0u5dovY47eMsQ5qy/VWr8IAzSntxpu','Activo','2023-05-09','2023-05-09','Administrador'),(2,'C.C','1023554584','cris','3017328804','cristian@hotmail.com','$2y$10$H5.gQP65R6mDulyKWFBt/eW.lEjUaKl0QfOaEl/AhSHqh5f0jO7DW','Activo','2023-05-10','2023-05-10','Administrador'),(3,'C.C','1030634046','nico','3006646485','nico@gmail.com','$2y$10$9ruPWqEKJqkmS4KoI1LOTOmfsSi6/lhoTCFL5d4qIVvR8KuD6dxBe','Activo','2023-05-12','2023-05-12','Administrador'),(4,'C.C','1020554483','Fabian','3104552020','fabiancho@aol.com','$2y$10$CPaJUTIN876IeT.hA9wrJOH1gw4FGjgx.4zC5IDrhIy38SQIDUFmu','Activo','2023-05-12','2024-02-10','Tecnico'),(5,'C.C','23568985','Isa','3215698787','isabella@hotmail.com','$2y$10$iF19xxjou9ksjLdu3PNMKeywN78.9FKwKTVFWyJ10Gys0HmEQpt5.','Activo','2023-11-05','0223-11-05','Tecnico'),(6,'C.C','1234','Danny','3198562323','danny@gmail.com','$2y$10$MeMa1Q2yHaGkBmx2nirKCOWLIhtJhRIfTBj9qE7x/BO/PZLQ1sRXW','Activo','2023-11-06','0223-11-06','Tecnico'),(9,'C.C','1222233','linlin','344455545','linlin@gmail.com','$2y$10$59RMhHKVQkRCoVOrpUZCKeB0xfDtF6EpxqYQuX2diRc2oPBaEjHdi','Activo','2024-02-09','2024-02-10','Tecnico');
+insert  into `usuario`(`idUsuario`,`tipoDocumento`,`documentoUsuario`,`nombresUsuario`,`telefonoUsuario`,`correoUsuario`,`claveUsuario`,`estadoUsuario`,`creado`,`ultimaActualizacion`,`rol`) values (1,'C.C','80065421','Karl','3196443053','schickperez@gmail.com','$2y$10$GKR1Uq.gErAPTPRai5BuYuD0u5dovY47eMsQ5qy/VWr8IAzSntxpu','Activo','2023-05-09','2023-05-09','Administrador'),(2,'C.C','1019107974','cris','3017328804','cristian@hotmail.com','$2y$10$H5.gQP65R6mDulyKWFBt/eW.lEjUaKl0QfOaEl/AhSHqh5f0jO7DW','Activo','2023-05-10','2023-05-10','Administrador'),(3,'C.C','1030634046','nico','3006646485','nico@gmail.com','$2y$10$9ruPWqEKJqkmS4KoI1LOTOmfsSi6/lhoTCFL5d4qIVvR8KuD6dxBe','Activo','2023-05-12','2023-05-12','Administrador'),(4,'C.C','1019076993','Fabian','3104552020','fabiancho@aol.com','$2y$10$CPaJUTIN876IeT.hA9wrJOH1gw4FGjgx.4zC5IDrhIy38SQIDUFmu','Activo','2023-05-12','2024-02-10','Tecnico'),(5,'C.C','23568985','Isa','3215698787','isabella@hotmail.com','$2y$10$iF19xxjou9ksjLdu3PNMKeywN78.9FKwKTVFWyJ10Gys0HmEQpt5.','Activo','2023-11-05','0223-11-05','Tecnico'),(6,'C.C','1234','Danny','3198562323','danny@gmail.com','$2y$10$MeMa1Q2yHaGkBmx2nirKCOWLIhtJhRIfTBj9qE7x/BO/PZLQ1sRXW','Activo','2023-11-06','0223-11-06','Tecnico'),(9,'C.C','1222233','linlin','344455545','linlin@gmail.com','$2y$10$59RMhHKVQkRCoVOrpUZCKeB0xfDtF6EpxqYQuX2diRc2oPBaEjHdi','Activo','2024-02-09','2024-02-10','Tecnico');
 
 /*Table structure for table `visitas` */
 
