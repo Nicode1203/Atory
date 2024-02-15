@@ -51,7 +51,7 @@ if ($varsesion == null || $varsesion = '') {
         <p class="card-description"> Ingrese los datos del Usuario</p>
         <form action="update.php" method="POST">
 
-          <input type="hidden" name="id" value="<?php echo $row['documentoUsuario']  ?>">
+          <input type="hidden" name="id" value="<?php echo $row['idUsuario']  ?>">
           <p class="card-description"> Tipo de documento: </p>
           <select class="form-select" aria-label="Default select example" name="td" id="td" value="<?php echo $row['tipoDocumento']  ?>">
             <option value="C.C">C.C</option>
@@ -61,7 +61,7 @@ if ($varsesion == null || $varsesion = '') {
           </select>
           <p></p>
           <p class="card-description"> Documento usuario: </p>
-          <input type="text" class="form-control mb-3" name="id" placeholder="Numero documento" value="<?php echo $row['documentoUsuario']  ?>">
+          <input type="text" class="form-control mb-3" name="docusuario" placeholder="Numero documento" value="<?php echo $row['documentoUsuario']  ?>">
           <p class="card-description"> Nombre usuario: </p>
           <input type="text" class="form-control mb-3" name="nombre" placeholder="Nombres Completos" value="<?php echo $row['nombresUsuario']  ?>">
           <p class="card-description"> Telefono usuario: </p>
