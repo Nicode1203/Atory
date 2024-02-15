@@ -5,7 +5,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>ATORY - Admin</title>
+    <title>Atory Solution</title>
     <!-- Estilos de los plugins -->
     <link rel="stylesheet" href="../assets/vendors/mdi/css/materialdesignicons.min.css">
     <link rel="stylesheet" href="../.assets/vendors/css/vendor.bundle.base.css">
@@ -17,13 +17,9 @@
 </head>
 
 <body>
-
     <div class="main-panel">
-
         <div class="content-wrapper">
-
             <div class="page-header">
-
                 <h1 style="font-size: 32px;">CONSULTAR FACTURA</h1>
                 <nav aria-label="breadcrumb">
                 </nav>
