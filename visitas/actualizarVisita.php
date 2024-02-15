@@ -151,7 +151,7 @@ if ($varsesion == null || $varsesion = '') {
                 </select>
                 <p></p>
                 <label>Comentario</label>
-                <h5><?php echo $row['comentario']  ?></h5>
+                <h5><?php echo "$comentario"  ?></h5>
                 <p></p>
 
 

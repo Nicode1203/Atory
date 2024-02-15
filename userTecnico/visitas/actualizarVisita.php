@@ -23,7 +23,53 @@ if ($varsesion == null || $varsesion = '') {
   <?php
   include("../conexion.php");
   $id = $_GET['id'];
-  $sql = "SELECT * FROM visitas WHERE idVisita='$id'";
+  $sql = "SELECT * FROM usuario
+  INNER JOIN user_visita
+  INNER JOIN visitas
+  INNER JOIN cliente
+  INNER JOIN plan
+  WHERE usuario.`idUsuario`=user_visita.`user_idUser`
+  AND user_visita.`visita_idVisita`=visitas.`idVisita`
+  AND  cliente.`idCliente`=visitas.`visita_idCliente`
+  AND cliente.`plan_idPlan`=plan.`idPlan`
+  AND idVisita='$id';";
+
+  if ($rta = $con->query($sql)) {
+    while ($row = $rta->fetch_assoc()) {
+      $idu = $row['idUsuario'];
+      $tdu = $row['tipoDocumento'];
+      $docu = $row['documentoUsuario'];
+      $nombresu = $row['nombresUsuario'];
+      $telu = $row['telefonoUsuario'];
+      $emailu = $row['correoUsuario'];
+      $estadou = $row['estadoUsuario'];
+      $creadou = $row['creado'];
+      $upu = $row['ultimaActualizacion'];
+      $rolu = $row['rol'];
+      $uservisita = $row['iduser_visita'];
+      $visita_idvisita = $row['visita_idVisita'];
+      $user_idUser = $row['user_idUser'];
+      $idv = $row['idVisita'];
+      $tipov = $row['tipoVisita'];
+      $motivo = $row['motivoVisita'];
+      $diaVisita = $row['diaVisita'];
+      $eVisita = $row['estadoVisita'];
+      $visitacliente = $row['visita_idCliente'];
+      $comentario = $row['comentario'];
+      $idc = $row['idCliente'];
+      $tdc = $row['tipoDocumento'];
+      $docCliente = $row['documentoCliente'];
+      $nomCliente = $row['nombreCliente'];
+      $telCliente = $row['telefonoCliente'];
+      $emailCliente = $row['correoCliente'];
+      $dirCliente = $row['direccion'];
+      $estado_cliente = $row['estadoCliente'];
+      $plan_idPlan = $row['plan_idPlan'];
+      $crearcliente = $row['creado'];
+      $uacliente = $row['ultimaActualizacion'];
+    }
+  };
+
   $query = mysqli_query($con, $sql);
   $row = mysqli_fetch_array($query);
   ?>
@@ -36,53 +82,7 @@ if ($varsesion == null || $varsesion = '') {
   <link rel="stylesheet" href="../assets/css/style.css">
   <!-- Fin de los estilos del archivo actual -->
   <link rel="shortcut icon" href="../assets/images/favicon.png">
-  <style type="text/css">
-    /* Chart.js */
-    @keyframes chartjs-render-animation {
-      from {
-        opacity: .99
-      }
 
-      to {
-        opacity: 1
-      }
-    }
-
-    .chartjs-render-monitor {
-      animation: chartjs-render-animation 1ms
-    }
-
-    .chartjs-size-monitor,
-    .chartjs-size-monitor-expand,
-    .chartjs-size-monitor-shrink {
-      position: absolute;
-      direction: ltr;
-      left: 0;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      overflow: hidden;
-      pointer-events: none;
-      visibility: hidden;
-      z-index: -1
-    }
-
-    .chartjs-size-monitor-expand>div {
-      position: absolute;
-      width: 1000000px;
-      height: 1000000px;
-      left: 0;
-      top: 0
-    }
-
-    .chartjs-size-monitor-shrink>div {
-      position: absolute;
-      width: 200%;
-      height: 200%;
-      left: 0;
-      top: 0
-    }
-  </style>
 </head>
 
 <body>
@@ -95,72 +95,45 @@ if ($varsesion == null || $varsesion = '') {
 
   <div class="main-panel">
     <div class="content-wrapper"> <!-- ESTO ES LO QUE TENEMOS QUE MODIFICAR -->
-      <div class="card-body">
-        <h4 class="card-title">GESTION DE VISITAS</h4>
-        <p class="card-description"> Ingrese Comentario sobre la visita </p>
-        <?php
-        include_once "conexion.php";
-        $id = $_GET["id"];
-        $sql = "SELECT * FROM visitas WHERE idVisita='$id';";
-        if ($rta = $con->query($sql)) {
-          while ($row = $rta->fetch_assoc()) {
-            $nomCliente = $row['nombreCliente'];
-            $telCliente = $row['telefonoCliente'];
-            $dirCliente = $row['direccionCliente'];
-            $nomTec = $row['nombreTecnico'];
-            $motivo = $row['motivoVisita'];
-            $diaVisita = $row['diaVisita'];
-            $comentario = $row['comentario'];
-          }
-        }
-        ?>
-
-        <h3 class="page-title">Visitas: </h3>
-
-        <div class="row">
-          <div class="col-md-12 grid-margin stretch-card">
-            <div class="card">
-              <div class="card-body">
-                <h4 class="card-title"><?php echo "$nomCliente" ?></h4>
-                <form class="forms-sample">
-                  <div class="form-group">
-                    <label for="">Telefono Cliente: <?php echo "$telCliente" ?></label>
-                  </div>
-                  <div class="form-group">
-                    <label for="vel">Direccion Cliente : <?php echo "$dirCliente" ?></label>
-                  </div>
-                  <div class="form-group">
-                    <label for="plan">Nombre Tecnico : <?php echo " $nomTec" ?></label>
-                  </div>
-                  <div class="form-group">
-                    <label for="plan">Motivo de la visita : <?php echo " $motivo" ?></label>
-                  </div>
-                  <div class="form-group">
-                    <label for="plan">Fecha de la visita : <?php echo " $diaVisita" ?></label>
-                  </div>
-
-                  <div class="form-button mt-5">
-                    <button id="submit" type="submit" formmethod="post" formaction="../visitas/tablasVisitas.php" class="btn btn-primary">Volver a todas las visitas</button>
-                  </div>
-
-                </form>
+      <div class="col-md-6 grid-margin stretch-card">
+        <div class="card">
+          <div class="card-body">
+            <h1 class="card-title">GESTION DE VISITAS</h1>
+            <h2 class="card-title">Información de la visita</h2>
+            <h3>Numero de visita: <?php echo $row['idVisita']  ?></h3>
+            <h4 class="card-title">Nombre del cliente: <?php echo "$nomCliente" ?></h4>
+            <form class="forms-sample">
+              <div class="form-group">
+                <h4 for="">Telefono Cliente: <?php echo "$telCliente" ?></h4>
               </div>
-            </div>
+              <form action="updateVisita.php" method="POST">
+
+                <input type="hidden" name="idVisita" value="<?php echo $row['idVisita']  ?>">
+                <input type="hidden" name="visita_idVisita" value="<?php echo $row['visita_idVisita']  ?>">
+                <p></p>
+                <label>Comentario</label>
+
+                <p></p>
+                <input type="textarea" class="form-control mb-3" name="comentario" placeholder="comentario" value="<?php echo $row['comentario']  ?>">
+
+
+
+
+
+
+
+                <input type="submit" class="btn btn-primary btn-block" value="Actualizar" formmethod="post" formaction=updateVisita.php>
+                <input type="submit" class="btn btn-danger btn-block" value="Cancelar" formmethod="post" formaction=inicioVisitasT.php>
+              </form>
+
+
           </div>
+          <!-- ESTO ES LO QUE PODEMOS MODIFICAR -->
+          <!-- partial:partials/_footer.html -->
+
+          <!-- partial -->
         </div>
-        <form action="updateComentario.php" method="POST">
-
-          <input type="text" class="form-control mb-3" name="comentario" placeholder="comentario" value="<?php echo $row['comentario']  ?>">
-
-          <input type="submit" class="btn btn-primary btn-block" value="Agregar comentario" formmethod="post" formaction=../visitas/updateComentario.php>
-        </form>
-
-
       </div>
-      <!-- ESTO ES LO QUE PODEMOS MODIFICAR -->
-      <!-- partial:partials/_footer.html -->
-
-      <!-- partial -->
     </div>
 
     <!-- main-panel ends -->

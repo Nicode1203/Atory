@@ -37,7 +37,7 @@
                       AND user_visita.`visita_idVisita`=visitas.`idVisita`
                       AND  cliente.`idCliente`=visitas.`visita_idCliente`
                       AND cliente.`plan_idPlan`=plan.`idPlan`
-                      AND idVisita='1';";
+                      AND idVisita=$id;";
   if ($rta = $con->query($sql)) {
     while ($row = $rta->fetch_assoc()) {
       $idu = $row['idUsuario'];
@@ -73,6 +73,7 @@
       $tipoplan = $row['tipoPlan'];
       $velplan = $row['velocidad'];
       $nombreplan = $row['nombrePlan'];
+      $comentario = $row['comentario'];
     }
   }
   ?>
@@ -116,9 +117,13 @@
                 <div class="form-group">
                   <label for="plan">Estado de la visita: <?php echo " $eVisita" ?></label>
                 </div>
+                <div class="form-group">
+                  <label for="plan">Comentarios: <?php echo " $comentario" ?></label>
+                </div>
                 <div class="form-button mt-5">
+                  <a href="actualizarVisita.php?id=<?php echo "$id" ?>" class="btn btn-danger btn-lg">Agregar Comentario</a>
                   <button id="submit" type="submit" formmethod="post" formaction="../visitas/inicioVisitasT.php" class="btn btn-primary btn-lg">Volver</button>
-                  <button id="submit" type="submit" formmethod="post" formaction="../visitas/actualizarVisita.php" class="btn btn-primary btn-lg">Actualizar</button>
+
                 </div>
               </form>
             </div>
