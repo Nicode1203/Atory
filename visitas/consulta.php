@@ -134,11 +134,52 @@
                       <a href="actualizarVisita.php?id=<?php echo "$id" ?>" class="btn btn-info btn-lg">Actualizar</a>
                     </td>
                   </div>
+                  
               </form>
             </div>
           </div>
         </div>
       </div>
+      <?php
+// Dirección del cliente
+$dirCliente = "Dirección del cliente";
+
+// Codificar la dirección para incluir en la URL
+$direccion_codificada = urlencode($dirCliente);
+
+// URL de la API de Nominatim para geocodificación
+$url = "https://nominatim.openstreetmap.org/search?format=json&q={$direccion_codificada}";
+
+// Realizar la solicitud a la API
+$respuesta = file_get_contents($url);
+
+// Decodificar la respuesta JSON
+$datos_geolocalizacion = json_decode($respuesta);
+
+// Verificar si se obtuvo una respuesta válida
+if (!empty($datos_geolocalizacion) && isset($datos_geolocalizacion[0])) {
+    // Obtener las coordenadas geográficas (latitud y longitud)
+    $latitud = $datos_geolocalizacion[0]->lat;
+    $longitud = $datos_geolocalizacion[0]->lon;
+
+    // URL de Google Maps para mostrar la ubicación en el mapa
+    $url_google_maps = "https://www.google.com/maps/search/?api=1&query={$latitud},{$longitud}";
+
+    // Mostrar un enlace para abrir la ubicación en Google Maps
+    echo "<div class='form-group'>";
+    echo "<label for='vel'><b>Direccion Cliente: </b>$dirCliente</label>";
+    echo "<br>";
+    echo "<a href='{$url_google_maps}' target='_blank'>Ver ubicación en Google Maps</a>";
+    echo "</div>";
+} else {
+    // Si no se pudo obtener la geolocalización, mostrar un mensaje de error
+    echo "<div class='form-group'>";
+    echo "<label for='vel'><b>Direccion Cliente: </b>$dirCliente</label>";
+    echo "<br>";
+    echo "No se pudo obtener la geolocalización para la dirección proporcionada.";
+    echo "</div>";
+}
+?>
 
     </div>
     <!-- partial -->
