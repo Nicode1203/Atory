@@ -100,7 +100,7 @@
                   <label for="vel"><b>Direccion Cliente : </b><?php echo "$dirCliente" ?></label>
                 </div>
                 <div class="form-group">
-                  <label for="plan"><b>ombre Tecnico : </b><?php echo " $nombresu" ?></label>
+                  <label for="plan"><b>Nombre Tecnico : </b><?php echo " $nombresu" ?></label>
                 </div>
                 <div class="form-group">
                   <label for="plan"><b>Número del técnico :</b> <?php echo " $telu" ?></label>
