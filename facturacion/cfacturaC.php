@@ -21,7 +21,7 @@
 <body>
             <div class="main-panel">
                 <div class="content-wrapper">
-                    <h1 style="font-size: 32px;">Consulta tu factura</h1>
+                    <h1 style="font-size: 32px;">CONSULTA TU FACTURA</h1>
                     <div class="card-body">
 
                         <?php

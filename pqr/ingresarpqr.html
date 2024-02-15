@@ -2,107 +2,92 @@
 <html>
 
 <head>
-  <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Atory Solutions</title>
-  <!-- plugins:css -->
+  <title>Atory Solution</title>
+  <!-- Estilos de los plugins -->
   <link rel="stylesheet" href="../assets/vendors/mdi/css/materialdesignicons.min.css">
   <link rel="stylesheet" href="../assets/vendors/css/vendor.bundle.base.css">
-  <!-- endinject -->
-  <!-- Plugin css for this page -->
-  <link rel="stylesheet" href="../assets/vendors/jvectormap/jquery-jvectormap.css">
-  <link rel="stylesheet" href="../assets/vendors/flag-icon-css/css/flag-icon.min.css">
-  <link rel="stylesheet" href="../assets/vendors/owl-carousel-2/owl.carousel.min.css">
-  <link rel="stylesheet" href="../assets/vendors/owl-carousel-2/owl.theme.default.min.css">
-  <!-- End plugin css for this page -->
-  <!-- inject:css -->
-  <!-- endinject -->
-  <!-- Layout styles -->
+  <!-- Fin de los estilos de los plugins -->
+  <!-- Estilos del archivo actual -->
   <link rel="stylesheet" href="../assets/css/style.css">
-  <!-- End layout styles -->
+  <!-- Fin de los estilos del archivo actual -->
   <link rel="shortcut icon" href="../assets/images/favicon.png">
- 
 </head>
 
 <body>
   <div class="main-panel">
-    <div class="content-wrapper"> <!-- ESTO ES LO QUE TENEMOS QUE MODIFICAR -->
-      <div class="page-header">
-
-        <div class="card-body">
-        <h4 class="card-title">SUGERENCIAS CLIENTES</h4>
-        <p class="card-description"> Ingrese sus datos</p>
-        <form class="forms-sample">
-          <div class="form-group">
-            <label for="td">Seleccione tipo de documento</label>
-            <select class="form-control" name="td" id="td" required>
-              <option value="C.C">C.C</option>
-              <option value="C.E">C.E</option>
-              <option value="R.C">R.C</option>
-              <option value="T.I">T.I</option>
-            </select>
-          </div>
-
-          <div class="form-group">
-            <label for="id">Ingrese documento</label>
-            <input type="text" class="form-control" name="id" id="id" placeholder="Numero de documento" required>
-          </div>
+    <div class="content-wrapper">
+      <div class="col-6 grid-margin stretch-card">
 
 
-          <div class="form-group">
-            <label for="nombre">Ingrese nombres y apellidos</label>
-            <input type="text" class="form-control" name="nombre" id="nombre" placeholder="Ingrese nombre" required>
-          </div>
+        <div class="card">
+          <div class="card-body">
+            <h4 class="card-title">SUGERENCIAS CLIENTES</h4>
+            <p class="card-description"> Ingrese sus datos</p>
+            <form class="forms-sample" action="enviarpqr.php" method="post">
+              <div class="form-group">
+                <label for="td">Seleccione tipo de documento</label>
+                <select class="form-control" name="td" id="td" required>
+                  <option value="C.C">C.C</option>
+                  <option value="C.E">C.E</option>
+                  <option value="R.C">R.C</option>
+                  <option value="T.I">T.I</option>
+                </select>
+              </div>
 
+              <div class="form-group">
+                <label for="id">Ingrese documento</label>
+                <input type="text" class="form-control" name="id" id="id" placeholder="Numero de documento" required>
+              </div>
 
+              <div class="form-group">
+                <label for="nombre">Ingrese nombres y apellidos</label>
+                <input type="text" class="form-control" name="nombre" id="nombre" placeholder="Ingrese nombre" required>
+              </div>
 
-          <div class="form-group">
-            <label for="tel">Ingrese numero de telefono</label>
-            <input type="text" class="form-control" name="tel" id="tel" placeholder="Numero de telefono" required>
-          </div>
+              <div class="form-group">
+                <label for="tel">Ingrese numero de telefono</label>
+                <input type="text" class="form-control" name="tel" id="tel" placeholder="Numero de telefono" required>
+              </div>
 
+              <div class="form-group">
+                <label for="email">Ingrese correo electronico</label>
+                <input type="email" class="form-control" name="email" id="email" placeholder="Correo electronico"
+                  required>
+              </div>
 
-          <div class="form-group">
-            <label for="email">Ingrese correo electronico</label>
-            <input type="email" class="form-control" name="email" id="email" placeholder="Correo electronico" required>
-          </div>
+              <div class="form-group">
+                <label for="estado">Seleccione tipo de solicitud</label>
+                <select class="form-control" name="soli" id="soli">
+                  <option value="Solicitud">Solicitud</option>
+                  <option value="Peticion">Peticion</option>
+                  <option value="Reclamo">Reclamo</option>
+                  <option value="Sugerencia">Sugerencia</option>
+                </select>
+              </div>
 
+              <div class="form-group">
+                <label for="creacion">Describanos el motivo de contacto</label>
+                <input type="text" class="form-control" name="dc" id="dc" placeholder="" required>
+              </div>
 
-          <div class="form-group">
-            <label for="estado">Seleccione tipo de solicitud</label>
-            <select class="form-control" name="soli" id="soli">
-              <option value="Solicitud">Solicitud </option>
-              <option value="Peticion">Peticion</option>
-              <option value="Reclamo">Reclamo</option>
-              <option value="Sugerencia">Sugerencia</option>
-            </select>
-          </div>
+              <div>
+                <br>
+                <button id="submit" type="submit" class="btn btn-primary  btn-lg">Enviar</button>
+                <a href="../index.html" class="btn btn-primary btn-lg">Volver al inicio</a>
+              </div>
+            </form>
 
-          <div class="form-group">
-            <label for="creacion">Describanos el motivo de contacto</label>
-            <input type="text" class="form-control" name="dc" id="dc" placeholder="" required>
-          </div>
-
-          <div>
-            <br>
-            <button id="submit" type="submit" formmethod="post" formaction="enviarpqr.php" class="btn btn-primary  btn-lg">Enviar</button>
-            <a href="../index.html" class="btn btn-primary btn-lg">Volver al inicio</a>
-          </div>
-        </form>
-
-        <div class="row">
-          <div>
-            <div>
+            <div class="row">
+              <div>
+                <div>
+                </div>
+              </div>
 
             </div>
           </div>
-
         </div>
-
-        </div>
-
-
       </div>
       <!-- ESTO ES LO QUE PODEMOS MODIFICAR -->
       <!-- partial:partials/_footer.html -->
