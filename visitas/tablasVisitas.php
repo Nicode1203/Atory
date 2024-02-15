@@ -82,36 +82,36 @@ if ($varsesion == null || $varsesion = '') {
 
                     if ($rta = $con->query($sql)) {
                         while ($row = $rta->fetch_assoc()) {
-                            $idu=$row['idUsuario'];
-                            $tdu=$row['tipoDocumento'];
+                            $idu = $row['idUsuario'];
+                            $tdu = $row['tipoDocumento'];
                             $docu = $row['documentoUsuario'];
-                            $nombresu=$row['nombresUsuario'];
-                            $telu=$row['telefonoUsuario'];
-                            $emailu=$row['correoUsuario'];
-                            $estadou=$row['estadoUsuario'];
-                            $creadou=$row['creado']; 
-                            $upu=$row['ultimaActualizacion'];
-                            $rolu=$row['rol']; 
-                            $uservisita=$row['iduser_visita'];
-                            $visita_idvisita=$row['visita_idVisita'];
-                            $user_idUser=$row['user_idUser'];
-                            $idv=$row['idVisita'];
-                            $tipov=$row['tipoVisita'];
+                            $nombresu = $row['nombresUsuario'];
+                            $telu = $row['telefonoUsuario'];
+                            $emailu = $row['correoUsuario'];
+                            $estadou = $row['estadoUsuario'];
+                            $creadou = $row['creado'];
+                            $upu = $row['ultimaActualizacion'];
+                            $rolu = $row['rol'];
+                            $uservisita = $row['iduser_visita'];
+                            $visita_idvisita = $row['visita_idVisita'];
+                            $user_idUser = $row['user_idUser'];
+                            $idv = $row['idVisita'];
+                            $tipov = $row['tipoVisita'];
                             $motivo = $row['motivoVisita'];
                             $diaVisita = $row['diaVisita'];
                             $eVisita = $row['estadoVisita'];
-                            $visitacliente=$row['visita_idCliente'];
-                            $idc=$row['idCliente'];
-                            $tdc=$row['tipoDocumento'];                  
+                            $visitacliente = $row['visita_idCliente'];
+                            $idc = $row['idCliente'];
+                            $tdc = $row['tipoDocumento'];
                             $docCliente = $row['documentoCliente'];
                             $nomCliente = $row['nombreCliente'];
                             $telCliente = $row['telefonoCliente'];
                             $emailCliente = $row['correoCliente'];
                             $dirCliente = $row['direccion'];
-                            $estado_cliente=$row['estadoCliente'];
-                            $plan_idPlan=$row['plan_idPlan'];
-                            $crearcliente=$row['creado'];
-                            $uacliente=$row['ultimaActualizacion'];
+                            $estado_cliente = $row['estadoCliente'];
+                            $plan_idPlan = $row['plan_idPlan'];
+                            $crearcliente = $row['creado'];
+                            $uacliente = $row['ultimaActualizacion'];
                     ?>
                             <tr>
                                 <td> <?php echo "$idv" ?></td>
