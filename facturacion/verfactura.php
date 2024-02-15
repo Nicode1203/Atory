@@ -53,20 +53,23 @@
       }
       ?>
       <div class="main-panel">
-        <div class="content-wrapper">
-          <div class="page-header">
-            <h2 class="page-title">Factura</h2>
-            <h4 class="card-title">Factura mes <?php echo "$ffact"?></h4>
-          </div>
+      <div class="content-wrapper">
+            <div class="page-header">
+                <h1 style="font-size: 32px;">SU FACTURA</h1>
+                <nav aria-label="breadcrumb">
+                </nav>
+            </div>
           <div class="row">
             <div class="col-md-6 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
-                  <h4 class="card-title">ESTIMADO <?php echo "$nomc" ?>, identificado con <?php echo "$td: $doc"?></h4>
+                  
                   <form class="forms-sample">
-                    <div class="form-group">
+                    <div class="form-group"> 
                     <div class="card-body">
-                  <h4 class="card-title">Esta es su factura correspontiente de <?php echo "$ffact"?> </h4> 
+                    <h4 class="card-title">cliente <?php echo "$nomc" ?></h4>
+                    <h4 class="card-title">Con <?php echo "$td: $doc"?></h4>
+                    <h4 class="card-title">Esta es su factura correspontiente al       :<?php echo "     $ffact"?> </h4> 
                   
                   <form class="forms-sample">
                   <div class="form-group">
@@ -92,34 +95,23 @@
                 </div>
               </div>
             </div>
-           
-          <!-- content-wrapper ends -->
-          <!-- partial:../../partials/_footer.html -->
-          <footer class="footer">
-            <div class="d-sm-flex justify-content-center justify-content-sm-between">
-              <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright © AtorySolution 2023</span>
-          </footer>
 
         </div>
-        <!-- partial -->
+
       </div>
-      <!-- main-panel ends -->
+
     </div>
-    <!-- page-body-wrapper ends -->
+
   </div>
-  <!-- container-scroller -->
-  <!-- plugins:js -->
+
   <script src="../assets/vendors/js/vendor.bundle.base.js"></script>
-  <!-- endinject -->
-  <!-- Plugin js for this page -->
-  <!-- End plugin js for this page -->
-  <!-- inject:js -->
+
   <script src="../assets/js/off-canvas.js"></script>
   <script src="../assets/js/hoverable-collapse.js"></script>
   <script src="../assets/js/misc.js"></script>
   <script src="../assets/js/settings.js"></script>
   <script src="../assets/js/todolist.js"></script>
-  <!-- endinject -->
+
 </body>
 
 </html>

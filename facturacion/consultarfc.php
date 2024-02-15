@@ -1,4 +1,3 @@
-<!-- CODIGO HTML -->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,7 +7,7 @@
     <title>Atory Solution</title>
     <!-- Estilos de los plugins -->
     <link rel="stylesheet" href="../assets/vendors/mdi/css/materialdesignicons.min.css">
-    <link rel="stylesheet" href="../.assets/vendors/css/vendor.bundle.base.css">
+    <link rel="stylesheet" href="../assets/vendors/css/vendor.bundle.base.css">
     <!-- Fin de los estilos de los plugins -->
     <!-- Estilos del archivo actual -->
     <link rel="stylesheet" href="../assets/css/style.css">
@@ -30,18 +29,18 @@
                         <!-- CONTENIDO -->
                         <div class="card-body">
                             <h4 class="card-title">Facturas</h4>
-                            <form class="forms-sample">
+                            <form class="forms-sample" action="cfacturaC.php" method="post">
                                 <div class="form-group">
                                     <label for="id">Ingrese su numero de identificacion</label>
                                     <input type="text" class="form-control" name="id" id="id" placeholder="Ingrese Número de Identificación">
                                 </div>
                                 <div>
                                     <br>
-                                    <button id="submit" type="submit" formmethod="post" formaction="cfacturaC.php" class="btn btn-primary btn-lg">Consultar</button>
+                                    <button id="submit" type="submit" class="btn btn-primary btn-lg">Consultar</button>
                                     <input type="submit" value="Volver al inicio" class="btn btn-primary btn-lg" formaction="../index.html" />
                                 </div>
+                            </form>
                         </div>
-                        </form>
                     </div>
                 </div>
             </div>
