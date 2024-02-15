@@ -57,7 +57,6 @@
                   <div class="form-group">
                     <label for="des" style="font-weight: bold; font-size: 16px;"><?php echo "$des" ?></label>
                   </div>
-                  <a href="solplan.php" class="btn btn-primary btn-lg" role="button" aria-pressed="true">Solicitar plan</a>
                 </form>
               </div>
             </div>
@@ -97,7 +96,6 @@
                   <div class="form-group">
                     <label for="des" style="font-weight: bold; font-size: 16px;"><?php echo "$des" ?></label>
                   </div>
-                  <a href="solplan.php" class="btn btn-primary btn-lg" role="button" aria-pressed="true">Solicitar plan</a>
                 </form>
               </div>
             </div>
@@ -138,7 +136,6 @@
                     <div class="form-group">
                       <label for="des" style="font-weight: bold; font-size: 16px;"><?php echo "$des" ?></label>
                     </div>
-                    <a href="solplan.php" class="btn btn-primary btn-lg" role="button" aria-pressed="true">Solicitar plan</a>
                   </form>
                 </div>
               </div>
@@ -178,7 +175,6 @@
                     <div class="form-group">
                       <label for="des" style="font-weight: bold; font-size: 16px;"><?php echo "$des" ?></label>
                     </div>
-                    <a href="solplan.php" class="btn btn-primary btn-lg" role="button" aria-pressed="true">Solicitar plan</a>
                   </form>
                 </div>
               </div>
@@ -219,7 +215,6 @@
                       <div class="form-group">
                         <label for="des" style="font-weight: bold; font-size: 16px;"><?php echo "$des" ?></label>
                       </div>
-                      <a href="solplan.php" class="btn btn-primary btn-lg" role="button" aria-pressed="true">Solicitar plan</a>
                     </form>
                   </div>
                 </div>
@@ -259,7 +254,6 @@
                       <div class="form-group">
                         <label for="des" style="font-weight: bold; font-size: 16px;"><?php echo "$des" ?></label>
                       </div>
-                      <a href="solplan.php" class="btn btn-primary btn-lg" role="button" aria-pressed="true">Solicitar plan</a>
                     </form>
                   </div>
                 </div>
@@ -299,11 +293,49 @@
                         <div class="form-group">
                           <label for="des" style="font-weight: bold; font-size: 16px;"><?php echo "$des" ?></label>
                         </div>
-                        <a href="solplan.php" class="btn btn-primary btn-lg" role="button" aria-pressed="true">Solicitar plan</a>
                       </form>
                     </div>
                   </div>
                 </div>
+
+                <div class="col-md-6 grid-margin stretch-card" style="width: auto; height: 700px;">
+            <div class="card" style="background: url('../assets/images/planes/fondoplanes.jpg') center center / cover no-repeat; border-radius: 20px; position: relative;">
+              <div class="card-body text-dark">
+                <form class="forms-sample">
+                <div class="card-body">
+          <h4 class="card-title text-dark">Solicitar uno de nuestros productos.</h4>
+          <p class="card-title text-dark"> Ingrese sus datos para ponernos en contacto</p>
+          <form class="forms-sample" method="POST" action="enviarplan.php">
+
+            <div class="form-group">
+              <label for="nombre">Ingrese nombres y apellidos</label>
+              <input type="text" class="form-control" name="nombre" id="nombre" placeholder="Ingrese nombre" required>
+            </div>
+
+
+
+            <div class="form-group">
+              <label for="tel">Ingrese numero de telefono</label>
+              <input type="text" class="form-control" name="tel" id="tel" placeholder="Numero de telefono" required>
+            </div>
+
+
+            <div class="form-group">
+              <label for="email">Ingrese correo electronico</label>
+              <input type="email" class="form-control" name="email" id="email" placeholder="Correo electronico" required>
+            </div>
+
+            <div>
+              <br>
+              <button id="submit" type="submit" formmethod="post" formaction="enviarplan.php" class="btn btn-primary">Enviar</button>
+
+
+            </div>
+
+                </form>
+              </div>
+            </div>
+          </div>
 
               </div>
               <!-- partial -->

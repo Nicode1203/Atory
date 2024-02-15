@@ -50,13 +50,12 @@
         <?php 
         include_once "conexion.php";
 
-        $td=$_POST["td"];
-        $id=$_POST["id"];
+
         $nombre=$_POST["nombre"];
         $tel=$_POST["tel"];
         $email=$_POST["email"];
-        $sql="INSERT INTO solicitudes (tipoDocumento, numeroDocumento, nombres, telefono, email)
-        VALUES ('$td','$id','$nombre','$tel','$email')";
+        $sql="INSERT INTO solicitudes (nombres, telefono, email)
+        VALUES ('$nombre','$tel','$email')";
         if ($con->query($sql) === TRUE) {
           } else {
             echo "Error al guardar los datos: " . $con;
