@@ -48,7 +48,7 @@ if ($varsesion == null || $varsesion = '') {
 
                     <?php
                     include("../conexion.php");
-                    $id = $_POST["id"];
+                    $id = $_POST["idUsuario"];
 
                     $sql = "SELECT * FROM usuario
                     INNER JOIN user_visita
@@ -58,7 +58,7 @@ if ($varsesion == null || $varsesion = '') {
                     AND user_visita.`visita_idVisita`=visitas.`idVisita`
                     AND  cliente.`idCliente`=visitas.`visita_idCliente`
                     AND usuario.`documentoUsuario`= '$id'
-                    AND estadoVisita = 'Activo';";
+                    AND estadoVisita = 'Atendido';";
 
                     echo '<div class="table-responsive">
                 <table class="table table-hover">
@@ -114,7 +114,7 @@ if ($varsesion == null || $varsesion = '') {
                                 <td> <?php echo "$tipov" ?></td>
                                 <td> <?php echo "$diaVisita" ?></td>
                                 <th><a href="consulta.php?id=<?php echo $row['idVisita'] ?>" class="btn btn-primary">Ver informacion de la visita</a></th>
-                                <th><a href="tablasAtendidas.php?idUsuario=<?php echo $row['idUsuario'] ?>" class="btn btn-info">Ver visitas Atendidas</a></th>
+
                                 <th><a href="eliminarVisita.php?id=<?php echo $row['idVisita'] ?>" class="btn btn-danger">Marcar como Atendida</a></th>
                                 </th>
                             </tr>
