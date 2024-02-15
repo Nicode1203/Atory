@@ -28,21 +28,21 @@ if ($varsesion == null || $varsesion = '') {
   WHERE plan.`idPlan`=cliente.`plan_idPlan`
   AND idCliente='$id';";
 
-if ($rta = $con->query($sql)) {
+  if ($rta = $con->query($sql)) {
     while ($row = $rta->fetch_assoc()) {
-        $idc=$row['idCliente'];
-        $tdc=$row['tipoDocumento'];                  
-        $docCliente = $row['documentoCliente'];
-        $nomCliente = $row['nombreCliente'];
-        $telCliente = $row['telefonoCliente'];
-        $emailCliente = $row['correoCliente'];
-        $dirCliente = $row['direccion'];
-        $estado_cliente=$row['estadoCliente'];
-        $plan_idPlan=$row['plan_idPlan'];
-        $crearcliente=$row['creado'];
-        $uacliente=$row['ultimaActualizacion'];
-        $tipoplan=$row['tipoPlan'];
-        $nombreplan=$row['nombrePlan'];
+      $idc = $row['idCliente'];
+      $tdc = $row['tipoDocumento'];
+      $docCliente = $row['documentoCliente'];
+      $nomCliente = $row['nombreCliente'];
+      $telCliente = $row['telefonoCliente'];
+      $emailCliente = $row['correoCliente'];
+      $dirCliente = $row['direccion'];
+      $estado_cliente = $row['estadoCliente'];
+      $plan_idPlan = $row['plan_idPlan'];
+      $crearcliente = $row['creado'];
+      $uacliente = $row['ultimaActualizacion'];
+      $tipoplan = $row['tipoPlan'];
+      $nombreplan = $row['nombrePlan'];
     }
   };
 
@@ -82,67 +82,67 @@ if ($rta = $con->query($sql)) {
                 <h4 for="">Telefono Cliente: <?php echo "$telCliente" ?></h4>
               </div>
               <div class="form-group">
-                <h4 for="">nombre del plan: <?php echo "$nombreplan" ?> del tipo: <?php echo "$tipoplan"?></h4>
+                <h4 for="">nombre del plan: <?php echo "$nombreplan" ?> del tipo: <?php echo "$tipoplan" ?></h4>
               </div>
-              <div> 
-            <h1 class="card-tittle">Información de la visita</h1>
-              <form action="insertarVisita.php" method="POST">
-                <input type="hidden" name="idcliente" value="<?php echo $row['idCliente']  ?>">
-                <label for="tipoVisita">Tipo de visita: </label>
-                <select class="form-control" name="tipoVisita" id="tipoVisita" placeholder="Tipo de visita">
-                  <option value="Instalacion">Instalacion</option>
-                  <option value="Desinstalacion">Desinstalacion</option>
-                  <option value="Reparacion">Reparacion</option>
-                </select>
+              <div>
+                <h1 class="card-tittle">Información de la visita</h1>
+                <form action="insertarVisita.php" method="POST">
+                  <input type="hidden" name="idCliente" value="<?php echo $row['idCliente']  ?>">
+                  <label for="tipoVisita">Tipo de visita: </label>
+                  <select class="form-control" name="tipoVisita" id="tipoVisita" placeholder="Tipo de visita">
+                    <option value="Instalacion">Instalacion</option>
+                    <option value="Desinstalacion">Desinstalacion</option>
+                    <option value="Reparacion">Reparacion</option>
+                  </select>
 
-                <p></p>
-                <label>Motivo de la visita</label>
-                <input type="text" class="form-control mb-3" name="motivoVisita" placeholder="Motivo de la visita">
-                <label>Dia de la visita</label>
-                <input type="date" class="form-control mb-3" name="diaVisita" placeholder="Dia de la visita">
-                <label for="">Estado de la visita</label>
-                <select class="form-control" name="estadoVisita" id="estadoVisita" placeholder="Estado de visita">
-                  <option value="Activo">Activo</option>
-                  <option value="Completado">Completado</option>
-                  <option value="Archivado">Archivado</option>
-                </select>
-                <p></p>
-                <label for="">Tecnico asignado</label>
-                <select class="form-control" aria-label="Default select example" name="idTecnico" id="idTecnico" placeholder="Técnico asignado">
+                  <p></p>
+                  <label>Motivo de la visita</label>
+                  <input type="text" class="form-control mb-3" name="motivoVisita" placeholder="Motivo de la visita">
+                  <label>Dia de la visita</label>
+                  <input type="date" class="form-control mb-3" name="diaVisita" placeholder="Dia de la visita">
+                  <label for="">Estado de la visita</label>
+                  <select class="form-control" name="estadoVisita" id="estadoVisita" placeholder="Estado de visita">
+                    <option value="Activo">Activo</option>
+                    <option value="Completado">Completado</option>
+                    <option value="Archivado">Archivado</option>
+                  </select>
+                  <p></p>
+                  <label for="">Tecnico asignado</label>
+                  <select class="form-control" aria-label="Default select example" name="idTecnico" id="idTecnico" placeholder="Técnico asignado">
 
-                  <?php
-                  $sql = "SELECT * FROM usuario WHERE rol='Tecnico' and estadoUsuario='Activo';";
-                  $query = mysqli_query($con, $sql);
-                  $row = mysqli_fetch_array($query);
-                  if ($rta = $con->query($sql)) {
-                    while ($row = $rta->fetch_assoc()) {
-                      $idUsuario = $row['idUsuario'];
-                      $nombresUsuario = $row['nombresUsuario'];
+                    <?php
+                    $sql = "SELECT * FROM usuario WHERE rol='Tecnico' and estadoUsuario='Activo';";
+                    $query = mysqli_query($con, $sql);
+                    $row = mysqli_fetch_array($query);
+                    if ($rta = $con->query($sql)) {
+                      while ($row = $rta->fetch_assoc()) {
+                        $idUsuario = $row['idUsuario'];
+                        $nombresUsuario = $row['nombresUsuario'];
 
-                  ?>
-                      <option value="<?php echo $idUsuario ?>"><?php echo "$nombresUsuario" ?> </option>
+                    ?>
+                        <option value="<?php echo $idUsuario ?>"><?php echo "$nombresUsuario" ?> </option>
 
-                  <?php
+                    <?php
+                      }
                     }
-                  }
-                  ?>
-                <input type="submit" class="btn btn-primary btn-block" value="Actualizar" formmethod="post" formaction=../visitas/insertarVisita.php>
-                <input type="submit" class="btn btn-danger btn-block" value="Cancelar" formmethod="post" formaction=../visitas/tablasVisitas.php>
-              </form>
+                    ?>
+                    <input type="submit" class="btn btn-primary btn-block" value="Crear Visita" formmethod="post" formaction=../visitas/insertarVisita.php>
+                    <input type="submit" class="btn btn-danger btn-block" value="Cancelar" formmethod="post" formaction=../visitas/tablasVisitas.php>
+                </form>
 
 
+              </div>
+              <!-- ESTO ES LO QUE PODEMOS MODIFICAR -->
+              <!-- partial:partials/_footer.html -->
+
+              <!-- partial -->
           </div>
-          <!-- ESTO ES LO QUE PODEMOS MODIFICAR -->
-          <!-- partial:partials/_footer.html -->
-
-          <!-- partial -->
         </div>
       </div>
-    </div>
 
-    <!-- main-panel ends -->
-  </div>
-  <!-- page-body-wrapper ends -->
+      <!-- main-panel ends -->
+    </div>
+    <!-- page-body-wrapper ends -->
 
 
   </div>
