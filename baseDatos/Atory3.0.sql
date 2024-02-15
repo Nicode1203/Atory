@@ -146,18 +146,16 @@ DROP TABLE IF EXISTS `solicitudes`;
 
 CREATE TABLE `solicitudes` (
   `idSolicitud` int(50) NOT NULL AUTO_INCREMENT,
-  `tipoDocumento` varchar(50) DEFAULT NULL,
-  `numeroDocumento` varchar(50) DEFAULT NULL,
   `nombres` varchar(50) DEFAULT NULL,
   `telefono` varchar(50) DEFAULT NULL,
   `email` varchar(50) DEFAULT NULL,
   `estadoSolicitud` varchar(50) DEFAULT 'Activo',
   PRIMARY KEY (`idSolicitud`)
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 /*Data for the table `solicitudes` */
 
-insert  into `solicitudes`(`idSolicitud`,`tipoDocumento`,`numeroDocumento`,`nombres`,`telefono`,`email`,`estadoSolicitud`) values (1,'C.C','202','Estefania Flor','3195852323','este@gmail.com','Atendido'),(2,'C.E','963','Julian Hernandez','3692582365','juli@gmail.com','Atendido'),(3,'C.C','3654','Ayane Hayabusa','5893652121','ayane@hotmail.com','Atendido'),(4,'C.C','15263635','Kasumi Hayabusa','9549638521414','kasumi@gmail.com','Activo'),(5,'C.C','45','Helena Leau','9638525858','helena@yahoo.com','Atendido'),(6,'C.C','89','Fabian Quimbay','3258963254','helena@gmail.com','Activo'),(7,'C.C','789','Ana Maria Rosales','7893652123','maria@gmail.com','Activo'),(8,'C.C','3636','Juan Rodriguez','123456','juan@aol.com','Atendido'),(9,'C.C','56','Helena','7859635874','helena@gmail.com','Activo'),(10,'C.E','987','stephy gomez','3198988686','ste@gmail.com','Activo'),(11,'C.C','987654','juanito alimaña','300886644','alimana@gmail.com','Atendido');
+insert  into `solicitudes`(`idSolicitud`,`nombres`,`telefono`,`email`,`estadoSolicitud`) values (1,'Estefania Flor','3195852323','este@gmail.com','Atendido'),(2,'Julian Hernandez','3692582365','juli@gmail.com','Atendido'),(3,'Ayane Hayabusa','5893652121','ayane@hotmail.com','Atendido'),(4,'Kasumi Hayabusa','9549638521414','kasumi@gmail.com','Activo'),(5,'Helena Leau','9638525858','helena@yahoo.com','Atendido'),(6,'Fabian Quimbay','3258963254','helena@gmail.com','Activo'),(7,'Ana Maria Rosales','7893652123','maria@gmail.com','Activo'),(8,'Juan Rodriguez','123456','juan@aol.com','Atendido'),(9,'Helena','7859635874','helena@gmail.com','Activo'),(10,'stephy gomez','3198988686','ste@gmail.com','Activo'),(11,'juanito alimaña','300886644','alimana@gmail.com','Atendido'),(12,'Isabella Perez','3216549898','isa.tkm@hotmail.com','Activo');
 
 /*Table structure for table `user_visita` */
 
