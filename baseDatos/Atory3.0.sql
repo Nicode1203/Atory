@@ -176,7 +176,7 @@ CREATE TABLE `user_visita` (
 
 /*Data for the table `user_visita` */
 
-insert  into `user_visita`(`iduser_visita`,`visita_idVisita`,`user_idUser`) values (1,1,4),(2,2,6),(3,3,5),(4,4,9),(5,5,9),(6,6,4),(7,7,5);
+insert  into `user_visita`(`iduser_visita`,`visita_idVisita`,`user_idUser`) values (1,1,4),(2,2,6),(3,3,7),(4,4,4),(5,5,4),(6,6,7),(7,7,4);
 
 /*Table structure for table `usuario` */
 
@@ -197,11 +197,11 @@ CREATE TABLE `usuario` (
   PRIMARY KEY (`idUsuario`),
   UNIQUE KEY `documentoUsuario` (`documentoUsuario`,`telefonoUsuario`,`correoUsuario`),
   KEY `rol_idRol` (`rol`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 /*Data for the table `usuario` */
 
-insert  into `usuario`(`idUsuario`,`tipoDocumento`,`documentoUsuario`,`nombresUsuario`,`telefonoUsuario`,`correoUsuario`,`claveUsuario`,`estadoUsuario`,`creado`,`ultimaActualizacion`,`rol`) values (1,'C.C','80065421','Karl','3196443053','schickperez@gmail.com','$2y$10$GKR1Uq.gErAPTPRai5BuYuD0u5dovY47eMsQ5qy/VWr8IAzSntxpu','Activo','2023-05-09','2023-05-09','Administrador'),(2,'C.C','1019107974','cris','3017328804','cristian@hotmail.com','$2y$10$H5.gQP65R6mDulyKWFBt/eW.lEjUaKl0QfOaEl/AhSHqh5f0jO7DW','Activo','2023-05-10','2023-05-10','Administrador'),(3,'C.C','1030634046','nico','3006646485','nico@gmail.com','$2y$10$9ruPWqEKJqkmS4KoI1LOTOmfsSi6/lhoTCFL5d4qIVvR8KuD6dxBe','Activo','2023-05-12','2023-05-12','Administrador'),(4,'C.C','1019076993','Fabian','3104552020','fabiancho@aol.com','$2y$10$CPaJUTIN876IeT.hA9wrJOH1gw4FGjgx.4zC5IDrhIy38SQIDUFmu','Activo','2023-05-12','2024-02-10','Tecnico'),(5,'C.C','23568985','Isa','3215698787','isabella@hotmail.com','$2y$10$iF19xxjou9ksjLdu3PNMKeywN78.9FKwKTVFWyJ10Gys0HmEQpt5.','Activo','2023-11-05','0223-11-05','Tecnico'),(6,'C.C','1234','Danny','3198562323','danny@gmail.com','$2y$10$MeMa1Q2yHaGkBmx2nirKCOWLIhtJhRIfTBj9qE7x/BO/PZLQ1sRXW','Activo','2023-11-06','0223-11-06','Tecnico'),(9,'C.C','1222233','linlin','344455545','linlin@gmail.com','$2y$10$59RMhHKVQkRCoVOrpUZCKeB0xfDtF6EpxqYQuX2diRc2oPBaEjHdi','Activo','2024-02-09','2024-02-10','Tecnico');
+insert  into `usuario`(`idUsuario`,`tipoDocumento`,`documentoUsuario`,`nombresUsuario`,`telefonoUsuario`,`correoUsuario`,`claveUsuario`,`estadoUsuario`,`creado`,`ultimaActualizacion`,`rol`) values (1,'C.C','80065421','Karl','3196443053','schickperez@gmail.com','$2y$10$GKR1Uq.gErAPTPRai5BuYuD0u5dovY47eMsQ5qy/VWr8IAzSntxpu','Activo','2023-05-09','2023-05-09','Administrador'),(2,'C.C','1019107974','cris','3017328804','cristian@hotmail.com','$2y$10$H5.gQP65R6mDulyKWFBt/eW.lEjUaKl0QfOaEl/AhSHqh5f0jO7DW','Activo','2023-05-10','2023-05-10','Administrador'),(3,'C.C','1030634046','nico','3006646485','nico@gmail.com','$2y$10$9ruPWqEKJqkmS4KoI1LOTOmfsSi6/lhoTCFL5d4qIVvR8KuD6dxBe','Activo','2023-05-12','2023-05-12','Administrador'),(4,'C.C','1019076993','Fabian','3104552020','fabiancho@aol.com','$2y$10$CPaJUTIN876IeT.hA9wrJOH1gw4FGjgx.4zC5IDrhIy38SQIDUFmu','Activo','2023-05-12','2024-02-10','Tecnico'),(5,'C.C','23568985','Isa','3215698787','isabella@hotmail.com','$2y$10$iAjfCd5Z/aVTZeXxXvNg2u4JAR20fRGwW9ITHK3EGk/eJQxZhGBK6','Activo','2023-11-05','0223-11-05','Tecnico'),(6,'C.C','1234','Danny','3198562323','danny@gmail.com','$2y$10$HpfbwQQfJWeny3jlSpxxM.Qzg9yiKKSSRgENMq9jVf8jTJTp5PgjS','Activo','2023-11-06','0223-11-06','Tecnico'),(7,'C.C','1222233','linlin','344455545','linlin@gmail.com','$2y$10$BWe9ZqyPNScYPikJr/APzuxidw.OnZ/R2jwZeT5vZ.sVkNpv1N332','Activo','2024-02-09','2024-02-10','Tecnico');
 
 /*Table structure for table `visitas` */
 
@@ -222,7 +222,7 @@ CREATE TABLE `visitas` (
 
 /*Data for the table `visitas` */
 
-insert  into `visitas`(`idVisita`,`tipoVisita`,`motivoVisita`,`diaVisita`,`estadoVisita`,`visita_idCliente`,`comentario`) values (1,'Instalacion','plan feo3434343','2023-06-25','Activo',11,'hola mundo'),(2,'Instalacion','Instalacion de plan','2023-06-27','Activo',21,NULL),(3,'Reparacion','el servicio no esta funcionando porque me la pelan todos','2023-06-29','Completado',7,NULL),(4,'Instalacion','Otra vez el internet me esta fallando','2023-06-30','Activo',7,NULL),(5,'Instalacion','Nuevo motivo de visita','2024-02-14','Activo',7,'Nuevo comentario'),(6,'Desinstalacion','cables dañados','2024-02-22','Activo',7,NULL),(7,'Instalacion','cables dañados','2024-02-22','Activo',7,NULL);
+insert  into `visitas`(`idVisita`,`tipoVisita`,`motivoVisita`,`diaVisita`,`estadoVisita`,`visita_idCliente`,`comentario`) values (1,'Instalacion','plan feo3434343','2023-06-25','Completado',11,'hola mundo'),(2,'Instalacion','Instalacion de plan','2023-06-27','Activo',21,NULL),(3,'Reparacion','el servicio no esta funcionando porque me la pelan todos','2023-06-29','Completado',7,NULL),(4,'Instalacion','Otra vez el internet me esta fallando','2023-06-30','Archivado',7,NULL),(5,'Instalacion','Nuevo motivo de visita','2024-02-14','Archivado',7,'Nuevo comentario'),(6,'Desinstalacion','cables dañados','2024-02-22','Activo',7,NULL),(7,'Instalacion','cables dañados','2024-02-22','Completado',7,NULL);
 
 /* Procedure structure for procedure `x` */
 
