@@ -49,8 +49,7 @@ if ($varsesion == null || $varsesion = '') {
                 <div class="card-body">
                     <a href="ingresarVisita.php" class="btn btn-primary btn-lg">Ingresar nueva Visita</a>
                     <a href="../visitas/consultarVisitas.php" class="btn btn-primary btn-lg ">Consultar visitas</a>
-                    <a href="../visitas/tablasVisitascompletadas.php" class="btn btn-primary btn-lg ">Ver visitas completas</a>
-                    <a href="../visitas/tablasVisitasArchivadas.php" class="btn btn-primary btn-lg ">Ver visitas archivadas</a>
+                    <a href="../visitas/tablasVisitas.php" class="btn btn-danger btn-lg ">Volver</a>
                     <a href="../excel/excelVisitas.php" class="btn btn-success btn-lg">Exportar tabla a Excel</a>
 
                     <?php
@@ -63,8 +62,8 @@ if ($varsesion == null || $varsesion = '') {
                     where usuario.`idUsuario`=user_visita.`user_idUser`
                     and user_visita.`visita_idVisita`=visitas.`idVisita`
                     and  cliente.`idCliente`=visitas.`visita_idCliente`
-                    and estadoVisita='Activo'
-                    ORDER BY visitas.`idVisita` ASC;";
+                    and visitas.estadoVisita='Completado'
+                    ORDER BY visitas.`idVisita` DESC;";
 
                     echo '<div class="table-responsive">
                 <table class="table table-hover">
