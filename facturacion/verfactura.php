@@ -57,6 +57,7 @@ if ($rta = $con->query($sql)) {
     $if = $row['idFactura'];
     $ffact = $row['fechaFactura'];
     $impt = $row['impuestoTotal'];
+    $sub=$row['subTotal'];
     $st = $row['valorTotalFactura'];
     $cid = $row['cliente_idCliente'];
     $estf = $row['estadoFactura'];
@@ -91,7 +92,7 @@ if ($rta = $con->query($sql)) {
                         <label for="cp">Se encuentra actualmente: <?php echo "$estf" ?> </label>
                       </div>
                       <div class="form-group">
-                        <label for="cp">Sub total: <?php echo "$st" ?></label>
+                        <label for="cp">Sub total: <?php echo "$sub" ?></label>
                       </div>
                       <div class="form-group">
                         <label for="vel">Impuesto: <?php echo "$impt" ?></label>
