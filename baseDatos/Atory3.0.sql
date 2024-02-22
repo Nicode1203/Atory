@@ -1,6 +1,6 @@
 /*
 SQLyog Ultimate v11.11 (64 bit)
-MySQL - 5.5.5-10.4.28-MariaDB : Database - atory
+MySQL - 5.5.5-10.4.32-MariaDB : Database - atory
 *********************************************************************
 */
 
@@ -15,6 +15,26 @@ MySQL - 5.5.5-10.4.28-MariaDB : Database - atory
 CREATE DATABASE /*!32312 IF NOT EXISTS*/`atory` /*!40100 DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci */;
 
 USE `atory`;
+
+/*Table structure for table `bancario` */
+
+DROP TABLE IF EXISTS `bancario`;
+
+CREATE TABLE `bancario` (
+  `id_bancario` int(5) NOT NULL AUTO_INCREMENT,
+  `num_cuenta` varchar(50) NOT NULL,
+  `nomb_banco` varchar(100) NOT NULL,
+  `estadoCuenta` varchar(20) NOT NULL DEFAULT 'activo',
+  `imagenQR` blob DEFAULT NULL,
+  `banco_idempresa` int(11) DEFAULT 1,
+  PRIMARY KEY (`id_bancario`),
+  KEY `banco_idempresa` (`banco_idempresa`),
+  CONSTRAINT `bancario_ibfk_1` FOREIGN KEY (`banco_idempresa`) REFERENCES `empresa` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+/*Data for the table `bancario` */
+
+insert  into `bancario`(`id_bancario`,`num_cuenta`,`nomb_banco`,`estadoCuenta`,`imagenQR`,`banco_idempresa`) values (1,'1235345','nequi','Activo',NULL,1),(2,'3196443053','daviplata','Activo',NULL,1),(3,'4534534534','lulo banc','Activo',NULL,1);
 
 /*Table structure for table `cliente` */
 
@@ -41,6 +61,49 @@ CREATE TABLE `cliente` (
 /*Data for the table `cliente` */
 
 insert  into `cliente`(`idCliente`,`tipoDocumento`,`documentoCliente`,`nombreCliente`,`telefonoCliente`,`correoCliente`,`direccion`,`estadoCliente`,`plan_idPlan`,`creado`,`ultimaActualizacion`) values (1,'C.C','1055325484','Arnulfo Rodriguez','3005554878','arnulfo@gmail.com','cll 148 # 98-41','Archivado',1,'2023-05-12','2023-05-17'),(2,'C.C','1030525484','Blanca Cordero','3008562013','blanca@gmail.com','cr 5 #148 -13','Activo',2,'2023-05-18','2023-05-18'),(3,'C.C','1035585487','Carolina Crosby','3122254858','caro@gmail.com','cll 89 sur # 45-48','Activo',2,'2023-05-17','2023-05-17'),(4,'C.C','9587458','Diana Borges','3103404090','diana@gmail.com','cr 2 # 98-74','Activo',2,'2023-05-17','2023-05-17'),(5,'C.C','1025859658','Ernesto Gutierrez','3203103525','ernie@gmail.com','cll 45 # 10-47','Archivado',2,'2023-06-01','2023-06-04'),(6,'C.C','2121','Carlos Schick','300300300','lkaro@gmail.com','cll 5#98-45','Activo',3,'2023-01-02','2023-05-16'),(7,'C.C','123','Mariana Borda','3236587979','Mariana@hotmail.com','cr 23 # 125-66','Archivado',1,'2023-03-01','2023-03-02'),(8,'C.C','2365','Ayane Hayabusa','878965412','ayane@hotmail.com','cll 123# 78-41','Activo',4,'2023-01-10','2023-06-07'),(9,'C.E','9863','Isabella Montana','9547893652','isabella@gmail.com','cll 127 # 98-85','Activo',1,'2022-01-04','2023-01-10'),(10,'C.E','58944444','Maria Reyes','3231039856','maria.r@gmail.com','cll 145 # 108-63','Activo',3,'2022-07-08','2023-03-17'),(11,'C.C','698','Yolanda Tellez','3216549898','y.165@aol.com','cll159#10-29','Activo',4,'2023-06-10','2023-06-18'),(12,'C.E','56','Tina Lovecraft','9548961245','tina@gmail.com','cll 36#69-89','Activo',3,'2023-04-05','2023-06-06'),(13,'C.C','1012151563','Gabriela Castiblanco','3103656989','gaby@hotmail.com','km 5 via cota chia','Activo',3,'2023-04-11','2023-05-28'),(14,'C.C','789','Ana Maria Rosales','7893652123','maria@gmail.com','cll 13#140-75','Activo',2,'2023-06-23','2023-06-23'),(15,'C.C','2024','juanito alimaña','300886644','alimana@gmail.com','cll 34 # 20 20','Activo',7,'2024-01-24','2024-01-24'),(19,'C.C','14543','Chun li','1222323','chun@gmail.com','calle#123  67-87','Activo',4,'2024-02-08','2024-02-09'),(20,'C.C','1222233','Jack li','344455545','jack@gmail.com','calle#123  65-87','Activo',5,'2024-02-09','2024-02-10'),(21,'C.C','123123','Xiao Lin','6325698958','lin@gmail.com','cll 148 # 78-98','Activo',3,'2024-02-05','2024-02-09'),(22,'C.C','852852','Xiao Qiao','123456789','Q@hotmail.com','CLL139A#23f-89','Activo',5,'2024-02-12','2024-02-13');
+
+/*Table structure for table `cuentas` */
+
+DROP TABLE IF EXISTS `cuentas`;
+
+CREATE TABLE `cuentas` (
+  `idCuentas` int(11) NOT NULL AUTO_INCREMENT,
+  `numCuenta` varchar(200) NOT NULL,
+  `nomBanco` varchar(500) NOT NULL,
+  `estado` varchar(20) NOT NULL DEFAULT 'Activo',
+  `empresa_idEmpresa` int(11) DEFAULT NULL,
+  PRIMARY KEY (`idCuentas`),
+  KEY `empresa_idEmpresa` (`empresa_idEmpresa`),
+  CONSTRAINT `cuentas_ibfk_1` FOREIGN KEY (`empresa_idEmpresa`) REFERENCES `empresa` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+/*Data for the table `cuentas` */
+
+/*Table structure for table `empresa` */
+
+DROP TABLE IF EXISTS `empresa`;
+
+CREATE TABLE `empresa` (
+  `id` int(11) NOT NULL DEFAULT 1,
+  `logoEmpr` longblob DEFAULT NULL,
+  `rz` varchar(255) DEFAULT NULL,
+  `nombEmpresa` varchar(255) DEFAULT NULL,
+  `nit` varchar(20) DEFAULT NULL,
+  `crc` varchar(255) DEFAULT NULL,
+  `nombrepleg` varchar(255) DEFAULT NULL,
+  `docurepleg` varchar(50) DEFAULT NULL,
+  `dirsede` varchar(255) DEFAULT NULL,
+  `telsede` varchar(20) DEFAULT NULL,
+  `telsede2` varchar(50) DEFAULT NULL,
+  `email` varchar(20) DEFAULT NULL,
+  `paginaWeb` varchar(255) DEFAULT NULL,
+  `fechaConstitucion` date DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+/*Data for the table `empresa` */
+
+insert  into `empresa`(`id`,`logoEmpr`,`rz`,`nombEmpresa`,`nit`,`crc`,`nombrepleg`,`docurepleg`,`dirsede`,`telsede`,`telsede2`,`email`,`paginaWeb`,`fechaConstitucion`) values (1,NULL,'PROVEEDORES DE SERVICIO DE INTERNET','BITS PLAY SAS','989988998-8','12345566','jhon mauris','907654321','Carrera 3b #2349','08052225226','08052225226','schickperez@gmail.co','bits.com','2024-01-10');
 
 /*Table structure for table `factura` */
 

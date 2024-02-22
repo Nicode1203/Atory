@@ -109,9 +109,9 @@
                                         $estadoCuenta=$row['estadoCuenta'];
                             ?>
                             <div class="form-group">
-                                <h4 class="card-tittle"> Numero de cuenta: <?php echo "$num_cuenta"?> </h4>
-                                <h4 class="card-tittle"> Nombre del banco: <?php echo "$nomb_banco"?> </h4>
-                                <h4 class="card-tittle"> Estado de cuenta: <?php echo "$estadoCuenta"?> </h4>
+                                <h4 class="form-control"> Numero de cuenta: <?php echo "$num_cuenta"?> </h4>
+                                <h4 class="form-control"> Nombre del banco: <?php echo "$nomb_banco"?> </h4>
+                                <h4 class="form-control"> Estado de cuenta: <?php echo "$estadoCuenta"?> </h4>
                             </div>
                             <?php
 
