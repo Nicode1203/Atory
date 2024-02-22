@@ -1,6 +1,6 @@
 /*
 SQLyog Ultimate v11.11 (64 bit)
-MySQL - 5.5.5-10.4.32-MariaDB : Database - atory
+MySQL - 5.5.5-10.4.28-MariaDB : Database - atory
 *********************************************************************
 */
 
@@ -30,7 +30,7 @@ CREATE TABLE `bancario` (
   PRIMARY KEY (`id_bancario`),
   KEY `banco_idempresa` (`banco_idempresa`),
   CONSTRAINT `bancario_ibfk_1` FOREIGN KEY (`banco_idempresa`) REFERENCES `empresa` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 /*Data for the table `bancario` */
 
@@ -103,7 +103,7 @@ CREATE TABLE `empresa` (
 
 /*Data for the table `empresa` */
 
-insert  into `empresa`(`id`,`logoEmpr`,`rz`,`nombEmpresa`,`nit`,`crc`,`nombrepleg`,`docurepleg`,`dirsede`,`telsede`,`telsede2`,`email`,`paginaWeb`,`fechaConstitucion`) values (1,NULL,'PROVEEDORES DE SERVICIO DE INTERNET','BITS PLAY SAS','989988998-8','12345566','jhon mauris','907654321','Carrera 3b #2349','08052225226','08052225226','schickperez@gmail.co','bits.com','2024-01-10');
+insert  into `empresa`(`id`,`logoEmpr`,`rz`,`nombEmpresa`,`nit`,`crc`,`nombrepleg`,`docurepleg`,`dirsede`,`telsede`,`telsede2`,`email`,`paginaWeb`,`fechaConstitucion`) values (1,NULL,'PROVEEDORES DE SERVICIO DE INTERNET','BITS PLAY SAS','989988998-8','12345566','jhon mauris','907654321','Carrera 3b #2349','08052225226','08052225226','schickperez@gmail.co','www.bits.com','2024-01-10');
 
 /*Table structure for table `factura` */
 
@@ -116,7 +116,9 @@ CREATE TABLE `factura` (
   `subTotal` decimal(10,0) NOT NULL,
   `valorTotalFactura` decimal(10,0) NOT NULL,
   `estadoFactura` varchar(20) NOT NULL DEFAULT 'Pendiente',
-  `cliente_idCliente` int(11) DEFAULT NULL,
+  `cliente_idCliente` int(11) NOT NULL,
+  `fechaVencimiento` date NOT NULL,
+  `fechaSuspencion` date NOT NULL,
   PRIMARY KEY (`idFactura`),
   KEY `fk_cliente_factura` (`cliente_idCliente`),
   CONSTRAINT `fk_cliente_factura` FOREIGN KEY (`cliente_idCliente`) REFERENCES `cliente` (`idCliente`)
@@ -124,7 +126,7 @@ CREATE TABLE `factura` (
 
 /*Data for the table `factura` */
 
-insert  into `factura`(`idFactura`,`fechaFactura`,`impuestoTotal`,`subTotal`,`valorTotalFactura`,`estadoFactura`,`cliente_idCliente`) values (1,'2023-05-17',10000,50000,60000,'Pago',1),(2,'2023-05-17',15000,60000,75000,'Pago',1),(3,'2023-05-17',50000,500000,550000,'Pago',1),(4,'2023-05-16',30000,200000,130000,'Pago',1),(5,'2023-03-12',7000,15000,22000,'Pago',1),(6,'2023-04-12',6000,21000,27000,'Pago',1),(7,'2023-05-12',6000,15000,21000,'Pago',1),(8,'2023-02-12',5000,15000,20000,'Pendiente',6),(9,'2023-05-22',70000,350000,420000,'Pago',2),(10,'2023-02-13',7000,25000,32000,'Pendiente',3),(11,'2023-06-29',20000,20000,40000,'Pago',4),(12,'2023-01-09',6000,45000,51000,'Pendiente',5),(13,'2023-03-30',90000,450000,54000,'Pendiente',6),(14,'2023-02-10',100000,500000,600000,'Pendiente',5),(15,'2022-12-17',50000,250000,30000,'Pendiente',4),(16,'2022-11-25',85000,225000,310000,'Pendiente',3),(17,'2023-01-18',6000,30000,36000,'Pendiente',2),(18,'2023-03-09',20000,75000,95000,'Pago',1),(19,'2023-06-18',15000,75000,90000,'Pago',1),(20,'2023-06-30',7000,30000,37000,'Pendiente',2),(21,'2024-02-05',50000,150000,200000,'Pendiente',3),(22,'2024-02-19',19000,81000,100000,'Pendiente',6),(23,'2024-02-23',13300,56700,70000,'Pendiente',14),(24,'2024-03-04',13300,56700,70000,'Pendiente',14),(25,'2024-02-19',19000,81000,100000,'Pendiente',21),(26,'2024-03-04',9500,40500,50000,'Pendiente',7);
+insert  into `factura`(`idFactura`,`fechaFactura`,`impuestoTotal`,`subTotal`,`valorTotalFactura`,`estadoFactura`,`cliente_idCliente`,`fechaVencimiento`,`fechaSuspencion`) values (1,'2023-05-17',10000,50000,60000,'Pago',1,'0000-00-00','0000-00-00'),(2,'2023-05-17',15000,60000,75000,'Pago',1,'0000-00-00','0000-00-00'),(3,'2023-05-17',50000,500000,550000,'Pago',1,'0000-00-00','0000-00-00'),(4,'2023-05-16',30000,200000,130000,'Pago',1,'0000-00-00','0000-00-00'),(5,'2023-03-12',7000,15000,22000,'Pago',1,'0000-00-00','0000-00-00'),(6,'2023-04-12',6000,21000,27000,'Pago',1,'0000-00-00','0000-00-00'),(7,'2023-05-12',6000,15000,21000,'Pago',1,'0000-00-00','0000-00-00'),(8,'2023-02-12',5000,15000,20000,'Pendiente',6,'0000-00-00','0000-00-00'),(9,'2023-05-22',70000,350000,420000,'Pago',2,'0000-00-00','0000-00-00'),(10,'2023-02-13',7000,25000,32000,'Pendiente',3,'0000-00-00','0000-00-00'),(11,'2023-06-29',20000,20000,40000,'Pago',4,'0000-00-00','0000-00-00'),(12,'2023-01-09',6000,45000,51000,'Pendiente',5,'0000-00-00','0000-00-00'),(13,'2023-03-30',90000,450000,54000,'Pendiente',6,'0000-00-00','0000-00-00'),(14,'2023-02-10',100000,500000,600000,'Pendiente',5,'0000-00-00','0000-00-00'),(15,'2022-12-17',50000,250000,30000,'Pendiente',4,'0000-00-00','0000-00-00'),(16,'2022-11-25',85000,225000,310000,'Pendiente',3,'0000-00-00','0000-00-00'),(17,'2023-01-18',6000,30000,36000,'Pendiente',2,'0000-00-00','0000-00-00'),(18,'2023-03-09',20000,75000,95000,'Pago',1,'0000-00-00','0000-00-00'),(19,'2023-06-18',15000,75000,90000,'Pago',1,'0000-00-00','0000-00-00'),(20,'2023-06-30',7000,30000,37000,'Pendiente',2,'0000-00-00','0000-00-00'),(21,'2024-02-05',50000,150000,200000,'Pendiente',3,'0000-00-00','0000-00-00'),(22,'2024-02-19',19000,81000,100000,'Pendiente',6,'0000-00-00','0000-00-00'),(23,'2024-02-23',13300,56700,70000,'Pendiente',14,'0000-00-00','0000-00-00'),(24,'2024-03-04',13300,56700,70000,'Pendiente',14,'0000-00-00','0000-00-00'),(25,'2024-02-19',19000,81000,100000,'Pendiente',21,'0000-00-00','0000-00-00'),(26,'2024-03-04',9500,40500,50000,'Pendiente',7,'0000-00-00','0000-00-00');
 
 /*Table structure for table `plan` */
 
@@ -284,6 +286,18 @@ CREATE TABLE `visitas` (
 /*Data for the table `visitas` */
 
 insert  into `visitas`(`idVisita`,`tipoVisita`,`motivoVisita`,`diaVisita`,`estadoVisita`,`visita_idCliente`,`comentario`) values (1,'Instalacion','plan feo3434343','2023-06-25','Completado',11,'hola mundo'),(2,'Instalacion','Instalacion de plan','2023-06-27','Activo',21,NULL),(3,'Reparacion','el servicio no esta funcionando porque me la pelan todos','2023-06-29','Completado',7,NULL),(4,'Instalacion','Otra vez el internet me esta fallando','2023-06-30','Archivado',7,NULL),(5,'Instalacion','Nuevo motivo de visita','2024-02-14','Archivado',7,'Nuevo comentario'),(6,'Desinstalacion','cables dañados','2024-02-22','Activo',7,NULL),(7,'Instalacion','cables dañados','2024-02-22','Completado',7,NULL);
+
+/* Procedure structure for procedure `verfactura` */
+
+/*!50003 DROP PROCEDURE IF EXISTS  `verfactura` */;
+
+DELIMITER $$
+
+/*!50003 CREATE DEFINER=`root`@`localhost` PROCEDURE `verfactura`(IN idFactura INT)
+BEGIN
+    SELECT fechaFactura FROM factura;
+END */$$
+DELIMITER ;
 
 /* Procedure structure for procedure `x` */
 
