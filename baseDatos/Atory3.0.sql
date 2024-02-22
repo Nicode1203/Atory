@@ -30,11 +30,11 @@ CREATE TABLE `bancario` (
   PRIMARY KEY (`id_bancario`),
   KEY `banco_idempresa` (`banco_idempresa`),
   CONSTRAINT `bancario_ibfk_1` FOREIGN KEY (`banco_idempresa`) REFERENCES `empresa` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 /*Data for the table `bancario` */
 
-insert  into `bancario`(`id_bancario`,`num_cuenta`,`nomb_banco`,`estadoCuenta`,`imagenQR`,`banco_idempresa`) values (1,'1235345','nequi','Activo',NULL,1),(2,'3196443053','daviplata','Activo',NULL,1),(3,'4534534534','lulo banc','Activo',NULL,1);
+insert  into `bancario`(`id_bancario`,`num_cuenta`,`nomb_banco`,`estadoCuenta`,`imagenQR`,`banco_idempresa`) values (1,'1235345','nequi','Activo',NULL,1),(2,'3196443053','daviplata','Activo',NULL,1),(3,'4534534534','lulo banc','Activo',NULL,1),(4,'365985','Colpatria','Activo',NULL,1);
 
 /*Table structure for table `cliente` */
 
@@ -142,11 +142,11 @@ CREATE TABLE `plan` (
   `desPlan` varchar(2000) DEFAULT NULL,
   `estadoPlan` varchar(10) NOT NULL,
   PRIMARY KEY (`idPlan`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 /*Data for the table `plan` */
 
-insert  into `plan`(`idPlan`,`codigoPlan`,`tipoPlan`,`velocidad`,`nombrePlan`,`precioPlan`,`desPlan`,`estadoPlan`) values (1,'1','rural','20mb','Plan economico',50000,'Plan económico de 20mb para la cuidad adecuada para casa pequeñas','Activo'),(2,'2','urbano','50mb','Plan dorado',70000,'EL plan dorado urbano es mucho mas rapido ideal para una familia completa, con fibra óptica, ofrece excelente velicidad de internet','Activo'),(3,'3','urbano','70mb','Plan diamante',100000,'Plan de alta velocidad para hogares','Activo'),(4,'4','empresarial','120mb','Plan empresa',120000,'Plan Ideal Para empresas pequeñas, por 120000 y de fibra optica puede alcanzar buenas velocidades','Activo'),(5,'5','urbano','5 mb','Plan Basico',50000,'EL plan rural Basico consta de 5 megas de navegación, se hace por medio de radiofrecuencia y es el plan que tiene mayor covertura, recomendado para personas que vivan muy alejadas o en sitios de dificil alcance.','Activo'),(6,'6','empresarial','150 mb','Plan elite empresa',150000,'Plan para empresas grande que requieran excelente velocidades de wifi, viene con fibra óptica','Activo'),(7,'7','urbano','10 mb','Plan dorado',65000,'Plan fibra optica rural, un plan con velocidades de internet más rapidas, para sitio rurales cerca a las cuidades más cercanas, toca validar disponibilidad','Archivado');
+insert  into `plan`(`idPlan`,`codigoPlan`,`tipoPlan`,`velocidad`,`nombrePlan`,`precioPlan`,`desPlan`,`estadoPlan`) values (1,'1','rural','20mb','Plan economico',50000,'Plan económico de 20mb para la cuidad adecuada para casa pequeñas','Activo'),(2,'2','urbano','50mb','Plan dorado',70000,'EL plan dorado urbano es mucho mas rapido ideal para una familia completa, con fibra óptica, ofrece excelente velicidad de internet','Activo'),(3,'3','urbano','70mb','Plan diamante',100000,'Plan de alta velocidad para hogares','Activo'),(4,'4','empresarial','120mb','Plan empresa',120000,'Plan Ideal Para empresas pequeñas, por 120000 y de fibra optica puede alcanzar buenas velocidades','Activo'),(5,'5','urbano','5 mb','Plan Basico',50000,'EL plan rural Basico consta de 5 megas de navegación, se hace por medio de radiofrecuencia y es el plan que tiene mayor covertura, recomendado para personas que vivan muy alejadas o en sitios de dificil alcance.','Activo'),(6,'6','empresarial','150 mb','Plan elite empresa',150000,'Plan para empresas grande que requieran excelente velocidades de wifi, viene con fibra óptica','Activo'),(7,'7','urbano','10 mb','Plan dorado',65000,'Plan fibra optica rural, un plan con velocidades de internet más rapidas, para sitio rurales cerca a las cuidades más cercanas, toca validar disponibilidad','Activo'),(8,'8','empresarial','300','Plan elite de empresas',400000,'Plan elite para las empresas mas grandes que necesitan altas velocidades','Activo'),(14,'9','rural','150','Plan mega',350000,'Plan diseñado para las grandes fincas de la region','Activo');
 
 /*Table structure for table `pqr2` */
 
