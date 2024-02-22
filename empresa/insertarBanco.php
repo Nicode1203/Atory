@@ -11,7 +11,7 @@ VALUES ('$num_cuenta', '$nomb_banco', '$estadoCuenta');";
 if ($con->query($sql) === TRUE) {
     echo "Los datos se han guardado correctamente.";
     
-    include_once "../empresa/actualizarEmpresa.php";
+    include_once "../empresa/verempresa.php";
   } else {
     echo "Error al guardar los datos: " . $con;
   }

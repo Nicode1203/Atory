@@ -17,6 +17,6 @@ include("conexion.php");
     $sql="UPDATE empresa SET rz = '$rz', nombEmpresa='$nombEmpresa', nit='$nit', crc='$crc', nombrepleg='$nombrepleg', docurepleg='$docurepleg',dirsede='$dirsede',telsede='$telsede',telsede2='$telsede2',email='$email', paginaWeb='$paginaWeb',fechaConstitucion='$fechaConstitucion' WHERE id='1'; " ;
     $query=mysqli_query($con,$sql);
     if($query){
-        Header("Location: ../empresa/actualizarEmpresa.php");
+        Header("Location: ../empresa/verempresa.php");
     }
 ?>
