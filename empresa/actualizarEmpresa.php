@@ -35,7 +35,7 @@
             <div class="col-md-6 grid-margin stretch-card">
                 <div class="card">
                     <div class="card-body">
-                        <h4 class="card-title">GESTION DE EMPRESA</h4>
+                        <h4 class="card-title">ACTUALIZAR EMPRESA</h4>
                         <p class="card-description"> Ingrese los datos siguientes datos</p>
                         <form class="forms-sample">
                             <div class="form-group">
