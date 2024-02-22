@@ -151,21 +151,31 @@ if ($varsesion == null || $varsesion = '') {
                             <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="profileDropdown">
                                 <h6 class="p-3 mb-0">PERFIL</h6>
                                 <div class="dropdown-divider"></div>
+                                <a href="empresa/verEmpresa.php">
+                                            <div class="preview-item-content">
+                                                <p class="preview-subject mb-1">Editar Empresa</p>
+                                            </div>
+                                        </a>
+                                        <br>
                                 <a class="nav-link" href="login/login.php">
                                     <div class="dropdown-item preview-item">
+                                        <br>
                                         <a href="cerrarSesion.php">
                                             <div class="preview-thumbnail">
                                                 <div class="preview-icon bg-dark rounded-circle">
                                                     <i class="mdi mdi-logout text-danger"></i>
                                                 </div>
                                             </div>
+                                            <br>
                                         </a>
-                                        <a href="cerrarSesion.php">
+                                           <a href="cerrarSesion.php">
                                             <div class="preview-item-content">
                                                 <p class="preview-subject mb-1">Cerrar sesión</p>
                                             </div>
                                         </a>
                                     </div>
+
+
                                 </a>
                             </div>
                         </li>

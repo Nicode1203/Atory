@@ -12,7 +12,6 @@
   <style>
     .form-group>div {
       margin-bottom: 1px;
-      /* Ajusta este valor según lo necesites */
     }
   </style>
 </head>
@@ -59,6 +58,10 @@
       $estf = $row['estadoFactura'];
     }
   }
+  $sql2 = "SELECT * FROM empresa WHERE id='1';";
+  $query2 = mysqli_query($con, $sql2);
+  $row = mysqli_fetch_array($query2);
+
   ?>
   <div class="main-panel">
     <div class="content-wrapper">
@@ -74,7 +77,7 @@
               </div>
               <br>
               <center>
-                <h2 class="card-title">BITS PLAY SAS</h2>
+                <h2 class="card-title"><?php echo $row['nombEmpresa']?></h2>
               </center>
 
 
@@ -84,7 +87,7 @@
                   <div class="card-body">
 
                     <form class="forms-sample">
-                      <center><class="card-title">PROVEEDORES DE SERVICIO DE INTERNET</center>
+                      <center><class="card-title"><?php echo $row['rz']?></center>
                       <center><class="card-title">NIT. 989988998-8 </center>
                       <center><class="card-title">tel. +57 312 2800098 </center>
                       <center><class="card-title">whatsapp +57 318 6005008 </center>
