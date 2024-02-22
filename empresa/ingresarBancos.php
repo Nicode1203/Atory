@@ -20,7 +20,7 @@
                     <div class="card-body">
                         <h4 class="card-title">INGRESO DE CUENTAS BANCARIAS</h4>
                         <p class="card-description"> Ingrese información del banco</p>
-                        <form class="forms-sample">
+                        <form class="forms-sample" method="POST" action="insertarBanco.php">
                             <div class="form-group">
                                 <label for="num_cuenta">Numero de cuenta</label>
                                 <input type="text" class="form-control" name="num_cuenta" id="num_cuenta" placeholder="ingrese numero de cuenta" >

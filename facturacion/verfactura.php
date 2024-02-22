@@ -88,36 +88,36 @@
 
                     <form class="forms-sample">
                       <center><class="card-title"><?php echo $row['rz']?></center>
-                      <center><class="card-title">NIT. 989988998-8 </center>
-                      <center><class="card-title">tel. +57 312 2800098 </center>
-                      <center><class="card-title">whatsapp +57 318 6005008 </center>
+                      <center><class="card-title">nit  : <?php echo $row['nit']?></center>
+                      <center><class="card-title">tel  : <?php echo $row['telsede']?></center>
+                      <center><class="card-title">tel2 : <?php echo $row['telsede2']?></center>
                       <br>
-                      <h4 class="card-title">Hola <?php echo "$nomc" ?></h4>
+                      <center><h4 class="card-title">Hola <?php echo "$nomc" ?></h4></center>
 
                       <div class="form-group">
                         <div>
-                          <label for="cp">Con : <?php echo "$td: $doc" ?></label>
+                        <center><label for="cp">Con : <?php echo "$td: $doc" ?></label></center>
                         </div>
                         <div>
-                          <label for="des"> Su telefono es <?php echo "$telc" ?></label>
+                        <center><label for="des"> Su telefono es <?php echo "$telc" ?></label><center>
                         </div>
                         <div>
-                          <label for="des"> Su correo es: <?php echo "$emailc" ?></label>
+                        <center><label for="des"> Su correo es: <?php echo "$emailc" ?></label></center>
                         </div>
                         <div>
-                          <label for="cp">Tu factura correspondiente al : <?php echo "$ffact" ?></label>
+                        <center><label for="cp">Tu factura correspondiente al : <?php echo "$ffact" ?></label></center>
                         </div>
                         <div>
-                          <label for="cp">Con <?php echo "$nombreplan" ?></label>
+                        <center><label for="cp">Con <?php echo "$nombreplan" ?></label></center>
                         </div>
                         <div>
-                          <label for="cp">Tipo: <?php echo "$tipoplan" ?></label>
+                        <center><label for="cp">Tipo: <?php echo "$tipoplan" ?></label></center>
                         </div>
                         <div>
-                          <label for="cp">Velocidad: <?php echo "$vp" ?></label>
+                        <center><label for="cp">Velocidad: <?php echo "$vp" ?></label></center>
                         </div>
                         <div>
-                          <label for="cp">Tu factura se encuentra actualmente: <?php echo "$estf" ?> </label>
+                        <center><label for="cp">Tu factura se encuentra actualmente: <?php echo "$estf" ?> </label></center>
                         </div>
                         <br>
                         <div>
@@ -136,6 +136,7 @@
                       </div>
 
                       <a href="../index.html" class="btn btn-light btn-lg active" role="button" aria-pressed="true">Volver </a>
+                      <a href="../index.html" class="btn btn-light btn-lg active" role="button" aria-pressed="true">Imprimir </a>
                     </form>
                   </div>
                 </div>
