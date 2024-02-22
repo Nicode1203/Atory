@@ -68,8 +68,8 @@
       <div class="page-header">
         <h2 class="page-title">FACTURA</h2>
       </div>
-      <div class="row">
-        <div class="col-md-6 grid-margin stretch-card">
+      <div class="row justify-content-center">
+        <div class="col-md-6 col-12 grid-margin stretch-card mx-auto">
           <div class="card">
             <div class="card-body">
               <div style="text-align: center;">
@@ -77,47 +77,45 @@
               </div>
               <br>
               <center>
-                <h2 class="card-title"><?php echo $row['nombEmpresa']?></h2>
+                <h2 class="card-title"><?php echo $row['nombEmpresa'] ?></h2>
               </center>
-
-
               <form class="forms-sample">
-
                 <div class="form-group">
                   <div class="card-body">
-
                     <form class="forms-sample">
-                      <center><class="card-title"><?php echo $row['rz']?></center>
-                      <center><class="card-title">nit  : <?php echo $row['nit']?></center>
-                      <center><class="card-title">tel  : <?php echo $row['telsede']?></center>
-                      <center><class="card-title">tel2 : <?php echo $row['telsede2']?></center>
+                      <center><class="card-title"><?php echo $row['rz'] ?></center>
+                      <center><class="card-title">nit : <?php echo $row['nit'] ?></center>
+                      <center><class="card-title">tel : <?php echo $row['telsede'] ?></center>
+                      <center><class="card-title">tel2 : <?php echo $row['telsede2'] ?></center>
                       <br>
-                      <center><h4 class="card-title">Hola <?php echo "$nomc" ?></h4></center>
-
+                      <center>
+                        <h4 class="card-title">Hola <?php echo "$nomc" ?></h4>
+                      </center>
                       <div class="form-group">
                         <div>
-                        <center><label for="cp">Con : <?php echo "$td: $doc" ?></label></center>
+                          <center><label for="cp">Con : <?php echo "$td: $doc" ?></label></center>
                         </div>
                         <div>
-                        <center><label for="des"> Su telefono es <?php echo "$telc" ?></label><center>
+                          <center><label for="des"> Su telefono es <?php echo "$telc" ?></label>
+                            <center>
                         </div>
                         <div>
-                        <center><label for="des"> Su correo es: <?php echo "$emailc" ?></label></center>
+                          <center><label for="des"> Su correo es: <?php echo "$emailc" ?></label></center>
                         </div>
                         <div>
-                        <center><label for="cp">Tu factura correspondiente al : <?php echo "$ffact" ?></label></center>
+                          <center><label for="cp">Tu factura correspondiente al : <?php echo "$ffact" ?></label></center>
                         </div>
                         <div>
-                        <center><label for="cp">Con <?php echo "$nombreplan" ?></label></center>
+                          <center><label for="cp">Con <?php echo "$nombreplan" ?></label></center>
                         </div>
                         <div>
-                        <center><label for="cp">Tipo: <?php echo "$tipoplan" ?></label></center>
+                          <center><label for="cp">Tipo: <?php echo "$tipoplan" ?></label></center>
                         </div>
                         <div>
-                        <center><label for="cp">Velocidad: <?php echo "$vp" ?></label></center>
+                          <center><label for="cp">Velocidad: <?php echo "$vp" ?></label></center>
                         </div>
                         <div>
-                        <center><label for="cp">Tu factura se encuentra actualmente: <?php echo "$estf" ?> </label></center>
+                          <center><label for="cp">Tu factura se encuentra actualmente: <?php echo "$estf" ?> </label></center>
                         </div>
                         <br>
                         <div>
@@ -132,30 +130,26 @@
                         <div>
                           <center><label for="plan">Valor total a pagar: <?php echo " $st" ?></label></center>
                         </div>
-
                       </div>
                       <center><a href="facturas.php" class="btn btn-light btn-lg active" role="button" aria-pressed="true">Volver a facturas</a>
-                      <a href="../index.html" class="btn btn-light btn-lg active" role="button" aria-pressed="true">Imprimir </a></center>
+                        <a href="../index.html" class="btn btn-light btn-lg active" role="button" aria-pressed="true">Imprimir </a>
+                      </center>
                     </form>
                   </div>
                 </div>
             </div>
-
           </div>
-
         </div>
-
       </div>
-
     </div>
+  </div>
 
-    <script src="../assets/vendors/js/vendor.bundle.base.js"></script>
-
-    <script src="../assets/js/off-canvas.js"></script>
-    <script src="../assets/js/hoverable-collapse.js"></script>
-    <script src="../assets/js/misc.js"></script>
-    <script src="../assets/js/settings.js"></script>
-    <script src="../assets/js/todolist.js"></script>
+  <script src="../assets/vendors/js/vendor.bundle.base.js"></script>
+  <script src="../assets/js/off-canvas.js"></script>
+  <script src="../assets/js/hoverable-collapse.js"></script>
+  <script src="../assets/js/misc.js"></script>
+  <script src="../assets/js/settings.js"></script>
+  <script src="../assets/js/todolist.js"></script>
 
 </body>
 
