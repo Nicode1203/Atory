@@ -31,7 +31,7 @@ if ($varsesion == null || $varsesion = '') {
     <?php
     include '../menu/menuint.php';
     ?>
-    <!-- Parcial -->
+
     <div class="main-panel">
         <div class="content-wrapper">
 
@@ -58,14 +58,13 @@ if ($varsesion == null || $varsesion = '') {
             </div>
         </div>
         <!-- Extremos del contenedor de contenido -->
-        <!-- Parcial -->
+
     </div>
-    <!-- main-panel fin -->
+
     </div>
-    <!-- page-body-wrapper fin -->
+
     </div>
-    <!-- container-scroller -->
-    <!-- Scripts -->
+
     <script src="../assets/vendors/js/vendor.bundle.base.js"></script>
     <script src="../assets/js/off-canvas.js"></script>
     <script src="../assets/js/hoverable-collapse.js"></script>
