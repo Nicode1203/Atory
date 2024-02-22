@@ -2,35 +2,31 @@
 <html lang="en">
 
 <head>
-
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>AtorySolution</title>
-
   <link rel="stylesheet" href="../assets/vendors/mdi/css/materialdesignicons.min.css">
   <link rel="stylesheet" href="../assets/vendors/css/vendor.bundle.base.css">
-
-
   <link rel="stylesheet" href="../assets/css/style.css">
-
   <link rel="shortcut icon" href="../assets/images/favicon.png" />
+  <style>
+    .form-group>div {
+      margin-bottom: 1px;
+    }
+  </style>
 </head>
 
 <body>
-  <?php
-  include '../menu/menuint.php';
-  ?>
-
   <?php
   include_once "conexion.php";
 
   $id = $_GET['id'];
   $sql = "SELECT * FROM cliente  
-      INNER JOIN plan
-      on cliente.plan_idPlan=plan.idPlan
-      INNER JOIN factura
-      ON cliente.idCliente=factura.cliente_idCliente
-      WHERE idCliente= '$id';";
+  INNER JOIN plan
+  on cliente.plan_idPlan=plan.idPlan
+  INNER JOIN factura
+  ON cliente.idCliente=factura.cliente_idCliente
+  WHERE idCliente= '$id';";
 
   if ($rta = $con->query($sql)) {
     while ($row = $rta->fetch_assoc()) {
@@ -56,11 +52,16 @@
       $if = $row['idFactura'];
       $ffact = $row['fechaFactura'];
       $impt = $row['impuestoTotal'];
+      $sub = $row['subTotal'];
       $st = $row['valorTotalFactura'];
       $cid = $row['cliente_idCliente'];
       $estf = $row['estadoFactura'];
     }
   }
+  $sql2 = "SELECT * FROM empresa WHERE id='1';";
+  $query2 = mysqli_query($con, $sql2);
+  $row = mysqli_fetch_array($query2);
+
   ?>
   <div class="main-panel">
     <div class="content-wrapper">
@@ -71,37 +72,70 @@
         <div class="col-md-6 grid-margin stretch-card">
           <div class="card">
             <div class="card-body">
-              <h4 class="card-title">Estimado cliente <?php echo "$nomc" ?>, identificado con : <?php echo "$td: $doc" ?></h4>
+              <div style="text-align: center;">
+                <img class="logo" src="../empresa/logoEmpresa.png" alt="logo" style="max-width: 20%; height: auto" class="img-responsive" />
+              </div>
+              <br>
+              <center>
+                <h2 class="card-title"><?php echo $row['nombEmpresa']?></h2>
+              </center>
+
+
               <form class="forms-sample">
+
                 <div class="form-group">
                   <div class="card-body">
-                    <h4 class="card-title">Esta factura corresponde a : <?php echo "$ffact" ?> </h4>
+
                     <form class="forms-sample">
+                      <center><class="card-title"><?php echo $row['rz']?></center>
+                      <center><class="card-title">nit  : <?php echo $row['nit']?></center>
+                      <center><class="card-title">tel  : <?php echo $row['telsede']?></center>
+                      <center><class="card-title">tel2 : <?php echo $row['telsede2']?></center>
+                      <br>
+                      <center><h4 class="card-title">Hola <?php echo "$nomc" ?></h4></center>
+
                       <div class="form-group">
-                        <label for="cp">Corresponde al plan <?php echo "$nombreplan" ?></label>
+                        <div>
+                        <center><label for="cp">Con : <?php echo "$td: $doc" ?></label></center>
+                        </div>
+                        <div>
+                        <center><label for="des"> Su telefono es <?php echo "$telc" ?></label><center>
+                        </div>
+                        <div>
+                        <center><label for="des"> Su correo es: <?php echo "$emailc" ?></label></center>
+                        </div>
+                        <div>
+                        <center><label for="cp">Tu factura correspondiente al : <?php echo "$ffact" ?></label></center>
+                        </div>
+                        <div>
+                        <center><label for="cp">Con <?php echo "$nombreplan" ?></label></center>
+                        </div>
+                        <div>
+                        <center><label for="cp">Tipo: <?php echo "$tipoplan" ?></label></center>
+                        </div>
+                        <div>
+                        <center><label for="cp">Velocidad: <?php echo "$vp" ?></label></center>
+                        </div>
+                        <div>
+                        <center><label for="cp">Tu factura se encuentra actualmente: <?php echo "$estf" ?> </label></center>
+                        </div>
+                        <br>
+                        <div>
+                          <center><label for="cp">Sub total: <?php echo "$sub" ?></label></center>
+                        </div>
+                        <div>
+                          <center><label for="vel">IVA 19%: <?php echo "$impt" ?></label></center>
+                        </div>
+                        <div>
+                          <center><label>_______________________</label></center>
+                        </div>
+                        <div>
+                          <center><label for="plan">Valor total a pagar: <?php echo " $st" ?></label></center>
+                        </div>
+
                       </div>
-                      <div class="form-group">
-                        <label for="cp">del tipo: <?php echo "$tipoplan" ?></label>
-                      </div>
-                      <div class="form-group">
-                        <label for="cp">Velocidad: <?php echo "$vp" ?></label>
-                      </div>
-                      <div class="form-group">
-                        <label for="cp">Se encuentra actualmente: <?php echo "$estf" ?> </label>
-                      </div>
-                      <div class="form-group">
-                        <label for="cp">Sub total: <?php echo "$st" ?></label>
-                      </div>
-                      <div class="form-group">
-                        <label for="vel">Impuesto: <?php echo "$impt" ?></label>
-                      </div>
-                      <div class="form-group">
-                        <label for="plan">Valor total a pagar: <?php echo " $st" ?></label>
-                      </div>
-                      <div class="form-group">
-                        <label for="des"> Le recordamos su información de contacto, su telefono es <?php echo "$telc" ?> y su correo es: <?php echo "$emailc" ?></label>
-                      </div>
-                      <a href="facturas.php" class="btn btn-light btn-lg active" role="button" aria-pressed="true">Volver a facturas</a>
+                      <center><a href="facturas.php" class="btn btn-light btn-lg active" role="button" aria-pressed="true">Volver a facturas</a>
+                      <a href="../index.html" class="btn btn-light btn-lg active" role="button" aria-pressed="true">Imprimir </a></center>
                     </form>
                   </div>
                 </div>
