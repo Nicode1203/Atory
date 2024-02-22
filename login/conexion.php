@@ -2,7 +2,7 @@
 
     $host = "localhost";
     $User = "root";
-    $pass = "12345";
+    $pass = "";
 
     $db = "atory";
 
