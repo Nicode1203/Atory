@@ -18,25 +18,25 @@
 </head>
 
 <body>
-  <div class="container-scroller">
-    <?php
-    include_once "conexion.php";
-
-    // Consulta para obtener datos del plan con códigoPlan='1'
-    $sql = "SELECT * FROM plan WHERE estadoPlan='Activo';";
-    if ($rta = $con->query($sql)) {
-      while ($row = $rta->fetch_assoc()) {
-        $cp = $row['codigoPlan'];
-        $vel = $row['velocidad'];
-        $nplan = $row['nombrePlan'];
-        $pplan = $row['precioPlan'];
-        $des = $row['desPlan'];
-        $estadop = $row['estadoPlan'];
-        $tplan = $row['tipoPlan'];
-    ?>
+  <div class="container-scroller"
     <div class="main-panel">
       <div class="content-wrapper">
         <div class="row">
+              <?php
+              include_once "conexion.php";
+          
+              // Consulta para obtener datos del plan con códigoPlan='1'
+              $sql = "SELECT * FROM plan WHERE estadoPlan='Activo';";
+              if ($rta = $con->query($sql)) {
+                while ($row = $rta->fetch_assoc()) {
+                  $cp = $row['codigoPlan'];
+                  $vel = $row['velocidad'];
+                  $nplan = $row['nombrePlan'];
+                  $pplan = $row['precioPlan'];
+                  $des = $row['desPlan'];
+                  $estadop = $row['estadoPlan'];
+                  $tplan = $row['tipoPlan'];
+              ?>
           <div class="col-md-6 grid-margin stretch-card" style="width: auto; height: 700px;">
             <div class="card" style="background: url('../assets/images/planes/fondoplanes.jpg') center center / cover no-repeat; border-radius: 20px; position: relative;">
               <div class="card-body text-dark">
