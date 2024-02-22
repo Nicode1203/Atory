@@ -16,5 +16,3 @@ if($query){
     Header("Location: ../planes/tablaplanes.php");
 }
 ?>
-$sql="INSERT INTO plan (codigoPlan, tipoPlan, velocidad, nombrePlan, precioPlan, desPlan, estadoPlan)
- VALUES('$cp','$tplan','$vel','$nplan','$pplan','$des','$estadop')";
