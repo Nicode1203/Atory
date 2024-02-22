@@ -15,4 +15,6 @@ $query=mysqli_query($con,$sql);
 if($query){
     Header("Location: ../planes/tablaplanes.php");
 }
+
 ?>
+
