@@ -41,7 +41,7 @@
                             <div>
                                 <br>
                                 <button id="submit" type="submit" formmethod="post" formaction="insertarBanco.php" class="btn btn-primary">Guardar</button>
-                                <button id="submit" type="submit" formmethod="post" formaction="index.html" class="btn btn-primary"> Volver al inicio </button>
+                                <button id="submit" type="submit" formmethod="post" formaction="actualizarEmpresa.php" class="btn btn-primary"> Volver al inicio </button>
 
                             </div>
                         </form>
