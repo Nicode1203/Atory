@@ -24,7 +24,7 @@ if ($resultado->num_rows > 0) {
   $sql_insertar = "INSERT INTO cliente (tipoDocumento, documentoCliente, nombreCliente, telefonoCliente, correoCliente, direccion, estadoCliente, plan_idPlan , creado, ultimaActualizacion) VALUES ('$td', '$id', '$nombres', '$telefono', '$email', '$dir', '$estado', '$plan', '$creacion', '$act')";
   if ($con->query($sql_insertar) === TRUE) {
     echo "Los datos se han guardado correctamente.";
-    include_once "tablas.php";
+    header("Location:../tablas.php");
   } else {
     echo "Error al guardar los datos: " . $con->error;
   }
