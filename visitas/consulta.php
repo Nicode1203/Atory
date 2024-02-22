@@ -140,14 +140,15 @@
           </div>
         </div>
       </div>
+
       <?php
-// Dirección del cliente
-$dirCliente = "Dirección del cliente";
+// Dirección para la que queremos obtener la geolocalización
+$direccion = "Statue of Liberty, New York, USA";
 
-// Codificar la dirección para incluir en la URL
-$direccion_codificada = urlencode($dirCliente);
+// Codificar la dirección para incluirla en la URL
+$direccion_codificada = urlencode($direccion);
 
-// URL de la API de Nominatim para geocodificación
+// URL de la API de Nominatim para geolocalización
 $url = "https://nominatim.openstreetmap.org/search?format=json&q={$direccion_codificada}";
 
 // Realizar la solicitud a la API
@@ -162,24 +163,22 @@ if (!empty($datos_geolocalizacion) && isset($datos_geolocalizacion[0])) {
     $latitud = $datos_geolocalizacion[0]->lat;
     $longitud = $datos_geolocalizacion[0]->lon;
 
-    // URL de Google Maps para mostrar la ubicación en el mapa
-    $url_google_maps = "https://www.google.com/maps/search/?api=1&query={$latitud},{$longitud}";
-
-    // Mostrar un enlace para abrir la ubicación en Google Maps
-    echo "<div class='form-group'>";
-    echo "<label for='vel'><b>Direccion Cliente: </b>$dirCliente</label>";
-    echo "<br>";
-    echo "<a href='{$url_google_maps}' target='_blank'>Ver ubicación en Google Maps</a>";
-    echo "</div>";
+    // Mostrar las coordenadas geográficas
+    echo "La Estatua de la Libertad está ubicada en:<br>";
+    echo "Latitud: $latitud<br>";
+    echo "Longitud: $longitud";
 } else {
     // Si no se pudo obtener la geolocalización, mostrar un mensaje de error
-    echo "<div class='form-group'>";
-    echo "<label for='vel'><b>Direccion Cliente: </b>$dirCliente</label>";
-    echo "<br>";
     echo "No se pudo obtener la geolocalización para la dirección proporcionada.";
-    echo "</div>";
 }
 ?>
+
+
+
+
+
+
+
 
     </div>
     <!-- partial -->
