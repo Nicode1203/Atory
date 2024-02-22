@@ -135,8 +135,8 @@
 
                       </div>
 
-                      <a href="../index.html" class="btn btn-light btn-lg active" role="button" aria-pressed="true">Volver </a>
-                      <a href="../index.html" class="btn btn-light btn-lg active" role="button" aria-pressed="true">Imprimir </a>
+                      <center><a href="../index.html" class="btn btn-light btn-lg active" role="button" aria-pressed="true">Volver </a>
+                      <a href="../index.html" class="btn btn-light btn-lg active" role="button" aria-pressed="true">Imprimir </a></center>
                     </form>
                   </div>
                 </div>
