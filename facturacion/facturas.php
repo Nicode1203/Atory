@@ -55,7 +55,7 @@ if ($varsesion == null || $varsesion = '') {
 
           include("conexion.php");
 
-          $sql = "SELECT cliente.idCliente,factura.cliente_idCliente,cliente.documentoCliente,cliente.nombreCliente,factura.fechaFactura,factura.valorTotalFactura,factura.estadoFactura FROM cliente 
+          $sql = "SELECT cliente.idCliente,factura.cliente_idCliente,cliente.documentoCliente,cliente.nombreCliente,factura.fechaFactura,factura.valorTotalFactura,factura.estadoFactura, factura.nPlan FROM cliente 
                     INNER JOIN factura
                     ON cliente.idCliente=factura.cliente_idCliente
                     WHERE estadoFactura='Pendiente'
@@ -70,6 +70,7 @@ if ($varsesion == null || $varsesion = '') {
         <th> Fecha Factura</th>
         <th> Valor Total</th>
         <th> Estado factura</th>
+        <th> Plan </th>
         <th> Consultas</th>
         <th> Pago</th>
     </tr>
@@ -85,6 +86,7 @@ if ($varsesion == null || $varsesion = '') {
               $ffact = $row['fechaFactura'];
               $st = $row['valorTotalFactura'];
               $estf = $row['estadoFactura'];
+              $nplan=$row['nPlan']
 
 
           ?>
@@ -94,6 +96,7 @@ if ($varsesion == null || $varsesion = '') {
                 <td> <?php echo "$ffact" ?></td>
                 <td> <?php echo "$st" ?></td>
                 <td> <?php echo "$estf" ?></td>
+                <td> <?php echo "$nplan" ?></td>
                 <th>
                   <a href="verfacturaAdmin.php?id=<?php echo  $row['idCliente'] ?>" class="btn btn-info">ver factura</a>
 
