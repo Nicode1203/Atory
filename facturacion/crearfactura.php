@@ -94,12 +94,17 @@ if ($varsesion == null || $varsesion = '') {
         <p class="card-description"> Subtotal a pagar: <?php echo "$sub"  ?> </p>
         <p class="card-description"> Impuestos: <?php echo "$impt"  ?> </p>
         <p class="card-description"> Total: <?php echo "$st"  ?> </p>
-        <p class="card-description"> Ingrese fecha de pago:</p>
+        <p class="card-description"> Ingrese fechas:</p>
         <form action="actfactura.php" method="POST">
           <input type="hidden" name="if" value="<?php echo "$if"  ?>">
           <input type="hidden" name="id" value="<?php echo "$id"  ?>">
           <input type="hidden" name="cid" value="<?php echo "$cid"  ?>">
-          <input type="date" class="form-control mb-3" name="ffact" placeholder="Fecha de factura">
+          <label for="f">Fecha de ingreso factura</label>
+          <input type="date" class="form-control mb-3" name="fing" placeholder="Fecha de Ingreso">
+          <label for="f">Fecha limite de pago</label>
+          <input type="date" class="form-control mb-3" name="ffact" placeholder="Fecha limite de pago">
+          <label for="f">Fecha de corte de servicio</label>
+          <input type="date" class="form-control mb-3" name="flim" placeholder="Fecha de corte de servicio">
           <input type="hidden" name="impt" value="<?php echo "$impt"  ?>">
           <input type="hidden" name="sub" value="<?php echo "$sub"  ?>">
           <input type="hidden" name="st" value="<?php echo "$st"  ?>">
