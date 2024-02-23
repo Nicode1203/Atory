@@ -127,7 +127,7 @@ CREATE TABLE `factura` (
 
 /*Data for the table `factura` */
 
-insert  into `factura`(`idFactura`,`fechaFactura`,`impuestoTotal`,`subTotal`,`valorTotalFactura`,`estadoFactura`,`cliente_idCliente`,`fechaVencimiento`,`fechaSuspencion`,`nPlan`) values (1,'2024-03-01',19000,81000,100000,'Pendiente',7,'2024-03-16','2024-03-21','Plan diamante'),(2,'2024-02-03',76000,324000,400000,'Pendiente',6,'2024-02-18','2024-02-23','Plan elite de empresas'),(3,'2024-02-01',9500,40500,50000,'Pendiente',7,'2024-02-16','2024-02-21','Plan economico'),(4,'2024-01-03',66500,283500,350000,'Pendiente',6,'2024-01-18','2024-01-23','Plan mega'),(5,'2024-01-18',13300,56700,70000,'Pendiente',14,'2024-02-02','2024-02-07','Plan dorado');
+insert  into `factura`(`idFactura`,`fechaFactura`,`impuestoTotal`,`subTotal`,`valorTotalFactura`,`estadoFactura`,`cliente_idCliente`,`fechaVencimiento`,`fechaSuspencion`,`nPlan`) values (1,'2024-03-01',19000,81000,100000,'Pendiente',7,'2024-03-16','2024-03-21','Plan diamante'),(2,'2024-02-03',76000,324000,400000,'Pendiente',6,'2024-02-18','2024-02-23','Plan elite de empresas'),(3,'2024-02-01',9500,40500,50000,'Pendiente',7,'2024-02-16','2024-02-21','Plan economico'),(4,'2024-01-03',66500,283500,350000,'Pago',6,'2024-01-18','2024-01-23','Plan mega'),(5,'2024-01-18',13300,56700,70000,'Pago',14,'2024-02-02','2024-02-07','Plan dorado');
 
 /*Table structure for table `plan` */
 

@@ -101,7 +101,7 @@ if ($varsesion == null || $varsesion = '') {
                 <th>
                   <a href="verfacturaAdmin.php?id=<?php echo  $row['idFactura'] ?>" class="btn btn-info">ver factura</a>
 
-                <th><a href="eliminarf.php?id=<?php echo $row['cliente_idCliente']   ?>" class="borrar btn btn-danger">Pago</a></th>
+                <th><a href="eliminarf.php?id=<?php echo $row['idFactura']   ?>" class="borrar btn btn-danger">Pago</a></th>
 
               </tr>
           <?php

@@ -53,10 +53,10 @@ if ($seguridad->getUsuario()==null) {
 
                     include("conexion.php");
                     $dc = $_POST['id'];
-                    $sql = "SELECT cliente.idCliente,factura.cliente_idCliente,cliente.documentoCliente,cliente.nombreCliente,factura.fechaFactura,factura.valorTotalFactura,factura.estadoFactura, factura.idFactura FROM cliente 
-            INNER JOIN factura
-            ON cliente.idCliente=factura.cliente_idCliente
-            WHERE documentoCliente='$dc';";
+                    $sql = "SELECT cliente.idCliente,factura.cliente_idCliente,cliente.documentoCliente,cliente.nombreCliente,factura.idFactura,factura.valorTotalFactura,factura.estadoFactura,factura.fechaVencimiento,factura.nplan FROM cliente 
+                    INNER JOIN factura
+                    ON cliente.idCliente=factura.cliente_idCliente
+                    WHERE documentoCliente='$dc';";
 
                     echo '<div class="table-responsive">
                         <table class="table table-hover">
@@ -64,9 +64,10 @@ if ($seguridad->getUsuario()==null) {
                     <tr>
                     <th> Documento Cliente </th>
                     <th> Nombre Cliente</th>
-                    <th> Fecha Factura</th>
+                    <th> Fecha Limite de pago</th>
                     <th> Valor Total</th>
                     <th> Estado factura</th>
+                    <th> Plan</th>
                     <th> Consultas</th>
                     <th> Editar</th>
                     <th> Pago</th>
@@ -80,10 +81,11 @@ if ($seguridad->getUsuario()==null) {
                             $b = $row['cliente_idCliente'];
                             $dc = $row['documentoCliente'];
                             $nomc = $row['nombreCliente'];
-                            $ffact = $row['fechaFactura'];
+                            $if = $row['idFactura'];
                             $st = $row['valorTotalFactura'];
                             $estf = $row['estadoFactura'];
-                            $if = $row['idFactura'];
+                            $ffact = $row['fechaVencimiento'];
+                            $nplan = $row['nplan'];
 
 
                     ?>
@@ -93,12 +95,14 @@ if ($seguridad->getUsuario()==null) {
                                 <td> <?php echo "$ffact" ?></td>
                                 <td> <?php echo "$st" ?></td>
                                 <td> <?php echo "$estf" ?></td>
+                                <td> <?php echo "$nplan" ?></td>
+
                                 <th>
-                                    <a href="verfacturaAdmin.php?id=<?php echo  $row['idCliente'] ?>" class="btn btn-info">ver factura</a>
+                                    <a href="verfacturaAdmin.php?id=<?php echo  $row['idFactura'] ?>" class="btn btn-info">ver factura</a>
                                 </th>
                                 <th><a href="editfactura.php?if=<?php echo  $row['idFactura'] ?>" class="btn btn-primary">Editar factura</a>
                                 </th>
-                                <th><a href="eliminarf.php?id=<?php echo $row['cliente_idCliente']   ?>" class="btn btn-danger">Pago</a></th>
+                                <th><a href="eliminarf.php?id=<?php echo $row['idFactura']   ?>" class="btn btn-danger">Pago</a></th>
 
                             </tr>
                     <?php
