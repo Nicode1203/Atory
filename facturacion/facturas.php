@@ -55,11 +55,11 @@ if ($varsesion == null || $varsesion = '') {
 
           include("conexion.php");
 
-          $sql = "SELECT cliente.idCliente,factura.cliente_idCliente,cliente.documentoCliente,cliente.nombreCliente,factura.idFactura,factura.fechaFactura,factura.valorTotalFactura,factura.estadoFactura, factura.nPlan FROM cliente 
+          $sql = "SELECT cliente.idCliente,factura.cliente_idCliente,cliente.documentoCliente,cliente.nombreCliente,factura.idFactura,factura.valorTotalFactura,factura.estadoFactura,factura.fechaVencimiento,factura.nPlan FROM cliente 
                     INNER JOIN factura
                     ON cliente.idCliente=factura.cliente_idCliente
                     WHERE estadoFactura='Pendiente'
-                    ORDER BY fechaFactura DESC;";
+                    ORDER BY fechaVencimiento ASC;";
 
           echo '<div class="table-responsive">
             <table class="table table-hover">
@@ -67,7 +67,7 @@ if ($varsesion == null || $varsesion = '') {
         <tr>
         <th> Documento Cliente </th>
         <th> Nombre Cliente</th>
-        <th> Fecha Factura</th>
+        <th> Fecha límite de pago</th>
         <th> Valor Total</th>
         <th> Estado factura</th>
         <th> Plan </th>
@@ -84,9 +84,9 @@ if ($varsesion == null || $varsesion = '') {
               $dc = $row['documentoCliente'];
               $nomc = $row['nombreCliente'];
               $idf=$row['idFactura'];
-              $ffact = $row['fechaFactura'];
               $st = $row['valorTotalFactura'];
               $estf = $row['estadoFactura'];
+              $ffact=$row['fechaVencimiento'];
               $nplan=$row['nPlan']
 
 
