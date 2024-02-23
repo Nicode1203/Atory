@@ -20,18 +20,19 @@
     <div class="main-panel">
         <div class="content-wrapper">
             <h1 style="font-size: 32px;">CONSULTA TU FACTURA</h1>
-            <div class="card-body">
+            <div class="card">
+                <div class="card-body">
 
-                <?php
+                    <?php
 
-                include("conexion.php");
-                $dc = $_POST['id'];
-                $sql = "SELECT cliente.idCliente,factura.cliente_idCliente,cliente.documentoCliente,cliente.nombreCliente,factura.idFactura,factura.valorTotalFactura,factura.estadoFactura,factura.fechaVencimiento,factura.nplan FROM cliente 
+                    include("conexion.php");
+                    $dc = $_POST['id'];
+                    $sql = "SELECT cliente.idCliente,factura.cliente_idCliente,cliente.documentoCliente,cliente.nombreCliente,factura.idFactura,factura.valorTotalFactura,factura.estadoFactura,factura.fechaVencimiento,factura.nplan FROM cliente 
             INNER JOIN factura
             ON cliente.idCliente=factura.cliente_idCliente
             WHERE documentoCliente='$dc';";
 
-                echo '<div class="table-responsive">
+                    echo '<div class="table-responsive">
                         <table class="table table-hover">
                         <thead>
                     <tr>
@@ -45,40 +46,41 @@
                 </thead>
                 ';
 
-                if ($rta = $con->query($sql)) {
-                    while ($row = $rta->fetch_assoc()) {
-                        $a = $row['idCliente'];
-                        $b = $row['cliente_idCliente'];
-                        $dc = $row['documentoCliente'];
-                        $nomc = $row['nombreCliente'];
-                        $idf = $row['idFactura'];
-                        $st = $row['valorTotalFactura'];
-                        $estf = $row['estadoFactura'];
-                        $ffact = $row['fechaVencimiento'];
-                        $nplan=$row['nplan']
+                    if ($rta = $con->query($sql)) {
+                        while ($row = $rta->fetch_assoc()) {
+                            $a = $row['idCliente'];
+                            $b = $row['cliente_idCliente'];
+                            $dc = $row['documentoCliente'];
+                            $nomc = $row['nombreCliente'];
+                            $idf = $row['idFactura'];
+                            $st = $row['valorTotalFactura'];
+                            $estf = $row['estadoFactura'];
+                            $ffact = $row['fechaVencimiento'];
+                            $nplan = $row['nplan']
 
 
-                ?>
-                        <tr>
-                            <td> <?php echo "$dc" ?></td>
-                            <td> <?php echo "$nomc" ?></td>
-                            <td> <?php echo "$ffact" ?></td>
-                            <td> <?php echo "$st" ?></td>
-                            <td> <?php echo "$estf" ?></td>
-                            <td> <?php echo "$nplan" ?></td>
-                            <th>
-                                <a href="verfactura.php?id=<?php echo  $row['idFactura'] ?>" class="btn btn-info">ver factura</a>
-                            </th>
+                    ?>
+                            <tr>
+                                <td> <?php echo "$dc" ?></td>
+                                <td> <?php echo "$nomc" ?></td>
+                                <td> <?php echo "$ffact" ?></td>
+                                <td> <?php echo "$st" ?></td>
+                                <td> <?php echo "$estf" ?></td>
+                                <td> <?php echo "$nplan" ?></td>
+                                <th>
+                                    <a href="verfactura.php?id=<?php echo  $row['idFactura'] ?>" class="btn btn-info">ver factura</a>
+                                </th>
 
 
 
-                        </tr>
-                <?php
+                            </tr>
+                    <?php
+                        }
                     }
-                }
-                ?>
+                    ?>
+                </div>
+                <a href="../index.html" class="btn btn-danger btn-lg ">Volver al inicio</a>
             </div>
-            <a href="../index.html" class="btn btn-danger btn-lg ">Volver al inicio</a>
         </div>
     </div>
 
