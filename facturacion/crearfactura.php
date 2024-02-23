@@ -89,7 +89,8 @@ if ($varsesion == null || $varsesion = '') {
         <p class="card-description"> Telefono:<?php echo "$telc"  ?> </p>
         <p class="card-description"> Correo Electronico:<?php echo "$emailc"  ?> </p>
         <p class="card-description"> Dirección Cliente:<?php echo "$dc"  ?> </p>
-        <p class="card-description"> Plan del cliente:<?php echo "$tipoplan"  ?> </p>
+        <p class="card-description"> Tipo plan del cliente:<?php echo "$tipoplan"  ?> </p>
+        <p class="card-description"> Plan del cliente:<?php echo "$nombreplan"  ?> </p>
         <p class="card-description"> velocidad del plan:<?php echo "$vp"  ?> </p>
         <p class="card-description"> Subtotal a pagar: <?php echo "$sub"  ?> </p>
         <p class="card-description"> Impuestos: <?php echo "$impt"  ?> </p>
@@ -99,6 +100,7 @@ if ($varsesion == null || $varsesion = '') {
           <input type="hidden" name="if" value="<?php echo "$if"  ?>">
           <input type="hidden" name="id" value="<?php echo "$id"  ?>">
           <input type="hidden" name="cid" value="<?php echo "$cid"  ?>">
+          <input type="hidden" name="nplan" value="<?php echo "$nombreplan"  ?>">
           <label for="f">Fecha de ingreso factura</label>
           <input type="date" class="form-control mb-3" name="fing" placeholder="Fecha de Ingreso">
           <input type="hidden" name="impt" value="<?php echo "$impt"  ?>">

@@ -50,12 +50,15 @@
       $descripcionplan = $row['desPlan'];
       $estadoplan = $row['estadoPlan'];
       $if = $row['idFactura'];
-      $ffact = $row['fechaFactura'];
+      $fing = $row['fechaFactura'];
       $impt = $row['impuestoTotal'];
       $sub = $row['subTotal'];
       $st = $row['valorTotalFactura'];
       $cid = $row['cliente_idCliente'];
       $estf = $row['estadoFactura'];
+      $ffact=$row['fechaVencimiento'];
+      $flim=$row['fechaSuspencion'];
+      $nplan=$row['nPlan'];
     }
   }
   $sql2 = "SELECT * FROM empresa WHERE id='1';";
@@ -103,13 +106,16 @@
                           <center><label for="des"> Su correo es: <?php echo "$emailc" ?></label></center>
                         </div>
                         <div>
-                          <center><label for="cp">Tu factura correspondiente al : <?php echo "$ffact" ?></label></center>
+                          <center><label for="cp">Tu factura correspondiente al : <?php echo "$fing" ?></label></center>
                         </div>
                         <div>
-                          <center><label for="cp">Con <?php echo "$nombreplan" ?></label></center>
+                          <center><label for="cp">Tu fecha limite de pago es : <?php echo "$ffact" ?></label></center>
                         </div>
                         <div>
-                          <center><label for="cp">Tipo: <?php echo "$tipoplan" ?></label></center>
+                          <center><label for="cp">Tu fecha de suspeción de servicio : <?php echo "$flim" ?></label></center>
+                        </div>
+                        <div>
+                          <center><label for="cp">Con el plan : <?php echo "$nplan" ?></label></center>
                         </div>
                         <div>
                           <center><label for="cp">Velocidad: <?php echo "$vp" ?></label></center>
