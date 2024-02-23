@@ -41,7 +41,8 @@ if ($varsesion == null || $varsesion = '') {
 
 
   <div class="main-panel">
-    <div class="content-wrapper"> <!-- ESTO ES LO QUE TENEMOS QUE MODIFICAR -->
+    <div class="content-wrapper"> 
+    <div class="card">
       <div class="card-body">
         <a href="solicitudes.php" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Volver a Solicitudes</a>
         <?php
@@ -55,8 +56,6 @@ if ($varsesion == null || $varsesion = '') {
             <thead>
         <tr>
         <th> Id Solicitud </th>
-        <th> Tipo de documento</th>
-        <th> Numero de documento</th>
         <th> Nombres del cliente</th>
         <th> Telefono </th>
         <th> Correo CLiente </th>
@@ -67,8 +66,6 @@ if ($varsesion == null || $varsesion = '') {
         if ($rta = $con->query($sql)) {
           while ($row = $rta->fetch_assoc()) {
             $i = $row['idSolicitud'];
-            $td = $row['tipoDocumento'];
-            $id = $row['numeroDocumento'];
             $nombres = $row['nombres'];
             $tel = $row['telefono'];
             $email = $row['email'];
@@ -76,8 +73,6 @@ if ($varsesion == null || $varsesion = '') {
         ?>
             <tr>
               <td> <?php echo "$i" ?></td>
-              <td> <?php echo "$td" ?></td>
-              <td> <?php echo "$id" ?></td>
               <td> <?php echo "$nombres" ?></td>
               <td> <?php echo "$tel" ?></td>
               <td> <?php echo "$email" ?></td>
@@ -91,6 +86,7 @@ if ($varsesion == null || $varsesion = '') {
 
         <!-- ESTO ES LO QUE PODEMOS MODIFICAR -->
 
+      </div>
       </div>
 
     </div>
