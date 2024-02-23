@@ -101,10 +101,6 @@ if ($varsesion == null || $varsesion = '') {
           <input type="hidden" name="cid" value="<?php echo "$cid"  ?>">
           <label for="f">Fecha de ingreso factura</label>
           <input type="date" class="form-control mb-3" name="fing" placeholder="Fecha de Ingreso">
-          <label for="f">Fecha limite de pago</label>
-          <input type="date" class="form-control mb-3" name="ffact" placeholder="Fecha limite de pago">
-          <label for="f">Fecha de corte de servicio</label>
-          <input type="date" class="form-control mb-3" name="flim" placeholder="Fecha de corte de servicio">
           <input type="hidden" name="impt" value="<?php echo "$impt"  ?>">
           <input type="hidden" name="sub" value="<?php echo "$sub"  ?>">
           <input type="hidden" name="st" value="<?php echo "$st"  ?>">
