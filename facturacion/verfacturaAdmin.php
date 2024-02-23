@@ -23,10 +23,10 @@
   $id = $_GET['id'];
   $sql = "SELECT * FROM cliente  
   INNER JOIN plan
-  on cliente.plan_idPlan=plan.idPlan
   INNER JOIN factura
-  ON cliente.idCliente=factura.cliente_idCliente
-  WHERE idCliente= '$id';";
+  WHERE cliente.plan_idPlan=plan.idPlan
+  AND cliente.idCliente=factura.cliente_idCliente
+  AND idFactura= '$id';";
 
   if ($rta = $con->query($sql)) {
     while ($row = $rta->fetch_assoc()) {
