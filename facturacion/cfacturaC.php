@@ -26,7 +26,7 @@
 
                 include("conexion.php");
                 $dc = $_POST['id'];
-                $sql = "SELECT cliente.idCliente,factura.cliente_idCliente,cliente.documentoCliente,cliente.nombreCliente,factura.fechaFactura,factura.valorTotalFactura,factura.estadoFactura FROM cliente 
+                $sql = "SELECT cliente.idCliente,factura.cliente_idCliente,cliente.documentoCliente,cliente.nombreCliente,factura.idFactura,factura.valorTotalFactura,factura.estadoFactura,factura.fechaVencimiento,factura.nplan FROM cliente 
             INNER JOIN factura
             ON cliente.idCliente=factura.cliente_idCliente
             WHERE documentoCliente='$dc';";
@@ -37,7 +37,7 @@
                     <tr>
                     <th> Documento Cliente </th>
                     <th> Nombre Cliente</th>
-                    <th> Fecha Factura</th>
+                    <th> Fecha de Pago</th>
                     <th> Valor Total</th>
                     <th> Estado factura</th>
                     <th> Consultas</th>
@@ -51,9 +51,11 @@
                         $b = $row['cliente_idCliente'];
                         $dc = $row['documentoCliente'];
                         $nomc = $row['nombreCliente'];
-                        $ffact = $row['fechaFactura'];
+                        $idf = $row['idFactura'];
                         $st = $row['valorTotalFactura'];
                         $estf = $row['estadoFactura'];
+                        $ffact = $row['fechaVencimiento'];
+                        $nplan=$row['nplan']
 
 
                 ?>
@@ -63,8 +65,9 @@
                             <td> <?php echo "$ffact" ?></td>
                             <td> <?php echo "$st" ?></td>
                             <td> <?php echo "$estf" ?></td>
+                            <td> <?php echo "$nplan" ?></td>
                             <th>
-                                <a href="verfactura.php?id=<?php echo  $row['idCliente'] ?>" class="btn btn-info">ver factura</a>
+                                <a href="verfactura.php?id=<?php echo  $row['idFactura'] ?>" class="btn btn-info">ver factura</a>
                             </th>
 
 
@@ -74,18 +77,8 @@
                     }
                 }
                 ?>
-
-                <!-- ESTO ES LO QUE PODEMOS MODIFICAR -->
-                <!-- partial:partials/_footer.html -->
-
-                <!-- partial -->
             </div>
-
-            <!-- main-panel ends -->
-        </div>
-        <!-- page-body-wrapper ends -->
-        <div>
-            <input type="submit" value="Volver al inicio" class="btn btn-primary btn-lg" formaction="../index.html" />
+            <a href="../index.html" class="btn btn-danger btn-lg ">Volver al inicio</a>
         </div>
     </div>
 
