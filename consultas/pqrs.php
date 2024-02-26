@@ -42,8 +42,9 @@
           <?php
 
           include("conexion.php");
-
-          $sql = "SELECT * FROM pqr2;";
+          $id=$_POST['id'];
+          $sql = "SELECT * FROM pqr2
+          WHERE nDocumento='$id';";
 
           echo '<div class="table-responsive">
             <table class="table table-hover">
