@@ -42,7 +42,7 @@
           <?php
 
           include("conexion.php");
-          $id=$_POST['id'];
+          $id = $_POST['id'];
           $sql = "SELECT * FROM pqr2
           WHERE nDocumento='$id';";
 
@@ -56,8 +56,7 @@
         <th> Nombres de cliente</th>
         <th> Tipo de PQR </th>
         <th> Consultar PQR</th>
-        <th> Comentario</th>
-        <th> Eliminar</th>
+        
     </tr>
     </thead>
     ';
