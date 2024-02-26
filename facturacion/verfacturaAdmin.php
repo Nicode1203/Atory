@@ -138,7 +138,7 @@
                         </div>
                       </div>
                       <center><a href="facturas.php" class="btn btn-light btn-lg active" role="button" aria-pressed="true">Volver a facturas</a>
-                        <a href="facturaPDF.php" class="btn btn-light btn-lg active" role="button" aria-pressed="true">Imprimir PDF </a>
+                        <a href="facturaPDF.php?id=<?php echo $if; ?>" class="btn btn-light btn-lg active" role="button" aria-pressed="true">Imprimir PDF </a>
                       </center>
                     </form>
                   </div>
