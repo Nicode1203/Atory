@@ -56,9 +56,9 @@
       $st = $row['valorTotalFactura'];
       $cid = $row['cliente_idCliente'];
       $estf = $row['estadoFactura'];
-      $ffact=$row['fechaVencimiento'];
-      $flim=$row['fechaSuspencion'];
-      $nplan=$row['nPlan'];
+      $ffact = $row['fechaVencimiento'];
+      $flim = $row['fechaSuspencion'];
+      $nplan = $row['nPlan'];
     }
   }
   $sql2 = "SELECT * FROM empresa WHERE id='1';";
@@ -138,7 +138,7 @@
                         </div>
                       </div>
                       <center><a href="facturas.php" class="btn btn-light btn-lg active" role="button" aria-pressed="true">Volver a facturas</a>
-                        <a href="../index.html" class="btn btn-light btn-lg active" role="button" aria-pressed="true">Imprimir </a>
+                        <a href="facturaPDF.php" class="btn btn-light btn-lg active" role="button" aria-pressed="true">Imprimir PDF </a>
                       </center>
                     </form>
                   </div>
