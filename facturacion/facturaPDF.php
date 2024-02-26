@@ -40,9 +40,9 @@ $bd = "atory";
 $con = mysqli_connect($host, $user, $pass, $bd);
 if (!$con) {
 
-   die("No se conecto a la base de datos " . mysqli_connect_error());
+  die("No se conecto a la base de datos " . mysqli_connect_error());
 } else {
-   //echo " CONEXIÓN EXITOSA";
+  //echo " CONEXIÓN EXITOSA";
 }
 
 $id = $_GET['id'];
@@ -54,37 +54,37 @@ ON cliente.idCliente=factura.cliente_idCliente
 WHERE idFactura= '$id';";
 
 if ($rta = $con->query($sql)) {
-   while ($row = $rta->fetch_assoc()) {
-      $id = $row['idCliente'];
-      $td = $row['tipoDocumento'];
-      $doc = $row['documentoCliente'];
-      $nomc = $row['nombreCliente'];
-      $telc = $row['telefonoCliente'];
-      $emailc = $row['correoCliente'];
-      $dc = $row['direccion'];
-      $ec = $row['estadoCliente'];
-      $plancliente = $row['plan_idPlan'];
-      $creado = $row['creado'];
-      $uact = $row['ultimaActualizacion'];
-      $idplan = $row['idPlan'];
-      $codigoplan = $row['codigoPlan'];
-      $tipoplan = $row['tipoPlan'];
-      $vp = $row['velocidad'];
-      $nombreplan = $row['nombrePlan'];
-      $precioplan = $row['precioPlan'];
-      $descripcionplan = $row['desPlan'];
-      $estadoplan = $row['estadoPlan'];
-      $if = $row['idFactura'];
-      $fing = $row['fechaFactura'];
-      $impt = $row['impuestoTotal'];
-      $sub = $row['subTotal'];
-      $st = $row['valorTotalFactura'];
-      $cid = $row['cliente_idCliente'];
-      $estf = $row['estadoFactura'];
-      $ffact = $row['fechaVencimiento'];
-      $flim = $row['fechaSuspencion'];
-      $nplan = $row['nPlan'];
-   }
+  while ($row = $rta->fetch_assoc()) {
+    $id = $row['idCliente'];
+    $td = $row['tipoDocumento'];
+    $doc = $row['documentoCliente'];
+    $nomc = $row['nombreCliente'];
+    $telc = $row['telefonoCliente'];
+    $emailc = $row['correoCliente'];
+    $dc = $row['direccion'];
+    $ec = $row['estadoCliente'];
+    $plancliente = $row['plan_idPlan'];
+    $creado = $row['creado'];
+    $uact = $row['ultimaActualizacion'];
+    $idplan = $row['idPlan'];
+    $codigoplan = $row['codigoPlan'];
+    $tipoplan = $row['tipoPlan'];
+    $vp = $row['velocidad'];
+    $nombreplan = $row['nombrePlan'];
+    $precioplan = $row['precioPlan'];
+    $descripcionplan = $row['desPlan'];
+    $estadoplan = $row['estadoPlan'];
+    $if = $row['idFactura'];
+    $fing = $row['fechaFactura'];
+    $impt = $row['impuestoTotal'];
+    $sub = $row['subTotal'];
+    $st = $row['valorTotalFactura'];
+    $cid = $row['cliente_idCliente'];
+    $estf = $row['estadoFactura'];
+    $ffact = $row['fechaVencimiento'];
+    $flim = $row['fechaSuspencion'];
+    $nplan = $row['nPlan'];
+  }
 }
 $sql2 = "SELECT * FROM empresa WHERE id='1';";
 $query2 = mysqli_query($con, $sql2);
@@ -195,4 +195,32 @@ $dompdf->loadHtml($html);
 $dompdf->render();
 
 // Enviar el PDF al navegador para su descarga o visualización
-$dompdf->stream('factura.pdf');
+$meses = [
+  1 => 'enero',
+  2 => 'febrero',
+  3 => 'marzo',
+  4 => 'abril',
+  5 => 'mayo',
+  6 => 'junio',
+  7 => 'julio',
+  8 => 'agosto',
+  9 => 'septiembre',
+  10 => 'octubre',
+  11 => 'noviembre',
+  12 => 'diciembre'
+];
+
+// Obtener el número del mes actual
+$numero_mes = date('n', strtotime($fing));
+
+// Obtener el nombre del mes en español
+$nombre_mes = $meses[$numero_mes];
+
+// Obtener el año actual
+$anio_actual = date('Y');
+
+// Crear el nombre del archivo con el mes y el año en español
+$nombre_archivo = 'factura_' . $nombre_mes . '_' . $anio_actual . '.pdf';
+
+// Enviar el PDF al navegador para su descarga o visualización
+$dompdf->stream($nombre_archivo);
