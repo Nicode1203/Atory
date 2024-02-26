@@ -20,40 +20,38 @@
         <div class="content-wrapper">
             <div class="page-header">
                 <h1 style="font-size: 32px;">CONSULTAS</h1>
-                <nav aria-label="breadcrumb">
-                </nav>
+                <nav aria-label="breadcrumb"></nav>
             </div>
-            <div class="row">
+            <div class="row justify-content-center">
                 <div class="col-6 grid-margin stretch-card">
                     <div class="card">
                         <!-- CONTENIDO -->
                         <div class="card-body">
-                            <h4 class="card-title">Seleccione que quiere consultar</h4>
-                                <div class="form-group">
-                                    <label for="id">Elija</label>
+                            <h4 class="card-title">Seleccione qué quiere consultar</h4>
+                            <div class="form-group">
+                                <label for="id">Elija</label>
+                            </div>
+                            <div class="row">
+                                <div class="col mb-3">
+                                    <a href="../facturacion/consultarfc.php" class="btn btn-lg btn-info">Consultar Factura</a>
                                 </div>
-                                <div>
-                                <a href="../facturacion/consultarfc.php" class="btn btn-lg btn-info">Consultar Factura</a>
+                                <div class="col mb-3">
+                                    <a href="consultavisitas.php" class="btn btn-lg btn-primary">Consultar Visitas</a>
                                 </div>
-                                <div></div>
-                                <div>
-                                <a href="consultavisitas.php" class="btn btn-lg btn-primary">Consultar Visitas </a>
+                                <div class="col mb-3">
+                                    <a href="consultapqrs.php" class="btn btn-lg btn-primary">Consultar contacto a la empresa</a>
                                 </div>
-                                <div>
-                                <a href="consultapqrs.php" class="btn btn-lg  btn-primary">Consultar contacto a la empresa</a>
+                                <div class="col">
+                                    <a href="../index.html" class="btn btn-lg btn-danger">Volver al inicio</a>
                                 </div>
-                                <div>
-                                <a href="../index.html" class="btn  btn-lg btn-danger">Volver al inicio</a>
-                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-
-        <!-- Extremos del contenedor de contenido -->
-        <!-- Parcial -->
     </div>
+
 
     <!-- container-scroller -->
     <!-- Scripts -->
