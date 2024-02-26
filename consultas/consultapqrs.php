@@ -19,7 +19,7 @@
     <div class="main-panel">
         <div class="content-wrapper">
             <div class="page-header">
-                <h1 style="font-size: 32px;">CONSULTAR FACTURA</h1>
+                <h1 style="font-size: 32px;">ATENCION AL CLIENTE</h1>
                 <nav aria-label="breadcrumb">
                 </nav>
             </div>
@@ -28,8 +28,8 @@
                     <div class="card">
                         <!-- CONTENIDO -->
                         <div class="card-body">
-                            <h4 class="card-title">Facturas</h4>
-                            <form class="forms-sample" action="cfacturaC.php" method="post">
+                            <h4 class="card-title">Consulte su contacto a la empresa</h4>
+                            <form class="forms-sample" action="pqrs.php" method="post">
                                 <div class="form-group">
                                     <label for="id">Ingrese su numero de identificacion</label>
                                     <input type="text" class="form-control" name="id" id="id" placeholder="Ingrese Número de Identificación">

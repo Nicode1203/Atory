@@ -1,15 +1,3 @@
-<?php
-//seguridad de sesiones paginacion (prueba 1)
-session_start();
-error_reporting(0);
-$varsesion = $_SESSION['usuario'];
-if ($varsesion == null || $varsesion = '') {
-  header("location:../index.html");
-  die();
-  exit;
-}
-
-?>
 <!DOCTYPE html>
 <html>
 
@@ -37,9 +25,6 @@ if ($varsesion == null || $varsesion = '') {
 </head>
 
 <body>
-  <?php
-  include '../menu/menuint.php';
-  ?>
   <!-- partial -->
 
 
@@ -58,7 +43,7 @@ if ($varsesion == null || $varsesion = '') {
 
           include("conexion.php");
 
-          $sql = "SELECT * FROM pqr2 WHERE estadoPqr='Activo';";
+          $sql = "SELECT * FROM pqr2;";
 
           echo '<div class="table-responsive">
             <table class="table table-hover">
@@ -96,9 +81,7 @@ if ($varsesion == null || $varsesion = '') {
                 <td> <?php echo "$nombres" ?></td>
                 <td> <?php echo "$soli" ?></td>
 
-                <th><a href="consultarpqr.php?i=<?php echo $row['idPqr'] ?>" class="btn btn-primary">Consultar PQR </a></th>
-                <th><a href="comentario.php?i=<?php echo $row['idPqr'] ?>" class="btn btn-info">Agregar comentario </a></th>
-                <th><a href="eliminarpqr.php?i=<?php echo $row['idPqr'] ?>" class="borrar btn btn-danger">Eliminar</a></th>
+                <th><a href="pqrscliente.php?i=<?php echo $row['idPqr'] ?>" class="btn btn-primary">Consultar PQR </a></th>
 
               </tr>
           <?php
