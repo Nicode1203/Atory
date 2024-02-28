@@ -27,17 +27,15 @@
   <!-- partial -->
   <?php
   include_once "conexion.php";
-  $id = $_GET["id"];
+  $id = $_GET['id'];
+
   $sql = "SELECT * FROM usuario
-                      INNER JOIN user_visita
-                      INNER JOIN visitas
-                      INNER JOIN cliente
-                      INNER JOIN plan
-                      WHERE usuario.`idUsuario`=user_visita.`user_idUser`
-                      AND user_visita.`visita_idVisita`=visitas.`idVisita`
-                      AND  cliente.`idCliente`=visitas.`visita_idCliente`
-                      AND cliente.`plan_idPlan`=plan.`idPlan`
-                      AND idVisita='$id';";
+          INNER JOIN user_visita ON usuario.idUsuario = user_visita.user_idUser
+          INNER JOIN visitas ON user_visita.visita_idVisita = visitas.idVisita
+          INNER JOIN cliente ON visitas.visita_idCliente = cliente.idCliente
+          INNER JOIN plan ON cliente.plan_idPlan = plan.idPlan
+          WHERE visitas.idVisita = '$id';";
+
   if ($rta = $con->query($sql)) {
     while ($row = $rta->fetch_assoc()) {
       $idu = $row['idUsuario'];
@@ -134,7 +132,7 @@
                       <a href="actualizarVisita.php?id=<?php echo "$id" ?>" class="btn btn-info btn-lg">Actualizar</a>
                     </td>
                   </div>
-                  
+
               </form>
             </div>
           </div>
@@ -142,36 +140,36 @@
       </div>
 
       <?php
-// Dirección para la que queremos obtener la geolocalización
-$direccion = "Statue of Liberty, New York, USA";
+      // Dirección para la que queremos obtener la geolocalización
+      $direccion = "Statue of Liberty, New York, USA";
 
-// Codificar la dirección para incluirla en la URL
-$direccion_codificada = urlencode($direccion);
+      // Codificar la dirección para incluirla en la URL
+      $direccion_codificada = urlencode($direccion);
 
-// URL de la API de Nominatim para geolocalización
-$url = "https://nominatim.openstreetmap.org/search?format=json&q={$direccion_codificada}";
+      // URL de la API de Nominatim para geolocalización
+      $url = "https://nominatim.openstreetmap.org/search?format=json&q={$direccion_codificada}";
 
-// Realizar la solicitud a la API
-$respuesta = file_get_contents($url);
+      // Realizar la solicitud a la API
+      $respuesta = file_get_contents($url);
 
-// Decodificar la respuesta JSON
-$datos_geolocalizacion = json_decode($respuesta);
+      // Decodificar la respuesta JSON
+      $datos_geolocalizacion = json_decode($respuesta);
 
-// Verificar si se obtuvo una respuesta válida
-if (!empty($datos_geolocalizacion) && isset($datos_geolocalizacion[0])) {
-    // Obtener las coordenadas geográficas (latitud y longitud)
-    $latitud = $datos_geolocalizacion[0]->lat;
-    $longitud = $datos_geolocalizacion[0]->lon;
+      // Verificar si se obtuvo una respuesta válida
+      if (!empty($datos_geolocalizacion) && isset($datos_geolocalizacion[0])) {
+        // Obtener las coordenadas geográficas (latitud y longitud)
+        $latitud = $datos_geolocalizacion[0]->lat;
+        $longitud = $datos_geolocalizacion[0]->lon;
 
-    // Mostrar las coordenadas geográficas
-    echo "La Estatua de la Libertad está ubicada en:<br>";
-    echo "Latitud: $latitud<br>";
-    echo "Longitud: $longitud";
-} else {
-    // Si no se pudo obtener la geolocalización, mostrar un mensaje de error
-    echo "No se pudo obtener la geolocalización para la dirección proporcionada.";
-}
-?>
+        // Mostrar las coordenadas geográficas
+        echo "La Estatua de la Libertad está ubicada en:<br>";
+        echo "Latitud: $latitud<br>";
+        echo "Longitud: $longitud";
+      } else {
+        // Si no se pudo obtener la geolocalización, mostrar un mensaje de error
+        echo "No se pudo obtener la geolocalización para la dirección proporcionada.";
+      }
+      ?>
 
 
 
