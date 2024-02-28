@@ -1,15 +1,6 @@
-
 <?php
-$host = 'localhost';
-$user = 'root';
-$password = '';
-$database = 'atory';
-
-$mysqli = new mysqli($host, $user, $password, $database);
-
-if ($mysqli->connect_error) {
-  die('Error de conexión: ' . $mysqli->connect_error);
-}
+ob_start(); // Inicia el buffer de salida
+include_once "conexion.php";
 
 $idCliente = $_POST['idCliente'];
 $tipoVisita = $_POST['tipoVisita'];
@@ -18,29 +9,25 @@ $diaVisita = $_POST['diaVisita'];
 $estadoVisita = $_POST['estadoVisita'];
 $idTecnico = $_POST['idTecnico'];
 
-// Insertar nueva visita
 $query = "INSERT INTO visitas (tipoVisita, motivoVisita, diaVisita, estadoVisita, visita_idCliente)
-VALUES('$tipoVisita','$motivoVisita','$diaVisita','$estadoVisita','$idCliente')";
-$result = $mysqli->query($query);
+          VALUES ('$tipoVisita', '$motivoVisita', '$diaVisita', '$estadoVisita', '$idCliente')";
 
-// Obtener el ID de la visita recién insertada
-$idVisita = $mysqli->insert_id;
+if (mysqli_query($con, $query)) {
+  $idVisita = mysqli_insert_id($con);
 
-// Obtener el ID del usuario que realizará la visita
+  $queryUserVisita = "INSERT INTO user_visita (visita_idVisita, user_idUser)
+                        VALUES ('$idVisita', '$idTecnico')";
 
-
-// Actualizar la tabla user_visita con la nueva visita
-$query = "INSERT INTO user_visita (visita_idVisita, user_idUser)
-          VALUES ('$idVisita', '$idTecnico')";
-$result = $mysqli->query($query);
-
-
-if ($result === TRUE) {
-  echo "Los datos se han guardado correctamente.";
-  include_once "tablasVisitas.php";
+  if (mysqli_query($con, $queryUserVisita)) {
+    echo "Los datos se han guardado correctamente.";
+    Header("Location: ../visitas/tablasVisitas.php");
+    exit; // Asegura que se detenga la ejecución después de la redirección
+  } else {
+    echo "Error al guardar los datos en user_visita: " . mysqli_error($con);
+  }
 } else {
-  echo "Error al guardar los datos: " . $mysqli->error;
+  echo "Error al guardar los datos en visitas: " . mysqli_error($con);
 }
 
-$mysqli->close();
-?>
+mysqli_close($con);
+ob_end_flush(); // Envía el contenido del buffer al navegador y deshabilita el buffer de salida
