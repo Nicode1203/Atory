@@ -121,7 +121,7 @@ if ($varsesion == null || $varsesion = '') {
                                 <td> <?php echo "$tipov" ?></td>
                                 <td> <?php echo "$diaVisita" ?></td>
 
-                                <th><a href="consulta.php?id=<?php echo $row['idVisita'] ?>" class="btn btn-info">Ver Visita</a>
+                                <th><a href="consulta.php?id=<?php echo $idv ?>" class="btn btn-info">Ver Visita</a>
                                 </th>
                                 <th><a href="eliminarVisitaDes.php?i=<?php echo $row['idVisita'] ?>" class="borrar btn btn-danger">Visita resuelta</a></th>
                                 </th>

@@ -139,43 +139,6 @@
         </div>
       </div>
 
-      <?php
-      // Dirección para la que queremos obtener la geolocalización
-      $direccion = "Statue of Liberty, New York, USA";
-
-      // Codificar la dirección para incluirla en la URL
-      $direccion_codificada = urlencode($direccion);
-
-      // URL de la API de Nominatim para geolocalización
-      $url = "https://nominatim.openstreetmap.org/search?format=json&q={$direccion_codificada}";
-
-      // Realizar la solicitud a la API
-      $respuesta = file_get_contents($url);
-
-      // Decodificar la respuesta JSON
-      $datos_geolocalizacion = json_decode($respuesta);
-
-      // Verificar si se obtuvo una respuesta válida
-      if (!empty($datos_geolocalizacion) && isset($datos_geolocalizacion[0])) {
-        // Obtener las coordenadas geográficas (latitud y longitud)
-        $latitud = $datos_geolocalizacion[0]->lat;
-        $longitud = $datos_geolocalizacion[0]->lon;
-
-        // Mostrar las coordenadas geográficas
-        echo "La Estatua de la Libertad está ubicada en:<br>";
-        echo "Latitud: $latitud<br>";
-        echo "Longitud: $longitud";
-      } else {
-        // Si no se pudo obtener la geolocalización, mostrar un mensaje de error
-        echo "No se pudo obtener la geolocalización para la dirección proporcionada.";
-      }
-      ?>
-
-
-
-
-
-
 
 
     </div>
