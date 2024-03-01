@@ -55,11 +55,11 @@ if ($varsesion == null || $varsesion = '') {
 
           include("conexion.php");
 
-          $sql = "SELECT cliente.idCliente,factura.cliente_idCliente,cliente.documentoCliente,cliente.nombreCliente,factura.fechaFactura,factura.valorTotalFactura,factura.estadoFactura FROM cliente 
+          $sql = "SELECT cliente.idCliente,factura.cliente_idCliente,cliente.documentoCliente,cliente.nombreCliente,factura.idFactura,factura.valorTotalFactura,factura.estadoFactura,factura.fechaVencimiento,factura.nPlan FROM cliente 
                     INNER JOIN factura
                     ON cliente.idCliente=factura.cliente_idCliente
                     WHERE estadoFactura='Pendiente'
-                    ORDER BY fechaFactura DESC;";
+                    ORDER BY fechaVencimiento ASC;";
 
           echo '<div class="table-responsive">
             <table class="table table-hover">
@@ -67,9 +67,10 @@ if ($varsesion == null || $varsesion = '') {
         <tr>
         <th> Documento Cliente </th>
         <th> Nombre Cliente</th>
-        <th> Fecha Factura</th>
+        <th> Fecha límite de pago</th>
         <th> Valor Total</th>
         <th> Estado factura</th>
+        <th> Plan </th>
         <th> Consultas</th>
         <th> Pago</th>
     </tr>
@@ -82,9 +83,11 @@ if ($varsesion == null || $varsesion = '') {
               $b = $row['cliente_idCliente'];
               $dc = $row['documentoCliente'];
               $nomc = $row['nombreCliente'];
-              $ffact = $row['fechaFactura'];
+              $idf=$row['idFactura'];
               $st = $row['valorTotalFactura'];
               $estf = $row['estadoFactura'];
+              $ffact=$row['fechaVencimiento'];
+              $nplan=$row['nPlan']
 
 
           ?>
@@ -94,10 +97,11 @@ if ($varsesion == null || $varsesion = '') {
                 <td> <?php echo "$ffact" ?></td>
                 <td> <?php echo "$st" ?></td>
                 <td> <?php echo "$estf" ?></td>
+                <td> <?php echo "$nplan" ?></td>
                 <th>
-                  <a href="verfacturaAdmin.php?id=<?php echo  $row['idCliente'] ?>" class="btn btn-info">ver factura</a>
+                  <a href="verfacturaAdmin.php?id=<?php echo  $row['idFactura'] ?>" class="btn btn-info">ver factura</a>
 
-                <th><a href="eliminarf.php?id=<?php echo $row['cliente_idCliente']   ?>" class="borrar btn btn-danger">Pago</a></th>
+                <th><a href="eliminarf.php?id=<?php echo $row['idFactura']   ?>" class="borrar btn btn-danger">Pago</a></th>
 
               </tr>
           <?php

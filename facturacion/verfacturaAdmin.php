@@ -23,10 +23,10 @@
   $id = $_GET['id'];
   $sql = "SELECT * FROM cliente  
   INNER JOIN plan
-  on cliente.plan_idPlan=plan.idPlan
   INNER JOIN factura
-  ON cliente.idCliente=factura.cliente_idCliente
-  WHERE idCliente= '$id';";
+  WHERE cliente.plan_idPlan=plan.idPlan
+  AND cliente.idCliente=factura.cliente_idCliente
+  AND idFactura= '$id';";
 
   if ($rta = $con->query($sql)) {
     while ($row = $rta->fetch_assoc()) {
@@ -50,12 +50,15 @@
       $descripcionplan = $row['desPlan'];
       $estadoplan = $row['estadoPlan'];
       $if = $row['idFactura'];
-      $ffact = $row['fechaFactura'];
+      $fing = $row['fechaFactura'];
       $impt = $row['impuestoTotal'];
       $sub = $row['subTotal'];
       $st = $row['valorTotalFactura'];
       $cid = $row['cliente_idCliente'];
       $estf = $row['estadoFactura'];
+      $ffact = $row['fechaVencimiento'];
+      $flim = $row['fechaSuspencion'];
+      $nplan = $row['nPlan'];
     }
   }
   $sql2 = "SELECT * FROM empresa WHERE id='1';";
@@ -103,13 +106,16 @@
                           <center><label for="des"> Su correo es: <?php echo "$emailc" ?></label></center>
                         </div>
                         <div>
-                          <center><label for="cp">Tu factura correspondiente al : <?php echo "$ffact" ?></label></center>
+                          <center><label for="cp">Tu factura correspondiente al : <?php echo "$fing" ?></label></center>
                         </div>
                         <div>
-                          <center><label for="cp">Con <?php echo "$nombreplan" ?></label></center>
+                          <center><label for="cp">Tu fecha limite de pago es : <?php echo "$ffact" ?></label></center>
                         </div>
                         <div>
-                          <center><label for="cp">Tipo: <?php echo "$tipoplan" ?></label></center>
+                          <center><label for="cp">Tu fecha de suspeción de servicio : <?php echo "$flim" ?></label></center>
+                        </div>
+                        <div>
+                          <center><label for="cp">Con el plan : <?php echo "$nplan" ?></label></center>
                         </div>
                         <div>
                           <center><label for="cp">Velocidad: <?php echo "$vp" ?></label></center>
@@ -132,7 +138,7 @@
                         </div>
                       </div>
                       <center><a href="facturas.php" class="btn btn-light btn-lg active" role="button" aria-pressed="true">Volver a facturas</a>
-                        <a href="../index.html" class="btn btn-light btn-lg active" role="button" aria-pressed="true">Imprimir </a>
+                        <a href="facturaPDF.php?id=<?php echo $if; ?>" class="btn btn-light btn-lg active" role="button" aria-pressed="true">Imprimir PDF </a>
                       </center>
                     </form>
                   </div>

@@ -22,11 +22,11 @@ if ($varsesion == null || $varsesion = '') {
   <link rel="stylesheet" href="../assets/vendors/mdi/css/materialdesignicons.min.css">
   <link rel="stylesheet" href="../assets/vendors/css/vendor.bundle.base.css">
 
-
   <link rel="stylesheet" href="../assets/vendors/jvectormap/jquery-jvectormap.css">
   <link rel="stylesheet" href="../assets/vendors/flag-icon-css/css/flag-icon.min.css">
   <link rel="stylesheet" href="../assets/vendors/owl-carousel-2/owl.carousel.min.css">
   <link rel="stylesheet" href="../assets/vendors/owl-carousel-2/owl.theme.default.min.css">
+
 
   <link rel="stylesheet" href="../assets/css/style.css">
 
@@ -40,7 +40,6 @@ if ($varsesion == null || $varsesion = '') {
   ?>
 
 
-
   <div class="main-panel">
     <div class="content-wrapper"> <!-- ESTO ES LO QUE TENEMOS QUE MODIFICAR -->
       <div class="page-header">
@@ -48,16 +47,19 @@ if ($varsesion == null || $varsesion = '') {
       </div>
       <div class="card">
         <div class="card-body">
-          <a href="facturas.php" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Volver a facturas pendientes</a>
+          <a href="factcliente.php" class="btn btn-danger btn-lg" role="button" aria-pressed="true">Ingresar factura</a>
+          <a href="fpagas.php" class="btn btn-primary active btn-lg" role="button" aria-pressed="true">Ver facturas pagas</a>
+          <a href="consultarf.php" class="btn btn-primary active btn-lg" role="button" aria-pressed="true">Consultar facturas</a>
+          <a href="../excel/excelFactura.php" class="btn btn-success btn-lg">Exportar tabla a Excel</a>
           <?php
 
           include("conexion.php");
 
-          $sql = "SELECT cliente.idCliente,factura.cliente_idCliente,cliente.documentoCliente,cliente.nombreCliente,factura.idFactura,factura.fechaFactura,factura.valorTotalFactura,factura.estadoFactura FROM cliente 
-        INNER JOIN factura
-        ON cliente.idCliente=factura.cliente_idCliente
-        WHERE estadoFactura='Pago'
-        ORDER BY fechaFactura DESC;";
+          $sql = "SELECT cliente.idCliente,factura.cliente_idCliente,cliente.documentoCliente,cliente.nombreCliente,factura.idFactura,factura.valorTotalFactura,factura.estadoFactura,factura.fechaVencimiento,factura.nPlan FROM cliente 
+                    INNER JOIN factura
+                    ON cliente.idCliente=factura.cliente_idCliente
+                    WHERE estadoFactura='Pago'
+                    ORDER BY fechaVencimiento ASC;";
 
           echo '<div class="table-responsive">
             <table class="table table-hover">
@@ -65,9 +67,10 @@ if ($varsesion == null || $varsesion = '') {
         <tr>
         <th> Documento Cliente </th>
         <th> Nombre Cliente</th>
-        <th> Fecha Factura</th>
+        <th> Fecha límite de pago</th>
         <th> Valor Total</th>
         <th> Estado factura</th>
+        <th> Plan </th>
         <th> Consultas</th>
         <th> Pago</th>
     </tr>
@@ -80,10 +83,11 @@ if ($varsesion == null || $varsesion = '') {
               $b = $row['cliente_idCliente'];
               $dc = $row['documentoCliente'];
               $nomc = $row['nombreCliente'];
-              $idf = $row['idFactura'];
-              $ffact = $row['fechaFactura'];
+              $idf=$row['idFactura'];
               $st = $row['valorTotalFactura'];
               $estf = $row['estadoFactura'];
+              $ffact=$row['fechaVencimiento'];
+              $nplan=$row['nPlan']
 
 
           ?>
@@ -93,28 +97,22 @@ if ($varsesion == null || $varsesion = '') {
                 <td> <?php echo "$ffact" ?></td>
                 <td> <?php echo "$st" ?></td>
                 <td> <?php echo "$estf" ?></td>
+                <td> <?php echo "$nplan" ?></td>
                 <th>
-                  <a href="verfacturaAdmin.php?id=<?php echo  $row['idCliente'] ?>" class="btn btn-info">ver factura</a>
+                  <a href="verfacturaAdmin.php?id=<?php echo  $row['idFactura'] ?>" class="btn btn-info">ver factura</a>
 
-                <th><a href="pend.php?id=<?php echo $row['cliente_idCliente']   ?>" class="btn btn-danger">Regresar a pendientes</a></th>
+                <th><a href="pend.php?id=<?php echo $row['idFactura']   ?>" class="borrar btn btn-danger">Regresar a pendiente</a></th>
 
               </tr>
           <?php
             }
           }
           ?>
-
-          <!-- ESTO ES LO QUE PODEMOS MODIFICAR -->
-          <!-- partial:partials/_footer.html -->
-
-
         </div>
+
       </div>
 
-
     </div>
-
-
 
   </div>
 
@@ -135,7 +133,32 @@ if ($varsesion == null || $varsesion = '') {
 
   <script src="../assets/js/dashboard.js"></script>
 
+
   <div class="jvectormap-tip"></div>
+  <!-- Estas ultimas lineas son para la alerta DE BORRAR, INSERTA SWEET ALERT Y LUEGO ESTA EL SCRIPT PARA BORRAR-->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script>
+    $('.borrar').on('click', function(e) {
+      e.preventDefault();
+      var self = $(this);
+      console.log(self.data('title'));
+      Swal.fire({
+        title: 'Esta seguro que desea continuar?',
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Confirmar',
+        cancelButtonText: 'No',
+        background: '#34495E'
+      }).then((result) => {
+        if (result.isConfirmed) {
+
+          location.href = self.attr('href');
+        }
+      })
+    })
+  </script>
 </body>
 
 </html>

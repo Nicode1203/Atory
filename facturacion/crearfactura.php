@@ -89,17 +89,20 @@ if ($varsesion == null || $varsesion = '') {
         <p class="card-description"> Telefono:<?php echo "$telc"  ?> </p>
         <p class="card-description"> Correo Electronico:<?php echo "$emailc"  ?> </p>
         <p class="card-description"> Dirección Cliente:<?php echo "$dc"  ?> </p>
-        <p class="card-description"> Plan del cliente:<?php echo "$tipoplan"  ?> </p>
+        <p class="card-description"> Tipo plan del cliente:<?php echo "$tipoplan"  ?> </p>
+        <p class="card-description"> Plan del cliente:<?php echo "$nombreplan"  ?> </p>
         <p class="card-description"> velocidad del plan:<?php echo "$vp"  ?> </p>
         <p class="card-description"> Subtotal a pagar: <?php echo "$sub"  ?> </p>
         <p class="card-description"> Impuestos: <?php echo "$impt"  ?> </p>
         <p class="card-description"> Total: <?php echo "$st"  ?> </p>
-        <p class="card-description"> Ingrese fecha de pago:</p>
+        <p class="card-description"> Ingrese fechas:</p>
         <form action="actfactura.php" method="POST">
           <input type="hidden" name="if" value="<?php echo "$if"  ?>">
           <input type="hidden" name="id" value="<?php echo "$id"  ?>">
           <input type="hidden" name="cid" value="<?php echo "$cid"  ?>">
-          <input type="date" class="form-control mb-3" name="ffact" placeholder="Fecha de factura">
+          <input type="hidden" name="nplan" value="<?php echo "$nombreplan"  ?>">
+          <label for="f">Fecha de ingreso factura</label>
+          <input type="date" class="form-control mb-3" name="fing" placeholder="Fecha de Ingreso">
           <input type="hidden" name="impt" value="<?php echo "$impt"  ?>">
           <input type="hidden" name="sub" value="<?php echo "$sub"  ?>">
           <input type="hidden" name="st" value="<?php echo "$st"  ?>">

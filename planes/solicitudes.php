@@ -106,8 +106,6 @@ if ($varsesion == null || $varsesion = '') {
             <thead>
         <tr>
         <th> Id Solicitud </th>
-        <th> Tipo de documento</th>
-        <th> Numero de documento</th>
         <th> Nombres del cliente</th>
         <th> Telefono </th>
         <th> Correo CLiente </th>
@@ -119,8 +117,6 @@ if ($varsesion == null || $varsesion = '') {
           if ($rta = $con->query($sql)) {
             while ($row = $rta->fetch_assoc()) {
               $i = $row['idSolicitud'];
-              $td = $row['tipoDocumento'];
-              $id = $row['numeroDocumento'];
               $nombres = $row['nombres'];
               $tel = $row['telefono'];
               $email = $row['email'];
@@ -128,8 +124,6 @@ if ($varsesion == null || $varsesion = '') {
           ?>
               <tr>
                 <td> <?php echo "$i" ?></td>
-                <td> <?php echo "$td" ?></td>
-                <td> <?php echo "$id" ?></td>
                 <td> <?php echo "$nombres" ?></td>
                 <td> <?php echo "$tel" ?></td>
                 <td> <?php echo "$email" ?></td>

@@ -56,15 +56,15 @@ if ($varsesion == null || $varsesion = '') {
                     <?php
                     include("../conexion.php");
 
-                    $sql = "select * from usuario
-                    inner join user_visita
-                    inner join visitas
-                    Inner join cliente
-                    where usuario.`idUsuario`=user_visita.`user_idUser`
-                    and user_visita.`visita_idVisita`=visitas.`idVisita`
-                    and  cliente.`idCliente`=visitas.`visita_idCliente`
-                    and estadoVisita='Activo'
-                    ORDER BY visitas.`idVisita` ASC;";
+                    $sql = "SELECT * from usuario
+                    INNER JOIN user_visita
+                    INNER JOIN visitas
+                    INNER JOIN cliente
+                    WHERE usuario.idUsuario=user_visita.user_idUser
+                    AND user_visita.visita_idVisita=visitas.idVisita
+                    AND  cliente.idCliente=visitas.visita_idCliente
+                    AND estadoVisita='Activo'
+                    ORDER BY visitas.idVisita ASC;";
 
                     echo '<div class="table-responsive">
                 <table class="table table-hover">
@@ -121,7 +121,7 @@ if ($varsesion == null || $varsesion = '') {
                                 <td> <?php echo "$tipov" ?></td>
                                 <td> <?php echo "$diaVisita" ?></td>
 
-                                <th><a href="consulta.php?id=<?php echo $row['idVisita'] ?>" class="btn btn-info">Ver Visita</a>
+                                <th><a href="consulta.php?id=<?php echo $idv ?>" class="btn btn-info">Ver Visita</a>
                                 </th>
                                 <th><a href="eliminarVisitaDes.php?i=<?php echo $row['idVisita'] ?>" class="borrar btn btn-danger">Visita resuelta</a></th>
                                 </th>
