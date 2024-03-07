@@ -32,7 +32,7 @@
                             <form class="forms-sample" action="visitas.php" method="post">
                                 <div class="form-group">
                                     <label for="id">Ingrese su numero de identificacion</label>
-                                    <input type="text" class="form-control" name="id" id="id" placeholder="Ingrese Número de Identificación">
+                                    <input type="text" class="form-control" name="id" id="id" placeholder="Ingrese Número de Identificación" required>
                                 </div>
                                 <div>
                                     <br>
