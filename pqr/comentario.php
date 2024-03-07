@@ -49,18 +49,19 @@ if ($varsesion == null || $varsesion = '') {
 
   <div class="main-panel">
     <div class="content-wrapper"> <!-- ESTO ES LO QUE TENEMOS QUE MODIFICAR -->
-      <div class="card-body">
-        <h1 style="font-size: 32px;"></h1>
-        <p class="card-description"> Ingrese comentario </p>
-        <form action="updateComentario.php" method="POST">
-          <input type="hidden" name="id" value="<?php echo $row['idPqr']  ?>">
-          <input type="text" class="form-control mb-3" name="comentario" placeholder="comentario" value="<?php echo $row['comentario']  ?>">
+      <div class="card">
+        <div class="card-body">
+          <h1 style="font-size: 32px;">Ingrese comentario</h1>
+          <p class="card-description"> </p>
+          <form action="updateComentario.php" method="POST">
+            <input type="hidden" name="id" value="<?php echo $row['idPqr']  ?>">
+            <input type="text" class="form-control mb-3" name="comentario" placeholder="comentario" value="<?php echo $row['comentario']  ?>">
 
-          <input type="submit" class="btn btn-primary" value="Agregar comentario" formmethod="post" formaction=../pqr/updateComentario.php>
-          <input type="submit" class="btn btn-danger" value="Cancelar" formaction=../pqr/pqr.php>
-        </form>
+            <input type="submit" class="btn btn-primary" value="Agregar comentario" formmethod="post" formaction=../pqr/updateComentario.php>
+            <input type="submit" class="btn btn-danger" value="Cancelar" formaction=../pqr/pqr.php>
+          </form>
 
-
+        </div>
       </div>
       <!-- ESTO ES LO QUE PODEMOS MODIFICAR -->
       <!-- partial:partials/_footer.html -->
