@@ -57,7 +57,7 @@ if ($varsesion == null || $varsesion = '') {
           <input type="text" class="form-control mb-3" name="comentario" placeholder="comentario" value="<?php echo $row['comentario']  ?>">
 
           <input type="submit" class="btn btn-primary" value="Agregar comentario" formmethod="post" formaction=../pqr/updateComentario.php>
-          <input type="submit" class="btn btn-danger" value="Cancelar" formaction=../pqr/consultarpqr.php>
+          <input type="submit" class="btn btn-danger" value="Cancelar" formaction=../pqr/pqr.php>
         </form>
 
 

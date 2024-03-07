@@ -2,11 +2,11 @@
 //seguridad de sesiones paginacion (prueba 1)
 session_start();
 error_reporting(0);
-$varsesion= $_SESSION['usuario'];
-if ($varsesion == null || $varsesion='' ) {
-    header ("location:../index.html");
-    die();
-    exit;
+$varsesion = $_SESSION['usuario'];
+if ($varsesion == null || $varsesion = '') {
+  header("location:../index.html");
+  die();
+  exit;
 }
 
 ?>
@@ -58,7 +58,7 @@ if ($varsesion == null || $varsesion='' ) {
   <div class="main-panel">
     <div class="content-wrapper">
       <div class="page-header">
-      <h1 style="font-size: 32px;">GESTIÓN PQR</h1>
+        <h1 style="font-size: 32px;">Contacto cliente</h1>
         <h3 class="page-title">Tipo <?php echo "$soli" ?> </h3>
       </div>
       <div class="row">
