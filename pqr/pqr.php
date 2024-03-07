@@ -46,7 +46,7 @@ if ($varsesion == null || $varsesion = '') {
   <div class="main-panel">
 
     <div class="content-wrapper"> <!-- ESTO ES LO QUE TENEMOS QUE MODIFICAR -->
-      <h1 style="font-size: 32px;">GESTIÓN PQR</h1>
+      <h1 style="font-size: 32px;">ATENCION AL CLIENTE</h1>
       <div class="card">
         <div class="card-body">
 
@@ -96,9 +96,9 @@ if ($varsesion == null || $varsesion = '') {
                 <td> <?php echo "$nombres" ?></td>
                 <td> <?php echo "$soli" ?></td>
 
-                <th><a href="consultarpqr.php?i=<?php echo $row['idPqr'] ?>" class="btn btn-primary">Consultar PQR </a></th>
+                <th><a href="consultarpqr.php?i=<?php echo $row['idPqr'] ?>" class="btn btn-primary">Consultar</a></th>
                 <th><a href="comentario.php?i=<?php echo $row['idPqr'] ?>" class="btn btn-info">Agregar comentario </a></th>
-                <th><a href="eliminarpqr.php?i=<?php echo $row['idPqr'] ?>" class="borrar btn btn-danger">Eliminar</a></th>
+                <th><a href="eliminarpqr.php?i=<?php echo $row['idPqr'] ?>" class="borrar btn btn-danger">Archivar contacto</a></th>
 
               </tr>
           <?php
