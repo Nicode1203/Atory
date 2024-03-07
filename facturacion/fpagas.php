@@ -48,7 +48,7 @@ if ($varsesion == null || $varsesion = '') {
       <div class="card">
         <div class="card-body">
           <a href="factcliente.php" class="btn btn-danger btn-lg" role="button" aria-pressed="true">Ingresar factura</a>
-          <a href="fpagas.php" class="btn btn-primary active btn-lg" role="button" aria-pressed="true">Ver facturas pagas</a>
+          <a href="facturas.php" class="btn btn-primary active btn-lg" role="button" aria-pressed="true">Ver facturas pendientes</a>
           <a href="consultarf.php" class="btn btn-primary active btn-lg" role="button" aria-pressed="true">Consultar facturas</a>
           <a href="../excel/excelFactura.php" class="btn btn-success btn-lg">Exportar tabla a Excel</a>
           <?php
@@ -83,11 +83,11 @@ if ($varsesion == null || $varsesion = '') {
               $b = $row['cliente_idCliente'];
               $dc = $row['documentoCliente'];
               $nomc = $row['nombreCliente'];
-              $idf=$row['idFactura'];
+              $idf = $row['idFactura'];
               $st = $row['valorTotalFactura'];
               $estf = $row['estadoFactura'];
-              $ffact=$row['fechaVencimiento'];
-              $nplan=$row['nPlan']
+              $ffact = $row['fechaVencimiento'];
+              $nplan = $row['nPlan']
 
 
           ?>
