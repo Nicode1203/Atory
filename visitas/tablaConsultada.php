@@ -41,7 +41,9 @@ if ($varsesion == null || $varsesion = '') {
 
         <div class="content-wrapper">
             <h1 style="font-size: 32px;">Visitas tecnicas e Instalaciones</h1>
+            <a href="tablasVisitas.php" class="btn btn-primary btn-lg">Volver al inicio</a>
             <div class="card">
+
                 <div class="card-body">
 
                     <?php
@@ -122,7 +124,7 @@ if ($varsesion == null || $varsesion = '') {
                     }
 
                     ?>
-                    <a href="tablasVisitas.php" class="btn btn-primary btn-lg">Volver al inicio</a>
+
 
                     <!-- ESTO ES LO QUE PODEMOS MODIFICAR -->
                     <!-- partial:partials/_footer.html -->

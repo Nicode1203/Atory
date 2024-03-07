@@ -22,7 +22,7 @@
             <h1 style="font-size: 32px;">Visitas tecnicas e Instalaciones</h1>
             <div class="card">
                 <div class="card-body">
-                    <a href="index.html" class="btn btn-danger">Volver al inicio</a>
+                    <a href="../index.html" class="btn btn-danger">Volver al inicio</a>
                     <?php
                     include("../conexion.php");
 
