@@ -1,6 +1,6 @@
 /*
 SQLyog Ultimate v11.11 (64 bit)
-MySQL - 5.5.5-10.4.28-MariaDB : Database - atory
+MySQL - 5.5.5-10.4.27-MariaDB : Database - atory
 *********************************************************************
 */
 
@@ -127,7 +127,7 @@ CREATE TABLE `factura` (
 
 /*Data for the table `factura` */
 
-insert  into `factura`(`idFactura`,`fechaFactura`,`impuestoTotal`,`subTotal`,`valorTotalFactura`,`estadoFactura`,`cliente_idCliente`,`fechaVencimiento`,`fechaSuspencion`,`nPlan`) values (1,'2024-03-01',19000,81000,100000,'Pendiente',7,'2024-03-16','2024-03-21','Plan diamante'),(2,'2024-02-03',76000,324000,400000,'Pendiente',6,'2024-02-18','2024-02-23','Plan elite de empresas'),(3,'2024-02-01',9500,40500,50000,'Pendiente',7,'2024-02-16','2024-02-21','Plan economico'),(4,'2024-01-03',66500,283500,350000,'Pago',6,'2024-01-18','2024-01-23','Plan mega'),(5,'2024-01-18',13300,56700,70000,'Pago',14,'2024-02-02','2024-02-07','Plan dorado');
+insert  into `factura`(`idFactura`,`fechaFactura`,`impuestoTotal`,`subTotal`,`valorTotalFactura`,`estadoFactura`,`cliente_idCliente`,`fechaVencimiento`,`fechaSuspencion`,`nPlan`) values (1,'2024-03-01',19000,81000,100000,'Pendiente',7,'2024-03-16','2024-03-21','Plan diamante'),(2,'2024-02-03',76000,324000,400000,'Pendiente',6,'2024-02-18','2024-02-23','Plan elite de empresas'),(3,'2024-02-01',9500,40500,50000,'Pendiente',7,'2024-02-16','2024-02-21','Plan economico'),(4,'2024-01-03',66500,283500,175000,'Pago',6,'2024-01-18','2024-01-23','Plan mega'),(5,'2024-01-18',13300,56700,35000,'Pago',14,'2024-02-02','2024-02-07','Plan dorado');
 
 /*Table structure for table `plan` */
 
@@ -236,11 +236,11 @@ CREATE TABLE `user_visita` (
   KEY `visita_idVisita` (`visita_idVisita`),
   CONSTRAINT `user_visita_ibfk_1` FOREIGN KEY (`user_idUser`) REFERENCES `usuario` (`idUsuario`),
   CONSTRAINT `user_visita_ibfk_2` FOREIGN KEY (`visita_idVisita`) REFERENCES `visitas` (`idVisita`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 /*Data for the table `user_visita` */
 
-insert  into `user_visita`(`iduser_visita`,`visita_idVisita`,`user_idUser`) values (1,1,4),(2,2,6),(3,3,7),(4,4,4),(5,5,4),(6,6,7),(7,7,4);
+insert  into `user_visita`(`iduser_visita`,`visita_idVisita`,`user_idUser`) values (1,1,4),(2,2,6),(3,3,7),(4,4,4),(5,5,4),(6,6,7),(7,7,4),(8,8,6),(9,9,4),(10,10,4);
 
 /*Table structure for table `usuario` */
 
@@ -261,11 +261,11 @@ CREATE TABLE `usuario` (
   PRIMARY KEY (`idUsuario`),
   UNIQUE KEY `documentoUsuario` (`documentoUsuario`,`telefonoUsuario`,`correoUsuario`),
   KEY `rol_idRol` (`rol`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 /*Data for the table `usuario` */
 
-insert  into `usuario`(`idUsuario`,`tipoDocumento`,`documentoUsuario`,`nombresUsuario`,`telefonoUsuario`,`correoUsuario`,`claveUsuario`,`estadoUsuario`,`creado`,`ultimaActualizacion`,`rol`) values (1,'C.C','80065421','Karl','3196443053','schickperez@gmail.com','$2y$10$GKR1Uq.gErAPTPRai5BuYuD0u5dovY47eMsQ5qy/VWr8IAzSntxpu','Activo','2023-05-09','2023-05-09','Administrador'),(2,'C.C','1019107974','cris','3017328804','cristian@hotmail.com','$2y$10$H5.gQP65R6mDulyKWFBt/eW.lEjUaKl0QfOaEl/AhSHqh5f0jO7DW','Activo','2023-05-10','2023-05-10','Administrador'),(3,'C.C','1030634046','nico','3006646485','nico@gmail.com','$2y$10$9ruPWqEKJqkmS4KoI1LOTOmfsSi6/lhoTCFL5d4qIVvR8KuD6dxBe','Activo','2023-05-12','2023-05-12','Administrador'),(4,'C.C','1019076993','Fabian','3104552020','fabiancho@aol.com','$2y$10$CPaJUTIN876IeT.hA9wrJOH1gw4FGjgx.4zC5IDrhIy38SQIDUFmu','Activo','2023-05-12','2024-02-10','Tecnico'),(5,'C.C','23568985','Isa','3215698787','isabella@hotmail.com','$2y$10$iAjfCd5Z/aVTZeXxXvNg2u4JAR20fRGwW9ITHK3EGk/eJQxZhGBK6','Activo','2023-11-05','0223-11-05','Tecnico'),(6,'C.C','1234','Danny','3198562323','danny@gmail.com','$2y$10$HpfbwQQfJWeny3jlSpxxM.Qzg9yiKKSSRgENMq9jVf8jTJTp5PgjS','Activo','2023-11-06','0223-11-06','Tecnico'),(7,'C.C','1222233','linlin','344455545','linlin@gmail.com','$2y$10$BWe9ZqyPNScYPikJr/APzuxidw.OnZ/R2jwZeT5vZ.sVkNpv1N332','Activo','2024-02-09','2024-02-10','Tecnico');
+insert  into `usuario`(`idUsuario`,`tipoDocumento`,`documentoUsuario`,`nombresUsuario`,`telefonoUsuario`,`correoUsuario`,`claveUsuario`,`estadoUsuario`,`creado`,`ultimaActualizacion`,`rol`) values (1,'C.C','80065421','Karl','3196443053','schickperez@gmail.com','$2y$10$GKR1Uq.gErAPTPRai5BuYuD0u5dovY47eMsQ5qy/VWr8IAzSntxpu','Activo','2023-05-09','2023-05-09','Administrador'),(2,'C.C','1019107974','cris','3017328804','cristian@hotmail.com','$2y$10$H5.gQP65R6mDulyKWFBt/eW.lEjUaKl0QfOaEl/AhSHqh5f0jO7DW','Activo','2023-05-10','2023-05-10','Administrador'),(3,'C.C','1030634046','nico','3006646485','nico@gmail.com','$2y$10$9ruPWqEKJqkmS4KoI1LOTOmfsSi6/lhoTCFL5d4qIVvR8KuD6dxBe','Activo','2023-05-12','2023-05-12','Administrador'),(4,'C.C','1019076993','Fabian','3104552020','fabiancho@aol.com','$2y$10$CPaJUTIN876IeT.hA9wrJOH1gw4FGjgx.4zC5IDrhIy38SQIDUFmu','Activo','2023-05-12','2024-02-10','Tecnico'),(5,'C.C','23568985','Isa','3215698787','isabella@hotmail.com','$2y$10$iAjfCd5Z/aVTZeXxXvNg2u4JAR20fRGwW9ITHK3EGk/eJQxZhGBK6','Activo','2023-11-05','0223-11-05','Tecnico'),(6,'C.C','1234','Danny','3198562323','danny@gmail.com','$2y$10$HpfbwQQfJWeny3jlSpxxM.Qzg9yiKKSSRgENMq9jVf8jTJTp5PgjS','Activo','2023-11-06','0223-11-06','Tecnico'),(7,'C.C','1222233','linlin','344455545','linlin@gmail.com','$2y$10$BWe9ZqyPNScYPikJr/APzuxidw.OnZ/R2jwZeT5vZ.sVkNpv1N332','Activo','2024-02-09','2024-02-10','Tecnico'),(8,'C.C','1234567','pruebausuario','323232','usuario@gmail.com','$2y$10$VJ8OYng.5L1/yahGz17/2.5yMauza9JM2S8zNJraXU19n6LLlArcS','Activo','2024-02-29','2024-03-01','Administrador');
 
 /*Table structure for table `visitas` */
 
@@ -282,11 +282,52 @@ CREATE TABLE `visitas` (
   PRIMARY KEY (`idVisita`),
   KEY `visita_idCliente` (`visita_idCliente`),
   CONSTRAINT `visitas_ibfk_1` FOREIGN KEY (`visita_idCliente`) REFERENCES `cliente` (`idCliente`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 /*Data for the table `visitas` */
 
-insert  into `visitas`(`idVisita`,`tipoVisita`,`motivoVisita`,`diaVisita`,`estadoVisita`,`visita_idCliente`,`comentario`) values (1,'Instalacion','plan feo3434343','2023-06-25','Completado',11,'hola mundo'),(2,'Instalacion','Instalacion de plan','2023-06-27','Activo',16,NULL),(3,'Reparacion','el servicio no esta funcionando porque me la pelan todos','2023-06-29','Completado',7,NULL),(4,'Instalacion','Otra vez el internet me esta fallando','2023-06-30','Archivado',7,NULL),(5,'Instalacion','Nuevo motivo de visita','2024-02-14','Archivado',7,'Nuevo comentario'),(6,'Desinstalacion','cables dañados','2024-02-22','Activo',7,NULL),(7,'Instalacion','cables dañados','2024-02-22','Completado',7,NULL);
+insert  into `visitas`(`idVisita`,`tipoVisita`,`motivoVisita`,`diaVisita`,`estadoVisita`,`visita_idCliente`,`comentario`) values (1,'Instalacion','plan feo3434343','2023-06-25','Completado',11,'hola mundo'),(2,'Instalacion','Instalacion de plan','2023-06-27','Activo',16,NULL),(3,'Reparacion','el servicio no esta funcionando porque me la pelan todos','2023-06-29','Completado',7,'se arreglo el modem y ya'),(4,'Instalacion','Otra vez el internet me esta fallando','2023-06-30','Archivado',7,NULL),(5,'Instalacion','Nuevo motivo de visita','2024-02-14','Archivado',7,'Nuevo comentario'),(6,'Desinstalacion','cables dañados','2024-02-22','Activo',7,NULL),(7,'Instalacion','cables dañados','2024-02-22','Completado',7,NULL),(8,'Reparacion','plan malo','2024-03-01','Activo',6,NULL),(9,'Instalacion','','0000-00-00','Archivado',7,NULL),(10,'Instalacion','nuevoplan que hay que modificar','2024-03-01','Activo',6,NULL);
+
+/* Procedure structure for procedure `consultaVisita` */
+
+/*!50003 DROP PROCEDURE IF EXISTS  `consultaVisita` */;
+
+DELIMITER $$
+
+/*!50003 CREATE DEFINER=`root`@`localhost` PROCEDURE `consultaVisita`(IN id_cliente INT)
+BEGIN
+	select * from usuario
+                      inner join user_visita
+                      inner join visitas
+                      Inner join cliente
+                      where usuario.`idUsuario`=user_visita.`user_idUser`
+                      and user_visita.`visita_idVisita`=visitas.`idVisita`
+                      and  cliente.`idCliente`=visitas.`visita_idCliente`
+                      and documentoCliente=id_cliente;
+    END */$$
+DELIMITER ;
+
+/* Procedure structure for procedure `GenerarDescuento` */
+
+/*!50003 DROP PROCEDURE IF EXISTS  `GenerarDescuento` */;
+
+DELIMITER $$
+
+/*!50003 CREATE DEFINER=`root`@`localhost` PROCEDURE `GenerarDescuento`(IN factura_id INT)
+BEGIN
+    DECLARE descuento DECIMAL(10,2);
+    -- Calcular el 50% de descuento
+    SET descuento = (SELECT valorTotalFactura * 0.5 FROM Factura WHERE idFactura = factura_id);
+    -- Aplicar el descuento
+    UPDATE Factura
+    SET valorTotalFactura = valorTotalFactura - descuento
+    WHERE idFactura = factura_id;
+    -- Ver el descuento
+    SELECT valorTotalFactura , nPlan ,nombreCliente FROM factura 
+    inner join cliente
+    WHERE factura_id = idFactura and idCliente = cliente_idCliente;
+END */$$
+DELIMITER ;
 
 /* Procedure structure for procedure `verfactura` */
 
