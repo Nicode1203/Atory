@@ -15,7 +15,7 @@ $sql = "INSERT INTO plan (codigoPlan, tipoPlan, velocidad, nombrePlan, precioPla
 
 if ($con->query($sql) === TRUE) {
   echo "Los datos se han guardado correctamente.";
-  header("Location:../planes/allplans.php");
+  header("Location:../planes/tablaplanes.php");
 } else {
   echo "Error al guardar los datos: " . $con;
 }
