@@ -67,7 +67,7 @@ if ($seguridad->getUsuario()==null) {
                     echo
                     '<div class="table-responsive">
                     
-        <table class="table table-hover table-light ">
+        <table class="table table-hover ">
           <thead>
             <tr>
               <th> Tipo identificacion </th>
