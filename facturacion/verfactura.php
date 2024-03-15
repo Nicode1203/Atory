@@ -117,7 +117,7 @@
                           <center><label for="cp">Tu fecha limite de pago es : <?php echo "$ffact" ?></label></center>
                         </div>
                         <div>
-                          <center><label for="cp">Tu fecha de suspeción de servicio : <?php echo "$flim" ?></label></center>
+                          <center><label for="cp">Tu fecha de suspensión de servicio : <?php echo "$flim" ?></label></center>
                         </div>
                         <div>
                           <center><label for="cp">Con el plan : <?php echo "$nplan" ?></label></center>
