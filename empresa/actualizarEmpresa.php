@@ -123,7 +123,7 @@
                             <div>
                                 <br>
                                 <button id="submit" type="submit" formmethod="post" formaction="indatos.php" class="btn btn-primary">Guardar</button>
-                                <button id="submit" type="submit" formmethod="post" formaction="index.html" class="btn btn-primary"> Volver al inicio </button>
+                                <button id="submit" type="submit" formmethod="post" formaction="../empresa/verempresa.php" class="btn btn-primary"> Volver al inicio </button>
                                 <button id="submit" type="submit" formmethod="post" formaction="ingresarBancos.php" class="btn btn-primary"> ingresar a bancos </button>
 
                             </div>

@@ -98,7 +98,7 @@
                             ?>
                             <div>
                                 <br>
-                                <button id="submit" type="submit" formmethod="post" formaction="index.html" class="btn btn-danger"> Volver al inicio </button>
+                                <button id="submit" type="submit" formmethod="post" formaction="../tablas.php" class="btn btn-danger"> Volver al inicio </button>
                                 <button id="submit" type="submit" formmethod="post" formaction="ingresarBancos.php" class="btn btn-primary"> ingresar a bancos </button>
                                 <button id="submit" type="submit" formmethod="post" formaction="actualizarEmpresa.php" class="btn btn-primary"> Actualizar información </button>
 
