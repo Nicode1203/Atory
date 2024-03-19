@@ -16,10 +16,10 @@ if (mysqli_num_rows($resultado) == 1) {
   // Verificar si la contraseña ingresada coincide con la contraseña encriptada almacenada en la base de datos
   if (password_verify($password, $hashed_clave)) {
     // Contraseña correcta, redirigir según el rol del usuario
-    if ($fila['rol'] == 'Administrador') {
+    if ($fila['rol'] == 'Administrador' and $fila['estadoUsuario'] == 'Activo') {
       header("location: ../principal.php");
       exit;
-    } elseif ($fila['rol'] == 'Tecnico') {
+    } elseif ($fila['rol'] == 'Tecnico' and $fila['estadoUsuario'] == 'Activo') {
       header("location: ../userTecnico/visitas/inicioVisitasT.php");
       exit;
     } else {

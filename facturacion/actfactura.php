@@ -2,9 +2,9 @@
 include "conexion.php";
 $if=$_POST['if'];
 $ffact=$_POST['ffact'];
-$impt=$_POST['impt'];
-$sub=$_POST['sub'];
 $st=$_POST['st'];
+$impt= $st *0.19;
+$sub= $st*0.81;
 $estf=$_POST['estf'];
 
 

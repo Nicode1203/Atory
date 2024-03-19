@@ -69,8 +69,8 @@ if ($seguridad->getUsuario()==null) {
                     <th> Estado factura</th>
                     <th> Plan</th>
                     <th> Consultas</th>
+                    <th> Volver a pago</th>
                     <th> Editar</th>
-                    <th> Pago</th>
                 </tr>
                 </thead>
                 ';
@@ -100,9 +100,12 @@ if ($seguridad->getUsuario()==null) {
                                 <th>
                                     <a href="verfacturaAdmin.php?id=<?php echo  $row['idFactura'] ?>" class="btn btn-info">ver factura</a>
                                 </th>
+                                <th><a href="eliminarf.php?id=<?php echo $row['idFactura']   ?>" class="btn btn-danger">Pago</a></th>
+                                <?php if ($estf == 'Pendiente'){ ?>
                                 <th><a href="editfactura.php?if=<?php echo  $row['idFactura'] ?>" class="btn btn-primary">Editar factura</a>
                                 </th>
-                                <th><a href="eliminarf.php?id=<?php echo $row['idFactura']   ?>" class="btn btn-danger">Pago</a></th>
+                                <?php }?>
+
 
                             </tr>
                     <?php

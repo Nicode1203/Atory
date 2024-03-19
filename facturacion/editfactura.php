@@ -46,6 +46,7 @@ if ($varsesion == null || $varsesion = '') {
       $cid = $row['cliente_idCliente'];
       $estf = $row['estadoFactura'];
     }
+    
   }
   ?>
   ?>
@@ -88,10 +89,10 @@ if ($varsesion == null || $varsesion = '') {
           <input type="hidden" class="form-control mb-3" name="cid" value="<?php echo "$cid"  ?>">
           <p class="card-description"> Fecha de facturacion: </p>
           <input type="date" class="form-control mb-3" name="ffact" placeholder="Velocidad Plan" value="<?php echo "$ffact"  ?>">
-          <p class="card-description"> Impuesto: </p>
-          <input type="text" class="form-control mb-3" name="impt" placeholder="Nombre del Plan" value="<?php echo  "$impt" ?>">
-          <p class="card-description"> SubTotal: </p>
-          <input type="text" class="form-control mb-3" name="sub" placeholder="Ingrese Valor del Plan" value="<?php echo "$sub"  ?>">
+          <p class="card-description" name = "impt" id ="impt"> Impuesto: <?php echo  "$impt"?>  </p>
+          <input type="hidden" class="form-control mb-3" name="impt" value="<?php echo "$impt"  ?>">
+          <p class="card-description"> SubTotal: <?php echo "$sub"  ?> </p>
+          <input type="hidden" class="form-control mb-3" name="sub" value="<?php echo "$sub"  ?>">
           <p class="card-description"> Valor total factura: </p>
           <input type="text" class="form-control mb-3" name="st" placeholder="Descripcion del plan" value="<?php echo "$st" ?>">
           <p class="card-description"> Estado de factura: </p>
