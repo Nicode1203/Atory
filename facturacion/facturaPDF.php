@@ -23,10 +23,10 @@ $html = '<!DOCTYPE html>
   <link rel="stylesheet" href="../assets/css/style.css">
   <link rel="shortcut icon" href="../assets/images/favicon.png" />
   <style>
-    .form-group>div {
-      margin-bottom: 1px;
-    }
-  </style>
+  .form-group>div {
+    margin-bottom: 1px;
+  }
+</style>
 </head>
 
 <body>';
@@ -190,9 +190,11 @@ $html .= '</body></html>';
 
 // Cargar el contenido HTML en Dompdf
 $dompdf->loadHtml($html);
-
+$dompdf->setPaper(array(0, 0, 400, 700), 'portrait');
 // Renderizar el PDF
 $dompdf->render();
+
+
 
 // Enviar el PDF al navegador para su descarga o visualización
 $meses = [
