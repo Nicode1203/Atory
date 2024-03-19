@@ -114,18 +114,15 @@ if ($varsesion == null || $varsesion = '') {
                                     <td> <?php echo "$tipov" ?></td>
                                     <td> <?php echo "$diaVisita" ?></td>
                                     <input type="hidden" name="id" value="<?php echo $docu ?>">
-                                    <button type="submit" class="btn btn-primary btn-lg">Volver a visitas activas</button>
                                     <th><a href="consulta.php?id=<?php echo $row['idVisita'] ?>" class="btn btn-primary">Ver informacion de la visita</a></th>
-
-
-                                    </th>
+                                  </th>
                                 </tr>
                         <?php
                             }
                         }
 
                         ?>
-
+                        <button type="submit" class="btn btn-primary btn-lg">Volver a visitas activas</button>
                         <!-- ESTO ES LO QUE PODEMOS MODIFICAR -->
                         <!-- partial:partials/_footer.html -->
                     </form>
