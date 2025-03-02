@@ -1,18 +1,14 @@
 <?php
-    $host="localhost";
-    $user="root";
-    $pass="";
+$host = "pink-monkey-303866.hostingersite.com";
+$User = "u480925299_root";
+$pass = "Administrator2025*";
+$db = "u480925299_atory2025";
 
-    $bd="atory";
+$conexion = mysqli_connect($host, $User, $pass, $db);
 
-    $con=mysqli_connect($host,$user,$pass,$bd);
-    if(!$con){
-
-        die("No se conecto a la base de datos ".mysqli_connect_error());
-    
-    } else {
-        //echo " CONEXIÓN EXITOSA";
-    }
-    
-
+if (!$conexion) {  // Se usa la variable correcta
+    die("Conexión fallida: " . mysqli_connect_error());
+} else {
+    echo "Conexión exitosa.";
+}
 ?>

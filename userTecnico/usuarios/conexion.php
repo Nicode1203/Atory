@@ -1,9 +1,8 @@
 <?php
     $host="localhost";
-    $user="root";
-    $pass="";
-
-    $bd="atory";
+    $user=""u480925299_root";
+    $pass="Administrator2025*";
+    $bd="u480925299_atory2025";;
 
     $con=mysqli_connect($host,$user,$pass,$bd);
     if(!$con){

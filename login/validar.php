@@ -1,41 +1,69 @@
 <?php
-$usuario = $_POST['usuario'];
-$password = $_POST['pass'];
 session_start();
-$_SESSION['usuario'] = $usuario;
 
-$conn = mysqli_connect("localhost", "root", "", "atory");
+// Datos de conexión a la base de datos en Hostinger
+$host = "localhost"; 
+$user = "u480925299_root";
+$pass = "Administrator2025*";
+$db = "u480925299_atory2025";
 
-$consulta = "SELECT * FROM usuario WHERE documentoUsuario = '$usuario'";
-$resultado = mysqli_query($conn, $consulta);
+// Establecer conexión con la base de datos
+$conn = mysqli_connect($host, $user, $pass, $db);
 
-if (mysqli_num_rows($resultado) == 1) {
-  $fila = mysqli_fetch_assoc($resultado);
-  $hashed_clave = $fila['claveUsuario'];
-
-  // Verificar si la contraseña ingresada coincide con la contraseña encriptada almacenada en la base de datos
-  if (password_verify($password, $hashed_clave)) {
-    // Contraseña correcta, redirigir según el rol del usuario
-    if ($fila['rol'] == 'Administrador' and $fila['estadoUsuario'] == 'Activo') {
-      header("location: ../principal.php");
-      exit;
-    } elseif ($fila['rol'] == 'Tecnico' and $fila['estadoUsuario'] == 'Activo') {
-      header("location: ../userTecnico/visitas/inicioVisitasT.php");
-      exit;
-    } else {
-      header("location: errorvalid.php");
-      exit;
-    }
-  } else {
-    // Contraseña incorrecta
-    header("location: errorvalid.php");
-    exit;
-  }
-} else {
-  // Usuario no encontrado
-  header("location: errorvalid.php");
-  exit;
+// Verificar conexión
+if (!$conn) {
+    die("Error de conexión: " . mysqli_connect_error());
 }
 
-mysqli_free_result($resultado);
-mysqli_close($conn);
+// Verificar que los datos del formulario están llegando
+if (!isset($_POST['usuario']) || !isset($_POST['pass'])) {
+    die("Error: No se recibieron los datos del formulario.");
+}
+
+$usuario = trim($_POST['usuario']);
+$password = trim($_POST['pass']);
+
+// Si los valores están vacíos, redirigir al error
+if (empty($usuario) || empty($password)) {
+    die("Error: Usuario o contraseña vacíos.");
+}
+
+// Usar una consulta preparada para mayor seguridad
+$stmt = $conn->prepare("SELECT rol, claveUsuario FROM usuario WHERE nombresUsuario = ?");
+$stmt->bind_param("s", $usuario);
+$stmt->execute();
+$resultado = $stmt->get_result();
+
+// Verificar si el usuario existe en la base de datos
+if ($filas = $resultado->fetch_assoc()) {
+    echo "Usuario encontrado<br>";
+    echo "Clave en la BD (Hasheada): " . $filas['claveUsuario'] . "<br>";
+
+    // Verificar contraseña con password_verify()
+    if (password_verify($password, $filas['claveUsuario'])) {  
+        echo "Contraseña correcta<br>";
+        
+        $_SESSION['usuario'] = $usuario;
+
+        // Redirigir según el rol del usuario
+        if ($filas['rol'] == 'Administrador') {
+            header("location:../principal.php");
+        } elseif ($filas['rol'] == 'Tecnico') {
+            header("location:../userTecnico/visitas/tablasVisitas.php");
+        } else {
+            header("location:errorvalid.php");
+        }
+        exit;
+    } else {
+        echo "Contraseña incorrecta<br>";
+        exit;
+    }
+} else {
+    echo "Usuario no encontrado<br>";
+    exit;
+}
+
+// Cerrar conexiones
+$stmt->close();
+$conn->close();
+?>
